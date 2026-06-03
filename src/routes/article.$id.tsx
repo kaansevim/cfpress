@@ -1,11 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { getArticle } from "@/lib/mock-articles";
+import { getArticle, type Article } from "@/lib/mock-articles";
 import { SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/article/$id")({
-  loader: ({ params }) => {
+  loader: ({ params }): { article: Article } => {
     const article = getArticle(params.id);
     if (!article) throw notFound();
     return { article };
