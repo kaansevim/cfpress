@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { getArticle, type Article } from "@/lib/mock-articles";
 import { SiteHeader } from "@/components/site-chrome";
+import { MockFigure } from "@/components/mock-figure";
 
 export const Route = createFileRoute("/article/$id")({
   loader: ({ params }): { article: Article } => {
