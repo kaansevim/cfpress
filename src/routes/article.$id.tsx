@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { getArticle, type Article } from "@/lib/mock-articles";
 import { SiteHeader } from "@/components/site-chrome";
+import { MockFigure } from "@/components/mock-figure";
 
 export const Route = createFileRoute("/article/$id")({
   loader: ({ params }): { article: Article } => {
@@ -186,9 +187,7 @@ function ArticlePage() {
                   <div className="space-y-6">
                     {article.figures.map((f) => (
                       <figure key={f.id}>
-                        <div className="flex aspect-video items-center justify-center rounded-md border border-dashed border-border bg-secondary/40 text-center text-sm text-muted-foreground">
-                          [{f.placeholder}]
-                        </div>
+                        <MockFigure figure={f} />
                         <figcaption className="mt-2 text-sm">
                           <span className="font-semibold">{f.label}.</span>{" "}
                           <span className="text-muted-foreground">{f.caption}</span>
