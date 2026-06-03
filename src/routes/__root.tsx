@@ -82,6 +82,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Akademik Dergi" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { property: "og:title", content: "Akademik Dergi" },
+      { name: "twitter:title", content: "Akademik Dergi" },
+      { property: "og:description", content: "Açık erişimli Türkçe akademik yayın platformu" },
+      { name: "twitter:description", content: "Açık erişimli Türkçe akademik yayın platformu" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7193704d-8f91-416f-8638-eb8f4b14cf4d/id-preview-781b3c0e--77410258-0d53-4bb1-8048-02c9636b9929.lovable.app-1780485888132.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7193704d-8f91-416f-8638-eb8f4b14cf4d/id-preview-781b3c0e--77410258-0d53-4bb1-8048-02c9636b9929.lovable.app-1780485888132.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
