@@ -1,7 +1,7 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { S as SiteHeader } from "./site-chrome-C4Xr1_fh.mjs";
-import { R as Route } from "./router-C1YiNSMi.mjs";
+import { S as SiteHeader } from "./site-chrome-D6ilkQVL.mjs";
+import { R as Route } from "./router-CvIdKJ3f.mjs";
 import { A as ArrowLeft, E as ExternalLink } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";

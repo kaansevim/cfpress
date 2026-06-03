@@ -1,6 +1,6 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { S as SiteHeader } from "./site-chrome-C4Xr1_fh.mjs";
+import { S as SiteHeader } from "./site-chrome-D6ilkQVL.mjs";
+import "../_libs/tanstack__react-router.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
 import "../_libs/cookie-es.mjs";
@@ -64,7 +64,7 @@ function AuthPage() {
       /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "mt-6 text-center text-sm text-muted-foreground", children: [
         "Hesabınız yok mu?",
         " ",
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/auth", className: "font-medium text-accent hover:underline", children: "Kayıt olun" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx("a", { href: "#", className: "font-medium text-accent hover:underline", children: "Kayıt olun" })
       ] })
     ] })
   ] });

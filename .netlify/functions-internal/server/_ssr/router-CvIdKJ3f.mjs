@@ -103,6 +103,10 @@ const Route$4 = createRootRouteWithContext()({
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,400..700;1,400..700&display=swap"
+      },
+      {
+        rel: "icon",
+        href: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">📖</text></svg>'
       }
     ]
   }),
@@ -112,7 +116,7 @@ const Route$4 = createRootRouteWithContext()({
   errorComponent: ErrorComponent
 });
 function RootShell({ children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("html", { lang: "en", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("html", { lang: "tr", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("head", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(HeadContent, {}) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("body", { children: [
       children,
@@ -124,7 +128,7 @@ function RootComponent() {
   const { queryClient } = Route$4.useRouteContext();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter$3 = () => import("./dashboard-DWfXSw6L.mjs");
+const $$splitComponentImporter$3 = () => import("./dashboard-SzNa2fth.mjs");
 const Route$3 = createFileRoute("/dashboard")({
   head: () => ({
     meta: [{
@@ -136,7 +140,7 @@ const Route$3 = createFileRoute("/dashboard")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./auth-4gSTabV8.mjs");
+const $$splitComponentImporter$2 = () => import("./auth-BeFwVF84.mjs");
 const Route$2 = createFileRoute("/auth")({
   head: () => ({
     meta: [{
@@ -148,7 +152,7 @@ const Route$2 = createFileRoute("/auth")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter$1 = () => import("./index-CdSQeW97.mjs");
+const $$splitComponentImporter$1 = () => import("./index-CNJIODKZ.mjs");
 const Route$1 = createFileRoute("/")({
   head: () => ({
     meta: [{
@@ -316,7 +320,7 @@ const submissions = [
   { id: "S-2024-074", title: "Türkiye'de Tarımsal Mikrobiyom Çeşitliliği", correspondingAuthor: "Dr. Ayşe Yılmaz", submittedAt: "2024-11-12", status: "Yayımlandı" },
   { id: "S-2024-061", title: "Büyük Dil Modellerinin Türkçe Akademik Metin Üretimi", correspondingAuthor: "Dr. Can Öztürk", submittedAt: "2024-12-05", status: "Yayımlandı" }
 ];
-const $$splitComponentImporter = () => import("./article._id-DjzIov0m.mjs");
+const $$splitComponentImporter = () => import("./article._id-Biwk6IjM.mjs");
 const $$splitErrorComponentImporter = () => import("./article._id-DkFFiRmK.mjs");
 const $$splitNotFoundComponentImporter = () => import("./article._id-_j_d3Aye.mjs");
 const Route = createFileRoute("/article/$id")({

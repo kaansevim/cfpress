@@ -1,7 +1,7 @@
 import { r as reactExports, j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { a as articles } from "./router-C1YiNSMi.mjs";
+import { a as articles } from "./router-CvIdKJ3f.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { S as SiteHeader, a as SiteFooter } from "./site-chrome-C4Xr1_fh.mjs";
+import { S as SiteHeader, a as SiteFooter } from "./site-chrome-D6ilkQVL.mjs";
 import { S as Search } from "../_libs/lucide-react.mjs";
 import "../_libs/tanstack__query-core.mjs";
 import "../_libs/tanstack__react-query.mjs";

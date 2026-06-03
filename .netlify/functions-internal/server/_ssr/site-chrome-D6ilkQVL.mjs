@@ -1,6 +1,6 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { S as Search } from "../_libs/lucide-react.mjs";
+import { B as Book } from "../_libs/lucide-react.mjs";
 function SiteHeader() {
   return /* @__PURE__ */ jsxRuntimeExports.jsx("header", { className: "border-b border-border bg-background", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mx-auto flex max-w-6xl items-center justify-between px-6 py-5", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { to: "/", className: "flex items-baseline gap-2", children: [
@@ -59,7 +59,7 @@ function SiteFooter() {
       ] })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-10 flex items-center gap-2 text-xs text-muted-foreground", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Search, { className: "h-3 w-3" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Book, { className: "h-3 w-3" }),
       " ISSN 0000-0000 · DOI 10.62847/akademik"
     ] })
   ] }) });

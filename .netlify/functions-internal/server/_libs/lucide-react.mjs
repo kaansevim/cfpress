@@ -75,11 +75,21 @@ const createLucideIcon = (iconName, iconNode) => {
   Component.displayName = toPascalCase(iconName);
   return Component;
 };
-const __iconNode$6 = [
+const __iconNode$7 = [
   ["path", { d: "m12 19-7-7 7-7", key: "1l729n" }],
   ["path", { d: "M19 12H5", key: "x3x0zl" }]
 ];
-const ArrowLeft = createLucideIcon("arrow-left", __iconNode$6);
+const ArrowLeft = createLucideIcon("arrow-left", __iconNode$7);
+const __iconNode$6 = [
+  [
+    "path",
+    {
+      d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20",
+      key: "k3hazp"
+    }
+  ]
+];
+const Book = createLucideIcon("book", __iconNode$6);
 const __iconNode$5 = [
   ["path", { d: "M15 3h6v6", key: "1q9fwt" }],
   ["path", { d: "M10 14 21 3", key: "gplh6r" }],
@@ -131,6 +141,7 @@ const __iconNode = [
 const X = createLucideIcon("x", __iconNode);
 export {
   ArrowLeft as A,
+  Book as B,
   ExternalLink as E,
   FileText as F,
   Search as S,
