@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: {
+    preset: process.env.NETLIFY ? "netlify" : process.env.VERCEL ? "vercel" : "cloudflare-module"
+  }
 });
