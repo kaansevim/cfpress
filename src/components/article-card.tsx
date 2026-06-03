@@ -1,27 +1,29 @@
 import { Link } from "@tanstack/react-router";
 import type { Article } from "@/lib/mock-articles";
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString("tr-TR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+import { getJournal } from "@/lib/journals";
+import { formatDate } from "@/lib/article-utils";
 
 export function ArticleCard({ article }: { article: Article }) {
+  const journal = getJournal(article.journalSlug);
   return (
     <article className="group border-b border-border py-8 last:border-b-0">
       <div className="mb-3 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
         <span>{formatDate(article.publishedAt)}</span>
-        {article.keywords.slice(0, 2).map((k) => (
-          <span key={k} className="rounded-full bg-secondary px-2 py-0.5 normal-case tracking-normal">
-            {k}
+        {article.subject && (
+          <span className="rounded-full bg-secondary px-2 py-0.5 normal-case tracking-normal">
+            {article.subject}
           </span>
-        ))}
+        )}
+        {journal && (
+          <span className="normal-case tracking-normal text-accent">{journal.shortName}</span>
+        )}
       </div>
 
-      <Link to="/article/$id" params={{ id: article.id }} className="block">
+      <Link
+        to="/journal/$slug/article/$id"
+        params={{ slug: article.journalSlug, id: article.id }}
+        className="block"
+      >
         <h2 className="font-serif-display text-2xl font-bold leading-tight transition-colors group-hover:text-accent sm:text-3xl">
           {article.title}
         </h2>
@@ -31,14 +33,12 @@ export function ArticleCard({ article }: { article: Article }) {
         {article.authors.map((a) => a.name).join(", ")}
       </div>
 
-      <p className="article-prose mt-4 line-clamp-3 text-base">
-        {article.abstract}
-      </p>
+      <p className="article-prose mt-4 line-clamp-3 text-base">{article.abstract}</p>
 
       <div className="mt-4 flex flex-wrap items-center gap-4 text-sm">
         <Link
-          to="/article/$id"
-          params={{ id: article.id }}
+          to="/journal/$slug/article/$id"
+          params={{ slug: article.journalSlug, id: article.id }}
           className="font-medium text-accent hover:underline"
         >
           Makaleyi oku →

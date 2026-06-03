@@ -10,16 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as YazarRehberiRouteImport } from './routes/yazar-rehberi'
+import { Route as JournalsRouteImport } from './routes/journals'
 import { Route as HakemSureciRouteImport } from './routes/hakem-sureci'
 import { Route as EtikIlkelerRouteImport } from './routes/etik-ilkeler'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ArticleIdRouteImport } from './routes/article.$id'
+import { Route as JournalSlugIndexRouteImport } from './routes/journal.$slug.index'
+import { Route as JournalSlugSectionRouteImport } from './routes/journal.$slug.$section'
+import { Route as JournalSlugArticleIdRouteImport } from './routes/journal.$slug.article.$id'
 
 const YazarRehberiRoute = YazarRehberiRouteImport.update({
   id: '/yazar-rehberi',
   path: '/yazar-rehberi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalsRoute = JournalsRouteImport.update({
+  id: '/journals',
+  path: '/journals',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HakemSureciRoute = HakemSureciRouteImport.update({
@@ -42,83 +51,126 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArticleIdRoute = ArticleIdRouteImport.update({
-  id: '/article/$id',
-  path: '/article/$id',
+const JournalSlugIndexRoute = JournalSlugIndexRouteImport.update({
+  id: '/journal/$slug/',
+  path: '/journal/$slug/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalSlugSectionRoute = JournalSlugSectionRouteImport.update({
+  id: '/journal/$slug/$section',
+  path: '/journal/$slug/$section',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalSlugArticleIdRoute = JournalSlugArticleIdRouteImport.update({
+  id: '/journal/$slug/article/$id',
+  path: '/journal/$slug/article/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/etik-ilkeler': typeof EtikIlkelerRoute
   '/hakem-sureci': typeof HakemSureciRoute
+  '/journals': typeof JournalsRoute
   '/yazar-rehberi': typeof YazarRehberiRoute
-  '/article/$id': typeof ArticleIdRoute
+  '/journal/$slug/$section': typeof JournalSlugSectionRoute
+  '/journal/$slug/': typeof JournalSlugIndexRoute
+  '/journal/$slug/article/$id': typeof JournalSlugArticleIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/etik-ilkeler': typeof EtikIlkelerRoute
   '/hakem-sureci': typeof HakemSureciRoute
+  '/journals': typeof JournalsRoute
   '/yazar-rehberi': typeof YazarRehberiRoute
-  '/article/$id': typeof ArticleIdRoute
+  '/journal/$slug/$section': typeof JournalSlugSectionRoute
+  '/journal/$slug': typeof JournalSlugIndexRoute
+  '/journal/$slug/article/$id': typeof JournalSlugArticleIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/auth': typeof AuthRoute
   '/dashboard': typeof DashboardRoute
   '/etik-ilkeler': typeof EtikIlkelerRoute
   '/hakem-sureci': typeof HakemSureciRoute
+  '/journals': typeof JournalsRoute
   '/yazar-rehberi': typeof YazarRehberiRoute
-  '/article/$id': typeof ArticleIdRoute
+  '/journal/$slug/$section': typeof JournalSlugSectionRoute
+  '/journal/$slug/': typeof JournalSlugIndexRoute
+  '/journal/$slug/article/$id': typeof JournalSlugArticleIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/auth'
     | '/dashboard'
     | '/etik-ilkeler'
     | '/hakem-sureci'
+    | '/journals'
     | '/yazar-rehberi'
-    | '/article/$id'
+    | '/journal/$slug/$section'
+    | '/journal/$slug/'
+    | '/journal/$slug/article/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/auth'
     | '/dashboard'
     | '/etik-ilkeler'
     | '/hakem-sureci'
+    | '/journals'
     | '/yazar-rehberi'
-    | '/article/$id'
+    | '/journal/$slug/$section'
+    | '/journal/$slug'
+    | '/journal/$slug/article/$id'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/auth'
     | '/dashboard'
     | '/etik-ilkeler'
     | '/hakem-sureci'
+    | '/journals'
     | '/yazar-rehberi'
-    | '/article/$id'
+    | '/journal/$slug/$section'
+    | '/journal/$slug/'
+    | '/journal/$slug/article/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AuthRoute: typeof AuthRoute
   DashboardRoute: typeof DashboardRoute
   EtikIlkelerRoute: typeof EtikIlkelerRoute
   HakemSureciRoute: typeof HakemSureciRoute
+  JournalsRoute: typeof JournalsRoute
   YazarRehberiRoute: typeof YazarRehberiRoute
-  ArticleIdRoute: typeof ArticleIdRoute
+  JournalSlugSectionRoute: typeof JournalSlugSectionRoute
+  JournalSlugIndexRoute: typeof JournalSlugIndexRoute
+  JournalSlugArticleIdRoute: typeof JournalSlugArticleIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -128,6 +180,13 @@ declare module '@tanstack/react-router' {
       path: '/yazar-rehberi'
       fullPath: '/yazar-rehberi'
       preLoaderRoute: typeof YazarRehberiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journals': {
+      id: '/journals'
+      path: '/journals'
+      fullPath: '/journals'
+      preLoaderRoute: typeof JournalsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hakem-sureci': {
@@ -158,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -165,11 +231,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/article/$id': {
-      id: '/article/$id'
-      path: '/article/$id'
-      fullPath: '/article/$id'
-      preLoaderRoute: typeof ArticleIdRouteImport
+    '/journal/$slug/': {
+      id: '/journal/$slug/'
+      path: '/journal/$slug'
+      fullPath: '/journal/$slug/'
+      preLoaderRoute: typeof JournalSlugIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/$slug/$section': {
+      id: '/journal/$slug/$section'
+      path: '/journal/$slug/$section'
+      fullPath: '/journal/$slug/$section'
+      preLoaderRoute: typeof JournalSlugSectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/$slug/article/$id': {
+      id: '/journal/$slug/article/$id'
+      path: '/journal/$slug/article/$id'
+      fullPath: '/journal/$slug/article/$id'
+      preLoaderRoute: typeof JournalSlugArticleIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -177,12 +257,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AuthRoute: AuthRoute,
   DashboardRoute: DashboardRoute,
   EtikIlkelerRoute: EtikIlkelerRoute,
   HakemSureciRoute: HakemSureciRoute,
+  JournalsRoute: JournalsRoute,
   YazarRehberiRoute: YazarRehberiRoute,
-  ArticleIdRoute: ArticleIdRoute,
+  JournalSlugSectionRoute: JournalSlugSectionRoute,
+  JournalSlugIndexRoute: JournalSlugIndexRoute,
+  JournalSlugArticleIdRoute: JournalSlugArticleIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

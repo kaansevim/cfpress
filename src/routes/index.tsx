@@ -1,17 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { articles } from "@/lib/mock-articles";
+import { journals } from "@/lib/journals";
 import { ArticleCard } from "@/components/article-card";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Akademik Dergi — Açık Erişimli Türkçe Akademik Yayın Platformu" },
-      { name: "description", content: "Hakemli, açık erişimli Türkçe akademik makaleler. Tüm bilim dallarından son araştırmaları keşfedin." },
-      { property: "og:title", content: "Akademik Dergi" },
-      { property: "og:description", content: "Hakemli, açık erişimli Türkçe akademik yayın platformu." },
+      { title: "Akademik Yayın Platformu — Açık Erişimli Türkçe Dergiler" },
+      { name: "description", content: "Birden çok hakemli, açık erişimli akademik derginin yönetildiği Türkçe yayın platformu." },
+      { property: "og:title", content: "Akademik Yayın Platformu" },
+      { property: "og:description", content: "Hakemli, açık erişimli Türkçe akademik dergiler tek çatı altında." },
     ],
   }),
   component: HomePage,
@@ -45,11 +46,44 @@ function HomePage() {
             Bilgi, paylaşıldıkça değer kazanır.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Akademik Dergi, Türkçe araştırmaları açık erişimle buluşturur — her disiplinden çalışmaya ücretsiz ve modern bir okuma deneyimi sunar.
+            Birden çok hakemli, açık erişimli akademik derginin yönetildiği bir yayın platformu — tüm dergilere ve son araştırmalara tek çatı altından ulaşın.
           </p>
         </div>
       </section>
 
+      {/* Dergiler */}
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="font-serif-display text-xl font-bold">Dergiler</h2>
+            <Link to="/journals" className="text-sm font-medium text-accent hover:underline">
+              Tümünü gör →
+            </Link>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {journals.map((j) => (
+              <Link
+                key={j.slug}
+                to="/journal/$slug"
+                params={{ slug: j.slug }}
+                className="group rounded-lg border border-border p-5 transition-colors hover:border-accent"
+              >
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="font-serif-display text-lg font-bold leading-snug transition-colors group-hover:text-accent">
+                    {j.name}
+                  </h3>
+                  <span className="shrink-0 text-xs uppercase tracking-widest text-muted-foreground">
+                    {j.shortName}
+                  </span>
+                </div>
+                <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{j.scope}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Son makaleler */}
       <main className="mx-auto max-w-3xl px-6 py-12">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="font-serif-display text-xl font-bold">Son Makaleler</h2>

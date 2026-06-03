@@ -2,6 +2,9 @@ export interface Author {
   name: string;
   orcid: string;
   affiliation: string;
+  isCorresponding?: boolean;
+  email?: string;
+  contributions?: string[];
 }
 
 export interface Figure {
@@ -18,6 +21,8 @@ export interface Reference {
 
 export interface Article {
   id: string;
+  journalSlug: string;
+  subject: string;
   title: string;
   authors: Author[];
   abstract: string;
@@ -27,6 +32,13 @@ export interface Article {
   content: string;
   figures: Figure[];
   references: Reference[];
+  metrics: {
+    views: number;
+    downloads: number;
+    citations: number;
+  };
+  funding?: string;
+  dataAvailability?: string;
   info: {
     received: string;
     accepted: string;
@@ -39,10 +51,12 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: "1",
+    journalSlug: "social-solutions",
+    subject: "Toplum Sağlığı & Çevre",
     title: "Türkiye'de Tarımsal Mikrobiyom Çeşitliliğinin Toprak Verimliliği Üzerindeki Etkisi",
     authors: [
-      { name: "Dr. Ayşe Yılmaz", orcid: "0000-0002-1825-0097", affiliation: "İstanbul Üniversitesi, Ziraat Fakültesi" },
-      { name: "Prof. Dr. Mehmet Demir", orcid: "0000-0001-5109-3700", affiliation: "Ankara Üniversitesi, Biyoloji Bölümü" },
+      { name: "Dr. Ayşe Yılmaz", orcid: "0000-0002-1825-0097", affiliation: "İstanbul Üniversitesi, Ziraat Fakültesi", isCorresponding: true, email: "ayse.yilmaz@istanbul.edu.tr", contributions: ["Kavramsallaştırma", "Metodoloji", "Yazım — özgün taslak"] },
+      { name: "Prof. Dr. Mehmet Demir", orcid: "0000-0001-5109-3700", affiliation: "Ankara Üniversitesi, Biyoloji Bölümü", contributions: ["Denetim", "Yazım — gözden geçirme ve düzenleme"] },
     ],
     abstract:
       "Bu çalışma, Anadolu'nun farklı iklim kuşaklarında bulunan tarım topraklarındaki mikrobiyom çeşitliliğini metagenomik yaklaşımlarla incelemiş ve bu çeşitliliğin toprak verimliliği parametreleri ile güçlü bir korelasyon gösterdiğini ortaya koymuştur. Yedi farklı bölgeden alınan 240 toprak örneği analiz edilmiş, Proteobacteria ve Actinobacteria filumlarının baskınlığı tespit edilmiştir.",
@@ -65,7 +79,11 @@ Türkiye, üç farklı iklim kuşağını barındıran coğrafi konumu sayesinde
 
 Genel olarak Proteobacteria (%38.2) ve Actinobacteria (%24.7) filumları baskın bulunmuştur. Karadeniz bölgesi topraklarında Acidobacteria oranı diğer bölgelere kıyasla anlamlı düzeyde yüksek bulunmuştur (p < 0.001).
 
+[[fig:f1]]
+
 Shannon çeşitlilik indeksi ile toprak organik madde içeriği arasında güçlü bir pozitif korelasyon (r = 0.78) gözlenmiştir. Bu bulgu, mikrobiyal çeşitliliğin toprak verimliliğinin doğrudan bir göstergesi olarak kullanılabileceğini önermektedir.
+
+[[fig:f2]]
 
 ## Tartışma
 
@@ -84,6 +102,9 @@ Türkiye genelinde tarımsal toprakların mikrobiyom haritasının çıkarılmas
       { id: "r2", text: "Bolyen, E. et al. (2019). Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nature Biotechnology, 37, 852-857." },
       { id: "r3", text: "Yılmaz, A. & Demir, M. (2022). Anadolu topraklarında mikrobiyal çeşitlilik. Türk Tarım Dergisi, 45(2), 112-128." },
     ],
+    metrics: { views: 4218, downloads: 1126, citations: 14 },
+    funding: "Bu çalışma TÜBİTAK 1001 programı (proje no. 123A456) tarafından desteklenmiştir.",
+    dataAvailability: "Ham sekanslama verileri NCBI SRA veri tabanında PRJNA000001 erişim numarasıyla kamuya açıktır.",
     info: {
       received: "12 Kasım 2024",
       accepted: "28 Şubat 2025",
@@ -94,10 +115,12 @@ Türkiye genelinde tarımsal toprakların mikrobiyom haritasının çıkarılmas
   },
   {
     id: "2",
+    journalSlug: "cognitive-formation",
+    subject: "Yapay Zekâ & Dilbilim",
     title: "Büyük Dil Modellerinin Türkçe Akademik Metin Üretiminde Performans Karşılaştırması",
     authors: [
-      { name: "Dr. Can Öztürk", orcid: "0000-0003-1415-9265", affiliation: "Boğaziçi Üniversitesi, Bilgisayar Mühendisliği" },
-      { name: "Zeynep Aydın", orcid: "0000-0002-7182-8459", affiliation: "ODTÜ, Yapay Zekâ Enstitüsü" },
+      { name: "Dr. Can Öztürk", orcid: "0000-0003-1415-9265", affiliation: "Boğaziçi Üniversitesi, Bilgisayar Mühendisliği", isCorresponding: true, email: "can.ozturk@boun.edu.tr", contributions: ["Kavramsallaştırma", "Yazılım", "Yazım — özgün taslak"] },
+      { name: "Zeynep Aydın", orcid: "0000-0002-7182-8459", affiliation: "ODTÜ, Yapay Zekâ Enstitüsü", contributions: ["Veri derleme", "Doğrulama"] },
     ],
     abstract:
       "Bu makalede, açık ve kapalı kaynaklı altı farklı büyük dil modelinin Türkçe akademik metin üretimindeki performansı karşılaştırılmıştır. Değerlendirme; dilbilgisi doğruluğu, terminoloji tutarlılığı ve bilimsel argümantasyon kalitesi olmak üzere üç eksende yapılmıştır.",
@@ -116,6 +139,8 @@ Karşılaştırmaya altı model dahil edilmiştir: GPT-4o, Claude 3.5 Sonnet, Ge
 
 Kapalı kaynaklı modeller dilbilgisi doğruluğunda %95'in üzerinde başarı gösterirken; açık kaynaklı modeller %78-87 bandında kalmıştır. Terminoloji tutarlılığında ise yerli model TurkishBERT-XL, alan-özel terminolojide diğer modelleri geride bırakmıştır.
 
+[[fig:f1]]
+
 ## Tartışma
 
 Bulgular, Türkçe akademik metin üretiminde "tek bir en iyi model" bulunmadığını, kullanım amacına göre model seçiminin kritik olduğunu göstermektedir.
@@ -131,6 +156,9 @@ Yerli dil modeli geliştirme çalışmalarının, alan-özel akademik kullanım 
       { id: "r1", text: "Brown, T. et al. (2020). Language Models are Few-Shot Learners. NeurIPS." },
       { id: "r2", text: "Öztürk, C. (2024). Türkçe doğal dil işleme: güncel durum. TBV Bilgisayar Bilimleri Dergisi, 17(1)." },
     ],
+    metrics: { views: 7903, downloads: 2541, citations: 22 },
+    funding: "Bu araştırma için herhangi bir dış finansman alınmamıştır.",
+    dataAvailability: "Üretilen metinler ve değerlendirme kodları açık bir depoda (github.com/ornek/bdm-degerlendirme) paylaşılmıştır.",
     info: {
       received: "5 Aralık 2024",
       accepted: "20 Ocak 2025",
@@ -141,9 +169,11 @@ Yerli dil modeli geliştirme çalışmalarının, alan-özel akademik kullanım 
   },
   {
     id: "3",
+    journalSlug: "economic-change-future",
+    subject: "Kentleşme & Çevre",
     title: "İstanbul'un Tarihi Yarımadasında Mikroklimatik Değişimlerin Mekânsal Analizi",
     authors: [
-      { name: "Doç. Dr. Ekin Arslan", orcid: "0000-0004-3829-1182", affiliation: "Mimar Sinan Güzel Sanatlar Üniversitesi, Şehircilik" },
+      { name: "Doç. Dr. Ekin Arslan", orcid: "0000-0004-3829-1182", affiliation: "Mimar Sinan Güzel Sanatlar Üniversitesi, Şehircilik", isCorresponding: true, email: "ekin.arslan@msgsu.edu.tr", contributions: ["Kavramsallaştırma", "Metodoloji", "Görselleştirme", "Yazım — özgün taslak"] },
     ],
     abstract:
       "Sur içi İstanbul'da 2015-2024 dönemini kapsayan uydu verileri ve yer ölçümleri birleştirilerek mikroklimatik değişim haritası üretilmiştir. Yeşil alan kaybı ile yüzey sıcaklığı artışı arasında anlamlı bir ilişki tespit edilmiştir.",
@@ -162,6 +192,8 @@ Landsat-8 ve Sentinel-2 uydu verileri ile sahada konuşlandırılan 42 sensörde
 
 Sur içi bölgede ortalama yüzey sıcaklığı son on yılda 2.1°C artmıştır. En yüksek artış, yeşil alanların azaldığı Eminönü ve Sirkeci aksında gözlenmiştir.
 
+[[fig:f1]]
+
 ## Sonuç
 
 Tarihi yarımadanın mikroklimatik dengesini korumak için hedefli yeşil altyapı müdahaleleri acil ihtiyaçtır.`,
@@ -171,6 +203,9 @@ Tarihi yarımadanın mikroklimatik dengesini korumak için hedefli yeşil altyap
     references: [
       { id: "r1", text: "Oke, T. R. (1982). The energetic basis of the urban heat island. QJRMS, 108, 1-24." },
     ],
+    metrics: { views: 2987, downloads: 813, citations: 6 },
+    funding: "İstanbul Büyükşehir Belediyesi Şehir Politikaları Merkezi tarafından desteklenmiştir.",
+    dataAvailability: "İşlenmiş sıcaklık katmanları ve sensör verileri talep üzerine sorumlu yazardan temin edilebilir.",
     info: {
       received: "1 Eylül 2024",
       accepted: "10 Aralık 2024",
@@ -182,6 +217,9 @@ Tarihi yarımadanın mikroklimatik dengesini korumak için hedefli yeşil altyap
 ];
 
 export const getArticle = (id: string) => articles.find((a) => a.id === id);
+
+export const getArticlesByJournal = (journalSlug: string) =>
+  articles.filter((a) => a.journalSlug === journalSlug);
 
 export type SubmissionStatus = "Hakem Sürecinde" | "Yayına Hazırlanıyor" | "Yayımlandı";
 

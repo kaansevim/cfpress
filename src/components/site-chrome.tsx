@@ -1,46 +1,160 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Book, Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+import { journalNav, navItemSlug, type Journal } from "@/lib/journals";
 
-export function SiteHeader() {
+/* ----------------------------- Platform Header ---------------------------- */
+
+const platformLinks = [
+  { to: "/", label: "Home", exact: true },
+  { to: "/journals", label: "Journals", exact: false },
+  { to: "/about", label: "About", exact: false },
+] as const;
+
+function PlatformNav({ onNavigate }: { onNavigate?: () => void }) {
+  return (
+    <>
+      {platformLinks.map((l) => (
+        <Link
+          key={l.to}
+          to={l.to}
+          onClick={onNavigate}
+          className="block rounded-md px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary sm:inline-block"
+          activeOptions={l.exact ? { exact: true } : undefined}
+          activeProps={{ className: "font-semibold" }}
+        >
+          {l.label}
+        </Link>
+      ))}
+    </>
+  );
+}
+
+/* ------------------------------ Journal Header ---------------------------- */
+
+function JournalDesktopNav({ slug }: { slug: string }) {
+  return (
+    <nav className="hidden items-center gap-1 text-sm lg:flex">
+      {journalNav.map((group) => (
+        <DropdownMenu key={group.section}>
+          <DropdownMenuTrigger className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-foreground outline-none transition-colors hover:bg-secondary data-[state=open]:bg-secondary">
+            {group.label}
+            <ChevronDown className="h-3.5 w-3.5" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="max-h-[70vh] overflow-y-auto">
+            {group.items.map((item) => (
+              <DropdownMenuItem key={item} asChild>
+                <Link
+                  to="/journal/$slug/$section"
+                  params={{ slug, section: group.section }}
+                  hash={navItemSlug(item)}
+                  className="cursor-pointer"
+                >
+                  {item}
+                </Link>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      ))}
+      <Link
+        to="/"
+        className="ml-1 rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+      >
+        Platform
+      </Link>
+    </nav>
+  );
+}
+
+function JournalMobileNav({ slug, onNavigate }: { slug: string; onNavigate: () => void }) {
+  return (
+    <div className="space-y-3">
+      {journalNav.map((group) => (
+        <div key={group.section}>
+          <Link
+            to="/journal/$slug/$section"
+            params={{ slug, section: group.section }}
+            onClick={onNavigate}
+            className="block rounded-md px-3 py-2 text-sm font-semibold text-foreground hover:bg-secondary"
+          >
+            {group.label}
+          </Link>
+          <ul className="ml-3 border-l border-border pl-3">
+            {group.items.map((item) => (
+              <li key={item}>
+                <Link
+                  to="/journal/$slug/$section"
+                  params={{ slug, section: group.section }}
+                  hash={navItemSlug(item)}
+                  onClick={onNavigate}
+                  className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <Link
+        to="/"
+        onClick={onNavigate}
+        className="block rounded-md px-3 py-2 text-sm font-semibold text-muted-foreground hover:bg-secondary hover:text-foreground"
+      >
+        Platform
+      </Link>
+    </div>
+  );
+}
+
+/* -------------------------------- SiteHeader ------------------------------ */
+
+export function SiteHeader({ journal }: { journal?: Journal }) {
   const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
 
   return (
     <header className="border-b border-border bg-background">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
-        <Link to="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="font-serif-display text-xl font-bold tracking-tight sm:text-2xl">
-            Akademik Dergi
-          </span>
-          <span className="hidden text-xs uppercase tracking-widest text-muted-foreground sm:inline">
-            açık erişim
-          </span>
-        </Link>
+        {journal ? (
+          <Link
+            to="/journal/$slug"
+            params={{ slug: journal.slug }}
+            className="flex items-baseline gap-2"
+            onClick={close}
+          >
+            <span className="font-serif-display text-lg font-bold leading-tight tracking-tight sm:text-xl">
+              {journal.name}
+            </span>
+            {journal.shortName && (
+              <span className="hidden text-xs uppercase tracking-widest text-muted-foreground sm:inline">
+                {journal.shortName}
+              </span>
+            )}
+          </Link>
+        ) : (
+          <Link to="/" className="flex items-baseline gap-2" onClick={close}>
+            <span className="font-serif-display text-xl font-bold tracking-tight sm:text-2xl">
+              Akademik Yayın Platformu
+            </span>
+          </Link>
+        )}
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 text-sm sm:flex">
-          <Link
-            to="/"
-            className="rounded-md px-3 py-2 text-foreground transition-colors hover:bg-secondary"
-            activeOptions={{ exact: true }}
-            activeProps={{ className: "font-semibold" }}
-          >
-            Makaleler
-          </Link>
-          <Link
-            to="/dashboard"
-            className="rounded-md px-3 py-2 text-foreground transition-colors hover:bg-secondary"
-            activeProps={{ className: "font-semibold" }}
-          >
-            Editör Paneli
-          </Link>
-          <Link
-            to="/auth"
-            className="ml-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Giriş Yap
-          </Link>
-        </nav>
+        {journal ? (
+          <JournalDesktopNav slug={journal.slug} />
+        ) : (
+          <nav className="hidden items-center gap-1 sm:flex">
+            <PlatformNav />
+          </nav>
+        )}
 
         {/* Mobile menu toggle */}
         <button
@@ -48,7 +162,7 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           aria-label="Menüyü aç/kapat"
           aria-expanded={open}
-          className="rounded-md p-2 text-foreground transition-colors hover:bg-secondary sm:hidden"
+          className={journal ? "rounded-md p-2 hover:bg-secondary lg:hidden" : "rounded-md p-2 hover:bg-secondary sm:hidden"}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -56,77 +170,73 @@ export function SiteHeader() {
 
       {/* Mobile nav panel */}
       {open && (
-        <nav className="border-t border-border px-4 py-3 sm:hidden">
-          <Link
-            to="/"
-            onClick={() => setOpen(false)}
-            className="block rounded-md px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-secondary"
-            activeOptions={{ exact: true }}
-            activeProps={{ className: "font-semibold" }}
-          >
-            Makaleler
-          </Link>
-          <Link
-            to="/dashboard"
-            onClick={() => setOpen(false)}
-            className="block rounded-md px-3 py-2.5 text-sm text-foreground transition-colors hover:bg-secondary"
-            activeProps={{ className: "font-semibold" }}
-          >
-            Editör Paneli
-          </Link>
-          <Link
-            to="/auth"
-            onClick={() => setOpen(false)}
-            className="mt-2 block rounded-md bg-primary px-4 py-2.5 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Giriş Yap
-          </Link>
+        <nav className={journal ? "border-t border-border px-4 py-3 lg:hidden" : "border-t border-border px-4 py-3 sm:hidden"}>
+          {journal ? (
+            <JournalMobileNav slug={journal.slug} onNavigate={close} />
+          ) : (
+            <PlatformNav onNavigate={close} />
+          )}
         </nav>
       )}
     </header>
   );
 }
 
+/* -------------------------------- SiteFooter ------------------------------ */
+// NOT: Footer içeriği (Yayın Ofisi adresi, ISSN, iletişim) GEÇİCİ placeholder'dır.
+// Kullanıcı gerçek bilgileri verince güncellenecektir.
+
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-secondary/30">
       <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="font-serif-display text-lg font-bold">Akademik Dergi</div>
+            <div className="font-serif-display text-lg font-bold">Akademik Yayın Platformu</div>
             <p className="mt-2 text-sm text-muted-foreground">
-              Açık erişimli, hakemli, Türkçe akademik yayın platformu.
+              Birden çok hakemli, açık erişimli akademik derginin yönetildiği yayın platformu.
             </p>
           </div>
+
           <div className="text-sm">
-            <div className="mb-2 font-semibold">Bağlantılar</div>
+            <div className="mb-2 font-semibold">Platform</div>
             <ul className="space-y-1 text-muted-foreground">
               <li>
-                <Link to="/yazar-rehberi" className="transition-colors hover:text-foreground">
-                  Yazar Rehberi
+                <Link to="/journals" className="transition-colors hover:text-foreground">
+                  Dergiler
                 </Link>
               </li>
               <li>
-                <Link to="/hakem-sureci" className="transition-colors hover:text-foreground">
-                  Hakem Süreci
-                </Link>
-              </li>
-              <li>
-                <Link to="/etik-ilkeler" className="transition-colors hover:text-foreground">
-                  Etik İlkeler
+                <Link to="/about" className="transition-colors hover:text-foreground">
+                  Hakkında
                 </Link>
               </li>
             </ul>
           </div>
+
           <div className="text-sm">
-            <div className="mb-2 font-semibold">Lisans</div>
+            <div className="mb-2 font-semibold">Yayın Ofisi</div>
+            {/* GEÇİCİ — kullanıcının vereceği gerçek adresle değiştirilecek */}
             <p className="text-muted-foreground">
-              Tüm içerikler CC BY 4.0 lisansı ile yayımlanır.
+              Yayın Ofisi Adresi (placeholder)
+              <br />
+              Şehir, Ülke
+              <br />
+              info@ornek-platform.org
+            </p>
+          </div>
+
+          <div className="text-sm">
+            <div className="mb-2 font-semibold">Lisans & Erişim</div>
+            <p className="text-muted-foreground">
+              Tüm içerikler CC BY 4.0 lisansı ile açık erişimle yayımlanır.
             </p>
           </div>
         </div>
-        <div className="mt-10 flex items-center gap-2 text-xs text-muted-foreground">
-          <Book className="h-3 w-3" /> ISSN 0000-0000 · DOI 10.62847/akademik
+
+        <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
+          {/* GEÇİCİ ISSN/telif bilgisi */}
+          ISSN 0000-0000 (Basılı) · e-ISSN 0000-0001 (Çevrimiçi) · © {new Date().getFullYear()} Akademik Yayın Platformu
         </div>
       </div>
     </footer>
