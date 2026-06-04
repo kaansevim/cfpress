@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getJournal, type Journal } from "@/lib/journals";
 import { getArticlesByJournal, type Article } from "@/lib/mock-articles";
+import { getXmlArticlesByJournal } from "@/lib/article-manifest";
+import { xmlEntryToArticle } from "@/lib/article-utils";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleCard } from "@/components/article-card";
 
@@ -8,7 +10,13 @@ export const Route = createFileRoute("/journal/$slug/")({
   loader: ({ params }): { journal: Journal; articles: Article[] } => {
     const journal = getJournal(params.slug);
     if (!journal) throw notFound();
-    return { journal, articles: getArticlesByJournal(params.slug) };
+    const mockArticles = getArticlesByJournal(params.slug);
+    const xmlArticles = getXmlArticlesByJournal(params.slug).map(xmlEntryToArticle);
+    // XML makaleler önce (yeni), mock makaleler sonra; tarih sırasına göre sırala
+    const all = [...xmlArticles, ...mockArticles].sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+    return { journal, articles: all };
   },
   head: ({ loaderData }) => ({
     meta: loaderData

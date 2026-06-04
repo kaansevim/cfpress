@@ -1,0 +1,3648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xml:lang="en" article-type="research-article" dtd-version="1.4">
+  <processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats">
+    <restricted-by>pmc</restricted-by>
+  </processing-meta>
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Healthcare (Basel)</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Healthcare (Basel)</journal-id>
+      <journal-id journal-id-type="pmc-domain-id">2994</journal-id>
+      <journal-id journal-id-type="pmc-domain">healthcare</journal-id>
+      <journal-id journal-id-type="publisher-id">healthcare</journal-id>
+      <journal-title-group>
+        <journal-title>Healthcare</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">2227-9032</issn>
+      <publisher>
+        <publisher-name>Multidisciplinary Digital Publishing Institute  (MDPI)</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="pmcid">PMC10001000</article-id>
+      <article-id pub-id-type="pmcid-ver">PMC10001000.1</article-id>
+      <article-id pub-id-type="pmcaid">10001000</article-id>
+      <article-id pub-id-type="pmcaiid">10001000</article-id>
+      <article-id pub-id-type="pmid">36900776</article-id>
+      <article-id pub-id-type="doi">10.3390/healthcare11050771</article-id>
+      <article-id pub-id-type="publisher-id">healthcare-11-00771</article-id>
+      <article-version article-version-type="pmc-version">1</article-version>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Prevalence of Use and Knowledge about Tobacco Products and Their Harmful Effects among University Students in Southern Croatia</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name name-style="western">
+            <surname>Istenic</surname>
+            <given-names initials="D">Dora</given-names>
+          </name>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Methodology" vocab-term-identifier="https://credit.niso.org/contributor-roles/methodology/">Methodology</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Resources" vocab-term-identifier="https://credit.niso.org/contributor-roles/resources/">Resources</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – original draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+          <xref rid="af1-healthcare-11-00771" ref-type="aff">1</xref>
+          <xref rid="fn1-healthcare-11-00771" ref-type="author-notes">†</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-2882-934X</contrib-id>
+          <name name-style="western">
+            <surname>Gavic</surname>
+            <given-names initials="L">Lidia</given-names>
+          </name>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Conceptualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Methodology" vocab-term-identifier="https://credit.niso.org/contributor-roles/methodology/">Methodology</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Validation" vocab-term-identifier="https://credit.niso.org/contributor-roles/validation/">Validation</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Formal analysis" vocab-term-identifier="https://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Resources" vocab-term-identifier="https://credit.niso.org/contributor-roles/resources/">Resources</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – original draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Supervision" vocab-term-identifier="https://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+          <xref rid="af2-healthcare-11-00771" ref-type="aff">2</xref>
+          <xref rid="fn1-healthcare-11-00771" ref-type="author-notes">†</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-5365-9816</contrib-id>
+          <name name-style="western">
+            <surname>Tadin</surname>
+            <given-names initials="A">Antonija</given-names>
+          </name>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Conceptualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Methodology" vocab-term-identifier="https://credit.niso.org/contributor-roles/methodology/">Methodology</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Software" vocab-term-identifier="https://credit.niso.org/contributor-roles/software/">Software</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Formal analysis" vocab-term-identifier="https://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Resources" vocab-term-identifier="https://credit.niso.org/contributor-roles/resources/">Resources</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Data curation" vocab-term-identifier="https://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – original draft" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Writing – review &amp; editing" vocab-term-identifier="https://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Supervision" vocab-term-identifier="https://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+          <role vocab="credit" vocab-identifier="https://credit.niso.org/" vocab-term="Funding acquisition" vocab-term-identifier="https://credit.niso.org/contributor-roles/funding-acquisition/">Funding acquisition</role>
+          <xref rid="af2-healthcare-11-00771" ref-type="aff">2</xref>
+          <xref rid="af3-healthcare-11-00771" ref-type="aff">3</xref>
+          <xref rid="c1-healthcare-11-00771" ref-type="corresp">*</xref>
+        </contrib>
+      </contrib-group>
+      <contrib-group>
+        <contrib contrib-type="editor">
+          <name name-style="western">
+            <surname>Shiri</surname>
+            <given-names initials="R">Rahman</given-names>
+          </name>
+          <role>Academic Editor</role>
+        </contrib>
+      </contrib-group>
+      <aff id="af1-healthcare-11-00771">
+        <label>1</label>
+        School of Medicine, University of Split, 21000 Split, Croatia
+      </aff>
+      <aff id="af2-healthcare-11-00771">
+        <label>2</label>
+        Department of Restorative Dental Medicine and Endodontics, Study of Dental Medicine, School of Medicine, University of Split, 21000 Split, Croatia
+      </aff>
+      <aff id="af3-healthcare-11-00771">
+        <label>3</label>
+        Department of Maxillofacial Surgery, Clinical Hospital Centre Split, 21000 Split, Croatia
+      </aff>
+      <author-notes>
+        <corresp id="c1-healthcare-11-00771">
+          <label>*</label>
+          Correspondence: 
+          <email>atadin@mefst.hr</email>
+          ; Tel.: +385-98609197; Fax: +385-21557624
+        </corresp>
+        <fn id="fn1-healthcare-11-00771">
+          <label>†</label>
+          <p>These authors contributed equally to this work.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>06</day>
+        <month>3</month>
+        <year>2023</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <month>3</month>
+        <year>2023</year>
+      </pub-date>
+      <volume>11</volume>
+      <issue>5</issue>
+      <issue-id pub-id-type="pmc-issue-id">430984</issue-id>
+      <elocation-id>771</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>18</day>
+          <month>11</month>
+          <year>2022</year>
+        </date>
+        <date date-type="rev-recd">
+          <day>02</day>
+          <month>3</month>
+          <year>2023</year>
+        </date>
+        <date date-type="accepted">
+          <day>03</day>
+          <month>3</month>
+          <year>2023</year>
+        </date>
+      </history>
+      <pub-history>
+        <event event-type="pmc-release">
+          <date>
+            <day>06</day>
+            <month>03</month>
+            <year>2023</year>
+          </date>
+        </event>
+        <event event-type="pmc-live">
+          <date>
+            <day>11</day>
+            <month>03</month>
+            <year>2023</year>
+          </date>
+        </event>
+        <event event-type="pmc-last-change">
+          <date iso-8601-date="2024-05-02 03:25:13.843">
+            <day>02</day>
+            <month>05</month>
+            <year>2024</year>
+          </date>
+        </event>
+      </pub-history>
+      <permissions>
+        <copyright-statement>© 2023 by the authors.</copyright-statement>
+        <copyright-year>2023</copyright-year>
+        <license>
+          <ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref>
+          <license-p>
+            Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (
+            <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</ext-link>
+            ).
+          </license-p>
+        </license>
+      </permissions>
+      <self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="healthcare-11-00771.pdf"/>
+      <abstract>
+        <p>
+          Understanding students’ attitudes toward smoking and tobacco products is essential for effective smoking prevention interventions. This questionnaire-based cross-sectional survey aims to determine the prevalence of use and knowledge about cigarettes, heated tobacco products, and electronic cigarettes and their harmful effects among university students. The survey was conducted using a self-administered online questionnaire among 1184 students. Questions were related to the respondents’ demographic characteristics, tobacco use patterns, and opinions about exposure to health warnings and tobacco product advertising messages. Data were analyzed using descriptive statistics and generalized linear regression analysis. The results showed that 30.2% of the students use tobacco products (74.5% smoked conventional cigarettes; 7.9% used electronic cigarettes; and 17.6% used heated tobacco products). The median (interquartile range) score of the students’ knowledge (maximum = 27) was 16 (12–22). The results showed that students from technical, social, humanities, natural, and biotechnology scientific programs had lower levels of knowledge about tobacco products and their harmful effects than biomedical students (
+          <italic toggle="yes">p</italic>
+           ≤ 0.001). In addition, past and current use of tobacco products was significantly associated with higher overall knowledge of tobacco products and their harmful effects (adjusted odds ratio (OR) 1.90, % confidence interval (CI) 1.09–3.31, 
+          <italic toggle="yes">p</italic>
+           = 0.023; OR 1.41, CI 1.08–1.84, 
+          <italic toggle="yes">p</italic>
+           = 0.011). The research findings confirm the lack of knowledge and misconceptions about the harmful effects associated with tobacco product use. They also emphasize the need for better prevention and awareness of the harmful effects of smoking on human health.
+        </p>
+      </abstract>
+      <kwd-group>
+        <kwd>smoking behavior</kwd>
+        <kwd>health risks</kwd>
+        <kwd>knowledge</kwd>
+        <kwd>university students</kwd>
+        <kwd>tobacco products</kwd>
+      </kwd-group>
+      <funding-group>
+        <funding-statement>This research received no external funding.</funding-statement>
+      </funding-group>
+      <custom-meta-group>
+        <custom-meta>
+          <meta-name>pmc-status-qastatus</meta-name>
+          <meta-value>0</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-status-live</meta-name>
+          <meta-value>yes</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-status-embargo</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-status-released</meta-name>
+          <meta-value>yes</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-open-access</meta-name>
+          <meta-value>yes</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-olf</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-manuscript</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-legally-suppressed</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-has-pdf</meta-name>
+          <meta-value>yes</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-has-supplement</meta-name>
+          <meta-value>yes</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-pdf-only</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-suppress-copyright</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-is-real-version</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-is-scanned-article</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-preprint</meta-name>
+          <meta-value>no</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-prop-in-epmc</meta-name>
+          <meta-value>yes</meta-value>
+        </custom-meta>
+        <custom-meta>
+          <meta-name>pmc-license-ref</meta-name>
+          <meta-value>CC BY</meta-value>
+        </custom-meta>
+      </custom-meta-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec sec-type="intro" id="sec1-healthcare-11-00771">
+      <title>1. Introduction</title>
+      <p>
+        Although the adverse health effects of tobacco product use are well known, it remains one of the most significant public health challenges in all age groups, especially among young people [
+        <xref rid="B1-healthcare-11-00771" ref-type="bibr">1</xref>
+        ]. According to 2020 study data, the prevalence of smoking in Croatia was 36%, the third-highest tobacco prevalence in Europe [
+        <xref rid="B2-healthcare-11-00771" ref-type="bibr">2</xref>
+        ]. As in most countries, Croatians start smoking at an average age of 18.2 years [
+        <xref rid="B2-healthcare-11-00771" ref-type="bibr">2</xref>
+        ,
+        <xref rid="B3-healthcare-11-00771" ref-type="bibr">3</xref>
+        ].
+      </p>
+      <p>
+        Starting university is perhaps one of the most challenging periods of a young adult’s life, as they are leaving their routine and building an independent lifestyle in a more liberal environment. During this time, young people are part of an at-risk group for starting to use different tobacco products [
+        <xref rid="B4-healthcare-11-00771" ref-type="bibr">4</xref>
+        ]. Scientific studies conducted on young people confirm that individuals who started smoking at a younger age can become addicted to nicotine very quickly, smoke more cigarettes per day, and are less likely to try to quit. Smoking initiation and continuation depend not only on sociodemographic factors, culture, family history of smoking, and health literacy, but also on social, emotional, and educational challenges during schooling [
+        <xref rid="B1-healthcare-11-00771" ref-type="bibr">1</xref>
+        ,
+        <xref rid="B4-healthcare-11-00771" ref-type="bibr">4</xref>
+        ]. It is well known that smoking is a preventable risk factor, and the literature identifies numerous interventions to reduce smoking initiation. These measures include education through school programs, increasing product prices, warning labels on packaging, limiting product advertising, smoke-free environments, and restricting minors’ purchase of tobacco products [
+        <xref rid="B5-healthcare-11-00771" ref-type="bibr">5</xref>
+        ]. Since most smokers start smoking before or immediately after graduating high school, this age group should be considered the primary target group for smoking prevention programs [
+        <xref rid="B6-healthcare-11-00771" ref-type="bibr">6</xref>
+        ]. The decision to not smoke or to quit smoking is a serious matter in which educational institutions, including universities, can play an important role. Since the university environment is a significant factor in health promotion, it is crucial for smoking prevention that universities create an environment that promotes anti-tobacco attitudes and behaviors [
+        <xref rid="B7-healthcare-11-00771" ref-type="bibr">7</xref>
+        ,
+        <xref rid="B8-healthcare-11-00771" ref-type="bibr">8</xref>
+        ].
+      </p>
+      <p>
+        To support smoking prevention and promote healthy lifestyles, it is essential to understand young people’s knowledge and attitudes about tobacco product use. Numerous studies have examined the relationship between knowledge, attitudes, and smoking habits among young adults and schoolchildren, both in Europe and worldwide [
+        <xref rid="B4-healthcare-11-00771" ref-type="bibr">4</xref>
+        ,
+        <xref rid="B6-healthcare-11-00771" ref-type="bibr">6</xref>
+        ,
+        <xref rid="B9-healthcare-11-00771" ref-type="bibr">9</xref>
+        ,
+        <xref rid="B10-healthcare-11-00771" ref-type="bibr">10</xref>
+        ,
+        <xref rid="B11-healthcare-11-00771" ref-type="bibr">11</xref>
+        ]. However, studies on habits of tobacco product use among youths and students in Croatia are rare. In 2008 and 2022, two studies were conducted only on medical students, which confirmed that over 30% of them currently smoke [
+        <xref rid="B11-healthcare-11-00771" ref-type="bibr">11</xref>
+        ,
+        <xref rid="B12-healthcare-11-00771" ref-type="bibr">12</xref>
+        ]. After an extensive literature review, to our knowledge, this is the first study to examine the prevalence of tobacco use and knowledge of the adverse health effects of tobacco use among medical and non-medical students in southern Croatia.
+      </p>
+      <p>Thus, the objectives of this study were: (1) to assess tobacco product use behaviors and (2) to analyze the relationship between knowledge about tobacco products and their harmful effects and attitudes regarding tobacco product use. All of the data support research activities on the prevalence of tobacco product use, which can help clarify the current situation and develop prevention programs in academic institutions.</p>
+    </sec>
+    <sec id="sec2-healthcare-11-00771">
+      <title>2. Materials and Methods</title>
+      <p>The questionnaire-based cross-sectional survey was conducted from November 2021 to February 2022 among the students of the University of Split in the academic year 2021/2022. The study was conducted at the Department of Restorative Dental Medicine and Endodontics, School of Medicine, University of Split, Croatia, and approved by its Ethics Committee. The working methodology was performed according to the recommendations and applicable regulations and following the institutional code of ethics.</p>
+      <sec sec-type="subjects" id="sec2dot1-healthcare-11-00771">
+        <title>2.1. Participants and Setting</title>
+        <p>The survey was based on a self-administered questionnaire created through a network survey (Google Forms). It was sent to the Students’ Association representative, who distributed it electronically to other students through the University’s Facebook group with 6579 members. Respondents were also asked to forward the questionnaire to other interested colleagues. A non-probability convenience and a snowball sampling method were used to recruit respondents. Students from the age of 18 years and older and of both genders participated in the study. A sample of 1184 students completed the survey, of which 72.3% were female and 27.7% were male. The mean age was 22.1 ± 2.6 years (minimum 18, maximum 49). Minors and individuals who did not answer the questions were not included in the study. Requirements for participation were students enrolled at the University of Split in the academic year 2021/2022 and a fully answered survey. The survey ensured anonymity, and participation was not financially supported. In addition, all participants could drop out at any time during the study.</p>
+        <p>At the University of Split, Croatia, students from 18 different programs participated in the survey: four from healthcare (medicine, dentistry, pharmacy, and health sciences) and 14 from other disciplines (economics, electrical engineering, mechanical engineering and naval architecture, humanities and social sciences, civil engineering, architecture and geodesy, Catholic theology, chemistry and engineering, kinesiology, law, natural sciences, marine biology, forensics, professional studies, and art academy).</p>
+        <p>
+          The introduction to the survey provided participants with all relevant information and a description of the purpose of the study. Participation was voluntary and anonymous, and completion of the questionnaire was taken as consent to participate in the study. The required minimum sample size (
+          <italic toggle="yes">n</italic>
+           = 377) was calculated from the total number of students at the University of Split in the academic year 2021/2022 (
+          <italic toggle="yes">n</italic>
+           = 19,100), with a confidence interval of 95%, a margin of error of 5%, and a response distribution of 50%.
+        </p>
+      </sec>
+      <sec id="sec2dot2-healthcare-11-00771">
+        <title>2.2. Questionnaire</title>
+        <p>
+          A structured questionnaire was modified based on several studies on the same topic [
+          <xref rid="B3-healthcare-11-00771" ref-type="bibr">3</xref>
+          ,
+          <xref rid="B5-healthcare-11-00771" ref-type="bibr">5</xref>
+          ,
+          <xref rid="B8-healthcare-11-00771" ref-type="bibr">8</xref>
+          ,
+          <xref rid="B13-healthcare-11-00771" ref-type="bibr">13</xref>
+          ,
+          <xref rid="B14-healthcare-11-00771" ref-type="bibr">14</xref>
+          ,
+          <xref rid="B15-healthcare-11-00771" ref-type="bibr">15</xref>
+          ,
+          <xref rid="B16-healthcare-11-00771" ref-type="bibr">16</xref>
+          ,
+          <xref rid="B17-healthcare-11-00771" ref-type="bibr">17</xref>
+          ], consisting of four parts and 50 questions [
+          <xref rid="B18-healthcare-11-00771" ref-type="bibr">18</xref>
+          ]. The first part included primary demographic data of the respondents (gender, age, year of study, employment of a family member in the medical field, and assessment of the family’s financial situation). The second part included ten questions about tobacco product use (tobacco product use, type of tobacco product use, duration of tobacco product use, when did they start using tobacco products, do their relatives know that they use tobacco products, do they have a desire to stop using tobacco products, smoking status of family members, and knowledge of smoke-free electronic devices such as e-cigarettes and tobacco heaters). The third section consisted of 27 questions assessing respondents’ understanding of the adverse health effects of tobacco products (14 questions), health risks associated with secondhand smoke (six questions), and knowledge of tobacco products (seven questions). Respondents could check one of the three answers offered (yes/no/do not know). Overall knowledge was calculated based on the sum of the correct answers, and a score between 0 and 27 was obtained. Thus, the higher the total score, the greater the respondents’ awareness of smoking-related diseases and secondhand smoke. The fourth part consisted of seven questions related to respondents’ opinions about exposure to health warnings and tobacco product advertising messages: have they noticed anti-smoking messages in the media, tobacco advertising in stores, use of tobacco products on television, i.e., health warnings on cigarette packets? Are they thinking about quitting smoking because of the warnings on the packages? Have they informed themselves about the dangers of tobacco? Do they think that smoking should be banned in enclosed public places, and what should be done to reduce the number of smokers?
+        </p>
+        <p>Before the Internet survey was sent to the respondents, two dentists (university professors) reviewed the survey. They agreed with the content of the prepared questionnaire. Before distributing the questionnaire, a pilot study was conducted with 30 students (15 from medical and 15 from non-medical fields of study) to check the reliability of the questionnaire. These questionaries were not included in the primary study data. The pilot study provided evaluation of the time needed to complete the questionnaire, which was approximately 12 min. The internal consistency of the total scores yielded a Cronbach’s coefficient alpha of 0.712.</p>
+      </sec>
+      <sec id="sec2dot3-healthcare-11-00771">
+        <title>2.3. Statistical Analysis</title>
+        <p>
+          Statistical Package for the Social Sciences, version 26 (SPSS, IBM Corp, Armonk, New York, NY, USA) was used for statistical data analysis. Frequencies were calculated for each categorical variable (question from the survey). The results are presented in tabular form. The Kolmogorov–Smirnov test was used to assess the normality of the distribution of responses. The association of demographic characteristics (age, gender, study filed, family members in the medical field, family’s monthly budget and smoking status) with knowledge of tobacco products and their harmful effects was tested using generalized linear model (GLM) analysis. The significance level was set at 
+          <italic toggle="yes">p</italic>
+           &lt; 0.05.
+        </p>
+      </sec>
+    </sec>
+    <sec sec-type="results" id="sec3-healthcare-11-00771">
+      <title>3. Results</title>
+      <p>
+        <xref rid="healthcare-11-00771-t001" ref-type="table">Table 1</xref>
+         shows the sociodemographic data of the respondents. The study was conducted with 1184 first to sixth-year students, of whom 72.3% were women and 26.7% were men. 
+      </p>
+      <p>
+        <xref rid="healthcare-11-00771-t002" ref-type="table">Table 2</xref>
+         shows the results regarding the tobacco use of the respondents. Most of the respondents had never used tobacco products (64.3%); 5.6% were former users who had not used a product for at least 28 days; and 30.2% were current users of tobacco products. Although former users had the best knowledge, there was no statistically significant difference between these three groups. However, students who wanted to quit tobacco use had better knowledge and knew the difference between different tobacco products (
+        <italic toggle="yes">p</italic>
+         ≤ 0.001).
+      </p>
+      <p>
+        Of the respondents, 30 (2.6%) did not give a single correct answer, while 164 (13.9%) correctly answered on all 27 questions used to assess their knowledge about tobacco products and their harmful effects on human health (see 
+        <xref rid="app1-healthcare-11-00771" ref-type="app">Supplementary File, Table S1</xref>
+        ). The median (interquartile range) score of the students’ knowledge (maximum = 27) was 16 (12–22).
+      </p>
+      <p>
+        <xref rid="healthcare-11-00771-t003" ref-type="table">Table 3</xref>
+         shows the responses to the questions assessing respondents’ attitudes toward exposure to health warnings and tobacco product advertising messages. 
+      </p>
+      <p>
+        The results of regression analysis showed that students from technical, social, humanities, natural and biotechnical science have a lower level of knowledge of tobacco products and their harmful effects than a biomedical student (
+        <italic toggle="yes">p</italic>
+         ≤ 0.001). Former and current tobacco product usage was significantly associated with higher overall knowledge of tobacco products and their harmful effects (
+        <italic toggle="yes">p</italic>
+         = 0.023 and 
+        <italic toggle="yes">p</italic>
+         = 0.011) (
+        <xref rid="healthcare-11-00771-t004" ref-type="table">Table 4</xref>
+        .)
+      </p>
+      <p>
+        <xref rid="healthcare-11-00771-t005" ref-type="table">Table 5</xref>
+         presents the results of adjusted and unadjusted associations of the GLM for knowledge of health risks of secondhand smoke and knowledge of tobacco products. Study of technical, social, humanities, natural and biotechnical science was significantly associated with lower overall knowledge of health risks of secondhand smoke (
+        <italic toggle="yes">p</italic>
+         ≤ 0.001), while studying technical science was the only program significantly associated with lower overall knowledge of tobacco products (
+        <italic toggle="yes">p</italic>
+         = 0.007).
+      </p>
+      <p>
+        <xref rid="healthcare-11-00771-t006" ref-type="table">Table 6</xref>
+         presents the results of the gender-specific GLM analysis on knowledge about tobacco products and their harmful effects. In women, former and current tobacco product usage was significantly associated with higher overall knowledge of tobacco products and their harmful effects (
+        <italic toggle="yes">p</italic>
+         = 0.023 and 
+        <italic toggle="yes">p</italic>
+         = 0.021).
+      </p>
+    </sec>
+    <sec sec-type="discussion" id="sec4-healthcare-11-00771">
+      <title>4. Discussion</title>
+      <p>
+        The results of the study showed that university students had a moderate to low level of knowledge regarding tobacco products and their harmful effects on health, with a median score of 16 out of a possible 27 points. In the knowledge assessment questions, students showed good knowledge when answering questions about health risks associated with active smoking. Similar results were obtained in studies with student test groups in Egypt and Pakistan [
+        <xref rid="B19-healthcare-11-00771" ref-type="bibr">19</xref>
+        ,
+        <xref rid="B20-healthcare-11-00771" ref-type="bibr">20</xref>
+        ]. In contrast, respondents in this survey showed below-average knowledge on questions about the health risks of secondhand smoke and knowledge of the difference between tobacco products. Numerous studies worldwide demonstrate the lack of awareness of the dangers of secondhand smoke and its many health effects [
+        <xref rid="B21-healthcare-11-00771" ref-type="bibr">21</xref>
+        ,
+        <xref rid="B22-healthcare-11-00771" ref-type="bibr">22</xref>
+        ].
+      </p>
+      <p>
+        The survey results show that the knowledge of tobacco products and their adverse health effects vary among respondents from different studies and scientific fields. Students from biomedical and health sciences had the highest knowledge level, while students from technical studies had the lowest knowledge level. Students in biomedical and health science programs are the future of smoking prevention and potential leaders of such interventions, which require accurate information on this topic. Therefore, their knowledge is crucial for the national tobacco control strategy [
+        <xref rid="B15-healthcare-11-00771" ref-type="bibr">15</xref>
+        ]. Most European medical and biomedical schools provide adequate theoretical training on tobacco culture and its health effects in their curricula; however, a much smaller proportion is provided in the form of practical training, which is crucial for developing high-quality educators [
+        <xref rid="B23-healthcare-11-00771" ref-type="bibr">23</xref>
+        ,
+        <xref rid="B24-healthcare-11-00771" ref-type="bibr">24</xref>
+        ,
+        <xref rid="B25-healthcare-11-00771" ref-type="bibr">25</xref>
+        ].
+      </p>
+      <p>
+        Regarding knowledge levels, several previous studies have shown that active smokers have inadequate knowledge about the harmful effects of smoking, suggesting that improving knowledge levels positively impact smoking prevalence [
+        <xref rid="B2-healthcare-11-00771" ref-type="bibr">2</xref>
+        ,
+        <xref rid="B26-healthcare-11-00771" ref-type="bibr">26</xref>
+        ]. In this survey, no differences were found in the knowledge of respondents’ tobacco use patterns. Of the respondents, 30.2% were current users, and 70.9% started using tobacco products in high school. The prevalence of active smokers is consistent with the 2016 European Union survey, in which 35% of adults in Croatia were registered smokers [
+        <xref rid="B27-healthcare-11-00771" ref-type="bibr">27</xref>
+        ]. Respondents in this survey smoked mainly conventional cigarettes (74.5%); 7.9% used e-cigarettes; and 17.6% used heated tobacco devices. The prevalence rate of e-cigarette use was similar to that published for the adult population in Croatia (5.8%) but much higher than the prevalence rate published in the 2017 Eurobarometer (1%) [
+        <xref rid="B2-healthcare-11-00771" ref-type="bibr">2</xref>
+        ,
+        <xref rid="B28-healthcare-11-00771" ref-type="bibr">28</xref>
+        ]. In addition, the prevalence of heated tobacco product use was much higher than the results of the study using Eurobarometer data from 2020 [
+        <xref rid="B29-healthcare-11-00771" ref-type="bibr">29</xref>
+        ], which was 6.8%.
+      </p>
+      <p>
+        Less than half of the respondents in this survey had the attitude that smokeless devices are a better alternative to traditional smoking. However, the same respondents had a significantly higher level of knowledge and better knew the differences between cigarettes, e-cigarettes, and heated tobacco products. Nowadays, more and more young people are choosing to switch to e-cigarettes or heated tobacco products. This is thought to be due to several factors, such as a health-related desire to cut down/quit smoking and the perceived lower adverse effects of the new products, branded packaging, and lack of visual warnings. In addition, pleasure and satisfaction during use, pleasant sensory experiences, lower odor, tactile similarity to cigarettes, and psychological similarities in rituals and routines also contribute [
+        <xref rid="B30-healthcare-11-00771" ref-type="bibr">30</xref>
+        ]. Although smokers consider the allegedly less harmful alternative tobacco products to be relatively safe, the need to educate smokers about the risks of alternatives to conventional cigarettes and to regulate the marketing and advertising of such options must be emphasized [
+        <xref rid="B31-healthcare-11-00771" ref-type="bibr">31</xref>
+        ,
+        <xref rid="B32-healthcare-11-00771" ref-type="bibr">32</xref>
+        ].
+      </p>
+      <p>
+        Respondents in this survey showed good knowledge about the harmful effects of smoking on general and oral health. The respondents showed the best knowledge on the questions about the relationship between tobacco and carcinomas, where 90.6% answered correctly. In addition, 85.5% of respondents knew that smoking causes cardiovascular disease. 91.7% of the respondents knew that smoking during pregnancy affects the child’s health, which is of great importance, because smoking parents are not only poor role models for children, but smoking also dramatically affects children’s health [
+        <xref rid="B33-healthcare-11-00771" ref-type="bibr">33</xref>
+        ,
+        <xref rid="B34-healthcare-11-00771" ref-type="bibr">34</xref>
+        ]. More than 93% knew that smoking causes tooth discoloration and bad breath, and 76.6% knew it causes oral cancer. Similar results were confirmed in a study conducted in Saudi Arabia in 2020 [
+        <xref rid="B35-healthcare-11-00771" ref-type="bibr">35</xref>
+        ].
+      </p>
+      <p>
+        When asked questions about the health effects of secondhand smoke, the respondents showed below-average knowledge. The most significant proportion of respondents was aware of the harmful effects of secondhand smoke concerning lung cancer (66.2%) and cardiovascular disease (56.6%). The lowest scores were found for questions about the association between smoking and cognitive deficits (51%) and ear infections in children (55.8%). Medical students in Saudi Arabia had a slightly better level of knowledge than the students in this study. Additionally, in that study, ear infections in children (28.1%) and cognitive deficits (47.8%) were the least-known health risks of secondhand smoke [
+        <xref rid="B15-healthcare-11-00771" ref-type="bibr">15</xref>
+        ]. Inadequate knowledge about the harmfulness of passive smoking compared to active smoking was also confirmed among students in Poland [
+        <xref rid="B36-healthcare-11-00771" ref-type="bibr">36</xref>
+        ].
+      </p>
+      <p>
+        In this survey, the gender of the respondents did not affect knowledge, and the number of active tobacco product users was the same in both genders. The opposite was shown in a Nigerian study, which found that there were more male smokers and that males had better knowledge levels. The higher percentage of males could be due to the social acceptance of smoking among males, a sense of maturity (a symbol of masculinity), and peer influence. The lower prevalence of female smokers could be due to family values, cultural norms, or religion [
+        <xref rid="B37-healthcare-11-00771" ref-type="bibr">37</xref>
+        ]. In contrast to gender, respondents’ age and the time they started using tobacco products influenced their knowledge. Older respondents had better knowledge, as did those who started smoking later, probably because they had more time to become informed and were aware of more advertisements about the harmful effects of smoking. Our study found that most respondents started smoking in high school (70.9%) and college (17.9%). Similar results were obtained in a study in Portugal, where most current smokers started smoking before 17 years (61.4%) [
+        <xref rid="B9-healthcare-11-00771" ref-type="bibr">9</xref>
+        ].
+      </p>
+      <p>
+        Considering the association between knowledge and the desire to quit smoking, this study shows that respondents who intend to quit using tobacco products know more than those who do not. The positive association between the intention to quit smoking and knowledge of health risks has been confirmed in studies from Iraq, China, and India [
+        <xref rid="B21-healthcare-11-00771" ref-type="bibr">21</xref>
+        ,
+        <xref rid="B22-healthcare-11-00771" ref-type="bibr">22</xref>
+        ,
+        <xref rid="B38-healthcare-11-00771" ref-type="bibr">38</xref>
+        ]. There is ample evidence that well-designed health warnings and messages can be effective interventions to communicate health risks and increase tobacco users’ motivation to quit smoking [
+        <xref rid="B39-healthcare-11-00771" ref-type="bibr">39</xref>
+        ]. In the present survey, most tobacco users continued to use them despite being aware of the health warnings on their packs (81.7%) and being educated about the harmful effects of tobacco use (91.7%). Additionally, they had inadequate knowledge about the harmful effects of smoking. Most respondents (40.4%) believe that there would be fewer smokers if the price of products were higher, and 63.8% believe that smoking should be banned in public places. A high proportion of the Croatian population facing health warnings has been previously confirmed, but without demonstrating a significant impact on smokers’ attitudes and habits [
+        <xref rid="B40-healthcare-11-00771" ref-type="bibr">40</xref>
+        ].
+      </p>
+      <p>
+        In contrast to health warnings on cigarette packaging, there are also marketing strategies that portray the tobacco industry in a positive light. Restricting tobacco company marketing and sponsorship is a practical component of tobacco control worldwide [
+        <xref rid="B41-healthcare-11-00771" ref-type="bibr">41</xref>
+        ]. Most respondents in our survey (48.1%) had seen tobacco product advertisements or promotions in stores in the past 30 days. Tobacco heater advertisements are primarily targeted at young people. Advertising is widespread, especially online and on social media platforms like Instagram. Social media user behavior analysis has shown that content related to tobacco heating products (e.g., photos showing how to use the device) is frequently shared. All these activities may increase the number of users and the social acceptance of tobacco [
+        <xref rid="B21-healthcare-11-00771" ref-type="bibr">21</xref>
+        ].
+      </p>
+      <p>
+        Launching more educational campaigns and creating a curriculum in all educational institutions that includes information about tobacco and its harmful effects on health is also recommended. In addition, banning the sale of tobacco and tobacco products on and off campus could be beneficial, as it would help reduce the number of deaths and illnesses caused by smoking [
+        <xref rid="B42-healthcare-11-00771" ref-type="bibr">42</xref>
+        ]. It is important to emphasize the significance of right information and adequate knowledge in changing behavior. In fact, many studies hold that information is important but does not change behavior. In other words, having knowledge is good, but behavior change involves other cognitive and social factors. The data could be helpful for educational institutions to better understand students’ knowledge and promote better education of students through various lectures or workshops [
+        <xref rid="B43-healthcare-11-00771" ref-type="bibr">43</xref>
+        ,
+        <xref rid="B44-healthcare-11-00771" ref-type="bibr">44</xref>
+        ].
+      </p>
+    </sec>
+    <sec id="sec5-healthcare-11-00771">
+      <title>5. Limitations </title>
+      <p>
+        This survey has several limitations. Firstly, it is a cross-sectional study from which causal inferences cannot be drawn. Secondly, the study was conducted with students from the one university in southern Croatia (only one geographical area of Croatia); including other cities would likely yield different results. Therefore, it is recommended that a study be conducted on the student population throughout Croatia and that students be educated about the dangers of tobacco products. Thirdly, university students are not representative of young people in general, and sociodemographic variables and health risk behaviors may differ in other populations. Fourthly, this survey includes only voluntary responses (online survey) and convenience sampling, which could affect sampling bias and generality. Another limiting factor of this study was that a higher percentage of women than men participated in the survey. This could be due to the fact that women are more involved in social activities and are more willing to answer a research survey, since study was restricted to Internet users [
+        <xref rid="B45-healthcare-11-00771" ref-type="bibr">45</xref>
+        ]. It should also be noted that a specially designed questionnaire was used in this survey. In contrast, in the future, validated questionnaires, such as the one from the Institute for Global Tobacco Control, should be used to allow easy comparison of the data of other studies [
+        <xref rid="B46-healthcare-11-00771" ref-type="bibr">46</xref>
+        ].
+      </p>
+    </sec>
+    <sec sec-type="conclusions" id="sec6-healthcare-11-00771">
+      <title>6. Conclusions</title>
+      <p>The results of this study provide information about the current insufficient knowledge of southern Croatia university students about tobacco products and their harmful effects on general and oral health. Respondents are well aware of the harmful effects of active smoking on health. However, they are not aware of the harmful effects of passive smoking and the differences between different tobacco products. Understanding how young people perceive the harmfulness of tobacco use can contribute to the understanding of the prevalence of tobacco consumption and the development of preventive educational interventions during schooling.</p>
+    </sec>
+  </body>
+  <back>
+    <fn-group>
+      <fn>
+        <p>
+          <bold>Disclaimer/Publisher’s Note:</bold>
+           The statements, opinions and data contained in all publications are solely those of the individual author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to people or property resulting from any ideas, methods, instructions or products referred to in the content.
+        </p>
+      </fn>
+    </fn-group>
+    <app-group>
+      <app id="app1-healthcare-11-00771">
+        <title>Supplementary Materials</title>
+        <p>
+          The following supporting information can be downloaded at: 
+          <uri xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://www.mdpi.com/article/10.3390/healthcare11050771/s1">https://www.mdpi.com/article/10.3390/healthcare11050771/s1</uri>
+          , Table S1: The frequency distribution (%) of respondents’ answers about tobacco products and their adverse effects on human health.
+        </p>
+        <supplementary-material id="healthcare-11-00771-s001" position="float" content-type="local-data" orientation="portrait">
+          <media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="healthcare-11-00771-s001.zip" position="float" orientation="portrait">
+            <caption>
+              <p>Click here for additional data file.</p>
+            </caption>
+          </media>
+        </supplementary-material>
+      </app>
+    </app-group>
+    <notes>
+      <title>Author Contributions</title>
+      <p>Conceptualization, A.T. and L.G.; Methodology, A.T. and L.G.; Validation, A.T. and L.G.; Formal Analysis, A.T. and L.G.; Investigation, D.I.; Data Curation, D.I.; Writing—Original Draft Preparation, D.I., A.T. and L.G.; Writing—Review &amp; Editing, D.I., A.T. and L.G.; Supervision, A.T. and L.G. All authors have read and agreed to the published version of the manuscript.</p>
+    </notes>
+    <notes>
+      <title>Institutional Review Board Statement</title>
+      <p>The study was conducted according to the guidelines of the Declaration of Helsinki, and approved by the Ethics Committee of School of Medicine, University of Split, Split, Croatia (No: 2181-198-03-04-21-0074).</p>
+    </notes>
+    <notes>
+      <title>Informed Consent Statement</title>
+      <p>Informed consent was obtained from all subjects involved in the study.</p>
+    </notes>
+    <notes notes-type="data-availability">
+      <title>Data Availability Statement</title>
+      <p>The data that support the findings of this study are available upon request from the authors.</p>
+    </notes>
+    <notes notes-type="COI-statement">
+      <title>Conflicts of Interest</title>
+      <p>The authors declare no conflict of interest.</p>
+    </notes>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1-healthcare-11-00771">
+        <label>1.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Polanska</surname>
+              <given-names>K.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Znyk</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Kaleta</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Susceptibility to tobacco use and associated factors among youth in five central and eastern European countries</article-title>
+          <source>BMC Public Health</source>
+          <year>2022</year>
+          <volume>22</volume>
+          <elocation-id>72</elocation-id>
+          <pub-id pub-id-type="doi">10.1186/s12889-022-12493-6</pub-id>
+          <pub-id pub-id-type="pmid">35016662</pub-id>
+          <pub-id pub-id-type="pmcid">PMC8753878</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B2-healthcare-11-00771">
+        <label>2.</label>
+        <element-citation publication-type="webpage">
+          <person-group person-group-type="author">
+            
+
+            <collab>European Commission</collab>
+            
+
+          </person-group>
+          <article-title>Special Eurobarometer 429: Attitudes of Europeans towards Tobacco and Electronic Cigarettes</article-title>
+          <year>2020</year>
+          <comment>
+            Available online: 
+            <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://health.ec.europa.eu/tobacco/overview_en#documents" ext-link-type="uri">https://health.ec.europa.eu/tobacco/overview_en#documents</ext-link>
+          </comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2023-01-17">(accessed on 17 January 2023)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B3-healthcare-11-00771">
+        <label>3.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Brożek</surname>
+              <given-names>G.M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Jankowski</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lawson</surname>
+              <given-names>J.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Shpakou</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Poznański</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Zielonka</surname>
+              <given-names>T.M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Klimatckaia</surname>
+              <given-names>L.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Loginovich</surname>
+              <given-names>Y.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Rachel</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Gereová</surname>
+              <given-names>J.</given-names>
+            </name>
+            
+
+            <etal/>
+            
+
+          </person-group>
+          <article-title>The Prevalence of Cigarette and E-cigarette Smoking among Students in Central and Eastern Europe-Results of the YUPESS Study</article-title>
+          <source>Int. J. Environ. Res. Public Health</source>
+          <year>2019</year>
+          <volume>16</volume>
+          <elocation-id>2297</elocation-id>
+          <pub-id pub-id-type="doi">10.3390/ijerph16132297</pub-id>
+          <pub-id pub-id-type="pmid">31261697</pub-id>
+          <pub-id pub-id-type="pmcid">PMC6651674</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B4-healthcare-11-00771">
+        <label>4.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Hossain</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Hossain</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Ahmed</surname>
+              <given-names>F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Islam</surname>
+              <given-names>R.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Sikder</surname>
+              <given-names>T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Rahman</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Prevalence of Tobacco Smoking and Factors Associated with the Initiation of Smoking among University Students in Dhaka, Bangladesh</article-title>
+          <source>Cent. Asian J. Glob. Health</source>
+          <year>2017</year>
+          <volume>6</volume>
+          <fpage>244</fpage>
+          <pub-id pub-id-type="doi">10.5195/cajgh.2017.244</pub-id>
+          <pub-id pub-id-type="pmid">29138736</pub-id>
+          <pub-id pub-id-type="pmcid">PMC5675390</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B5-healthcare-11-00771">
+        <label>5.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Pierce</surname>
+              <given-names>J.P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>White</surname>
+              <given-names>V.M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Emery</surname>
+              <given-names>S.L.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>What public health strategies are needed to reduce smoking initiation?</article-title>
+          <source>Tob. Control</source>
+          <year>2012</year>
+          <volume>21</volume>
+          <fpage>258</fpage>
+          <lpage>264</lpage>
+          <pub-id pub-id-type="doi">10.1136/tobaccocontrol-2011-050359</pub-id>
+          <pub-id pub-id-type="pmid">22345263</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B6-healthcare-11-00771">
+        <label>6.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Alexopoulos</surname>
+              <given-names>E.C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Jelastopulu</surname>
+              <given-names>E.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Aronis</surname>
+              <given-names>K.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Dougenis</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Cigarette smoking among university students in Greece: A comparison between medical and other students</article-title>
+          <source>Environ. Health Prev. Med.</source>
+          <year>2010</year>
+          <volume>15</volume>
+          <fpage>115</fpage>
+          <lpage>120</lpage>
+          <pub-id pub-id-type="doi">10.1007/s12199-009-0110-0</pub-id>
+          <pub-id pub-id-type="pmid">19802656</pub-id>
+          <pub-id pub-id-type="pmcid">PMC2824102</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B7-healthcare-11-00771">
+        <label>7.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Jakobsen</surname>
+              <given-names>G.S.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Danielsen</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Jensen</surname>
+              <given-names>M.P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Vinther</surname>
+              <given-names>J.L.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Pisinger</surname>
+              <given-names>C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Holmberg</surname>
+              <given-names>T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Krølner</surname>
+              <given-names>R.F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Andersen</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Reducing smoking in youth by a smoke-free school environment: A stratified cluster randomized controlled trial of Focus, a multicomponent program for alternative high schools</article-title>
+          <source>Tob. Prev. Cessat.</source>
+          <year>2021</year>
+          <volume>7</volume>
+          <fpage>42</fpage>
+          <pub-id pub-id-type="doi">10.18332/tpc/133934</pub-id>
+          <pub-id pub-id-type="pmid">34131598</pub-id>
+          <pub-id pub-id-type="pmcid">PMC8171329</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B8-healthcare-11-00771">
+        <label>8.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Andreeva</surname>
+              <given-names>T.I.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Ananjeva</surname>
+              <given-names>G.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Daminova</surname>
+              <given-names>N.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Leontieva</surname>
+              <given-names>T.V.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Khakimova</surname>
+              <given-names>L.K.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Smoke-Free Universities Help Students Avoid Establishing Smoking by Means of Facilitating Quitting</article-title>
+          <source>Health Promot. Perspect.</source>
+          <year>2016</year>
+          <volume>5</volume>
+          <fpage>241</fpage>
+          <lpage>249</lpage>
+          <pub-id pub-id-type="doi">10.15171/hpp.2015.029</pub-id>
+          <pub-id pub-id-type="pmid">26933643</pub-id>
+          <pub-id pub-id-type="pmcid">PMC4772794</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B9-healthcare-11-00771">
+        <label>9.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Alves</surname>
+              <given-names>R.F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Precioso</surname>
+              <given-names>J.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Becoña</surname>
+              <given-names>E.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Smoking behavior and secondhand smoke exposure among university students in northern Portugal: Relations with knowledge on tobacco use and attitudes toward smoking</article-title>
+          <source>Pulmonology</source>
+          <year>2022</year>
+          <volume>28</volume>
+          <fpage>193</fpage>
+          <lpage>202</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.pulmoe.2020.03.004</pub-id>
+          <pub-id pub-id-type="pmid">32444313</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B10-healthcare-11-00771">
+        <label>10.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Wamamili</surname>
+              <given-names>B.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Wallace-Bell</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Richardson</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Grace</surname>
+              <given-names>R.C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Coope</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Cigarette smoking among university students aged 18-24 years in New Zealand: Results of the first (baseline) of two na-tional surveys</article-title>
+          <source>BMJ Open</source>
+          <year>2019</year>
+          <volume>9</volume>
+          <fpage>e032590</fpage>
+          <pub-id pub-id-type="doi">10.1136/bmjopen-2019-032590</pub-id>
+          <pub-id pub-id-type="pmcid">PMC6937031</pub-id>
+          <pub-id pub-id-type="pmid">31857310</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B11-healthcare-11-00771">
+        <label>11.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Ilić</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Grujičić</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Novaković</surname>
+              <given-names>B.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Vrkatić</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lozanov-Crvenković</surname>
+              <given-names>Z.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Cigarette Smoking among Medical Students from the Western Balkans</article-title>
+          <source>Int. J. Environ. Res. Public Health</source>
+          <year>2022</year>
+          <volume>19</volume>
+          <elocation-id>3055</elocation-id>
+          <pub-id pub-id-type="doi">10.3390/ijerph19053055</pub-id>
+          <pub-id pub-id-type="pmid">35270751</pub-id>
+          <pub-id pub-id-type="pmcid">PMC8910248</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B12-healthcare-11-00771">
+        <label>12.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Vrazic</surname>
+              <given-names>H.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Ljubicic</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Schneider</surname>
+              <given-names>N.K.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Tobacco use and cessation among medical students in Croatia–results of the Global Health Professionals Pilot Survey (GHPS) in Croatia, 2005</article-title>
+          <source>Int. J. Public Health</source>
+          <year>2008</year>
+          <volume>53</volume>
+          <fpage>111</fpage>
+          <lpage>117</lpage>
+          <pub-id pub-id-type="doi">10.1007/s00038-008-7005-5</pub-id>
+          <pub-id pub-id-type="pmid">18681340</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B13-healthcare-11-00771">
+        <label>13.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Sharma</surname>
+              <given-names>I.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Chalise</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>The Knowledge and Attitude Regarding the Health Effect of Smoking among Secondary Level Students in Nepal</article-title>
+          <source>Asian J. Humanit. Soc. Stud.</source>
+          <year>2018</year>
+          <volume>6</volume>
+          <fpage>83</fpage>
+          <lpage>90</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B14-healthcare-11-00771">
+        <label>14.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Paul</surname>
+              <given-names>Y.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Soni</surname>
+              <given-names>N.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Vaid</surname>
+              <given-names>R.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Basavaraj</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Khuller</surname>
+              <given-names>N.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Ill effects of smoking on general and oral health: Awareness among college going students</article-title>
+          <source>J. Indian Assoc. Public Health Dent.</source>
+          <year>2014</year>
+          <volume>12</volume>
+          <fpage>47</fpage>
+          <lpage>53</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B15-healthcare-11-00771">
+        <label>15.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Alzahrani</surname>
+              <given-names>S.H.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Alghamdi</surname>
+              <given-names>R.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Almutairi</surname>
+              <given-names>A.M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Alghamdi</surname>
+              <given-names>A.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Aljuhani</surname>
+              <given-names>A.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>ALbalawi</surname>
+              <given-names>A.H.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Knowledge and Attitudes Among Medical Students Toward the Clinical Usage of e-Cigarettes: A Cross-Sectional Study in a University Hospital in Saudi Arabia</article-title>
+          <source>Risk Manag. Healthc. Policy</source>
+          <year>2021</year>
+          <volume>14</volume>
+          <fpage>1969</fpage>
+          <lpage>1984</lpage>
+          <pub-id pub-id-type="doi">10.2147/RMHP.S302309</pub-id>
+          <pub-id pub-id-type="pmid">34017206</pub-id>
+          <pub-id pub-id-type="pmcid">PMC8131966</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B16-healthcare-11-00771">
+        <label>16.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>La Torre</surname>
+              <given-names>G.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Dorelli</surname>
+              <given-names>B.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Ricciardi</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Grassi</surname>
+              <given-names>M.C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Mannocci</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Smoking E-CigaRette and HEat-noT-burn products: Validation of the SECRHET questionnaire</article-title>
+          <source>Clin. Ter.</source>
+          <year>2019</year>
+          <volume>170</volume>
+          <fpage>e247</fpage>
+          <lpage>e251</lpage>
+          <pub-id pub-id-type="pmid">31304510</pub-id>
+          <pub-id pub-id-type="doi" assigning-authority="pmc">10.7417/CT.2019.2142</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B17-healthcare-11-00771">
+        <label>17.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Ergin</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Uzun</surname>
+              <given-names>S.U.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Bozkurt</surname>
+              <given-names>A.İ.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Knowledge and attitudes of health professional students on smoking cessation techniques in Turkey</article-title>
+          <source>Tob. Prev. Cessat.</source>
+          <year>2016</year>
+          <volume>2</volume>
+          <fpage>66</fpage>
+          <pub-id pub-id-type="doi">10.18332/tpc/63821</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B18-healthcare-11-00771">
+        <label>18.</label>
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Istenic</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Knowledge and Attitudes of the Students at the University of Split on the Harmful Effects of Tobacco Products</article-title>
+          <source>Undergraduate Diploma Thesis</source>
+          <publisher-name>School of Medicine, University of Splitu</publisher-name>
+          <publisher-loc>Split, Croatia</publisher-loc>
+          <year>2022</year>
+          <comment>
+            Available online: 
+            <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://zir.nsk.hr/islandora/object/mefst:1659" ext-link-type="uri">https://zir.nsk.hr/islandora/object/mefst:1659</ext-link>
+          </comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2023-01-24">(accessed on 24 January 2023)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B19-healthcare-11-00771">
+        <label>19.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Shalaby</surname>
+              <given-names>S.F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Soliman</surname>
+              <given-names>M.A.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Knowledge, attitude, and practice of medical students regarding smoking and substance abuse, Cairo University, Egypt</article-title>
+          <source>J. Egypt Public Health Assoc.</source>
+          <year>2019</year>
+          <volume>94</volume>
+          <fpage>11</fpage>
+          <pub-id pub-id-type="doi">10.1186/s42506-019-0011-z</pub-id>
+          <pub-id pub-id-type="pmid">32813081</pub-id>
+          <pub-id pub-id-type="pmcid">PMC7364688</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B20-healthcare-11-00771">
+        <label>20.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Khan</surname>
+              <given-names>F.M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Hussain</surname>
+              <given-names>S.J.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Laeeq</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Awais</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Hussain</surname>
+              <given-names>S.F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Khan</surname>
+              <given-names>J.A.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Smoking prevalence, knowledge and attitudes among medical students in Karachi, Pakistan</article-title>
+          <source>East Mediterr. Health J.</source>
+          <year>2005</year>
+          <volume>11</volume>
+          <fpage>952</fpage>
+          <lpage>958</lpage>
+          <pub-id pub-id-type="pmid">16761665</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B21-healthcare-11-00771">
+        <label>21.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Dawood</surname>
+              <given-names>O.T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Rashan</surname>
+              <given-names>M.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Hassali</surname>
+              <given-names>M.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Saleem</surname>
+              <given-names>F.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Knowledge and perception about health risks of cigarette smoking among Iraqi smokers</article-title>
+          <source>J. Pharm. Bioallied. Sci.</source>
+          <year>2016</year>
+          <volume>8</volume>
+          <fpage>146</fpage>
+          <lpage>151</lpage>
+          <pub-id pub-id-type="doi">10.4103/0975-7406.171738</pub-id>
+          <pub-id pub-id-type="pmid">27134468</pub-id>
+          <pub-id pub-id-type="pmcid">PMC4832906</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B22-healthcare-11-00771">
+        <label>22.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Yang</surname>
+              <given-names>J.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Hammond</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Driezen</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Fong</surname>
+              <given-names>G.T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Jiang</surname>
+              <given-names>Y.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Health knowledge and perception of risks among Chinese smokers and non-smokers: Findings from the Wave 1 ITC China Survey</article-title>
+          <source>Tob. Control</source>
+          <year>2010</year>
+          <volume>19</volume>
+          <fpage>i18</fpage>
+          <lpage>i23</lpage>
+          <pub-id pub-id-type="doi">10.1136/tc.2009.029710</pub-id>
+          <pub-id pub-id-type="pmid">20935195</pub-id>
+          <pub-id pub-id-type="pmcid">PMC5654747</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B23-healthcare-11-00771">
+        <label>23.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Ramseier</surname>
+              <given-names>C.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Aurich</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Bottini</surname>
+              <given-names>C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Warnakulasuriya</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Davis</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Curriculum survey on tobacco education in European dental schools</article-title>
+          <source>Br. Dent. J.</source>
+          <year>2012</year>
+          <volume>213</volume>
+          <fpage>E12</fpage>
+          <pub-id pub-id-type="doi">10.1038/sj.bdj.2012.892</pub-id>
+          <pub-id pub-id-type="pmid">23059694</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B24-healthcare-11-00771">
+        <label>24.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Armstrong</surname>
+              <given-names>G.W.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Veronese</surname>
+              <given-names>G.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>George</surname>
+              <given-names>P.F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Montroni</surname>
+              <given-names>I.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Ugolini</surname>
+              <given-names>G.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Assessment of Tobacco Habits, Attitudes, and Education Among Medical Students in the United States and Italy: A Cross-sectional Survey</article-title>
+          <source>J. Prev. Med. Public Health</source>
+          <year>2017</year>
+          <volume>50</volume>
+          <fpage>177</fpage>
+          <lpage>187</lpage>
+          <pub-id pub-id-type="doi">10.3961/jpmph.15.061</pub-id>
+          <pub-id pub-id-type="pmid">28605889</pub-id>
+          <pub-id pub-id-type="pmcid">PMC5495685</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B25-healthcare-11-00771">
+        <label>25.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>D’Egidio</surname>
+              <given-names>V.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Patrissi</surname>
+              <given-names>R.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>De Vivo</surname>
+              <given-names>G.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Chiarini</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Grassi</surname>
+              <given-names>M.C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>La Torre</surname>
+              <given-names>G.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Global Health Professions Student Survey among Healthcare students: A cross sectional study</article-title>
+          <source>Ann. Ig.</source>
+          <year>2020</year>
+          <volume>32</volume>
+          <fpage>419</fpage>
+          <lpage>429</lpage>
+          <pub-id pub-id-type="pmid">32744300</pub-id>
+          <pub-id pub-id-type="doi" assigning-authority="pmc">10.7416/ai.2020.2365</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B26-healthcare-11-00771">
+        <label>26.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Hsieh</surname>
+              <given-names>C.R.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Yen</surname>
+              <given-names>L.L.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Liu</surname>
+              <given-names>J.T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lin</surname>
+              <given-names>C.J.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Smoking, health knowledge, and anti-smoking campaigns: An empirical study in Taiwan</article-title>
+          <source>J. Health Econ.</source>
+          <year>1996</year>
+          <volume>15</volume>
+          <fpage>87</fpage>
+          <lpage>104</lpage>
+          <pub-id pub-id-type="doi">10.1016/0167-6296(95)00033-X</pub-id>
+          <pub-id pub-id-type="pmid">10157430</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B27-healthcare-11-00771">
+        <label>27.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Marasović Šušnjara</surname>
+              <given-names>I.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Vejić</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Prevalence of smoking in Croatia—How to solve the problem?</article-title>
+          <source>Acta Med. Croat.</source>
+          <year>2020</year>
+          <volume>74</volume>
+          <fpage>189</fpage>
+          <lpage>196</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B28-healthcare-11-00771">
+        <label>28.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Puharić</surname>
+              <given-names>Z.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Smola</surname>
+              <given-names>V.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Žulec</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Grabovac</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Puharić</surname>
+              <given-names>F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Petričev</surname>
+              <given-names>N.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Knowledge, Attitudes and Use of E-Cigarettes</article-title>
+          <source>Arch. Psychiatry Res.</source>
+          <year>2021</year>
+          <volume>57</volume>
+          <fpage>5</fpage>
+          <lpage>14</lpage>
+          <pub-id pub-id-type="doi">10.20471/may.2021.57.01.01</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B29-healthcare-11-00771">
+        <label>29.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Laverty</surname>
+              <given-names>A.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Vardavas</surname>
+              <given-names>C.I.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Filippidis</surname>
+              <given-names>F.T.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Prevalence and reasons for use of Heated Tobacco Products (HTP) in Europe: An analysis of Eurobarometer data in 28 countries</article-title>
+          <source>Lancet Reg. Health Eur.</source>
+          <year>2021</year>
+          <volume>8</volume>
+          <fpage>100159</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.lanepe.2021.100159</pub-id>
+          <pub-id pub-id-type="pmid">34557853</pub-id>
+          <pub-id pub-id-type="pmcid">PMC8454644</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B30-healthcare-11-00771">
+        <label>30.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Tompkins</surname>
+              <given-names>C.N.E.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Burnley</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>McNeill</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Hitchman</surname>
+              <given-names>S.C.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Factors that influence smokers’ and ex-smokers’ use of IQOS: A qualitative study of IQOS users and ex-users in the UK</article-title>
+          <source>Tob. Control</source>
+          <year>2021</year>
+          <volume>30</volume>
+          <fpage>16</fpage>
+          <lpage>23</lpage>
+          <pub-id pub-id-type="doi">10.1136/tobaccocontrol-2019-055306</pub-id>
+          <pub-id pub-id-type="pmid">31941822</pub-id>
+          <pub-id pub-id-type="pmcid">PMC7803910</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B31-healthcare-11-00771">
+        <label>31.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>O’Connor</surname>
+              <given-names>R.J.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Hyland</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Giovino</surname>
+              <given-names>G.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Fong</surname>
+              <given-names>G.T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Cummings</surname>
+              <given-names>K.M.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Smoker awareness of and beliefs about supposedly less-harmful tobacco products</article-title>
+          <source>Am. J. Prev. Med.</source>
+          <year>2005</year>
+          <volume>29</volume>
+          <fpage>85</fpage>
+          <lpage>90</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.amepre.2005.04.013</pub-id>
+          <pub-id pub-id-type="pmid">16005803</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B32-healthcare-11-00771">
+        <label>32.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Wężyk-Caba</surname>
+              <given-names>I.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Kaleta</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Zajdel</surname>
+              <given-names>R.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Balwicki</surname>
+              <given-names>Ł.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Świątkowska</surname>
+              <given-names>B.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Do Young People Perceive E-Cigarettes and Heated Tobacco as Less Harmful Than Traditional Cigarettes? A Survey from Poland</article-title>
+          <source>Int. J. Environ. Res. Public Health</source>
+          <year>2022</year>
+          <volume>19</volume>
+          <elocation-id>14632</elocation-id>
+          <pub-id pub-id-type="doi">10.3390/ijerph192214632</pub-id>
+          <pub-id pub-id-type="pmid">36429359</pub-id>
+          <pub-id pub-id-type="pmcid">PMC9690410</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B33-healthcare-11-00771">
+        <label>33.</label>
+        <element-citation publication-type="gov">
+          <article-title>Smoking and Your Child: What Parents Should Know</article-title>
+          <comment>
+            Available online: 
+            <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://pubmed.ncbi.nlm.nih.gov/20084216/" ext-link-type="uri">https://pubmed.ncbi.nlm.nih.gov/20084216/</ext-link>
+          </comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2022-10-10">(accessed on 10 October 2022)</date-in-citation>
+        </element-citation>
+      </ref>
+      <ref id="B34-healthcare-11-00771">
+        <label>34.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Cornelius</surname>
+              <given-names>M.D.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Day</surname>
+              <given-names>N.L.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>The effects of tobacco use during and after pregnancy on exposed children</article-title>
+          <source>Alcohol Res. Health</source>
+          <year>2000</year>
+          <volume>24</volume>
+          <fpage>242</fpage>
+          <lpage>249</lpage>
+          <pub-id pub-id-type="pmid">15986719</pub-id>
+          <pub-id pub-id-type="pmcid">PMC6709748</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B35-healthcare-11-00771">
+        <label>35.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Alkhalifah</surname>
+              <given-names>A.F.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Agarwal</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Cigarette smoking prevalence and awareness of its oral health effects amongst medical students in Qassim Region, Saudi Arabia</article-title>
+          <source>Int. J. Community Med. Public Health</source>
+          <year>2020</year>
+          <volume>7</volume>
+          <fpage>1240</fpage>
+          <lpage>1243</lpage>
+          <pub-id pub-id-type="doi">10.18203/2394-6040.ijcmph20201426</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B36-healthcare-11-00771">
+        <label>36.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Kaleta</surname>
+              <given-names>D.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Polanska</surname>
+              <given-names>K.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Wojtysiak</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Szatko</surname>
+              <given-names>F.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Involuntary Smoking in Adolescents, Their Awareness of Its Harmfulness, and Attitudes towards Smoking in the Presence of Non-Smokers</article-title>
+          <source>Int. J. Environ. Res. Public Health</source>
+          <year>2017</year>
+          <volume>14</volume>
+          <elocation-id>1095</elocation-id>
+          <pub-id pub-id-type="doi">10.3390/ijerph14101095</pub-id>
+          <pub-id pub-id-type="pmid">28934143</pub-id>
+          <pub-id pub-id-type="pmcid">PMC5664596</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B37-healthcare-11-00771">
+        <label>37.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Igwe</surname>
+              <given-names>C.U.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>David</surname>
+              <given-names>J.C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Okuma</surname>
+              <given-names>O.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Njemanze</surname>
+              <given-names>V.C.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>The prevalence, knowledge of health effect and attitude towards smoking among undergraduates in a Nigerian University</article-title>
+          <source>J. Public Health Epidemiol.</source>
+          <year>2021</year>
+          <volume>13</volume>
+          <fpage>22</fpage>
+          <lpage>29</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B38-healthcare-11-00771">
+        <label>38.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Sansone</surname>
+              <given-names>G.C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Raute</surname>
+              <given-names>L.J.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Fong</surname>
+              <given-names>G.T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Pednekar</surname>
+              <given-names>M.S.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Quah</surname>
+              <given-names>A.C.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Bansal-Travers</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Prakash</surname>
+              <given-names>C.G.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Dhirendra</surname>
+              <given-names>N.S.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Knowledge of health effects and intentions to quit among smokers in India: Findings from the Tobacco Control Policy (TCP) India pilot survey</article-title>
+          <source>Int. J. Environ. Res. Public Health</source>
+          <year>2012</year>
+          <volume>9</volume>
+          <fpage>564</fpage>
+          <lpage>578</lpage>
+          <pub-id pub-id-type="doi">10.3390/ijerph9020564</pub-id>
+          <pub-id pub-id-type="pmid">22470310</pub-id>
+          <pub-id pub-id-type="pmcid">PMC3315264</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B39-healthcare-11-00771">
+        <label>39.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Xiao</surname>
+              <given-names>L.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Di</surname>
+              <given-names>X.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Nan</surname>
+              <given-names>Y.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lyu</surname>
+              <given-names>T.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Jiang</surname>
+              <given-names>Y.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Cigarette Package Warnings for Adult Smoking Cessation—China, 2018</article-title>
+          <source>China CDC Wkly.</source>
+          <year>2020</year>
+          <volume>2</volume>
+          <fpage>394</fpage>
+          <lpage>398</lpage>
+          <pub-id pub-id-type="doi">10.46234/ccdcw2020.101</pub-id>
+          <pub-id pub-id-type="pmid">34594665</pub-id>
+          <pub-id pub-id-type="pmcid">PMC8428454</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B40-healthcare-11-00771">
+        <label>40.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Goel</surname>
+              <given-names>R.K.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Budak</surname>
+              <given-names>J.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Smoking patterns in Croatia and comparisons with European nations</article-title>
+          <source>Cent. Eur. J. Public Health</source>
+          <year>2007</year>
+          <volume>15</volume>
+          <fpage>110</fpage>
+          <lpage>115</lpage>
+          <pub-id pub-id-type="doi">10.21101/cejph.a3430</pub-id>
+          <pub-id pub-id-type="pmid">17958203</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B41-healthcare-11-00771">
+        <label>41.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Neuman</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Bitton</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Glantz</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Tobacco industry strategies for influencing European Community tobacco advertising legislation</article-title>
+          <source>Lancet</source>
+          <year>2002</year>
+          <volume>359</volume>
+          <fpage>1323</fpage>
+          <lpage>1330</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0140-6736(02)08275-2</pub-id>
+          <pub-id pub-id-type="pmid">11965294</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B42-healthcare-11-00771">
+        <label>42.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Majek</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Jankowski</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Nowak</surname>
+              <given-names>B.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Macherski</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Nowak</surname>
+              <given-names>M.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Gil</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Nakiela</surname>
+              <given-names>P.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lewicka</surname>
+              <given-names>B.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lawson</surname>
+              <given-names>J.A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Zejda</surname>
+              <given-names>J.E.</given-names>
+            </name>
+            
+
+            <etal/>
+            
+
+          </person-group>
+          <article-title>The Frequency of Use and Harm Perception of Heated Tobacco Products (HTPs): The 2019 Cross-Sectional Survey among Medical Students from Poland</article-title>
+          <source>Int. J. Environ. Res. Public Health</source>
+          <year>2021</year>
+          <volume>18</volume>
+          <elocation-id>3381</elocation-id>
+          <pub-id pub-id-type="doi">10.3390/ijerph18073381</pub-id>
+          <pub-id pub-id-type="pmid">33805180</pub-id>
+          <pub-id pub-id-type="pmcid">PMC8037208</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B43-healthcare-11-00771">
+        <label>43.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Arlinghaus</surname>
+              <given-names>K.R.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Johnston</surname>
+              <given-names>C.A.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Advocating for Behavior Change with Education</article-title>
+          <source>Am. J. Lifestyle Med.</source>
+          <year>2017</year>
+          <volume>12</volume>
+          <fpage>113</fpage>
+          <lpage>116</lpage>
+          <pub-id pub-id-type="doi">10.1177/1559827617745479</pub-id>
+          <pub-id pub-id-type="pmid">30283247</pub-id>
+          <pub-id pub-id-type="pmcid">PMC6124997</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B44-healthcare-11-00771">
+        <label>44.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Park</surname>
+              <given-names>J.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lim</surname>
+              <given-names>M.K.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Yun</surname>
+              <given-names>E.H.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Oh</surname>
+              <given-names>J.K.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Jeong</surname>
+              <given-names>B.Y.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Cheon</surname>
+              <given-names>Y.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Lim</surname>
+              <given-names>S.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Influences of Tobacco-Related Knowledge on Awareness and Behavior towards Smoking</article-title>
+          <source>J. Korean Med. Sci.</source>
+          <year>2018</year>
+          <volume>33</volume>
+          <fpage>e302</fpage>
+          <pub-id pub-id-type="doi">10.3346/jkms.2018.33.e302</pub-id>
+          <pub-id pub-id-type="pmid">30450026</pub-id>
+          <pub-id pub-id-type="pmcid">PMC6236079</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B45-healthcare-11-00771">
+        <label>45.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            
+
+            <name name-style="western">
+              <surname>Otufowora</surname>
+              <given-names>A.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Liu</surname>
+              <given-names>Y.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Young</surname>
+              <given-names>H.</given-names>
+              <suffix>2nd</suffix>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Egan</surname>
+              <given-names>K.L.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Varma</surname>
+              <given-names>D.S.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Striley</surname>
+              <given-names>C.W.</given-names>
+            </name>
+            
+
+            <name name-style="western">
+              <surname>Cottler</surname>
+              <given-names>L.B.</given-names>
+            </name>
+            
+
+          </person-group>
+          <article-title>Sex Differences in Willingness to Participate in Research Based on Study Risk Level Among a Community Sample of African Americans in North Central Florida</article-title>
+          <source>J. Immigr. Minor. Health</source>
+          <year>2021</year>
+          <volume>23</volume>
+          <fpage>19</fpage>
+          <lpage>25</lpage>
+          <pub-id pub-id-type="doi">10.1007/s10903-020-01015-4</pub-id>
+          <pub-id pub-id-type="pmid">32328873</pub-id>
+          <pub-id pub-id-type="pmcid">PMC7714285</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B46-healthcare-11-00771">
+        <label>46.</label>
+        <element-citation publication-type="webpage">
+          <person-group person-group-type="author">
+            
+
+            <collab>World Health Organization</collab>
+            
+
+          </person-group>
+          <article-title>Tobacco Questions for Surveys of Youth (TQS-Youth): A Subset of Key Questions from the Global Youth Tobacco Survey (GYTS)</article-title>
+          <year>2019</year>
+          <comment>
+            Available online: 
+            <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://apps.who.int/iris/handle/10665/339158" ext-link-type="uri">https://apps.who.int/iris/handle/10665/339158</ext-link>
+          </comment>
+          <date-in-citation content-type="access-date" iso-8601-date="2023-01-23">(accessed on 23 January 2023)</date-in-citation>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+  <floats-group>
+    <table-wrap position="float" id="healthcare-11-00771-t001" orientation="portrait">
+      <object-id pub-id-type="pii">healthcare-11-00771-t001_Table 1</object-id>
+      <label>Table 1</label>
+      <caption>
+        <p>
+          Demographic characteristics of respondents according to the average score of knowledge about tobacco products and their adverse effects (
+          <italic toggle="yes">n</italic>
+           = 1184).
+        </p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Characteristics</th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Categories</th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+              Frequency (
+              <italic toggle="yes">n</italic>
+              )
+            </th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Percentage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Gender</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Female</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">857</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">72.3</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Male</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">327</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">26.7</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Age</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">18–22</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">723</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">61.0</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">23–25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">409</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">34.5</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≥25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">52</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">4.5</td>
+          </tr>
+          <tr>
+            <td rowspan="6" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Study field</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biomedical science</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">230</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">19.4</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Social sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">411</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">34.7</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Technical sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">162</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">13.7</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Humanities sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">154</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">13.0</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Natural sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">105</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">8.9</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biotechnical science</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">122</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">10.3</td>
+          </tr>
+          <tr>
+            <td rowspan="6" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Year of study</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1st year</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">287</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">4.2</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2nd year</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">190</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">16.0</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">3rd year</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">225</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">19.0</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">4th year</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">215</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">18.2</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">5th year</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">181</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">15.3</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">6th year</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">86</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">7.3</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Family members-healthcare employees</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">272</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">23.0</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Family’s monthly budget</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Below average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">83</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">7.0</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">653</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">55.2</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Above average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">448</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">37.8</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn>
+          <p>Data are presented as numbers and percentage.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap position="float" id="healthcare-11-00771-t002" orientation="portrait">
+      <object-id pub-id-type="pii">healthcare-11-00771-t002_Table 2</object-id>
+      <label>Table 2</label>
+      <caption>
+        <p>
+          Characteristics of respondents related to tobacco use behavior based on mean score for knowledge of tobacco products and their harmful effects (
+          <italic toggle="yes">n</italic>
+           = 1184).
+        </p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Characteristics</th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Categories</th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+              Frequency (
+              <italic toggle="yes">n</italic>
+              )
+            </th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Percentage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Tobacco product use</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Former user (not smoked in the last 28 days)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">66</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">5.6</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Current</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">357</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">30.1</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Type of tobacco product use among current users of tobacco products</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Cigarettes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">266</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">74.5</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">E-cigarettes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">28</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">7.9</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Heated tobacco products</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">63</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">17.6</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Started using tobacco products among current users of tobacco products</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Elementary school</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">40</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">11.2</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">High school</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">253</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">70.9</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">University</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">64</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">17.9</td>
+          </tr>
+          <tr>
+            <td rowspan="4" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Duration of tobacco product usage among current users of tobacco products</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤1/year</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">20</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">5.6</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1–2/years</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">47</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">13.2</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">3–5/years</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">169</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">47.3</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≥5/years</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">121</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">33.9</td>
+          </tr>
+          <tr>
+            <td rowspan="4" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Who knows that you use tobacco products among current users of tobacco products</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Family</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">4</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Friends</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">110</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">30.8</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Family/friends</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">242</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">67.8</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">No one</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.3</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Want to quit use of tobacco products among current users of tobacco products</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">204</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">57.1</td>
+          </tr>
+          <tr>
+            <td rowspan="6" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Family members use tobacco products</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Both parents</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">203</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">17.1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Father</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">196</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">16.5</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Mother</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">175</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">14.8</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Grandparents</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">21</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.8</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Sibling(s)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">142</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">12.0</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Nobody</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">447</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">37.8</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Familiar with smoke-free devices</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">978</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">82.6</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Smoke-free devices are a better alternative to traditional smoking</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">555</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">46.9</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Familiar with the difference between cigarettes, e-cigarettes, and tobacco heating devices</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">590</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">49.8</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn>
+          <p>Data are presented as numbers and percentage.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap position="float" id="healthcare-11-00771-t003" orientation="portrait">
+      <object-id pub-id-type="pii">healthcare-11-00771-t003_Table 3</object-id>
+      <label>Table 3</label>
+      <caption>
+        <p>
+          Respondents’ opinion on exposure to health warnings and tobacco product advertising messages in relation to the average level of knowledge about tobacco products and their harmful effects (
+          <italic toggle="yes">n</italic>
+           = 1184).
+        </p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Question</th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Categories</th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+              Frequency (
+              <italic toggle="yes">n</italic>
+              )
+            </th>
+            <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Percentage (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Did you notice messages in the media against smoking during the last 30 days?</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">434</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">36.7</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Did you notice tobacco advertisements or its promotion in shops during the last 30 days?</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">570</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">48.1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Did you notice someone using tobacco on TV, videos or films during the last 30 days?</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">859</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">72.6</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Do you notice health warnings on cigarette packaging?</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">967</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">81.7</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Did you learn about the dangers of using tobacco products during schooling?</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1086</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">91.7</td>
+          </tr>
+          <tr>
+            <td rowspan="4" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">There would be less smokers if?</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">The price increases</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">478</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">40.4</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Young people were educated</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">311</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">26.3</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Health workers informed the public about the adverse effects of smoking more frequently</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">250</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">21.1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Marketing and advertising were limited</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">145</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">12.2</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Smoking should be banned in closed public spaces?</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">755</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">63.8</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn>
+          <p>Data are presented as numbers and percentage.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap position="float" id="healthcare-11-00771-t004" orientation="portrait">
+      <object-id pub-id-type="pii">healthcare-11-00771-t004_Table 4</object-id>
+      <label>Table 4</label>
+      <caption>
+        <p>Unadjusted and adjusted odds ratios for the associations of participants’ characteristics with knowledge of tobacco products and their harmful effects and knowledge of adverse health effects of tobacco.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">Independent Variable</th>
+            <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">Categories</th>
+            <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Knowledge of Tobacco Products and Their Harmful Effects</th>
+            <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Knowledge of Adverse Health Effects of Tobacco</th>
+          </tr>
+          <tr>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Unadjusted
+              <break/>
+              OR (95% CI)
+            </th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Adjusted
+              <break/>
+              OR (95% CI)
+            </th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Unadjusted
+              <break/>
+              OR (95% CI)
+            </th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Adjusted
+              <break/>
+              OR (95% CI)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Gender</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Male</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Female</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.10 (0.85–1.43)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.11 (0.83–1.47)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.28 (0.99–1.66)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.25 (0.94–1.67)</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Age (years)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">18–22</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">23–25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.58 (1.24–2.03) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.27 (0.97–1.65)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.60 (1.24–2.06) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.23 (0.92–1.61)</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≥25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              2.00 (1.12–3.59) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.81 (1.01–3.41) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.67 (0.92–3.045)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.69 (0.90–3.17)</td>
+          </tr>
+          <tr>
+            <td rowspan="6" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Study field</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biomedical science</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Technical sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.26 (0.17–0.40) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.28 (0.18–0.45) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.12 (0.07–0.21) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.15 (0.09–0.25) 
+              <sup>c</sup>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Social sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.33 (0.23–0.47) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.33 (0.23–0.48) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.14 (0.09–0.22) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.15 (0.09–0.24) 
+              <sup>c</sup>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Humanities sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.21 (0.13–0.34) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.23 (0.14–0.37) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.13 (0.07–0.22) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.14 (0.08–0.25) 
+              <sup>c</sup>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Natural sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.32 (0.20–0.53) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.37 (0.23–0.61) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.16 (0.09–0.28) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.18 (0.10–0.33) 
+              <sup>c</sup>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biotechnical science</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.26 (0.16–0.42) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.27 (0.17–0.44) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.16 (0.09–0.27) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.16 (0.09–0.29) 
+              <sup>c</sup>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">
+              Family members/healthcare
+              <break/>
+              employees
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">No</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.04 (0.93–1.17)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.01 (0.76–1.36)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.69 (0.52–0.92) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.86 (0.64–1.18)</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Family’s monthly budget</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Below average</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.77 (0.48–1.22)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.79 (0.49–1.28)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.80 (0.50–1.28)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.81 (0.49–1.33)</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Above average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.19 (0.74–1.19)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.11 (0.67–1.84)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.28 (0.79–2.08)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.20 (0.72–2.01)</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Tobacco product use</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Never</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Former user</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.96 (1.16–3.33) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.90 (1.09–3.31) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              2.11 (2.18–3.79) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              2.02 (1.09–3.73) 
+              <sup>a</sup>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Current</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.30 (1.01–1.68) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.41 (1.08–1.84) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.93 (0.72–1.20)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.02 (0.77–1.34)</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn>
+          <p>
+            Note: 
+            <sup>a</sup>
+            
+
+            <italic toggle="yes">p</italic>
+             &lt; 0.05.; 
+            <sup>c</sup>
+            
+
+            <italic toggle="yes">p</italic>
+             &lt; 0.001. Reference knowledge level category is “poor”. OR: odds ratio; 95% CI: 95% confidence interval.
+          </p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap position="float" id="healthcare-11-00771-t005" orientation="portrait">
+      <object-id pub-id-type="pii">healthcare-11-00771-t005_Table 5</object-id>
+      <label>Table 5</label>
+      <caption>
+        <p>Unadjusted and adjusted odds ratios for the associations of participants’ characteristics with and health risks of secondhand smoke and the knowledge of tobacco products.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">Independent Variable</th>
+            <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">Categories</th>
+            <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Knowledge of Health Risks of Secondhand Smoke</th>
+            <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Knowledge of Tobacco Products</th>
+          </tr>
+          <tr>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Unadjusted
+              <break/>
+              OR (95% CI)
+            </th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Adjusted
+              <break/>
+              OR (95% CI)
+            </th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Unadjusted
+              <break/>
+              OR (95% CI)
+            </th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              Adjusted
+              <break/>
+              OR (95% CI)
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Gender</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Male</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Female</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.06 (0.82–1.37)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.01 (0.83–1.46)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.04 (0.79–1.27)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.92 (0.68–1.26)</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Age (years)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">18–22</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">23–25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.87 (1.46–2.40) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              1.60 (1.23–2.08) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.03 (0.79–1.34)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.99 (0.47–1.32)</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≥25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.91 (0.52–1.61)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.85 (0.47–1.53)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.70 (0.86–3.37)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.22 (0.60–2.54)</td>
+          </tr>
+          <tr>
+            <td rowspan="6" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Study field</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biomedical science</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Technical sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.38 (0.25–059) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.44 (0.28–0.68) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.57 (0.37–0.87) 
+              <sup>b</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.52 (0.33–0.83) 
+              <sup>b</sup>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Social sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.39 (0.27–0.55) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.45 (0.31–0.65) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.26 (0.88–1.80)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.17 (0.79–1.70)</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Humanities sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.31 (0.19–0.49) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.38 (0.23–0.61) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.85 (0.53–1.35)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.75 (0.45–1.23)</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Natural sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.37 (0.23–0.60) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.40 (0.24–0.66) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.19 (0.71–2.01)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.22 (0.71–2.10)</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biotechnical science</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.23 (0.14–0.37) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.25 (0.15–0.40) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.89 (0.55–1.43)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.86 (0.52–1.41)</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">
+              Family members/healthcare
+              <break/>
+              employees
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">No</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.76 (0.58–1.00)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.86 (0.64–1.15)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.70 (0.58–1.08)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.81 (0.58–1.11)</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Family’s monthly budget</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Below average</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.94 (0.59–1.49)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.88 (0.54–1.53)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.30 (016–0.57) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.30 (0.16–0.58) 
+              <sup>c</sup>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Above average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.06 (0.66–1.69)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.92 (0.56–1.51)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.47 (0.24–0.91) 
+              <sup>a</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              0.44 (0.22–0.87) 
+              <sup>a</sup>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Tobacco product use</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Never</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Former user</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.40 (0.84–2.35)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.32 (0.77–2.27)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.08 (1.64–1.84)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.05 (0.66–1.82)</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Current</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.93 (0.72–1.20)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.99 (0.76–1.29)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              3.21 (2.23–4.43) 
+              <sup>c</sup>
+            </td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              3.17 (2.17–4.24) 
+              <sup>c</sup>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn>
+          <p>
+            Note: 
+            <sup>a</sup>
+            
+
+            <italic toggle="yes">p</italic>
+             &lt; 0.05.; 
+            <sup>b</sup>
+            
+
+            <italic toggle="yes">p</italic>
+             &lt; 0.01.; 
+            <sup>c</sup>
+            
+
+            <italic toggle="yes">p</italic>
+             &lt; 0.001. Reference knowledge level category is “poor”. OR: odds ratio; 95% CI: 95% confidence interval.
+          </p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap position="float" id="healthcare-11-00771-t006" orientation="portrait">
+      <object-id pub-id-type="pii">healthcare-11-00771-t006_Table 6</object-id>
+      <label>Table 6</label>
+      <caption>
+        <p>Gender-specific generalized linear model regression for estimating the odds ratio and 95% confidence interval for knowledge about tobacco products and their harmful effects.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">Independent Variable</th>
+            <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">Categories</th>
+            <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Male</th>
+            <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Female</th>
+          </tr>
+          <tr>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">OR (95% CI)</th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              <italic toggle="yes">p</italic>
+              -Value
+            </th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">OR (95% CI)</th>
+            <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+              <italic toggle="yes">p</italic>
+              -Value
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Age (years)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">18–22</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">23–25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.12 (0.67–1.87)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.147</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.60 (0.77–3.34)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.114</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≥25</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.28 (0.74–6.94)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.646</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.29 (0.93–1.79)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.206</td>
+          </tr>
+          <tr>
+            <td rowspan="6" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Study field</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biomedical science</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Social sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.28 (0.12–0.61)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.34 (0.22–0.52)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Technical sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.27 (0.12–0.60)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.24 (0.13–0.44)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Humanities sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.26 (0.06–1.07)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.061</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.22 (0.13–0.37)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Natural sciences</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.15 (0.05–0.48)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.47 (0.26–0.83)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.009</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Biotechnical science</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.08 (0.03–0.31)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.32 (0.19–0.55)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">≤0.001</td>
+          </tr>
+          <tr>
+            <td rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Family members/healthcare employees</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Yes</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">No</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.51 (0.28–0.94)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.030</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.23 (0.90–1.79)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.175</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Family’s monthly budget</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Below average</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.55 (0.41–5.85)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.512</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.75 (0.44–1.27)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.282</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Above average</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.81 (0.47–7.01)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.385</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.16 (0.66–2.03)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.608</td>
+          </tr>
+          <tr>
+            <td rowspan="3" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">Tobacco product use</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Never</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+            <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Former user</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.38 (0.44–4.27)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.571</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.11 (1.10–4.04)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.023</td>
+          </tr>
+          <tr>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Current</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.32 (0.77–2.24)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.300</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.41 (1.05–1.99)</td>
+            <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.021</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn>
+          <p>Reference knowledge level category is “poor”. OR: odds ratio; 95% CI: 95% confidence interval.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+  </floats-group>
+</article>

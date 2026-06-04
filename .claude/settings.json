@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.github.com)",
+      "Bash(curl -s --max-time 30 \"https://raw.githubusercontent.com/elifesciences/elife-article-xml/master/articles/elife-00003-v1.xml\")",
+      "Bash(curl -s --max-time 30 \"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC10001000&rettype=xml&retmode=xml\" -o /tmp/pmc-real-article.xml)",
+      "Read(//tmp/**)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s http://localhost:3456/journal/social-solutions/)",
+      "Bash(curl -sv http://localhost:3456/journal/social-solutions/)"
+    ]
+  }
+}

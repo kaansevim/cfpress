@@ -214,6 +214,92 @@ Tarihi yarımadanın mikroklimatik dengesini korumak için hedefli yeşil altyap
       license: "CC BY 4.0",
     },
   },
+  {
+    id: "4",
+    journalSlug: "community-foundations",
+    subject: "Sivil Toplum & Yerel Yönetişim",
+    title: "Türkiye'de Mahalle Muhtarlıklarının Dijital Dönüşümü: Katılımcı Yönetişim Üzerine Bir Saha Araştırması",
+    authors: [
+      {
+        name: "Doç. Dr. Fatma Çelik",
+        orcid: "0000-0001-2345-6789",
+        affiliation: "Marmara Üniversitesi, Siyaset Bilimi ve Kamu Yönetimi",
+        isCorresponding: true,
+        email: "fatma.celik@marmara.edu.tr",
+        contributions: ["Kavramsallaştırma", "Saha araştırması", "Yazım — özgün taslak"],
+      },
+      {
+        name: "Dr. Tarık Soysal",
+        orcid: "0000-0002-9876-5432",
+        affiliation: "Sakarya Üniversitesi, Yerel Yönetimler Araştırma Merkezi",
+        contributions: ["Veri analizi", "Yazım — gözden geçirme"],
+      },
+    ],
+    abstract:
+      "Bu çalışma, Türkiye'deki 48 mahalle muhtarlığında yürütülen saha araştırmasıyla dijital dönüşüm süreçlerini ve bu süreçlerin vatandaş katılımına etkisini incelemiştir. E-muhtarlık uygulamalarının benimsenmesinde altyapı, dijital okuryazarlık ve kurumsal destek olmak üzere üç kritik faktör belirlenmiştir.",
+    publishedAt: "2025-05-08",
+    doi: "10.62847/akademik.2025.0004",
+    keywords: ["dijital dönüşüm", "muhtarlık", "katılımcı yönetişim", "yerel yönetim"],
+    content: `## Giriş
+
+Yerel yönetim birimlerinin dijitalleşmesi, kamu hizmetlerinin etkinliği ve vatandaş katılımı açısından kritik öneme sahiptir. Türkiye'de yaklaşık 51.000 mahalle muhtarlığı, yerel yönetimin en küçük birimi olarak vatandaşla doğrudan temas noktasını oluşturmaktadır.
+
+## Yöntemler
+
+Araştırma, 2024 yılı Ekim–Aralık döneminde İstanbul, Ankara, İzmir, Bursa ve Gaziantep illerinden seçilen **48 muhtarlıkta** karma yöntem deseniyle yürütülmüştür. Muhtarlarla yapılandırılmış görüşmeler ve vatandaş anketleri birlikte kullanılmıştır.
+
+## Bulgular
+
+Dijital araç kullanan muhtarlıklarda vatandaş başvuru süresi ortalama **%62 kısalmıştır**. Bununla birlikte, 65 yaş üstü nüfusun yoğun olduğu mahallelerde dijital hizmetlere erişim oranı %23 ile sınırlı kalmaktadır.
+
+[[fig:f1]]
+
+## Tartışma
+
+Dijital dönüşümün salt teknoloji yatırımına indirgenmesi yetersiz kalmaktadır. Başarılı uygulamalar incelendiğinde, sürdürülebilir dijitalleşmenin arkasında güçlü bir kapasite geliştirme programı olduğu görülmektedir.
+
+## Sonuç
+
+Muhtarlıklarda dijital dönüşüm, altyapı, eğitim ve kurumsal destek sacayağına oturtulduğunda vatandaş memnuniyetini ve katılımı anlamlı biçimde artırabilecek potansiyele sahiptir.`,
+    figures: [
+      {
+        id: "f1",
+        label: "Şekil 1",
+        caption: "İllere göre dijital hizmet benimseme oranları ve vatandaş memnuniyeti skorları.",
+        placeholder: "Çubuk grafik + çizgi grafik (ikili eksen)",
+      },
+      {
+        id: "t1",
+        label: "Tablo 1",
+        caption: "Araştırma kapsamındaki muhtarlıkların demografik özellikleri.",
+        placeholder: "Veri tablosu",
+      },
+    ],
+    references: [
+      {
+        id: "r1",
+        text: "Özgür, H. & Kösecik, M. (2019). Yerel yönetimler üzerine güncel araştırmalar. Adalet Yayınevi.",
+      },
+      {
+        id: "r2",
+        text: "Yıldırım, Ü. (2023). E-devlet ve yerel katılım: Türkiye deneyimi. Amme İdaresi Dergisi, 56(1), 45–72.",
+      },
+      {
+        id: "r3",
+        text: "OECD (2022). Digital Government Review of Turkey. OECD Publishing.",
+      },
+    ],
+    metrics: { views: 891, downloads: 234, citations: 0 },
+    funding: "Bu araştırma için herhangi bir dış finansman alınmamıştır.",
+    dataAvailability: "Anket verileri ve görüşme transkriptleri talep üzerine sorumlu yazardan temin edilebilir.",
+    info: {
+      received: "3 Mart 2025",
+      accepted: "22 Nisan 2025",
+      published: "8 Mayıs 2025",
+      editor: "Prof. Dr. Selma Kaya",
+      license: "CC BY 4.0",
+    },
+  },
 ];
 
 export const getArticle = (id: string) => articles.find((a) => a.id === id);

@@ -1,10 +1,14 @@
+import { useState, useEffect } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, FileText, Loader2 } from "lucide-react";
 import { getArticle, type Article } from "@/lib/mock-articles";
 import { getJournal, type Journal } from "@/lib/journals";
-import { extractHeadings, formatDate } from "@/lib/article-utils";
+import { extractHeadings, formatDate, slugify, type Heading } from "@/lib/article-utils";
+import { findXmlArticle, type XmlArticleEntry } from "@/lib/article-manifest";
+import { parseJats, type ParsedJats } from "@/lib/jats-parser";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleBody } from "@/components/article-body";
+import { JatsBody } from "@/components/jats-body";
 import { MockFigure } from "@/components/mock-figure";
 import { ArticleToc } from "@/components/article/article-toc";
 import { ArticleAuthors, AuthorContributions } from "@/components/article/article-authors";
@@ -12,23 +16,42 @@ import { ArticleActions } from "@/components/article/article-actions";
 import { MetricsStrip, MetricsCards } from "@/components/article/article-metrics";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
+// ── Loader ────────────────────────────────────────────────────────────────────
+
+type LoaderData =
+  | { kind: "mock"; journal: Journal; article: Article }
+  | { kind: "xml"; journal: Journal; entry: XmlArticleEntry };
+
 export const Route = createFileRoute("/journal/$slug/article/$id")({
-  loader: ({ params }): { journal: Journal; article: Article } => {
+  loader: ({ params }): LoaderData => {
     const journal = getJournal(params.slug);
+    if (!journal) throw notFound();
+
+    // Önce XML manifest'i kontrol et
+    const entry = findXmlArticle(params.id, params.slug);
+    if (entry) return { kind: "xml", journal, entry };
+
+    // Mock veriye bak
     const article = getArticle(params.id);
-    if (!journal || !article || article.journalSlug !== params.slug) throw notFound();
-    return { journal, article };
+    if (!article || article.journalSlug !== params.slug) throw notFound();
+    return { kind: "mock", journal, article };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.article.title} — ${loaderData.journal.name}` },
-          { name: "description", content: loaderData.article.abstract.slice(0, 160) },
-          { property: "og:title", content: loaderData.article.title },
-          { property: "og:description", content: loaderData.article.abstract.slice(0, 160) },
-        ]
-      : [{ title: "Makale" }],
-  }),
+
+  head: ({ loaderData }) => {
+    if (!loaderData) return { meta: [{ title: "Makale" }] };
+    const journal = loaderData.journal;
+    const title =
+      loaderData.kind === "mock"
+        ? loaderData.article.title
+        : "Makale Yükleniyor…";
+    return {
+      meta: [
+        { title: `${title} — ${journal.name}` },
+        { name: "description", content: title.slice(0, 160) },
+      ],
+    };
+  },
+
   notFoundComponent: () => (
     <div className="flex min-h-screen items-center justify-center">
       <div className="text-center">
@@ -39,20 +62,88 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
       </div>
     </div>
   ),
-  errorComponent: ({ error }) => (
-    <div className="p-12 text-center">
-      <p>Bir hata oluştu: {error.message}</p>
-    </div>
-  ),
+
   component: ArticlePage,
 });
+
+// ── Sekme stili ───────────────────────────────────────────────────────────────
 
 const tabTrigger =
   "rounded-none border-b-2 border-transparent bg-transparent px-4 py-3 text-sm font-medium text-muted-foreground shadow-none data-[state=active]:border-accent data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none";
 
+// ── Bileşen ───────────────────────────────────────────────────────────────────
+
 function ArticlePage() {
-  const { journal, article } = Route.useLoaderData();
-  const headings = extractHeadings(article.content);
+  const loaderData = Route.useLoaderData();
+  const { journal } = loaderData;
+
+  // XML makaleler için client-side parse durumu
+  const [parsedJats, setParsedJats] = useState<ParsedJats | null>(null);
+  const [jatsLoading, setJatsLoading] = useState(loaderData.kind === "xml");
+  const [jatsError, setJatsError] = useState<string | null>(null);
+
+  const xmlEntry = loaderData.kind === "xml" ? loaderData.entry : null;
+
+  useEffect(() => {
+    if (!xmlEntry) return;
+    setJatsLoading(true);
+    fetch(xmlEntry.xmlPath)
+      .then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}: ${xmlEntry.xmlPath}`);
+        return r.text();
+      })
+      .then((xml) => {
+        setParsedJats(parseJats(xml, xmlEntry));
+        setJatsLoading(false);
+      })
+      .catch((e: Error) => {
+        setJatsError(e.message);
+        setJatsLoading(false);
+      });
+  }, [xmlEntry?.xmlPath]);
+
+  // Görüntülenecek makale verisi: XML yüklendiyse parsedJats, değilse mock
+  const article: Article | ParsedJats =
+    loaderData.kind === "mock" ? loaderData.article : (parsedJats as ParsedJats);
+
+  // Yükleme ekranı
+  if (loaderData.kind === "xml" && jatsLoading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <SiteHeader journal={journal} />
+        <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-muted-foreground">
+          <Loader2 className="h-8 w-8 animate-spin text-accent" />
+          <p className="text-sm">Makale XML dosyası yükleniyor…</p>
+        </div>
+        <SiteFooter />
+      </div>
+    );
+  }
+
+  // Hata ekranı
+  if (loaderData.kind === "xml" && jatsError) {
+    return (
+      <div className="min-h-screen bg-background">
+        <SiteHeader journal={journal} />
+        <div className="flex min-h-[60vh] flex-col items-center justify-center gap-2 p-12 text-center">
+          <p className="font-semibold text-destructive">XML yüklenemedi</p>
+          <p className="text-sm text-muted-foreground">{jatsError}</p>
+        </div>
+        <SiteFooter />
+      </div>
+    );
+  }
+
+  // article henüz yüklenmediyse (beklenmedik durum)
+  if (!article) return null;
+
+  const headings =
+    loaderData.kind === "mock"
+      ? extractHeadings((article as Article).content)
+      : extractHeadingsFromJats(parsedJats!.bodyElement);
+
+  const isXml = loaderData.kind === "xml";
+  const pdfUrl = isXml ? (parsedJats as ParsedJats).pdfUrl : undefined;
 
   return (
     <div className="min-h-screen bg-background">
@@ -69,7 +160,7 @@ function ArticlePage() {
       </div>
 
       <Tabs defaultValue="full-text" className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        {/* Üst sekme barı (eLife tarzı alt-çizgili) */}
+        {/* Sekme barı */}
         <div className="overflow-x-auto border-b border-border">
           <TabsList className="h-auto justify-start gap-1 rounded-none bg-transparent p-0">
             <TabsTrigger value="full-text" className={tabTrigger}>
@@ -87,7 +178,7 @@ function ArticlePage() {
           </TabsList>
         </div>
 
-        {/* ----------------------------- Tam Metin ---------------------------- */}
+        {/* ── Tam Metin ── */}
         <TabsContent value="full-text">
           <div className="lg:grid lg:grid-cols-[14rem_1fr] lg:gap-12">
             <ArticleToc headings={headings} />
@@ -97,6 +188,14 @@ function ArticlePage() {
                 <span className="text-accent">{article.subject}</span>
                 <span>·</span>
                 <span>Araştırma Makalesi</span>
+                {isXml && (
+                  <>
+                    <span>·</span>
+                    <span className="inline-flex items-center gap-1 text-accent">
+                      <FileText className="h-3 w-3" /> JATS XML
+                    </span>
+                  </>
+                )}
                 <span>·</span>
                 <span>{formatDate(article.publishedAt)}</span>
               </div>
@@ -110,19 +209,37 @@ function ArticlePage() {
               <div className="mt-5 flex flex-col gap-4 border-b border-border pb-5">
                 <MetricsStrip metrics={article.metrics} />
                 <ArticleActions article={article} />
-                <a
-                  href={`https://doi.org/${article.doi}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 font-mono text-sm text-accent hover:underline"
-                >
-                  doi.org/{article.doi} <ExternalLink className="h-3 w-3" />
-                </a>
+                <div className="flex flex-wrap items-center gap-4">
+                  {article.doi && (
+                    <a
+                      href={`https://doi.org/${article.doi}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 font-mono text-sm text-accent hover:underline"
+                    >
+                      doi.org/{article.doi}{" "}
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  )}
+                  {pdfUrl && (
+                    <a
+                      href={pdfUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1 text-sm hover:bg-muted"
+                    >
+                      <FileText className="h-3.5 w-3.5" /> PDF İndir
+                    </a>
+                  )}
+                </div>
               </div>
 
+              {/* Öz */}
               <section className="mt-8">
                 <h2 className="mb-3 font-serif-display text-xl font-bold">Özet</h2>
-                <p className="article-prose text-[1.0625rem] leading-relaxed">{article.abstract}</p>
+                <p className="article-prose text-[1.0625rem] leading-relaxed">
+                  {article.abstract}
+                </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {article.keywords.map((k) => (
                     <span key={k} className="rounded-full bg-secondary px-3 py-1 text-xs">
@@ -132,16 +249,29 @@ function ArticlePage() {
                 </div>
               </section>
 
+              {/* Makale gövdesi */}
               <div className="article-prose mt-10">
-                <ArticleBody content={article.content} figures={article.figures} />
+                {isXml && parsedJats ? (
+                  <JatsBody bodyElement={parsedJats.bodyElement} />
+                ) : (
+                  <ArticleBody
+                    content={(article as Article).content}
+                    figures={(article as Article).figures}
+                  />
+                )}
               </div>
             </article>
           </div>
         </TabsContent>
 
-        {/* -------------------------- Şekiller ve Veriler --------------------- */}
+        {/* ── Şekiller ── */}
         <TabsContent value="figures">
           <div className="mx-auto max-w-3xl space-y-10 py-4">
+            {article.figures.length === 0 && (
+              <p className="text-center text-sm text-muted-foreground">
+                Bu makalede şekil bulunmamaktadır.
+              </p>
+            )}
             {article.figures.map((f) => (
               <figure key={f.id}>
                 <MockFigure figure={f} />
@@ -154,11 +284,13 @@ function ArticlePage() {
           </div>
         </TabsContent>
 
-        {/* ----------------------- Makale ve Yazar Bilgisi -------------------- */}
+        {/* ── Makale ve Yazar Bilgisi ── */}
         <TabsContent value="info">
           <div className="mx-auto max-w-3xl space-y-10 py-4">
             <section>
-              <h2 className="mb-4 font-serif-display text-xl font-bold">Yazarlar ve Katkılar</h2>
+              <h2 className="mb-4 font-serif-display text-xl font-bold">
+                Yazarlar ve Katkılar
+              </h2>
               <AuthorContributions authors={article.authors} />
             </section>
 
@@ -171,7 +303,9 @@ function ArticlePage() {
 
             {article.dataAvailability && (
               <section>
-                <h2 className="mb-2 font-serif-display text-xl font-bold">Veri Erişilebilirliği</h2>
+                <h2 className="mb-2 font-serif-display text-xl font-bold">
+                  Veri Erişilebilirliği
+                </h2>
                 <p className="text-sm text-muted-foreground">{article.dataAvailability}</p>
               </section>
             )}
@@ -184,25 +318,31 @@ function ArticlePage() {
                 <InfoRow label="Yayın Tarihi" value={article.info.published} />
                 <InfoRow label="Sorumlu Editör" value={article.info.editor} />
                 <InfoRow label="Lisans" value={article.info.license} />
-                <InfoRow label="DOI" value={article.doi} mono />
+                {article.doi && (
+                  <InfoRow label="DOI" value={article.doi} mono />
+                )}
               </dl>
             </section>
 
-            <section>
-              <h2 className="mb-3 font-serif-display text-xl font-bold">Kaynakça</h2>
-              <ol className="space-y-3 text-sm">
-                {article.references.map((r, i) => (
-                  <li key={r.id} className="flex gap-3">
-                    <span className="font-mono text-xs text-muted-foreground">[{i + 1}]</span>
-                    <span>{r.text}</span>
-                  </li>
-                ))}
-              </ol>
-            </section>
+            {article.references.length > 0 && (
+              <section>
+                <h2 className="mb-3 font-serif-display text-xl font-bold">Kaynakça</h2>
+                <ol className="space-y-3 text-sm">
+                  {article.references.map((r, i) => (
+                    <li key={r.id} id={r.id} className="flex gap-3">
+                      <span className="font-mono text-xs text-muted-foreground">
+                        [{i + 1}]
+                      </span>
+                      <span>{r.text}</span>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
           </div>
         </TabsContent>
 
-        {/* ------------------------------ Metrikler --------------------------- */}
+        {/* ── Metrikler ── */}
         <TabsContent value="metrics">
           <div className="mx-auto max-w-3xl py-6">
             <MetricsCards metrics={article.metrics} />
@@ -218,11 +358,37 @@ function ArticlePage() {
   );
 }
 
-function InfoRow({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
+// ── Yardımcılar ───────────────────────────────────────────────────────────────
+
+function InfoRow({
+  label,
+  value,
+  mono,
+}: {
+  label: string;
+  value: string;
+  mono?: boolean;
+}) {
+  if (!value) return null;
   return (
     <div className="flex justify-between gap-4 border-b border-border pb-2 last:border-b-0">
       <dt className="text-muted-foreground">{label}</dt>
       <dd className={mono ? "font-mono text-xs" : "text-right font-medium"}>{value}</dd>
     </div>
   );
+}
+
+// JATS <body> elementinden TOC için Heading[] çıkartır (sadece üst seviye sec)
+function extractHeadingsFromJats(bodyEl: Element): Heading[] {
+  return Array.from(bodyEl.children)
+    .filter((c) => c.tagName.toLowerCase() === "sec")
+    .flatMap((sec) => {
+      const titleEl = Array.from(sec.children).find(
+        (c) => c.tagName.toLowerCase() === "title"
+      );
+      if (!titleEl) return [];
+      const text = titleEl.textContent?.trim() ?? "";
+      const id = sec.getAttribute("id") ?? slugify(text);
+      return [{ id, text }];
+    });
 }

@@ -1,4 +1,5 @@
 import type { Article } from "@/lib/mock-articles";
+import type { XmlArticleEntry } from "@/lib/article-manifest";
 
 // Türkçe karakterleri ASCII anchor'a indirger (TOC id'leri için).
 const TR_MAP: Record<string, string> = {
@@ -67,6 +68,27 @@ export function toRIS(article: Article): string {
   for (const k of article.keywords) lines.push(`KW  - ${k}`);
   lines.push("ER  - ");
   return lines.join("\n");
+}
+
+// XML manifest girişini listeleme kartı için Article nesnesine dönüştürür.
+// Tam makale içeriği (body) yoktur — yalnızca listeleme ve kart için yeterlidir.
+export function xmlEntryToArticle(e: XmlArticleEntry): Article {
+  return {
+    id: e.id,
+    journalSlug: e.journalSlug,
+    subject: e.subject,
+    title: e.title,
+    authors: e.authorNames.map((name) => ({ name, orcid: "", affiliation: "" })),
+    abstract: e.abstract,
+    publishedAt: e.publishedAt,
+    doi: e.doi,
+    keywords: e.keywords,
+    content: "",
+    figures: [],
+    references: [],
+    metrics: { views: 0, downloads: 0, citations: 0 },
+    info: { received: "", accepted: "", published: "", editor: "", license: "CC BY 4.0" },
+  };
 }
 
 // APA tarzı düz metin alıntı.

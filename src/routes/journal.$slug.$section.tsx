@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getJournal, journalNav, navItemSlug, type Journal } from "@/lib/journals";
 import { getArticlesByJournal, type Article } from "@/lib/mock-articles";
+import { getXmlArticlesByJournal } from "@/lib/article-manifest";
+import { xmlEntryToArticle } from "@/lib/article-utils";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleCard } from "@/components/article-card";
 
@@ -10,7 +12,12 @@ export const Route = createFileRoute("/journal/$slug/$section")({
   loader: ({ params }): { journal: Journal; articles: Article[]; section: string } => {
     const journal = getJournal(params.slug);
     if (!journal || !VALID.has(params.section)) throw notFound();
-    return { journal, articles: getArticlesByJournal(params.slug), section: params.section };
+    const mockArticles = getArticlesByJournal(params.slug);
+    const xmlArticles = getXmlArticlesByJournal(params.slug).map(xmlEntryToArticle);
+    const all = [...xmlArticles, ...mockArticles].sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    );
+    return { journal, articles: all, section: params.section };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Dergi" }] };

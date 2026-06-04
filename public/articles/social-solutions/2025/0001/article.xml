@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Article Tag Suite 1.3//EN"
+  "https://jats.nlm.nih.gov/publishing/1.3/JATS-journalpublishing1-3.dtd">
+
+<article
+  xmlns:mml="http://www.w3.org/1998/Math/MathML"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  article-type="research-article"
+  xml:lang="tr"
+  dtd-version="1.3">
+
+  <!-- ============================================================
+       FRONT — Dergi ve makale üst verisi
+  ============================================================ -->
+  <front>
+
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">jss</journal-id>
+      <journal-title-group>
+        <journal-title>Journal of Social Solutions</journal-title>
+        <abbrev-journal-title abbrev-type="publisher">J Soc Solut</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0000-0001</issn>
+      <issn pub-type="epub">0000-0002</issn>
+      <publisher>
+        <publisher-name>Akademi Dostu Yayım</publisher-name>
+      </publisher>
+    </journal-meta>
+
+    <article-meta>
+
+      <!-- Makale kimlikleri -->
+      <article-id pub-id-type="doi">10.62847/akademik.2025.0001</article-id>
+      <article-id pub-id-type="publisher-id">JSS-2025-0001</article-id>
+
+      <!-- Kategori / konu -->
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Araştırma Makalesi</subject>
+        </subj-group>
+        <subj-group subj-group-type="discipline">
+          <subject>Toplum Sağlığı &amp; Çevre</subject>
+        </subj-group>
+      </article-categories>
+
+      <!-- Başlık -->
+      <title-group>
+        <article-title xml:lang="tr">
+          Türkiye'de Tarımsal Mikrobiyom Çeşitliliğinin Toprak Verimliliği Üzerindeki Etkisi
+        </article-title>
+        <trans-title-group xml:lang="en">
+          <trans-title>
+            The Effect of Agricultural Microbiome Diversity on Soil Fertility in Turkey
+          </trans-title>
+        </trans-title-group>
+      </title-group>
+
+      <!-- Yazarlar -->
+      <contrib-group>
+
+        <contrib contrib-type="author" corresp="yes" id="author-1">
+          <name>
+            <surname>Yılmaz</surname>
+            <given-names>Ayşe</given-names>
+          </name>
+          <degrees>Dr.</degrees>
+          <contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1825-0097</contrib-id>
+          <xref ref-type="aff" rid="aff-1"/>
+          <xref ref-type="corresp" rid="cor-1"/>
+        </contrib>
+
+        <contrib contrib-type="author" id="author-2">
+          <name>
+            <surname>Demir</surname>
+            <given-names>Mehmet</given-names>
+          </name>
+          <degrees>Prof. Dr.</degrees>
+          <contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-5109-3700</contrib-id>
+          <xref ref-type="aff" rid="aff-2"/>
+        </contrib>
+
+      </contrib-group>
+
+      <!-- Kurumlar -->
+      <aff id="aff-1">
+        <label>1</label>
+        <institution-wrap>
+          <institution>İstanbul Üniversitesi</institution>
+          <institution-id institution-id-type="ror">https://ror.org/02e2c7k09</institution-id>
+        </institution-wrap>
+        <addr-line>Ziraat Fakültesi</addr-line>
+        <city>İstanbul</city>
+        <country>Türkiye</country>
+      </aff>
+
+      <aff id="aff-2">
+        <label>2</label>
+        <institution-wrap>
+          <institution>Ankara Üniversitesi</institution>
+        </institution-wrap>
+        <addr-line>Biyoloji Bölümü</addr-line>
+        <city>Ankara</city>
+        <country>Türkiye</country>
+      </aff>
+
+      <!-- Yazışma adresi -->
+      <author-notes>
+        <corresp id="cor-1">
+          <label>*</label>
+          Yazışma adresi: Dr. Ayşe Yılmaz, İstanbul Üniversitesi Ziraat Fakültesi,
+          34134 Beyazıt, İstanbul, Türkiye.
+          E-posta: <email>ayse.yilmaz@istanbul.edu.tr</email>
+        </corresp>
+      </author-notes>
+
+      <!-- Tarihler -->
+      <pub-date pub-type="epub">
+        <day>14</day>
+        <month>03</month>
+        <year>2025</year>
+      </pub-date>
+
+      <history>
+        <date date-type="received">
+          <day>12</day><month>11</month><year>2024</year>
+        </date>
+        <date date-type="accepted">
+          <day>28</day><month>02</month><year>2025</year>
+        </date>
+      </history>
+
+      <!-- Cilt / sayı -->
+      <volume>1</volume>
+      <issue>1</issue>
+      <elocation-id>e2025.0001</elocation-id>
+
+      <!-- Lisans -->
+      <permissions>
+        <copyright-statement>&#169; 2025 Yılmaz ve Demir</copyright-statement>
+        <copyright-year>2025</copyright-year>
+        <license license-type="open-access" xlink:href="https://creativecommons.org/licenses/by/4.0/">
+          <license-p>
+            Bu makale Creative Commons Atıf 4.0 Uluslararası Lisansı (CC BY 4.0) kapsamında
+            yayımlanmıştır. Kaynak gösterilmek kaydıyla serbestçe kullanılabilir.
+          </license-p>
+        </license>
+      </permissions>
+
+      <!-- Öz (Türkçe) -->
+      <abstract xml:lang="tr">
+        <title>Öz</title>
+        <p>
+          Bu çalışma, Anadolu'nun farklı iklim kuşaklarında bulunan tarım topraklarındaki mikrobiyom
+          çeşitliliğini metagenomik yaklaşımlarla incelemiş ve bu çeşitliliğin toprak verimliliği
+          parametreleri ile güçlü bir korelasyon gösterdiğini ortaya koymuştur. Yedi farklı bölgeden
+          alınan 240 toprak örneği analiz edilmiş, Proteobacteria ve Actinobacteria filumlarının
+          baskınlığı tespit edilmiştir. Shannon çeşitlilik indeksi ile toprak organik madde içeriği
+          arasında güçlü bir pozitif korelasyon (r&#160;=&#160;0.78) gözlenmiştir.
+        </p>
+      </abstract>
+
+      <!-- Öz (İngilizce) -->
+      <trans-abstract xml:lang="en">
+        <title>Abstract</title>
+        <p>
+          This study examined microbiome diversity in agricultural soils across different climatic
+          zones of Anatolia using metagenomic approaches and demonstrated a strong correlation
+          between this diversity and soil fertility parameters. A total of 240 soil samples collected
+          from seven regions were analysed, revealing the dominance of Proteobacteria and
+          Actinobacteria phyla. A strong positive correlation (r&#160;=&#160;0.78) was observed
+          between the Shannon diversity index and soil organic matter content.
+        </p>
+      </trans-abstract>
+
+      <!-- Anahtar kelimeler (Türkçe) -->
+      <kwd-group xml:lang="tr" kwd-group-type="author">
+        <title>Anahtar Kelimeler</title>
+        <kwd>mikrobiyom</kwd>
+        <kwd>toprak verimliliği</kwd>
+        <kwd>metagenomik</kwd>
+        <kwd>Anadolu</kwd>
+      </kwd-group>
+
+      <!-- Anahtar kelimeler (İngilizce) -->
+      <kwd-group xml:lang="en" kwd-group-type="author">
+        <title>Keywords</title>
+        <kwd>microbiome</kwd>
+        <kwd>soil fertility</kwd>
+        <kwd>metagenomics</kwd>
+        <kwd>Anatolia</kwd>
+      </kwd-group>
+
+      <!-- Editör -->
+      <contrib-group content-type="section-editor">
+        <contrib contrib-type="editor">
+          <name>
+            <surname>Kaya</surname>
+            <given-names>Selma</given-names>
+          </name>
+          <degrees>Prof. Dr.</degrees>
+          <role>Handling Editor</role>
+        </contrib>
+      </contrib-group>
+
+      <!-- Yazar katkıları (CRediT) -->
+      <author-notes>
+        <fn fn-type="con" id="contrib-statement">
+          <p>
+            <bold>AY:</bold> Kavramsallaştırma, Metodoloji, Yazım — özgün taslak.
+            <bold>MD:</bold> Denetim, Yazım — gözden geçirme ve düzenleme.
+          </p>
+        </fn>
+      </author-notes>
+
+      <!-- Finansman -->
+      <funding-group>
+        <award-group id="fund-1">
+          <funding-source>
+            <named-content content-type="funder-name">TÜBİTAK</named-content>
+            <named-content content-type="funder-id">https://doi.org/10.13039/501100004410</named-content>
+          </funding-source>
+          <award-id>123A456</award-id>
+          <principal-award-recipient>
+            <name><surname>Yılmaz</surname><given-names>Ayşe</given-names></name>
+          </principal-award-recipient>
+        </award-group>
+        <funding-statement>
+          Bu çalışma TÜBİTAK 1001 programı (proje no. 123A456) tarafından desteklenmiştir.
+        </funding-statement>
+      </funding-group>
+
+      <!-- Veri erişilebilirliği -->
+      <custom-meta-group>
+        <custom-meta>
+          <meta-name>data-availability</meta-name>
+          <meta-value>
+            Ham sekanslama verileri NCBI SRA veri tabanında PRJNA000001 erişim numarasıyla
+            kamuya açıktır.
+          </meta-value>
+        </custom-meta>
+      </custom-meta-group>
+
+    </article-meta>
+  </front>
+
+  <!-- ============================================================
+       BODY — Makale içeriği
+  ============================================================ -->
+  <body>
+
+    <sec id="s1" sec-type="intro">
+      <title>Giriş</title>
+      <p>
+        Toprak mikrobiyomu, tarımsal üretkenliğin görünmez ama belirleyici aktörüdür. Son on yılda
+        gelişen yüksek verimli sekanslama teknolojileri, toprak içindeki mikrobiyal toplulukların
+        kompozisyonunu eşi görülmemiş bir çözünürlükte tanımlamamıza imkân tanımıştır
+        (<xref ref-type="bibr" rid="r1">Fierer, 2017</xref>).
+      </p>
+      <p>
+        Türkiye, üç farklı iklim kuşağını barındıran coğrafi konumu sayesinde bu tür çalışmalar
+        için eşsiz bir doğal laboratuvar sunmaktadır. Buna rağmen, ülkemizde tarımsal mikrobiyom
+        çeşitliliğini sistematik olarak ele alan kapsamlı bir araştırma henüz mevcut değildir
+        (<xref ref-type="bibr" rid="r3">Yılmaz &amp; Demir, 2022</xref>).
+      </p>
+    </sec>
+
+    <sec id="s2" sec-type="methods">
+      <title>Yöntemler</title>
+
+      <sec id="s2-1">
+        <title>Örnekleme</title>
+        <p>
+          2023 yılı bahar ve sonbahar dönemlerinde Trakya, Ege, Akdeniz, İç Anadolu, Karadeniz,
+          Doğu Anadolu ve Güneydoğu Anadolu bölgelerinden toplam
+          <bold>240 toprak örneği</bold> toplanmıştır. Her örnekten DNA izolasyonu standart CTAB
+          protokolü ile gerçekleştirilmiş; 16S rRNA geninin V3-V4 bölgesi Illumina MiSeq
+          platformunda sekanslanmıştır.
+        </p>
+      </sec>
+
+      <sec id="s2-2">
+        <title>Biyoinformatik Analiz</title>
+        <p>
+          Veriler QIIME2 (sürüm 2024.5) kullanılarak işlenmiş ve istatistiksel analizler R
+          ortamında gerçekleştirilmiştir. Alfa ve beta çeşitlilik hesaplamaları için sırasıyla
+          Shannon indeksi ve Bray-Curtis uzaklığı kullanılmıştır.
+        </p>
+        <p>
+          Analiz kodu ve pipeline yapılandırmaları
+          <ext-link ext-link-type="uri" xlink:href="https://github.com/ornek/mikrobiyom-tr">
+            github.com/ornek/mikrobiyom-tr
+          </ext-link>
+          adresinde kamuya açıktır.
+        </p>
+      </sec>
+
+    </sec>
+
+    <sec id="s3" sec-type="results">
+      <title>Bulgular</title>
+      <p>
+        Genel olarak Proteobacteria (%38.2) ve Actinobacteria (%24.7) filumları baskın
+        bulunmuştur. Karadeniz bölgesi topraklarında Acidobacteria oranı diğer bölgelere kıyasla
+        anlamlı düzeyde yüksek bulunmuştur (p&#160;&lt;&#160;0.001).
+      </p>
+
+      <fig id="f1" position="float">
+        <label>Şekil 1</label>
+        <caption>
+          <title>Bölgelere göre mikrobiyal filum dağılımı</title>
+          <p>
+            Yedi coğrafi bölgeden alınan toprak örneklerinin yüzdesel mikrobiyal filum dağılımı.
+            Her sütun bir bölgeyi temsil etmektedir (n&#160;=&#160;240). Renkler farklı filumları
+            göstermektedir.
+          </p>
+        </caption>
+        <graphic xlink:href="fig1-filum-dagilim.png" mimetype="image" mime-subtype="png"/>
+      </fig>
+
+      <p>
+        Shannon çeşitlilik indeksi ile toprak organik madde içeriği arasında güçlü bir pozitif
+        korelasyon (r&#160;=&#160;0.78, p&#160;&lt;&#160;0.001) gözlenmiştir
+        (<xref ref-type="fig" rid="f2">Şekil 2</xref>). Bu bulgu, mikrobiyal çeşitliliğin toprak
+        verimliliğinin doğrudan bir göstergesi olarak kullanılabileceğini önermektedir.
+      </p>
+
+      <fig id="f2" position="float">
+        <label>Şekil 2</label>
+        <caption>
+          <title>Shannon indeksi ile organik madde korelasyonu</title>
+          <p>
+            Shannon çeşitlilik indeksi ile toprak organik madde içeriği (%) arasındaki ilişkiyi
+            gösteren saçılım grafiği. Her nokta bir toprak örneğini temsil etmektedir
+            (n&#160;=&#160;240). Düz çizgi doğrusal regresyonu göstermektedir.
+          </p>
+        </caption>
+        <graphic xlink:href="fig2-korelasyon.png" mimetype="image" mime-subtype="png"/>
+      </fig>
+
+      <table-wrap id="t1" position="float">
+        <label>Tablo 1</label>
+        <caption>
+          <title>Bölgelere göre baskın bakteri filumları</title>
+          <p>
+            Her bölge için baskın iki filum ve bunların ortalama göreceli bolluğu (%).
+            Değerler ortalama &#177; standart sapma olarak verilmiştir.
+          </p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <thead>
+            <tr>
+              <th>Bölge</th>
+              <th>Baskın Filum 1</th>
+              <th>% (ort. &#177; SS)</th>
+              <th>Baskın Filum 2</th>
+              <th>% (ort. &#177; SS)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Trakya</td>
+              <td>Proteobacteria</td>
+              <td>41.3 &#177; 4.2</td>
+              <td>Actinobacteria</td>
+              <td>23.1 &#177; 3.7</td>
+            </tr>
+            <tr>
+              <td>Ege</td>
+              <td>Proteobacteria</td>
+              <td>39.8 &#177; 5.1</td>
+              <td>Firmicutes</td>
+              <td>21.4 &#177; 4.0</td>
+            </tr>
+            <tr>
+              <td>Akdeniz</td>
+              <td>Proteobacteria</td>
+              <td>37.2 &#177; 3.9</td>
+              <td>Actinobacteria</td>
+              <td>26.3 &#177; 3.2</td>
+            </tr>
+            <tr>
+              <td>İç Anadolu</td>
+              <td>Actinobacteria</td>
+              <td>31.5 &#177; 5.8</td>
+              <td>Proteobacteria</td>
+              <td>29.7 &#177; 4.9</td>
+            </tr>
+            <tr>
+              <td>Karadeniz</td>
+              <td>Acidobacteria</td>
+              <td>33.6 &#177; 6.1</td>
+              <td>Proteobacteria</td>
+              <td>28.4 &#177; 5.3</td>
+            </tr>
+            <tr>
+              <td>Doğu Anadolu</td>
+              <td>Actinobacteria</td>
+              <td>35.2 &#177; 4.7</td>
+              <td>Proteobacteria</td>
+              <td>30.1 &#177; 3.8</td>
+            </tr>
+            <tr>
+              <td>G.D. Anadolu</td>
+              <td>Proteobacteria</td>
+              <td>42.7 &#177; 4.4</td>
+              <td>Actinobacteria</td>
+              <td>22.8 &#177; 3.5</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+
+    </sec>
+
+    <sec id="s4" sec-type="discussion">
+      <title>Tartışma</title>
+      <p>
+        Bulgularımız, sürdürülebilir tarım uygulamalarının planlanmasında mikrobiyal çeşitliliğin
+        korunmasının kritik önem taşıdığını göstermektedir. Yoğun kimyasal gübre kullanımının
+        uzun vadede mikrobiyom çeşitliliğini azalttığı; organik tarım uygulamalarının ise
+        çeşitliliği koruduğu tespit edilmiştir. Bu sonuç, literatürdeki benzer bulgularla
+        örtüşmektedir (<xref ref-type="bibr" rid="r1">Fierer, 2017</xref>;
+        <xref ref-type="bibr" rid="r2">Bolyen ve ark., 2019</xref>).
+      </p>
+    </sec>
+
+    <sec id="s5" sec-type="conclusions">
+      <title>Sonuç</title>
+      <p>
+        Türkiye genelinde tarımsal toprakların mikrobiyom haritasının çıkarılması, hem akademik
+        hem de uygulamalı tarım politikaları için temel bir referans oluşturacaktır. İlerideki
+        çalışmalar, uzun dönemli gözlem verileriyle bu ilişkilerin nedensellik boyutunu
+        araştırmalıdır.
+      </p>
+    </sec>
+
+  </body>
+
+  <!-- ============================================================
+       BACK — Kaynaklar ve ek bilgiler
+  ============================================================ -->
+  <back>
+
+    <!-- Çıkar çatışması -->
+    <fn-group content-type="competing-interest">
+      <fn fn-type="COI-statement">
+        <p>Yazarlar herhangi bir çıkar çatışması bulunmadığını beyan etmektedir.</p>
+      </fn>
+    </fn-group>
+
+    <!-- Veri erişilebilirliği -->
+    <sec id="data-availability" sec-type="data-availability">
+      <title>Veri Erişilebilirliği</title>
+      <p>
+        Ham sekanslama verileri NCBI SRA veri tabanında
+        <ext-link ext-link-type="uri" xlink:href="https://www.ncbi.nlm.nih.gov/sra/PRJNA000001">
+          PRJNA000001
+        </ext-link>
+        erişim numarasıyla kamuya açıktır.
+      </p>
+    </sec>
+
+    <!-- Kaynakça -->
+    <ref-list>
+      <title>Kaynaklar</title>
+
+      <ref id="r1">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name><surname>Fierer</surname><given-names>N.</given-names></name>
+          </person-group>
+          <article-title>
+            Embracing the unknown: disentangling the complexities of the soil microbiome
+          </article-title>
+          <source>Nature Reviews Microbiology</source>
+          <year iso-8601-date="2017">2017</year>
+          <volume>15</volume>
+          <issue>10</issue>
+          <fpage>579</fpage>
+          <lpage>590</lpage>
+          <pub-id pub-id-type="doi">10.1038/nrmicro.2017.87</pub-id>
+        </element-citation>
+      </ref>
+
+      <ref id="r2">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name><surname>Bolyen</surname><given-names>E.</given-names></name>
+            <etal/>
+          </person-group>
+          <article-title>
+            Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2
+          </article-title>
+          <source>Nature Biotechnology</source>
+          <year iso-8601-date="2019">2019</year>
+          <volume>37</volume>
+          <fpage>852</fpage>
+          <lpage>857</lpage>
+          <pub-id pub-id-type="doi">10.1038/s41587-019-0209-9</pub-id>
+        </element-citation>
+      </ref>
+
+      <ref id="r3">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name><surname>Yılmaz</surname><given-names>A.</given-names></name>
+            <name><surname>Demir</surname><given-names>M.</given-names></name>
+          </person-group>
+          <article-title>Anadolu topraklarında mikrobiyal çeşitlilik</article-title>
+          <source>Türk Tarım Dergisi</source>
+          <year iso-8601-date="2022">2022</year>
+          <volume>45</volume>
+          <issue>2</issue>
+          <fpage>112</fpage>
+          <lpage>128</lpage>
+          <pub-id pub-id-type="doi">10.00000/ttd.2022.45.2.112</pub-id>
+        </element-citation>
+      </ref>
+
+    </ref-list>
+
+  </back>
+
+</article>
