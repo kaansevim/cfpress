@@ -7,9 +7,10 @@ const XLINK = "http://www.w3.org/1999/xlink";
 
 interface JatsBodyProps {
   bodyElement: Element;
+  basePath?: string;
 }
 
-export function JatsBody({ bodyElement }: JatsBodyProps) {
+export function JatsBody({ bodyElement, basePath }: JatsBodyProps) {
   const topSections = Array.from(bodyElement.children).filter(
     (c) => c.tagName.toLowerCase() === "sec"
   );
@@ -17,7 +18,7 @@ export function JatsBody({ bodyElement }: JatsBodyProps) {
   return (
     <>
       {topSections.map((sec, i) => (
-        <RenderSec key={i} el={sec} depth={2} />
+        <RenderSec key={i} el={sec} depth={2} basePath={basePath} />
       ))}
     </>
   );
@@ -25,22 +26,36 @@ export function JatsBody({ bodyElement }: JatsBodyProps) {
 
 // ── Bölüm ─────────────────────────────────────────────────────────────────────
 
-function RenderSec({ el, depth }: { el: Element; depth: number }) {
+function RenderSec({ el, depth, basePath }: { el: Element; depth: number; basePath?: string }) {
   const id = el.getAttribute("id") ?? undefined;
   const titleEl = Array.from(el.children).find(
     (c) => c.tagName.toLowerCase() === "title"
   );
   const title = titleEl?.textContent?.trim();
+  const secType = el.getAttribute("sec-type");
+
+  const isSupplementary = secType && [
+    "COI-statement",
+    "funding",
+    "ethics-statement",
+    "supplementary-material",
+    "author-contributions",
+    "data-availability",
+    "acknowledgments",
+    "competing-interests"
+  ].includes(secType);
+
+  const effectiveDepth = isSupplementary ? Math.max(depth + 1, 3) : depth;
 
   const Heading =
-    depth === 2 ? "h2" : depth === 3 ? "h3" : ("h4" as "h2" | "h3" | "h4");
+    effectiveDepth === 2 ? "h2" : effectiveDepth === 3 ? "h3" : ("h4" as "h2" | "h3" | "h4");
 
   return (
-    <section id={id} className="scroll-mt-24">
+    <section id={id} className={`scroll-mt-24 ${isSupplementary ? "mt-12" : ""}`}>
       {title && <Heading>{title}</Heading>}
       {Array.from(el.childNodes).map((child, i) =>
         child === titleEl ? null : (
-          <RenderNode key={i} node={child} depth={depth} />
+          <RenderNode key={i} node={child} depth={effectiveDepth} basePath={basePath} />
         )
       )}
     </section>
@@ -52,9 +67,11 @@ function RenderSec({ el, depth }: { el: Element; depth: number }) {
 function RenderNode({
   node,
   depth,
+  basePath,
 }: {
   node: Node;
   depth: number;
+  basePath?: string;
 }): ReactNode {
   // Metin düğümü
   if (node.nodeType === Node.TEXT_NODE) return node.textContent;
@@ -65,13 +82,13 @@ function RenderNode({
 
   const kids = () =>
     Array.from(el.childNodes).map((c, i) => (
-      <RenderNode key={i} node={c} depth={depth} />
+      <RenderNode key={i} node={c} depth={depth} basePath={basePath} />
     ));
 
   switch (tag) {
     // Yapısal
     case "sec":
-      return <RenderSec el={el} depth={depth + 1} />;
+      return <RenderSec el={el} depth={depth + 1} basePath={basePath} />;
 
     // Paragraf
     case "p":
@@ -148,7 +165,7 @@ function RenderNode({
 
     // Şekil
     case "fig":
-      return <RenderFig el={el} />;
+      return <RenderFig el={el} basePath={basePath} />;
 
     // Tablo
     case "table-wrap":
@@ -168,18 +185,23 @@ function RenderNode({
 
 // ── Şekil ─────────────────────────────────────────────────────────────────────
 
-function RenderFig({ el }: { el: Element }) {
-  const id = el.getAttribute("id") ?? "";
+export function RenderFig({ el, idSuffix = "", basePath = "" }: { el: Element; idSuffix?: string; basePath?: string }) {
+  const baseId = el.getAttribute("id") ?? "";
+  const id = baseId ? `${baseId}${idSuffix}` : undefined;
   const label = el.querySelector("label")?.textContent?.trim() ?? "";
   const captionTitle = el.querySelector("caption > title")?.textContent?.trim() ?? "";
   const captionP = el.querySelector("caption > p")?.textContent?.trim() ?? "";
   const caption = [captionTitle, captionP].filter(Boolean).join(" ");
   const graphicEl = el.querySelector("graphic");
-  const src = graphicEl
+  let src = graphicEl
     ? (graphicEl.getAttributeNS(XLINK, "href") ??
       graphicEl.getAttribute("xlink:href") ??
       "")
     : "";
+
+  if (src && !src.startsWith("http") && !src.startsWith("/") && basePath) {
+    src = basePath + src;
+  }
 
   return (
     <figure id={id} className="my-8">
@@ -187,7 +209,7 @@ function RenderFig({ el }: { el: Element }) {
         <img
           src={src}
           alt={caption || label}
-          className="max-w-full rounded border border-border"
+          className="mx-auto max-h-[500px] max-w-full rounded border border-border object-contain"
         />
       ) : (
         <div className="flex min-h-[8rem] items-center justify-center rounded border border-dashed border-border bg-muted/40 p-8 text-sm text-muted-foreground">
@@ -208,8 +230,9 @@ function RenderFig({ el }: { el: Element }) {
 
 // ── Tablo sarmalayıcı ─────────────────────────────────────────────────────────
 
-function RenderTableWrap({ el }: { el: Element }) {
-  const id = el.getAttribute("id") ?? "";
+export function RenderTableWrap({ el, idSuffix = "" }: { el: Element; idSuffix?: string }) {
+  const baseId = el.getAttribute("id") ?? "";
+  const id = baseId ? `${baseId}${idSuffix}` : undefined;
   const label = el.querySelector("label")?.textContent?.trim() ?? "";
   const captionTitle =
     el.querySelector("caption > title")?.textContent?.trim() ?? "";
@@ -239,39 +262,49 @@ function RenderTable({ table }: { table: Element }) {
   const tbody = table.querySelector("tbody");
 
   return (
-    <table className="w-full border-collapse text-sm">
-      {thead && (
-        <thead className="bg-muted/60">
-          {Array.from(thead.querySelectorAll("tr")).map((tr, i) => (
-            <tr key={i}>
-              {Array.from(tr.querySelectorAll("th, td")).map((cell, j) => (
-                <th
-                  key={j}
-                  className="border border-border px-3 py-2 text-left font-semibold"
-                >
-                  {cell.textContent}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-      )}
-      {tbody && (
-        <tbody>
-          {Array.from(tbody.querySelectorAll("tr")).map((tr, i) => (
-            <tr key={i} className={i % 2 === 1 ? "bg-muted/20" : ""}>
-              {Array.from(tr.querySelectorAll("td, th")).map((cell, j) => (
-                <td
-                  key={j}
-                  className="border-x border-b border-border px-3 py-2"
-                >
-                  {cell.textContent}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      )}
-    </table>
+    <div className="w-full overflow-x-auto my-6 rounded-lg border border-border shadow-sm">
+      <table className="w-full border-collapse text-sm text-left bg-card">
+        {thead && (
+          <thead className="bg-muted/40 border-b border-border text-muted-foreground">
+            {Array.from(thead.querySelectorAll("tr")).map((tr, i) => (
+              <tr key={i} className="border-b border-border/40 last:border-0">
+                {Array.from(tr.querySelectorAll("th, td")).map((cell, j) => (
+                  <th
+                    key={j}
+                    colSpan={parseInt(cell.getAttribute("colspan") || "1")}
+                    rowSpan={parseInt(cell.getAttribute("rowspan") || "1")}
+                    className="px-4 py-3 font-medium align-bottom"
+                  >
+                    {Array.from(cell.childNodes).map((child, k) => (
+                      <RenderNode key={k} node={child} depth={5} />
+                    ))}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+        )}
+        {tbody && (
+          <tbody className="divide-y divide-border/60">
+            {Array.from(tbody.querySelectorAll("tr")).map((tr, i) => (
+              <tr key={i} className="transition-colors hover:bg-muted/30">
+                {Array.from(tr.querySelectorAll("td, th")).map((cell, j) => (
+                  <td
+                    key={j}
+                    colSpan={parseInt(cell.getAttribute("colspan") || "1")}
+                    rowSpan={parseInt(cell.getAttribute("rowspan") || "1")}
+                    className="px-4 py-3 align-top"
+                  >
+                    {Array.from(cell.childNodes).map((child, k) => (
+                      <RenderNode key={k} node={child} depth={5} />
+                    ))}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        )}
+      </table>
+    </div>
   );
 }

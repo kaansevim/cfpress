@@ -111,22 +111,36 @@
   }
 
   .article-prose h2 {
-    font-size: 1.625rem;
+    font-size: 1.875rem;
     font-weight: 700;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
     letter-spacing: -0.01em;
+    color: var(--color-foreground);
   }
 
   .article-prose h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
+    color: var(--color-foreground);
+  }
+
+  .article-prose h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-foreground);
   }
 
   .article-prose p {
     margin-bottom: 1.25rem;
+  }
+
+  .article-prose table p {
+    margin-bottom: 0;
   }
 
   .article-prose blockquote {

@@ -1,0 +1,2884 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.3 20210610//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="research-article" xml:lang="en" dtd-version="1.3">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">JSS</journal-id>
+      <journal-title-group>
+        <journal-title>Journal of Social Solutions</journal-title>
+      </journal-title-group>
+      <publisher>
+        <publisher-name>Copernicus Foundation Academy</publisher-name>
+        <publisher-loc>Istanbul, Turkey</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.70989/jss.123456</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes">
+          <contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0009-0002-5660-8560</contrib-id>
+          <name>
+            <surname>Sevim</surname>
+            <given-names>Kaan</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1"/>
+          <email>kaan.sevim@izu.edu.tr</email>
+        </contrib>
+        <contrib contrib-type="author">
+          <contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-3839-1193</contrib-id>
+          <name>
+            <surname>Sevim</surname>
+            <given-names>Kaan</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1"/>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">
+        <institution content-type="org">Prof. Dr. - Istanbul Sabahattin Zaim University</institution>
+        <addr-line content-type="city">Department of Social Work</addr-line>
+        <country>Istanbul Türkiye</country>
+      </aff>
+      <author-notes>
+        <corresp>Correspondence: Kaan Sevim — <email>kaan.sevim@izu.edu.tr</email></corresp>
+      </author-notes>
+      <history>
+        <date date-type="received">
+          <day>09</day>
+          <month>01</month>
+          <year>2026</year>
+        </date>
+        <date date-type="accepted">
+          <day>11</day>
+          <month>02</month>
+          <year>2026</year>
+        </date>
+      </history>
+      <pub-date publication-format="electronic" date-type="pub">
+        <day>16</day>
+        <month>04</month>
+        <year>2026</year>
+      </pub-date>
+      <volume>1</volume>
+      <issue>1</issue>
+      <fpage>1</fpage>
+      <permissions>
+        <copyright-statement>© 2026 Copernicus Foundation Academy</copyright-statement>
+        <license license-type="open-access">
+          <license-p>This is an open access article distributed under the terms of the CC-BY-NC-ND 4.0 license.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </abstract>
+      <kwd-group xml:lang="en">
+        <kwd>Early maladaptive schemas</kwd>
+        <kwd>cyberbullying</kwd>
+        <kwd>social support</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <back>
+    <notes notes-type="endnotes">
+      <title>Notes</title>
+    </notes>
+    <ref-list>
+      <title>References</title>
+      <ref id="agatston2007">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Agatston</surname>
+              <given-names>P.W.</given-names>
+            </name>
+            <name>
+              <surname>Kowalski</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Limber</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <year>2007</year>
+          <article-title>Student’s perspective on cyberbullying</article-title>
+          <source>Journal of Adolescent Health</source>
+          <volume>41</volume>
+          <issue>6</issue>
+          <fpage>59–60</fpage>
+        </element-citation>
+      </ref>
+      <ref id="akbulut2011">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Akbulut</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Eristi</surname>
+              <given-names>B.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>Cyberbullying and victimisation among Turkish university students</article-title>
+          <source>Australasian Journal of Educational Technology</source>
+          <volume>27</volume>
+          <issue>7</issue>
+          <fpage>1155–70</fpage>
+        </element-citation>
+      </ref>
+      <ref id="alipan2020">
+        <element-citation publication-type="thesis">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alipan</surname>
+              <given-names>A. D.</given-names>
+            </name>
+          </person-group>
+          <year>2020</year>
+          <article-title>A mixed methods investigation of cyberbullying behaviours, early maladaptive schemas, coping styles, and psychological outcomes in emerging adults</article-title>
+          <pub-id pub-id-type="doi">10.25916/sut.26281762</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="alotaibi2019">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alotaibi</surname>
+              <given-names>N. B.</given-names>
+            </name>
+          </person-group>
+          <year>2019</year>
+          <article-title>Cyber bullying and the expected consequences on the students’ academic achievement</article-title>
+          <source>IEEE Access</source>
+          <volume>7</volume>
+          <fpage>153417–153431</fpage>
+        </element-citation>
+      </ref>
+      <ref id="alrajeh2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alrajeh</surname>
+              <given-names>S. M.</given-names>
+            </name>
+            <name>
+              <surname>Hassan</surname>
+              <given-names>H. M.</given-names>
+            </name>
+            <name>
+              <surname>Al-Ahmed</surname>
+              <given-names>A. S.</given-names>
+            </name>
+            <name>
+              <surname>Alsayed Hassan</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>An investigation of the relationship between cyberbullying, cybervictimization and depression symptoms: A cross sectional study among university students in Qatar</article-title>
+          <source>Plos One</source>
+          <volume>16</volume>
+          <issue>12</issue>
+          <fpage>e0260263</fpage>
+          <pub-id pub-id-type="doi">10.1371/journal.pone.0260263</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="aricak2012">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Arıcak</surname>
+              <given-names>O. T.</given-names>
+            </name>
+            <name>
+              <surname>Tanrıkulu</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Kınay</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <year>2012</year>
+          <article-title>Siber Mağduriyet Ölçeği’nin ilk psikometrik bulguları</article-title>
+          <source>Akdeniz Eğitim Araştırmaları Dergisi</source>
+          <volume>11</volume>
+          <fpage>1–6</fpage>
+        </element-citation>
+      </ref>
+      <ref id="bolat2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bolat</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Korkmaz</surname>
+              <given-names>Ö.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Ortaokullarda ergenlik çağındaki öğrencilerin siber zorbalık davranışları, sosyal medya bağımlılıkları ve sosyal medya bozuklukları</article-title>
+          <source>Türkiye Sosyal Araştırmalar Dergisi</source>
+          <volume>25</volume>
+          <issue>1</issue>
+          <fpage>253–268</fpage>
+        </element-citation>
+      </ref>
+      <ref id="bradshaw2017">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bradshaw</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Crous</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Rees</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Turner</surname>
+              <given-names>N.</given-names>
+            </name>
+          </person-group>
+          <year>2017</year>
+          <article-title>Comparing children’s experiences of schools-based bullying across countries</article-title>
+          <source>Children and Youth Services Review</source>
+          <volume>80</volume>
+          <fpage>171–180</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.childyouth.2017.06.060</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="buyukozturk2021">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Büyüköztürk</surname>
+              <given-names>Ş.</given-names>
+            </name>
+            <name>
+              <surname>Çakmak</surname>
+              <given-names>E. K.</given-names>
+            </name>
+            <name>
+              <surname>Akgün</surname>
+              <given-names>Ö. E.</given-names>
+            </name>
+            <name>
+              <surname>Karadeniz</surname>
+              <given-names>Ş.</given-names>
+            </name>
+            <name>
+              <surname>Demirel</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Bilimsel araştırma yöntemleri</article-title>
+          <publisher-name>Pegem Akademi</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="calvete2008">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Calvete</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <year>2008</year>
+          <article-title>Justification of Violence and Grandiosity Schemas as Predictors of Antisocial Behavior in Adolescents</article-title>
+          <source>Journal of Abnormal Child Psychology</source>
+          <volume>36</volume>
+          <issue>7</issue>
+          <fpage>1083–1095</fpage>
+          <pub-id pub-id-type="doi">10.1007/s10802-008-9229-5</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="calvete2015">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Calvete</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Orue</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Gámez-Guadix</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <year>2015</year>
+          <article-title>Cyberbullying Victimization and Depression in Adolescents: The Mediating Role of Body Image and Cognitive Schemas in a One-year Prospective Study</article-title>
+          <source>European Journal on Criminal Policy and Research</source>
+          <volume>22</volume>
+          <issue>2</issue>
+          <fpage>271–284</fpage>
+          <pub-id pub-id-type="doi">10.1007/s10610-015-9292-8</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="celsi2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Celsi</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Paleari</surname>
+              <given-names>F. G.</given-names>
+            </name>
+            <name>
+              <surname>Fincham</surname>
+              <given-names>F. D.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Adverse Childhood Experiences and Early Maladaptive Schemas as Predictors of Cyber Dating Abuse: An Actor-Partner Interdependence Mediation Model Approach</article-title>
+          <source>Frontiers in Psychology</source>
+          <volume>12</volume>
+          <pub-id pub-id-type="doi">10.3389/fpsyg.2021.623646</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="cenat2014">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cénat</surname>
+              <given-names>J. M.</given-names>
+            </name>
+            <name>
+              <surname>Hébert</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Blais</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Lavoie</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Guerrier</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Derivois</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>2014</year>
+          <article-title>Cyberbullying, psychological distress and 185 self-esteem among youth in Quebec schools</article-title>
+          <source>Journal of Affective Disorders</source>
+          <volume>169</volume>
+          <fpage>7–9</fpage>
+        </element-citation>
+      </ref>
+      <ref id="cho2016">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cho</surname>
+              <given-names>Y.-K.</given-names>
+            </name>
+            <name>
+              <surname>Yoo</surname>
+              <given-names>J.-W.</given-names>
+            </name>
+          </person-group>
+          <year>2016</year>
+          <article-title>Cyberbullying, internet and SNS usage types, and perceived social support: a comparison of different age groups</article-title>
+          <source>Information, Communication &amp; Society</source>
+          <volume>20</volume>
+          <issue>10</issue>
+          <fpage>1464–1481</fpage>
+          <pub-id pub-id-type="doi">10.1080/1369118x.2016.1228998</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="cosma2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cosma</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Bjereld</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Elgar</surname>
+              <given-names>F. J.</given-names>
+            </name>
+            <name>
+              <surname>Richardson</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Bilz</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Craig</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Augustine</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Molcho</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Malinowska-Cieślik</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Walsh</surname>
+              <given-names>S. D.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>Gender Differences in Bullying Reflect Societal Gender Inequality: A Multilevel Study With Adolescents in 46 Countries</article-title>
+          <source>Journal of Adolescent Health</source>
+          <volume>71</volume>
+          <issue>5</issue>
+          <fpage>601–608</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.jadohealth.2022.05.015</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="cakar2024">
+        <element-citation publication-type="thesis">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Çakar</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <year>2024</year>
+          <article-title>Ergenlerde erken dönem uyumsuz şemalar ile riskli davranışlar arasındaki ilişkinin incelenmesi</article-title>
+        </element-citation>
+      </ref>
+      <ref id="davis2015">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Davis</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Ammons</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Dahl</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Kliewer</surname>
+              <given-names>W.</given-names>
+            </name>
+          </person-group>
+          <year>2015</year>
+          <article-title>Community violence exposure and callous–unemotional traits in adolescents: Testing parental support as a promotive versus protective factor</article-title>
+          <source>Personality and Individual Differences</source>
+          <volume>77</volume>
+          <fpage>7–12</fpage>
+        </element-citation>
+      </ref>
+      <ref id="despoti2020">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Despoti</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Kokkinos</surname>
+              <given-names>C. M.</given-names>
+            </name>
+            <name>
+              <surname>Fanti</surname>
+              <given-names>K. A.</given-names>
+            </name>
+          </person-group>
+          <year>2020</year>
+          <article-title>Bullying, victimization, and psychopathy in early adolescents: The moderating role of social support</article-title>
+          <source>European Journal of Developmental Psychology</source>
+          <volume>18</volume>
+          <issue>5</issue>
+          <fpage>747–764</fpage>
+          <pub-id pub-id-type="doi">10.1080/17405629.2020.1858787</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ding2020">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ding</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Xiao</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>Y.</given-names>
+            </name>
+          </person-group>
+          <year>2020</year>
+          <article-title>Profiles of adolescent traditional and cyber bullying and victimization: The role of demographic, individual, family, school, and peer factors</article-title>
+          <source>Computers in Human Behavior</source>
+          <volume>111</volume>
+          <fpage>106439</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.chb.2020.106439</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="dubow1989">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Dubow</surname>
+              <given-names>E. F.</given-names>
+            </name>
+            <name>
+              <surname>Ullman</surname>
+              <given-names>D. G.</given-names>
+            </name>
+          </person-group>
+          <year>1989</year>
+          <article-title>Assessing Social Support in Elementary School Children: The Survey of Children’s Social Support</article-title>
+          <source>Journal of Clinical Child Psychology</source>
+          <volume>18</volume>
+          <issue>1</issue>
+          <fpage>52–64</fpage>
+          <pub-id pub-id-type="doi">10.1207/s15374424jccp1801_7</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="erdur2007">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Erdur</surname>
+              <given-names>Ö. B.</given-names>
+            </name>
+            <name>
+              <surname>Kavşut</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <year>2007</year>
+          <article-title>Akran zorbalığının yeni yüzü: Siber zorbalık</article-title>
+          <source>Eurasian Journal of Educational Research</source>
+          <volume>0</volume>
+          <issue>27</issue>
+          <fpage>31–42</fpage>
+        </element-citation>
+      </ref>
+      <ref id="erkus2011">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Erkuş</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>Davranış bilimleri için bilimsel araştırma süreci</article-title>
+          <publisher-name>Seçkin Yayıncılık</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="eroglu2015">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Eroğlu</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Peker</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <year>2015</year>
+          <article-title>Ergenlerde akran ilişkileri ile siber zorbalık statüleri arasındaki ilişkinin incelenmesi</article-title>
+          <source>Turkish Studies</source>
+          <volume>10</volume>
+          <issue>11</issue>
+          <fpage>593–606</fpage>
+        </element-citation>
+      </ref>
+      <ref id="fan2016">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fan</surname>
+              <given-names>C.-Y.</given-names>
+            </name>
+            <name>
+              <surname>Chu</surname>
+              <given-names>X.-W.</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Zhou</surname>
+              <given-names>Z.-K.</given-names>
+            </name>
+          </person-group>
+          <year>2016</year>
+          <article-title>Are Narcissists More Likely to Be Involved in Cyberbullying? Examining the Mediating Role of Self-Esteem</article-title>
+          <source>Journal of Interpersonal Violence</source>
+          <volume>34</volume>
+          <issue>15</issue>
+          <fpage>3127–3150</fpage>
+          <pub-id pub-id-type="doi">10.1177/0886260516666531</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="fang2020">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fang</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Gao</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Yang</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Wen</surname>
+              <given-names>Z.</given-names>
+            </name>
+          </person-group>
+          <year>2020</year>
+          <article-title>Childhood Maltreatment and Adolescent Cyberbullying Perpetration: A Moderated Mediation Model of Callous—Unemotional Traits and Perceived Social Support</article-title>
+          <source>Journal of Interpersonal Violence</source>
+          <volume>37</volume>
+          <issue>7-8</issue>
+          <fpage>NP5026–NP5049</fpage>
+          <pub-id pub-id-type="doi">10.1177/0886260520960106</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="fanti2012">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fanti</surname>
+              <given-names>K. A.</given-names>
+            </name>
+            <name>
+              <surname>Demetriou</surname>
+              <given-names>A. G.</given-names>
+            </name>
+            <name>
+              <surname>Hawa</surname>
+              <given-names>V. V.</given-names>
+            </name>
+          </person-group>
+          <year>2012</year>
+          <article-title>A longitudinal study of cyberbullying: Examining riskand protective factors</article-title>
+          <source>European Journal of Developmental Psychology</source>
+          <volume>9</volume>
+          <issue>2</issue>
+          <fpage>168–181</fpage>
+          <pub-id pub-id-type="doi">10.1080/17405629.2011.643169</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="fauragarcia2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Faura-Garcia</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Orue</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Calvete</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Cyberbullying victimization and nonsuicidal self-injury in adolescents: The role of maladaptive schemas and dispositional mindfulness</article-title>
+          <source>Child Abuse &amp; Neglect</source>
+          <volume>118</volume>
+          <fpage>105135</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.chiabu.2021.105135</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="fernandezgonzalez2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fernández-González</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Orue</surname>
+              <given-names>I.</given-names>
+            </name>
+            <name>
+              <surname>Adrián</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Calvete</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Child-to-Parent Aggression and Dating Violence: Longitudinal Associations and the Predictive Role of Early Maladaptive Schemas</article-title>
+          <source>Journal of Family Violence</source>
+          <volume>37</volume>
+          <issue>1</issue>
+          <fpage>181–189</fpage>
+          <pub-id pub-id-type="doi">10.1007/s10896-021-00269-2</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="gardella2017">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gardella</surname>
+              <given-names>J. H.</given-names>
+            </name>
+            <name>
+              <surname>Fisher</surname>
+              <given-names>B. W.</given-names>
+            </name>
+            <name>
+              <surname>Teurbe-Tolon</surname>
+              <given-names>A. R.</given-names>
+            </name>
+          </person-group>
+          <year>2017</year>
+          <article-title>A systematic review and meta-analysis of cyber-victimization and educational outcomes for adolescents</article-title>
+          <source>Review of Educational Research</source>
+          <volume>87</volume>
+          <issue>2</issue>
+          <fpage>283–308</fpage>
+          <pub-id pub-id-type="doi">10.3102/0034654316</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="gokler2007">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gökler</surname>
+              <given-names>I.</given-names>
+            </name>
+          </person-group>
+          <year>2007</year>
+          <article-title>Çocuk ve Ergenler İçin Sosyal Destek Değerlendirme Ölçeği Türkçe formunun uyarlama çalışması: Faktör yapısı, geçerlik ve güvenirliği</article-title>
+          <source>Çocuk ve Gençlik Ruh Sağlığı Dergisi</source>
+          <volume>14</volume>
+          <issue>2</issue>
+          <fpage>90–99</fpage>
+        </element-citation>
+      </ref>
+      <ref id="guner2013">
+        <element-citation publication-type="thesis">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Güner</surname>
+              <given-names>O.</given-names>
+            </name>
+          </person-group>
+          <year>2013</year>
+          <article-title>10-16 Yaş Çocuk ve Ergenler İçin Erken Dönem Uyumsuz Şema Ölçekler Takımı (ÇEŞÖT)’nın geçerlik, güvenirlik ve norm çalışması</article-title>
+        </element-citation>
+      </ref>
+      <ref id="gurkan2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gürkan</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Atabay</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Gezgin</surname>
+              <given-names>D. M.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>Lise Öğrencileri Arasında Dijital Şiddet: Siber Zorbalık, Akıllı Telefon Bağımlılığı ve Medya Okuryazarlık Arasındaki İlişki</article-title>
+          <source>Trakya Eğitim Dergisi</source>
+          <volume>12</volume>
+          <issue>3</issue>
+          <fpage>1799–1820</fpage>
+          <pub-id pub-id-type="doi">10.24315/tred.1115385</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="hakan2011">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hakan</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>İlköğretim öğrencilerinin farklı zorbalık türleri ile karşı karşıya kalma sıklığının ve boyun eğme davranışı ile durumluk-sürekli öfke ile ilişkisinin karşılaştırılması</article-title>
+          <source>Milli Eğitim Dergisi</source>
+          <volume>41</volume>
+          <issue>190</issue>
+          <fpage>54–71</fpage>
+        </element-citation>
+      </ref>
+      <ref id="handono2019">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Handono</surname>
+              <given-names>S. G.</given-names>
+            </name>
+            <name>
+              <surname>Laeheem</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Sittichai</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <year>2019</year>
+          <article-title>Factors related with cyberbullying among the youth of Jakarta, Indonesia</article-title>
+          <source>Children and Youth Services Review</source>
+          <volume>99</volume>
+          <fpage>235–239</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.childyouth.2019.02.012</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="heiman2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Heiman</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Olenik-Shemesh</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>Cyber-Victimization Experience among Higher Education Students: Effects of Social Support, Loneliness, and Self-Efficacy</article-title>
+          <source>International Journal of Environmental Research and Public Health</source>
+          <volume>19</volume>
+          <issue>12</issue>
+          <fpage>7395</fpage>
+          <pub-id pub-id-type="doi">10.3390/ijerph19127395</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="hellfeldt2019">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hellfeldt</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>López-Romero</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Andershed</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <year>2019</year>
+          <article-title>Cyberbullying and Psychological Well-being in Young Adolescence: The Potential Protective Mediation Effects of Social Support from Family, Friends, and Teachers</article-title>
+          <source>International Journal of Environmental Research and Public Health</source>
+          <volume>17</volume>
+          <issue>1</issue>
+          <fpage>45</fpage>
+          <pub-id pub-id-type="doi">10.3390/ijerph17010045</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="hinduja2009">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hinduja</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Patchin</surname>
+              <given-names>J. W.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <article-title>Bullying beyond the schoolyard: Preventing and responding to cyberbullying</article-title>
+          <publisher-name>Sage, Corwin Press</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="hu2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hu</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Bai</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Pan</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Cyberbullying victimization and depression among adolescents: A meta-analysis</article-title>
+          <source>Psychiatry Research</source>
+          <volume>305</volume>
+          <fpage>114198</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.psychres.2021.114198</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="huang2023">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Huang</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Gan</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Jin</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Rao</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Guo</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>He</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Wei</surname>
+              <given-names>Z.</given-names>
+            </name>
+          </person-group>
+          <year>2023</year>
+          <article-title>The relationship between the Dark Triad and bullying among Chinese adolescents: the role of social exclusion and sense of control</article-title>
+          <source>Frontiers in Psychology</source>
+          <volume>14</volume>
+          <pub-id pub-id-type="doi">10.3389/fpsyg.2023.1173860</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="huang2010">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Huang</surname>
+              <given-names>Y.-Y.</given-names>
+            </name>
+            <name>
+              <surname>Chou</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <year>2010</year>
+          <article-title>An analysis of multiple factors of cyberbullying among junior high school students in Taiwan</article-title>
+          <source>Computers in Human Behavior</source>
+          <volume>26</volume>
+          <issue>6</issue>
+          <fpage>1581–1590</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.chb.2010.06.005</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="juvonen2008">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Juvonen</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Gross</surname>
+              <given-names>E. F.</given-names>
+            </name>
+          </person-group>
+          <year>2008</year>
+          <article-title>Extending the school grounds?</article-title>
+          <source>Bullying Experiences in Cyberspace. Journal of School Health</source>
+          <volume>78</volume>
+          <issue>9</issue>
+          <fpage>496–505</fpage>
+        </element-citation>
+      </ref>
+      <ref id="kahi2024">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kahi</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Heidari</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Esmaeili</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Samouei</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Amini-Rarani</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <year>2024</year>
+          <article-title>From Screens to Minds: The Connection Between Cyberbullying, Psychological Well‐Being, and the Mediating Role of Perceived Social Support in High School Students</article-title>
+          <source>Advances in Public Health</source>
+          <volume>2024</volume>
+          <issue>1</issue>
+          <pub-id pub-id-type="doi">10.1155/2024/6662382</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ke2024">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ke</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Xie</surname>
+              <given-names>Q.</given-names>
+            </name>
+            <name>
+              <surname>Huang</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Bi</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Kou</surname>
+              <given-names>H.</given-names>
+            </name>
+          </person-group>
+          <year>2024</year>
+          <article-title>The Effect of Social Support on Aggression Among Male Juvenile Delinquents in China: The Multiple Mediated Role of Trait Mindfulness and Self-Control/impulsivity</article-title>
+          <source>Deviant Behavior</source>
+          <volume>46</volume>
+          <issue>12</issue>
+          <fpage>1533–1550</fpage>
+          <pub-id pub-id-type="doi">10.1080/01639625.2024.2394817</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="keles2025">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Keleş</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Tagay</surname>
+              <given-names>Ö.</given-names>
+            </name>
+          </person-group>
+          <year>2025</year>
+          <article-title>Ergenlerin siber zorbalık düzeylerinin incelenmesi</article-title>
+          <source>Mehmet Akif Ersoy Üniversitesi Eğitim Fakültesi Dergisi</source>
+          <issue>73</issue>
+          <fpage>734–757</fpage>
+          <pub-id pub-id-type="doi">10.21764/maeuefd.1543367</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="kiran2025">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kıran</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Kalyon</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Koca</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <year>2025</year>
+          <article-title>Ergenlerde Siber Zorbalık: Bilişsel Esneklik ve Duygusal Zekanın Rolü</article-title>
+          <source>Pamukkale Üniversitesi Eğitim Fakültesi Dergisi</source>
+          <issue>64</issue>
+          <fpage>1–28</fpage>
+          <pub-id pub-id-type="doi">10.9779/pauefd.1381030</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="kircallioglu2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kırcallıoğlu</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Şimşek Orhon</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>Relations of cyber bullying sensitivity to perceived social support and to parent and peer attachments in high school students</article-title>
+          <source>Current Research and Reviews in Psychology and Psychiatry</source>
+          <volume>2</volume>
+          <issue>1</issue>
+          <fpage>11–29</fpage>
+        </element-citation>
+      </ref>
+      <ref id="li2007">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Li</surname>
+              <given-names>Q.</given-names>
+            </name>
+          </person-group>
+          <year>2007</year>
+          <article-title>Bullying in the New playground: Research into cyberbullying and cyber victimisation</article-title>
+          <source>Australasian Journal of Educational Technology</source>
+          <volume>23</volume>
+          <issue>4</issue>
+          <fpage>435–454</fpage>
+        </element-citation>
+      </ref>
+      <ref id="lopezlarranaga2019">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>López-Larrañaga</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Orue</surname>
+              <given-names>I.</given-names>
+            </name>
+          </person-group>
+          <year>2019</year>
+          <article-title>Interaction Among Psychopathic Traits in the Prediction of Cyberbullying Behavior</article-title>
+          <source>Revista de Psicopatología Y Psicología Clínica</source>
+          <volume>24</volume>
+          <issue>1</issue>
+          <pub-id pub-id-type="doi">10.5944/rppc.23932</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="mallmann2017">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mallmann</surname>
+              <given-names>C. L.</given-names>
+            </name>
+            <name>
+              <surname>Saraiva de Macedo Lisboa</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Zanatta Calza</surname>
+              <given-names>T.</given-names>
+            </name>
+          </person-group>
+          <year>2017</year>
+          <article-title>Cyberbullying e Esquemas Iniciais Desadaptativos em Adolescentes Brasileiros</article-title>
+          <source>Revista Colombiana de Psicología</source>
+          <volume>26</volume>
+          <issue>2</issue>
+          <fpage>313–328</fpage>
+          <pub-id pub-id-type="doi">10.15446/rcp.v26n2.60631</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="mitchel2011">
+        <element-citation publication-type="thesis">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mitchel</surname>
+              <given-names>M. S.</given-names>
+            </name>
+          </person-group>
+          <year>2011</year>
+          <article-title>Cyberbullying and academic achievement: Research ınto the rates of ıncidence, knowledge of consequences, and behavioral patterns of cyberbullying</article-title>
+        </element-citation>
+      </ref>
+      <ref id="nansel2001">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nansel</surname>
+              <given-names>T. R.</given-names>
+            </name>
+            <name>
+              <surname>Overpeck</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Pilla</surname>
+              <given-names>R. S.</given-names>
+            </name>
+            <name>
+              <surname>Ruan</surname>
+              <given-names>W. J.</given-names>
+            </name>
+            <name>
+              <surname>SimonsMorton</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Scheidt</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <year>2001</year>
+          <article-title>Bullying behaviors among US youth: Prevalence and association with psychosocial adjustment</article-title>
+          <source>Jama</source>
+          <volume>285</volume>
+          <issue>16</issue>
+          <fpage>2094–100</fpage>
+        </element-citation>
+      </ref>
+      <ref id="olweus2012">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Olweus</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>2012</year>
+          <article-title>Cyberbullying: An overrated phenomenon?</article-title>
+          <source>European Journal of Developmental Psychology</source>
+          <volume>9</volume>
+          <issue>5</issue>
+          <fpage>520–538</fpage>
+          <pub-id pub-id-type="doi">10.1080/17405629.2012.682358</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="ozkan2025">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Özkan</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Çelikkol Sadıç</surname>
+              <given-names>Ç.</given-names>
+            </name>
+            <name>
+              <surname>Özmutlu</surname>
+              <given-names>A. G.</given-names>
+            </name>
+            <name>
+              <surname>Kara</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Gerçek</surname>
+              <given-names>H. G.</given-names>
+            </name>
+          </person-group>
+          <year>2025</year>
+          <article-title>Examining the Link Between Impulsivity, Internet Addiction, Cyberbullying, and Cybervictimization Among Adolescents in a Child and Adolescent Psychiatry Outpatient Clinic</article-title>
+          <source>Osmangazi Tıp Dergisi</source>
+          <volume>47</volume>
+          <issue>3</issue>
+          <fpage>467–476</fpage>
+          <pub-id pub-id-type="doi">10.20515/otd.1619413</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="pala2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pala</surname>
+              <given-names>S. C.</given-names>
+            </name>
+            <name>
+              <surname>Ünsal</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Emıral</surname>
+              <given-names>G. O.</given-names>
+            </name>
+            <name>
+              <surname>Demırtaş</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Zencırcı</surname>
+              <given-names>S. A.</given-names>
+            </name>
+            <name>
+              <surname>Tözün</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Arslantas</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Evaluation of cyberbullying and multidimensional perceived social support levels in high school students of Turkey</article-title>
+          <source>İstanbul Tıp Fakültesi Dergisi</source>
+          <volume>84</volume>
+          <issue>1</issue>
+          <fpage>104–112</fpage>
+          <pub-id pub-id-type="doi">10.26650/Iuıtfd.2019.0106</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="pan2025">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pan</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Gong</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Guo</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Lu</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Lin</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>B.</given-names>
+            </name>
+          </person-group>
+          <year>2025</year>
+          <article-title>Negative Affect and Impulsivity in Adolescents with Non-Suicidal Self-Injury: The Moderating and Mediating Roles of Perceived Social Support</article-title>
+          <source>Neuropsychiatric Disease and Treatment</source>
+          <volume>Volume 21</volume>
+          <fpage>1–13</fpage>
+          <pub-id pub-id-type="doi">10.2147/ndt.s498951</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="patchin2010">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Patchin</surname>
+              <given-names>J. W.</given-names>
+            </name>
+            <name>
+              <surname>Hinduja</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <year>2010</year>
+          <article-title>Cyberbullying and self‐esteem</article-title>
+          <source>Journal of School Health</source>
+          <volume>80</volume>
+          <issue>12</issue>
+          <fpage>614–621</fpage>
+        </element-citation>
+      </ref>
+      <ref id="pepler2006">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pepler</surname>
+              <given-names>D.J.</given-names>
+            </name>
+            <name>
+              <surname>Craig</surname>
+              <given-names>W.M.</given-names>
+            </name>
+            <name>
+              <surname>Connolly</surname>
+              <given-names>J.A.</given-names>
+            </name>
+            <name>
+              <surname>Yuile</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>McMaster</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Jiang</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>2006</year>
+          <article-title>A developmental perspective on bullying, Aggressive Behavior</article-title>
+          <volume>32</volume>
+          <fpage>376–384</fpage>
+        </element-citation>
+      </ref>
+      <ref id="rada2025">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rada</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Neagu</surname>
+              <given-names>A.-E.</given-names>
+            </name>
+            <name>
+              <surname>Marinescu</surname>
+              <given-names>V.</given-names>
+            </name>
+            <name>
+              <surname>Rodideal</surname>
+              <given-names>A.-A.</given-names>
+            </name>
+            <name>
+              <surname>Lunga</surname>
+              <given-names>R.-A.</given-names>
+            </name>
+          </person-group>
+          <year>2025</year>
+          <article-title>The Impact of Childhood Abuse on the Development of Early Maladaptive Schemas and the Expression of Violence in Adolescents</article-title>
+          <source>Behavioral Sciences</source>
+          <volume>15</volume>
+          <issue>7</issue>
+          <fpage>854</fpage>
+          <pub-id pub-id-type="doi">10.3390/bs15070854</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="rafaeli2013">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rafaeli</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Bernstein</surname>
+              <given-names>D. P.</given-names>
+            </name>
+            <name>
+              <surname>Young</surname>
+              <given-names>J. E.</given-names>
+            </name>
+          </person-group>
+          <year>2013</year>
+          <article-title>Şema terapi ayırıcı özellikler</article-title>
+          <publisher-name>. Psikonet Yayınları</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="raskauskas2015">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Raskauskas</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Huynh</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <year>2015</year>
+          <article-title>The process of coping with cyberbullying: A systematic review</article-title>
+          <source>Aggression and Violent Behavior</source>
+          <volume>23</volume>
+          <fpage>118–125</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.avb.2015.05.019</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="rodop2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rodop</surname>
+              <given-names>Ş.</given-names>
+            </name>
+            <name>
+              <surname>Yıldırım</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Yildiz</surname>
+              <given-names>P. D.</given-names>
+            </name>
+            <name>
+              <surname>Hanif</surname>
+              <given-names>A. G.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>Üniversite öğrencilerinde siber zorbalık: başa çıkma stratejileri, değer yönelimleri ve akademik başarılarıyla ilişkileri</article-title>
+          <source>Gençlik Araştırmaları Dergisi</source>
+          <volume>10</volume>
+          <issue>26</issue>
+          <fpage>97–116</fpage>
+        </element-citation>
+      </ref>
+      <ref id="sabra2020">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sabra</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Hassan</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <year>2020</year>
+          <article-title>Role of Perceived Social Support on Self-Esteem and Aggression among Adolescents</article-title>
+          <source>Tanta Scientific Nursing Journal</source>
+          <volume>19</volume>
+          <issue>2</issue>
+          <fpage>174–191</fpage>
+          <pub-id pub-id-type="doi">10.21608/tsnj.2020.131970</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="salekin2016">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Salekin</surname>
+              <given-names>R. T.</given-names>
+            </name>
+          </person-group>
+          <year>2016</year>
+          <article-title>Psychopathy in childhood: Toward better informing the DSM–5 and ICD-11 conduct disorder specifiers.</article-title>
+          <source>Personality Disorders: Theory, Research, and Treatment</source>
+          <volume>7</volume>
+          <issue>2</issue>
+          <fpage>180–191</fpage>
+          <pub-id pub-id-type="doi">10.1037/per0000150</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="saylor2009">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Saylor</surname>
+              <given-names>C. F.</given-names>
+            </name>
+            <name>
+              <surname>Leach</surname>
+              <given-names>J. B.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <article-title>Perceived bullying and social support in students accessing special inclusion programming</article-title>
+          <source>Journal of Developmental and Physical Disabilities</source>
+          <volume>21</volume>
+          <issue>1</issue>
+          <fpage>69–80</fpage>
+        </element-citation>
+      </ref>
+      <ref id="seto2002">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Seto</surname>
+              <given-names>K. W.</given-names>
+            </name>
+          </person-group>
+          <year>2002</year>
+          <article-title>How should legislation deal with children as victims and perpetrators of cyberstalking?</article-title>
+          <source>Cardozo Women’s Law Journal</source>
+          <volume>9</volume>
+          <fpage>67–72</fpage>
+        </element-citation>
+      </ref>
+      <ref id="tarcalirerol2015">
+        <element-citation publication-type="thesis">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tarçalır Erol</surname>
+              <given-names>B.</given-names>
+            </name>
+          </person-group>
+          <year>2015</year>
+          <article-title>Investigating early maladaptive schemas among secondary school children in regard to peer bullying and victimization</article-title>
+        </element-citation>
+      </ref>
+      <ref id="topcu2008">
+        <element-citation publication-type="thesis">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Topçu</surname>
+              <given-names>Ç.</given-names>
+            </name>
+          </person-group>
+          <year>2008</year>
+          <article-title>The relationship of cyber bullying to empathy, gender, traditional bullying, ınternet use and adult monitoring</article-title>
+        </element-citation>
+      </ref>
+      <ref id="tremblay2009">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tremblay</surname>
+              <given-names>P. F.</given-names>
+            </name>
+            <name>
+              <surname>Dozois</surname>
+              <given-names>D. J. A.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <article-title>Another perspective on trait aggressiveness: Overlap with early maladaptive schemas</article-title>
+          <source>Personality and Individual Differences</source>
+          <volume>46</volume>
+          <fpage>569–574</fpage>
+        </element-citation>
+      </ref>
+      <ref id="turk2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Türk</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Şenyuva</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Şiddet Sarmalı İçinden Siber Zorbalık: Bir Gözden Geçirme</article-title>
+          <source>IBAD Sosyal Bilimler Dergisi</source>
+          <issue>10</issue>
+          <fpage>462–479</fpage>
+          <pub-id pub-id-type="doi">10.21733/ibad.901032</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="vagos2025">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Vagos</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Fabris</surname>
+              <given-names>M. A.</given-names>
+            </name>
+            <name>
+              <surname>Rijo</surname>
+              <given-names>D.</given-names>
+            </name>
+          </person-group>
+          <year>2025</year>
+          <article-title>Cognitive pathways to the forms and functions of aggression in adolescence: the role of early maladaptive schemas and social information processing</article-title>
+          <source>Frontiers in Psychology</source>
+          <volume>16</volume>
+          <pub-id pub-id-type="doi">10.3389/fpsyg.2025.1431756</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="vangeel2017">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>van Geel</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Goemans</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Toprak</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>Vedder</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <year>2017</year>
+          <article-title>Which personality traits are related to traditional bullying and cyberbullying? A study with the Big Five, Dark Triad and sadism</article-title>
+          <source>Personality and Individual Differences</source>
+          <volume>106</volume>
+          <fpage>231–235</fpage>
+          <pub-id pub-id-type="doi">10.1016/j.paid.2016.10.063</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="vangeel2014">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>van Geel</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Vedder</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Tanilon</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <year>2014</year>
+          <article-title>Relationship Between Peer Victimization, Cyberbullying, and Suicide in Children and Adolescents: A Meta-analysis</article-title>
+          <source>JAMA Pediatrics</source>
+          <volume>168</volume>
+          <issue>5</issue>
+          <fpage>435</fpage>
+          <pub-id pub-id-type="doi">10.1001/jamapediatrics.2013.4143</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="vanwijkherbrink2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Van Wijk-Herbrink</surname>
+              <given-names>M. F.</given-names>
+            </name>
+            <name>
+              <surname>Lobbestael</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Bernstein</surname>
+              <given-names>D. P.</given-names>
+            </name>
+            <name>
+              <surname>Broers</surname>
+              <given-names>N. J.</given-names>
+            </name>
+            <name>
+              <surname>Roelofs</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Arntz</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>The Influence of Early Maladaptive Schemas on the Causal Links between Perceived Injustice, Negative Affect, and Aggression</article-title>
+          <source>International Journal of Forensic Mental Health</source>
+          <volume>20</volume>
+          <issue>2</issue>
+          <fpage>133–149</fpage>
+          <pub-id pub-id-type="doi">10.1080/14999013.2020.1842562</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="varaee2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Varaee</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Mamdouhi</surname>
+              <given-names>Z.</given-names>
+            </name>
+            <name>
+              <surname>Mohsab</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Tagipoor</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>Predicting Self-Injury Based on Cyberbullying Victimization: The Mediating Role of Hopelessness and Early Maladaptive Schemas in Substance-Dependent Adolescents</article-title>
+          <source>Research on Addiction</source>
+          <volume>16</volume>
+          <issue>65</issue>
+          <fpage>255–286</fpage>
+          <pub-id pub-id-type="doi">10.52547/etiadpajohi.16.65.255</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="wang2019">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wang</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>X.</given-names>
+            </name>
+            <name>
+              <surname>Lei</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <year>2019</year>
+          <article-title>Gender Differences Between Student–Student Relationship and Cyberbullying Perpetration: An Evolutionary Perspective</article-title>
+          <source>Journal of Interpersonal Violence</source>
+          <volume>36</volume>
+          <issue>19-20</issue>
+          <fpage>9187–9207</fpage>
+          <pub-id pub-id-type="doi">10.1177/0886260519865970</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="wright2015">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wright</surname>
+              <given-names>M. F.</given-names>
+            </name>
+          </person-group>
+          <year>2015</year>
+          <article-title>Adolescents’ cyber aggression perpetration and cyber victimization: the longitudinal associations with school functioning</article-title>
+          <source>Social Psychology of Education</source>
+          <volume>18</volume>
+          <issue>4</issue>
+          <fpage>653–666</fpage>
+          <pub-id pub-id-type="doi">10.1007/s11218-015-9318-6</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="yagmur2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yağmur</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Arıcak</surname>
+              <given-names>O.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>The Relationship Between Early Maladaptive Schema and Problematic Mobile Phone Use Among Adolescent Female</article-title>
+          <source>Research on Education and Psychology</source>
+          <volume>6</volume>
+          <issue>2</issue>
+          <fpage>101–117</fpage>
+          <pub-id pub-id-type="doi">10.54535/rep.1075894</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="young2009">
+        <element-citation publication-type="book">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Young</surname>
+              <given-names>J. E.</given-names>
+            </name>
+            <name>
+              <surname>Klosko</surname>
+              <given-names>J. S.</given-names>
+            </name>
+            <name>
+              <surname>Weishaar</surname>
+              <given-names>M. E.</given-names>
+            </name>
+          </person-group>
+          <year>2009</year>
+          <article-title>Şema terapi: Uygulayıcı rehberi</article-title>
+          <publisher-name>Litera Yayıncılık</publisher-name>
+        </element-citation>
+      </ref>
+      <ref id="yousefpour2022">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yousefpour</surname>
+              <given-names>N.</given-names>
+            </name>
+          </person-group>
+          <year>2022</year>
+          <article-title>Predicting bullying and antisocial behaviors based on early maladaptive schemas and defense mechanisms in drug abusers</article-title>
+          <source>Scientific Quarterly Research on Addiction</source>
+          <volume>16</volume>
+          <issue>63</issue>
+          <fpage>285–308</fpage>
+        </element-citation>
+      </ref>
+      <ref id="yu2020">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Yu</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Li</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Zhao</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <year>2020</year>
+          <article-title>Childhood maltreatment and prosocial behavior among Chinese adolescents: Roles of empathy and gratitude</article-title>
+          <source>Child Abuse &amp; Neglect</source>
+          <volume>101</volume>
+          <fpage>104319</fpage>
+        </element-citation>
+      </ref>
+      <ref id="zhu2021">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zhu</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Huang</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Evans</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>W.</given-names>
+            </name>
+          </person-group>
+          <year>2021</year>
+          <article-title>Cyberbullying Among Adolescents and Children: A Comprehensive Review of the Global Situation, Risk Factors, and Preventive Measures</article-title>
+          <source>Frontiers in Public Health</source>
+          <volume>9</volume>
+          <pub-id pub-id-type="doi">10.3389/fpubh.2021.634909</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="zsila2018">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zsila</surname>
+              <given-names>Á.</given-names>
+            </name>
+            <name>
+              <surname>Urbán</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Griffiths</surname>
+              <given-names>M. D.</given-names>
+            </name>
+            <name>
+              <surname>Demetrovics</surname>
+              <given-names>Z.</given-names>
+            </name>
+          </person-group>
+          <year>2018</year>
+          <article-title>Gender Differences in the Association Between Cyberbullying Victimization and Perpetration: The Role of Anger Rumination and Traditional Bullying Experiences</article-title>
+          <source>International Journal of Mental Health and Addiction</source>
+          <volume>17</volume>
+          <issue>5</issue>
+          <fpage>1252–1267</fpage>
+          <pub-id pub-id-type="doi">10.1007/s11469-018-9893-9</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+  <body>
+    <sec id="giri">
+      <title>Giriş</title>
+      <p>Gelişen teknolojiyle dijitalleşen dünyada, internet kullanımı hızla artmakta ve günlük yaşamımızda vazgeçilmez bir unsur haline gelmektedir. İnternet, bireylere çevrim içi ortamda iletişim kurmak, diğerlerine dair gelişmeleri takip etmek ve oyun oynamak gibi pek çok olanak sunmasının yanı sıra siber zorbalık gibi birtakım sorunları da beraberinde getirmiştir <xref ref-type="bibr" rid="seto2002">(Seto, 2002)</xref>. Gençlerin bilgi ve iletişim teknolojilerine dair yoğun ilgileri onları, siber zorbalık yönünden riskli bir konuma taşımakta <xref ref-type="bibr" rid="turk2021">(Türk, 2021)</xref>; ergenlik dönemindeki siber zorbalık eylemleri, onların gelişimsel süreçleri, davranışsal uyumları ve ruh sağlıkları ile yakından ilişkili görüldüğünden önemli bir toplumsal sorun olarak değerlendirilmektedir <xref ref-type="bibr" rid="bradshaw2017">(Bradshaw, 2017; Raskauskas, 2015)</xref>.</p>
+      <p>Siber zorbalık, bireye veya gruba zarar vermek maksadıyla, dijital iletişim araçları kullanılarak yapılan bilinçli ve yinelenen saldırgan davranışlardır <xref ref-type="bibr" rid="hinduja2009">(Hinduja, 2009)</xref>. Bir meta-analiz çalışması, çocukluk ve ergenlikte siber zorbalık davranışları sergileme yaygınlığının %6,0 ile %46,3 aralığında değişirken siber mağduriyet yaygınlığının %13,99 ile %57,5 düzeylerinde olduğunu saptamıştır <xref ref-type="bibr" rid="zhu2021">(Zhu, 2021)</xref>. Çalışkan Pala ve arkadaşlarının <xref ref-type="bibr" rid="pala2021">(Pala, 2021)</xref> çalışma grubunu lise öğrencilerinin oluşturduğu araştırmalarında, siber zorbalık yaygınlığını %65,3 olarak tespit etmişlerdir. Siber zorbalık davranışları sergileyenlerde antisosyal davranış örüntüleri, düşük akademik performans ve madde kullanımı daha yaygın görülürken <xref ref-type="bibr" rid="olweus2012">(Olweus, 2012)</xref> siber mağduriyetin düşük benlik saygısı <xref ref-type="bibr" rid="cenat2014">(Cénat, 2014; Patchin, 2010)</xref>, depresyon <xref ref-type="bibr" rid="hu2021">(Hu, 2021)</xref>, yalnızlık <xref ref-type="bibr" rid="heiman2022">(Heiman, 2022)</xref>, akademik güçlükler <xref ref-type="bibr" rid="gardella2017">(Gardella, 2017)</xref> ile ilişkisi çeşitli araştırmalarla ortaya koymuştur. Bir meta-analiz çalışması, siber zorbalığın geleneksel zorbalığa göre intihar eğilimleri ile daha güçlü ilişkisi olduğunu göstermiştir <xref ref-type="bibr" rid="vangeel2014">(Geel, 2014)</xref>. Siber zorbalık, güncel araştırmalarda şema terapi odağında da çalışılmaktadır <xref ref-type="bibr" rid="alipan2020">(Alipan, 2020; Faura-Garcia, 2021; Varaee, 2022)</xref>.</p>
+      <p>Young, Klosko ve Weishaar <xref ref-type="bibr" rid="young2009">(Young, 2009)</xref>, şema terapi modelini geliştirmiş ve giderilmemiş duygusal gereksinimlerden kaynaklanan erken dönem uyumsuz şemaların, ruhsal bozuklukların gelişiminde önemli bir rol üstlendiğini belirtmişlerdir. Erken dönem uyumsuz şemalar, erken çocuklukta temellenerek yaşam boyu süren bilişsel, duygusal ve öz yıkıcı kalıplardır <xref ref-type="bibr" rid="rafaeli2013">(Rafaeli, 2013)</xref>. Şema modelinde erken dönem uyumsuz şemalar beş genel kategori içerisinde gruplandırılmış, on sekiz farklı boyut olarak detaylandırılmıştır. Kopukluk ve reddedilme alanı içerisinde terk edilme/tutarsızlık, kuşkuculuk/kötüye kullanılma, duygusal yoksunluk, kusurluluk/ utanma, sosyal izolasyon; zedelenmiş özerklik ve performans alanı içerisinde bağımlılık/ yetersizlik, hastalık ve tehditlere karşı dayanıksızlık, yapışıklık ve gelişmemiş benlik, başarısızlık; zedelenmiş sınırlar alanı içerisinde haklılık/ büyüklenmecilik, yetersiz öz denetim; başkalarına yönelimlilik alanı içerisinde boyun eğicilik, kendini feda etme, onay arayıcılık; aşırı tetikte olma ve baskılama/ketleme alanı içerisinde karamsarlık, duyguları bastırma, yüksek standartlar ve aşırı eleştiricilik, cezalandırıcılık <xref ref-type="bibr" rid="young2009">(Young, 2009)</xref>. Ergenlerle yapılan çeşitli araştırmalar uyumsuz şemaların problemli cep telefonu kullanımı <xref ref-type="bibr" rid="yagmur2022">(Yağmur, 2022)</xref>, zorbalık failliği <xref ref-type="bibr" rid="yousefpour2022">(Yousefpour, 2022)</xref>, siber mağduriyet <xref ref-type="bibr" rid="calvete2015">(Calvete, 2015; Faura-Garcia, 2021)</xref>, siber flört istismarı <xref ref-type="bibr" rid="celsi2021">(Celsi, 2021)</xref>, saldırganlık ve şiddet <xref ref-type="bibr" rid="rada2025">(Rada, 2025; Wijk-Herbrink, 2021)</xref> ile ilişkisine işaret etmektedir.</p>
+      <p>Algılanan sosyal destek, bireyin ihtiyaç duyacağı zaman çevresinden destek alabileceğine dair öznel kanısı anlamına gelmektedir <xref ref-type="bibr" rid="cho2016">(Cho, 2016)</xref>. Ergenlerin başlıca sosyal destek sağlayıcıları, aileleri, akranları ve öğretmenleridir <xref ref-type="bibr" rid="saylor2009">(Saylor, 2009)</xref>. Riskli davranışlar sergileme eğiliminin arttığı bir dönem olan ergenlikte, akranlardan, aileden ve diğer kaynaklardan elde edilen sosyal destek, ergenin toplumsal davranış becerileri edinme sürecinde kritik bir rol oynamaktadır <xref ref-type="bibr" rid="handono2019">(Handono, 2019; Kırcallıoğlu, 2022)</xref>. Önceki araştırmalar, yüksek düzeyde algılanan sosyal desteğin siber zorbalık failliğini negatif yönlü anlamlı olarak yordadığını göstermektedir <xref ref-type="bibr" rid="cho2016">(Cho, 2016; Fang, 2020)</xref>.</p>
+      <p>Dijital ortamlarda görülen zorbalığın dünya çapında giderek yaygınlaşmasının <xref ref-type="bibr" rid="zhu2021">(Zhu, 2021)</xref> yanı sıra çocuk ve ergenlerin ruhsallığı üzerine olumsuz etkileri göz önünde bulundurulduğunda siber zorbalık davranışlarının ortaya çıkmasına zemin hazırlayan unsurların belirlenmesi, çocukların davranım problemlerinin azaltılması ve suça sürüklenmelerini önlemek adına önemli görülmektedir <xref ref-type="bibr" rid="kiran2025">(Kıran, 2025)</xref>. Alan yazında zorbalık ile şema mekanizmalarını inceleyen araştırmaların çoğunlukla mağdurların şemalarına odaklandığı görülürken siber zorbalık davranışları sergileyenlerin şemalarını inceleyen sınırlı sayıda araştırmaya rastlanmıştır. Bununla birlikte koruyucu bir içsel mekanizma olarak ergenlerin bilişlerini yapılandırmaya ve sosyal beceri geliştirmelerine katkı sağlayan algılanan sosyal desteğin <xref ref-type="bibr" rid="cho2016">(Cho, 2016)</xref>, siber zorbalık davranışlarını negatif yönlü yordadığını gösteren çalışmalar mevcuttur <xref ref-type="bibr" rid="ding2020">(Ding, 2020)</xref>. Bu sebeple algılanan sosyal desteğin, uyumsuz şemalar ile siber faillik arasında düzenleyici bir etkisi olabileceği düşünülmüş, bu kapsamda mevcut araştırmada algılanan sosyal destek, düzenleyici değişken olarak ele alınmıştır.</p>
+      <p>Alan yazında bu üç değişkenin birlikte ele alındığı bir çalışmaya rastlanmamış olup bu durum çalışmanın özgün niteliğini göstermektedir. Bu çalışmada ergenlerde görülen erken dönem uyumsuz şemalar ile siber zorbalık davranışı arasındaki ilişkide algılanan sosyal destek düzeyinin düzenleyici rolünü incelemek amaçlanmıştır. Bu çerçevede aşağıdaki sorulara cevap aranmıştır.</p>
+      <p>1. Ergenlerin siber zorbalık davranışları cinsiyete, sınıf düzeyine ve okul başarı durumuna göre değişmekte midir?</p>
+      <p>2. Ergenlerde erken dönem uyumsuz şemalar ile siber zorbalık davranışları arasında anlamlı bir ilişki var mıdır?</p>
+      <p>3. Ergenlerde algılanan sosyal destek düzeyi ile siber zorbalık davranışları arasında anlamlı bir ilişki var mıdır?</p>
+      <p>4. Ergenlerin erken dönem uyumsuz şemaları ile siber zorbalık davranışı arasındaki ilişkide algılanan sosyal destek düzeyinin düzenleyici rolü var mıdır?</p>
+    </sec>
+    <sec id="y-ntem">
+      <title>Yöntem</title>
+      <sec id="ara-t-rma-modeli">
+        <title>Araştırma Modeli</title>
+        <p>Ergenlerde uyumsuz şemalar ile siber zorbalık davranışı arasındaki ilişkide algılanan sosyal desteğin düzenleyici rolünü incelemeyi amaçlayan bu çalışma, veri toplama yönünden nicel türde, ilişkisel tarama deseni ile yapılmıştır. İlişkisel tarama deseni, iki ya da daha fazla değişken arasındaki bağların ortaya konmasını ve bu bağların şiddetinin veya yönünün belirlenmesini hedefleyen çalışmalarda tercih edilir <xref ref-type="bibr" rid="buyukozturk2021">(Büyüköztürk, 2021)</xref>.</p>
+        <fig id="fig:1">
+          <caption>
+            <p>Araştırmanın Modeli</p>
+          </caption>
+          <graphic xlink:href="fig1.png"/>
+        </fig>
+      </sec>
+      <sec id="rneklem">
+        <title>Örneklem</title>
+        <p>Bu çalışmanın evreni, 2024-2025 öğretim yılında İstanbul’da eğitimine devam eden ortaokul öğrencileridir. Çalışma grubu 2024-2025 Eğitim Öğretim Yılı İstanbul ili Kağıthane ilçesinde yer alan 4 farklı devlet ortaokulunda eğitim gören, kolayda örnekleme yöntemiyle seçilmiş 489 ortaokul öğrencisidir. Kolayda örnekleme, araştırmacının çevresinde yer alan, erişimi güçlük taşımayan ve çalışmaya katılmayı kabul eden bireyler arasından seçilen örneklemedir <xref ref-type="bibr" rid="erkus2011">(Erkuş, 2011)</xref>.</p>
+        <p>Katılımcıların 247’si (%50,5) kız, 242’si (%49,5) erkektir. Öğrencilerin %18,8’i 5. sınıf, %27,8’i 6. sınıf, %27,8’i 7. sınıf, %25,6’sı 8. sınıfta eğitim görmektedir. Akademik başarı durumlarında öğrencilerin %10,4’ü düşük, %64,4’ü orta, %25,2’si yüksek düzeyde başarı bildirmiştir.</p>
+      </sec>
+      <sec id="verilerin-toplanmas">
+        <title>Verilerin Toplanması</title>
+        <p>Araştırma için İstanbul Ticaret Üniversitesi Etik Kurulu’ndan (E-65836846-044-339440) 22.11.2024 tarihli etik onayı alınmıştır. Okullarda gerçekleştirilecek ölçek uygulamaları için Millî Eğitim Bakanlığı Araştırma Uygulama İzinleri Başvuru ve Değerlendirme Sistemi üzerinden gerekli izinler alınmıştır. Bilgilendirilmiş onam formları anne-babalara ve katılımcı öğrencilere ulaştırılarak imzaları alınmıştır. Uygulamadan önce öğrencilere araştırmanın amacı ve anketlerin nasıl doldurulacağı açıklanmış, çalışmaya katılımın gönüllü olduğu vurgulanmıştır. Ölçek uygulamaları, öğretimi aksatmayacak şekilde okul yönetimi tarafından planlanan ders saatlerinde, doğrudan araştırmacı tarafından yapılmıştır. Uygulamalar yaklaşık 40-45 dakika sürmüş, geçersiz sayılacak yanıtlar çıkarıldığında kalan 489 öğrencinin yanıtları analize dahil edilmiştir. Veri toplama işlemi 2025 yılı Şubat ve Mart aylarında gerçekleştirilmiştir.</p>
+      </sec>
+      <sec id="veri-toplama-ara-lar">
+        <title>Veri Toplama Araçları</title>
+        <p><italic>Kişisel Bilgi Formu: </italic>Araştırmacı tarafından geliştirilmiş, katılımcılara ait cinsiyet, sınıf ve akademik başarı durumlarının yer aldığı formdur.</p>
+        <p><italic>10-16 Yaş Çocuk ve Ergenler İçin Erken Dönem Uyumsuz</italic><italic> Şema Ölçekler Takımı </italic>(ÇEŞÖT): ÇEŞÖT, Olcay Güner <xref ref-type="bibr" rid="guner2013">(Güner, 2013)</xref> tarafından geliştirilmiştir. Ölçek, 97 madde ve 15 faktörden oluşan beş temel boyut üzerine yapılandırılmış; geçerlik-güvenirlik incelemeleri tamamlanmış bir ölçme aracıdır. Alt ölçekler sırasıyla, kopukluk ve reddedilmişlik boyutunda yer alan kusurluluk / utanma, kuşkuculuk / kötüye kullanılma, duygusal yoksunluk, terk edilme ve tutarsızlık; zedelenmiş özerklik ve performans boyutunda başarısızlık, bağımlılık / yetersizlik, yapışıklık ve gelişmemiş benlik, hastalık ve tehditlere karşı dayanıksızlık; zedelenmiş sınırlar boyutunda haklılık/büyüklenmecilik yetersiz öz denetim, başkalarına yönelimlilik boyutunda boyun eğicilik, kendini onaylamama, onay arayıcılık; aşırı tetikte olma ve baskılama / ketleme boyutunda karamsarlık, cezalandırıcılıktır. Katılımcılar, her maddeyi beşli likert üzerinde (1=Benim için tamamıyla yanlış, 5=Benim için tamamıyla doğru) derecelendirmektedir. ÇEŞÖT Cronbach’s Alpha iç tutarlılık katsayıları kusurluluk .61, kuşkuculuk / kötüye kullanılma .77, duygusal yoksunluk .81, terk edilme ve tutarsızlık 0.64, başarısızlık .77, bağımlılık / yetersizlik .75, yapışıklık ve gelişmemiş benlik .68, hastalık ve tehditlere karşı dayanıksızlık .68, haklılık/büyüklenmecilik .84, yetersiz öz denetim .72, boyun eğicilik .67, kendini onaylamama .73, onay arayıcılık .66, karamsarlık .83, cezalandırıcılık .55 olarak bulunmuştur. Bu araştırmada iç tutarlılık katsayıları kusurluluk .55, kuşkuculuk / kötüye kullanılma .81, duygusal yoksunluk .88, terk edilme ve tutarsızlık 0.68, başarısızlık .83, bağımlılık / yetersizlik .77, yapışıklık ve gelişmemiş benlik .57, hastalık ve tehditlere karşı dayanıksızlık .68, haklılık/büyüklenmecilik .86, yetersiz öz denetim .71, boyun eğicilik .75, kendini onaylamama .80, onay arayıcılık .67, karamsarlık .88, cezalandırıcılık .61 olarak bulunmuştur.</p>
+        <p><italic>Siber Zorbalık Ölçeği </italic>(SZÖ): SZÖ, Arıcak, Kınay ve Tanrıkulu <xref ref-type="bibr" rid="aricak2012">(Arıcak, 2012)</xref> tarafından geliştirilmiştir. 24 maddeden oluşan, dörtlü likert tipi (Hiçbir Zaman, Bazen, Çoğu Zaman, Her Zaman) derecelendirilen ölçek tek faktörlü yapıdadır. "Hiçbir Zaman " bir puan olarak, "Her Zaman " yanıtı ise dört puan olarak değerlendirilmektedir. Ölçekten alınabilecek en düşük puan 24, en yüksek puan ise 96’dır. Alınan yüksek puan, siber zorbalık davranışlarında artışı göstermektedir. SZÖ Cronbach’s Alpha iç tutarlılık katsayısı .95 olarak bulunmuştur. Bu araştırmada iç tutarlılık katsayısı .90 olarak hesaplanmıştır.</p>
+        <p><italic>Çocuk ve Ergenler İçin Sosyal Destek Değerlendirme Ölçeği </italic>(SDDÖ)<bold>:</bold> SDDÖ, Dubow ve Ullman <xref ref-type="bibr" rid="dubow1989">(Dubow, 1989)</xref> tarafından oluşturulmuş, Gökler <xref ref-type="bibr" rid="gokler2007">(Gökler, 2007)</xref> tarafından Türkçeye uyarlanmıştır. Algılanan arkadaş sosyal desteği, algılanan aile sosyal desteği ve algılanan öğretmen sosyal desteği olmak üzere 3 alt boyut ve 41 maddeden oluşan ölçek beşli likert tiptedir. Katılımcılar her maddeye beş seçenek (1= hiçbir zaman, 5 = her zaman) üzerinden yanıt vermektedirler. Ölçekten alınan en düşük puan 41, en yüksek puan 205’tir. SDDÖ Cronbach’s Alpha iç tutarlılık katsayıları arkadaş desteği .89, aile desteği .86, öğretmen desteği .88 olarak bulunmuştur. Bu araştırmada iç tutarlılık katsayıları arkadaş desteği .91, aile desteği .92, öğretmen desteği .85 olarak hesaplanmıştır.</p>
+      </sec>
+      <sec id="verilerin-analizi">
+        <title>Verilerin Analizi</title>
+        <p>Çalışmada yapılan istatistiksel analizlerin tamamı için R programı sürüm 4.4.1 kullanılmıştır. Ölçeklere ait tanımlayıcı analizler yapılmış ve dağılım özelliklerini incelemek amacıyla basıklık ve çarpıklık değerleri hesaplanmıştır. Veri setinin normallik varsayımı için Kolmogorov–Smirnov testi kullanılmıştır. Ölçeklerde iç tutarlılık güvenirliği Cronbach alfa katsayısı kullanılarak değerlendirilmiştir. Değişkenler arasındaki ilişkiler korelasyon analizi ile incelenmiştir. Normallik varsayımının sağlanmadığı durumlarda ikili grup karşılaştırmaları için Man-Whitney U testi, ikiden fazla grup karşılaştırmaları için Kruskal-Wallis testi kullanılmıştır. Düzenleyici değişken analizleri Yapısal Eşitlik Modeli çerçevesinde yürütülmüş, bu amaçla lavaan paketi (v0.6-19) kullanılmış; regresyon modelleri, değişken dönüştürmeleri ve ortalama merkezleme işlemleri için R’nin base ve stats paketleri ile gerçekleştirilmiştir. Modeller maksimum olabilirlik kestirim yöntemi ile tahmin edilmiş, standart hatalar ve %95 güven aralıkları bootstrap yöntemi kullanılarak hesaplanmıştır. Tüm hesaplamalarda anlamlılık düzeyi p&lt;0.05 olarak alınmıştır.</p>
+      </sec>
+    </sec>
+    <sec id="bulgular">
+      <title>Bulgular</title>
+      <table-wrap id="table1">
+        <label>Table 1</label>
+        <caption>
+          <p>ÇEŞÖT, SZÖ ve SDDÖ Puanlarına İlişkin Tanımlayıcı İstatistikler</p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <thead>
+            <tr>
+              <th>Ölçek</th>
+              <th>Boyut</th>
+              <th>Ort</th>
+              <th>S</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Çarp.</th>
+              <th>Bas.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ÇEŞÖT</td>
+              <td>Kusurluluk</td>
+              <td>2,20</td>
+              <td>0,77</td>
+              <td>1</td>
+              <td>4,6</td>
+              <td>0,612</td>
+              <td>-0,095</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Kuşkuculuk ve Kötüye Kullanma</td>
+              <td>2,51</td>
+              <td>0,95</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,303</td>
+              <td>-0,679</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Duygusal Yoksunluk</td>
+              <td>2,24</td>
+              <td>0,95</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,710</td>
+              <td>-0,231</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Terk Edilme ve Tutarsızlık</td>
+              <td>2,59</td>
+              <td>1,08</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,346</td>
+              <td>-0,839</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Başarısızlık</td>
+              <td>2,22</td>
+              <td>0,90</td>
+              <td>1</td>
+              <td>4,63</td>
+              <td>0,584</td>
+              <td>-0,500</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Bağımlılık/Yetersizlik</td>
+              <td>2,22</td>
+              <td>0,87</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,596</td>
+              <td>-0,163</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Yapışıklık ve Gelişmemiş Benlik</td>
+              <td>3,37</td>
+              <td>1,07</td>
+              <td>1</td>
+              <td>5</td>
+              <td>-0,307</td>
+              <td>-0,705</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Hastalık ve Tehditlere Karşı Dayanıksızlık</td>
+              <td>3,09</td>
+              <td>1,16</td>
+              <td>1</td>
+              <td>5</td>
+              <td>-0,052</td>
+              <td>-1,019</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Haklılık/Büyüklenmecilik</td>
+              <td>2,22</td>
+              <td>0,73</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,559</td>
+              <td>0,130</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Yetersiz/Öz denetim</td>
+              <td>2,62</td>
+              <td>0,97</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,175</td>
+              <td>-0,636</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Kendini Onaylamama</td>
+              <td>2,16</td>
+              <td>1,02</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,803</td>
+              <td>-0,138</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Boyun Eğicilik</td>
+              <td>2,28</td>
+              <td>0,87</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,748</td>
+              <td>0,189</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Onay Arayıcılık</td>
+              <td>2,71</td>
+              <td>1,04</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,280</td>
+              <td>-0,696</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Karamsarlık</td>
+              <td>2,81</td>
+              <td>1,04</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,173</td>
+              <td>-0,794</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Cezalandırıcılık</td>
+              <td>2,55</td>
+              <td>0,89</td>
+              <td>1</td>
+              <td>5</td>
+              <td>0,362</td>
+              <td>-0,496</td>
+            </tr>
+            <tr>
+              <td>SZÖ</td>
+              <td>SZÖ Toplam Puan</td>
+              <td>26,71</td>
+              <td>5,25</td>
+              <td>24</td>
+              <td>58</td>
+              <td>3,268</td>
+              <td>12,305</td>
+            </tr>
+            <tr>
+              <td>SDDÖ</td>
+              <td>Arkadaş Desteği</td>
+              <td>71,99</td>
+              <td>13,02</td>
+              <td>27</td>
+              <td>92</td>
+              <td>-0,739</td>
+              <td>0,211</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Aile Desteği</td>
+              <td>50,65</td>
+              <td>9,33</td>
+              <td>14</td>
+              <td>60</td>
+              <td>-1,218</td>
+              <td>0,884</td>
+            </tr>
+            <tr>
+              <td/>
+              <td>Öğretmen Desteği</td>
+              <td>37,07</td>
+              <td>7,59</td>
+              <td>15</td>
+              <td>50</td>
+              <td>-0,499</td>
+              <td>-0,196</td>
+            </tr>
+          </tbody>
+        </table>
+        <table-wrap-foot>
+          <fn>
+            <p/>
+          </fn>
+          <fn>
+            <p><italic>Not:</italic> Ort=Ortalama, S=Standart Sapma</p>
+          </fn>
+        </table-wrap-foot>
+      </table-wrap>
+      <sec id="kat-l-mc-lar-n-siber-zorbal-k-puanlar-n">
+        <title>Katılımcıların Siber Zorbalık Puanlarının Sosyodemografik Değişkenlere Göre İncelenmesi</title>
+        <table-wrap id="table2">
+          <label>Table 2</label>
+          <caption>
+            <p>Siber Zorbalık Puanlarının Cinsiyete Göre Mann-Whitney U Testi Sonuçları</p>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th>Değişken</th>
+                <th>Medyan (Q1-Q3)</th>
+                <th>p</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cinsiyet Kız Erkek</td>
+                <td>24(24-26) 25(24-28)</td>
+                <td>&lt;0,001</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p/>
+            </fn>
+            <fn>
+              <p>p&lt;0.001</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>Table 2’ye göre siber zorbalık toplam puanı istatistiksel olarak cinsiyete göre anlamlı farklılaşmakta olup erkeklerin siber zorbalık davranış düzeyleri kızlara göre daha yüksektir (p&lt;0,001).</p>
+        <table-wrap id="table3">
+          <label>Table 3</label>
+          <caption>
+            <p>Siber Zorbalık Puanlarının Çeşitli Değişkenler Yönünden Kruskal Wallis Testi Sonuçları</p>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th>Değişken</th>
+                <th>Medyan (Q1-Q3)</th>
+                <th>p</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sınıf 5 6 7 8</td>
+                <td>24(24-26) 24(24-26) 25(24-7,75) 25(24-28)</td>
+                <td>0,006</td>
+              </tr>
+              <tr>
+                <td>Okul Başarı Durumu Düşük Orta Yüksek</td>
+                <td>25(24-31) 25(24-27) 24(24-26)</td>
+                <td>0,010</td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+        <p>Table 3’e göre siber zorbalık puanları, sınıf değişkenine göre anlamlı farklılık göstermektedir (p=0,006). Dunn testi ile ikili karşılaştırmada 6 ve 8. sınıflar arasında 8. sınıflar lehine anlamlı farklılık görülmektedir (p=0,005). Okul başarı durumları arasında istatistiksel olarak anlamlı bir fark vardır (p=0,010). Grupların ikili karşılaştırmasında yüksek başarı durumu ve düşük başarı durumu olan siber zorbalık puanları arasında istatistiksel olarak anlamlı fark bulunmakta olup farklılık düşük başarı bildiren öğrenciler lehinedir (p=0,008).</p>
+      </sec>
+      <sec id="kat-l-mc-lar-n-erken-d-nem-uyumsuz--emal">
+        <title>Katılımcıların Erken Dönem Uyumsuz Şemaları ile Siber Zorbalık Davranışları Arasındaki İlişkilerin İncelenmesi</title>
+        <table-wrap id="table4">
+          <label>Table 4</label>
+          <caption>
+            <p>Ergenlerin Uyumsuz Şemaları ile Siber Zorbalık Davranışları Arasındaki İlişkilerin Spearman Korelasyon Testi ile İncelenmesi</p>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th colspan="3">SZÖ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Kusurluluk</td>
+                <td>r p</td>
+                <td>0,273 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Kuşkuculuk ve Kötüye Kullanma</td>
+                <td>r p</td>
+                <td>0,291 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Duygusal ve Yoksunluk</td>
+                <td>r p</td>
+                <td>0,341 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Terk Edilme ve Tutarsızlık</td>
+                <td>r p</td>
+                <td>0,141 0,002</td>
+              </tr>
+              <tr>
+                <td>Başarısızlık</td>
+                <td>r p</td>
+                <td>0,268 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Bağımlılık ve Yetersizlik</td>
+                <td>r p</td>
+                <td>0,225 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Yapışıklık ve Gelişmemiş Benlik</td>
+                <td>r p</td>
+                <td>0,022 0,629</td>
+              </tr>
+              <tr>
+                <td>Hastalık ve Tehditlere Karşı Dayanıksızlık</td>
+                <td>r p</td>
+                <td>0,056 0,214</td>
+              </tr>
+              <tr>
+                <td>Haklılık ve Büyüklenmecilik</td>
+                <td>r p</td>
+                <td>0,451 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Yetersiz Öz Denetim</td>
+                <td>r p</td>
+                <td>0,434 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Kendini Onaylamama</td>
+                <td>r p</td>
+                <td>0,251 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Boyun Eğicilik</td>
+                <td>r p</td>
+                <td>0,152 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Onay Arayıcılık</td>
+                <td>r p</td>
+                <td>0,133 0,003</td>
+              </tr>
+              <tr>
+                <td>Karamsarlık</td>
+                <td>r p</td>
+                <td>0,258 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Cezalandırıcılık</td>
+                <td>r p</td>
+                <td>0,205 &lt;0,001</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p/>
+            </fn>
+            <fn>
+              <p>p&lt;0.001</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>Table 4’te görüldüğü üzere siber zorbalık ve şema alt boyutlarından kusurluluk ile düşük düzeyde pozitif yönlü (r=0,273, p&lt;0,001), kuşkuculuk ve kötüye kullanma ile düşük düzeyde (r=0,291, p&lt;0,001), duygusal yoksunluk ile orta düzeyde (r=0,341, p&lt;0,001), terk edilme ve tutarsızlık ile düşük düzeyde (r=0,141, p=0,002), başarısızlık ile düşük düzeyde (r=0,268, p&lt;0,001), bağımlılık ve yetersizlik ile düşük düzeyde (r=0,225, p&lt;0,001), haklılık/büyüklenmecilik ile orta düzeyde (r=0,451, p&lt;0,001), yetersiz öz denetim ile orta düzeyde (r=0,434, p&lt;0,001) kendini onaylamama ile düşük düzeyde (r=0,251, p&lt;0,001), boyun eğicilik ile düşük düzeyde (r=0,152, p&lt;0,001), onay arayıcılık ile düşük düzeyde (r=0,133, p=0,003), karamsarlık ile düşük düzeyde (r=0,258, p&lt;0,001), cezalandırıcılık ile düşük düzeyde (r=0,205, p&lt;0,001) pozitif yönlü anlamlı bir ilişki tespit edilmiştir Siber zorbalık ile yapışıklık ve gelişmemiş benlik (r=0,022, p=0,629), hastalık ve tehditlere karşı dayanıksızlık (r=0,056, p=0,214) alt boyutları arasında anlamlı bir ilişki saptanmamıştır.</p>
+      </sec>
+      <sec id="kat-l-mc-lar-n-alg-lanan-sosyal-destek-d">
+        <title>Katılımcıların Algılanan Sosyal Destek Düzeyi ile Siber Zorbalık Davranışları Arasındaki İlişkilerin İncelenmesi</title>
+        <table-wrap id="table5">
+          <label>Table 5</label>
+          <caption>
+            <p>Ergenlerin Algıladıkları Sosyal Destek Düzeyleri ile Siber Zorbalık Davranışları Arasındaki İlişkinin Spearman Korelasyon Testi ile İncelenmesi</p>
+          </caption>
+          <table frame="hsides" rules="groups">
+            <thead>
+              <tr>
+                <th/>
+                <th colspan="2">SZÖ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arkadaşlardan Destek</td>
+                <td>r p</td>
+                <td>-0,330 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Aileden Alınan Destek</td>
+                <td>r p</td>
+                <td>-0,413 &lt;0,001</td>
+              </tr>
+              <tr>
+                <td>Öğretmenlerden Alınan Destek</td>
+                <td>r p</td>
+                <td>-0,385 &lt;0,001</td>
+              </tr>
+            </tbody>
+          </table>
+          <table-wrap-foot>
+            <fn>
+              <p/>
+            </fn>
+            <fn>
+              <p>p&lt;0.001</p>
+            </fn>
+          </table-wrap-foot>
+        </table-wrap>
+        <p>Table 5’te görüldüğü üzere siber zorbalık ile sosyal destek alt boyutlarından arkadaştan alınan destek (r=-0,330, p&lt;0,001), aileden alınan destek (r=-0,413, p&lt;0,001) ve öğretmenden alından destek (r=-0,385, p&lt;0,001) arasında orta düzeyde negatif yönlü ilişki saptanmıştır</p>
+      </sec>
+      <sec id="ergenlerin-erken-d-nem-uyumsuz--emalar">
+        <title>Ergenlerin Erken Dönem Uyumsuz Şemaları ile Siber Zorbalık Davranışı Arasındaki İlişkide Algılanan Sosyal Destek Düzeyinin Düzenleyici Rolünün İncelenmesi</title>
+        <sec id="e--t-kopukluk-ve-reddedilme--ema-alan">
+          <title>ÇEŞÖT Kopukluk ve Reddedilme Şema Alanı ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolüne İlişkin Analiz Sonuçları</title>
+          <table-wrap id="table6">
+            <label>Table 6</label>
+            <caption>
+              <p>ÇEŞÖT Kopukluk ve Reddedilme Şemaları ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolü</p>
+            </caption>
+            <table frame="hsides" rules="groups">
+              <thead>
+                <tr>
+                  <th rowspan="2"/>
+                  <th rowspan="2">B</th>
+                  <th rowspan="2">SH</th>
+                  <th rowspan="2">p</th>
+                  <th colspan="2">%95 Güven Aralığı</th>
+                </tr>
+                <tr>
+                  <th>Alt Sınır</th>
+                  <th>Üst Sınır</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Kopukluk ve Reddedilme (X)</td>
+                  <td>–0.016</td>
+                  <td>0.084</td>
+                  <td>.847</td>
+                  <td>–0.183</td>
+                  <td>0.143</td>
+                </tr>
+                <tr>
+                  <td>Sosyal Destek (M)</td>
+                  <td>–0.079</td>
+                  <td>0.013</td>
+                  <td>.000</td>
+                  <td>–0.106</td>
+                  <td>–0.054</td>
+                </tr>
+                <tr>
+                  <td>Etkileşim (X * M)</td>
+                  <td>0.001</td>
+                  <td>0.003</td>
+                  <td>.767</td>
+                  <td>–0.005</td>
+                  <td>0.006</td>
+                </tr>
+              </tbody>
+            </table>
+            <table-wrap-foot>
+              <fn>
+                <p/>
+              </fn>
+              <fn>
+                <p><italic>Not:</italic> Bağımlı Değişken=Siber Zorbalık, B=Standardize edilmiş Beta katsayısı, SH=Standart Hata, p&lt;0.05</p>
+              </fn>
+            </table-wrap-foot>
+          </table-wrap>
+          <p>Table 6’da yer alan bulgulara göre bulgulara göre kopukluk ve reddedilme şema alanının siber zorbalık üzerindeki doğrudan etkisi istatistiksel olarak anlamlı bulunmamıştır (β=-0.016, p=0.860). Algılanan sosyal destek, siber zorbalık davranışlarını negatif yönde anlamlı düzeyde yordamaktadır (β=-0.079, p=0.000). Düzenleyici değişken etkisini test eden etkileşim terimi anlamlı bulunmamıştır (β=0.001, p=0.767). Kopukluk ve reddedilme şema alanı ile siber zorbalık davranışları arasındaki ilişkide algılanan sosyal desteğin düzenleyici etkisi olmadığı sonucuna ulaşılmıştır.</p>
+        </sec>
+        <sec id="e--t-zedelenmi---zerklik-ve-performans">
+          <title>ÇEŞÖT Zedelenmiş Özerklik ve Performans Şema Alanı ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolüne İlişkin Analiz Sonuçları</title>
+          <table-wrap id="table7">
+            <label>Table 7</label>
+            <caption>
+              <p>ÇEŞÖT Zedelenmiş Özerklik ve Performans Şemaları ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolü</p>
+            </caption>
+            <table frame="hsides" rules="groups">
+              <thead>
+                <tr>
+                  <th rowspan="2"/>
+                  <th rowspan="2">B</th>
+                  <th rowspan="2">SH</th>
+                  <th rowspan="2">p</th>
+                  <th colspan="2">%95 Güven Aralığı</th>
+                </tr>
+                <tr>
+                  <th>Alt Sınır</th>
+                  <th>Üst Sınır</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Zedelenmiş Özerklik ve Performans (X)</td>
+                  <td>–0.056</td>
+                  <td>0.071</td>
+                  <td>.437</td>
+                  <td>–0.200</td>
+                  <td>0.080</td>
+                </tr>
+                <tr>
+                  <td>Sosyal Destek (M)</td>
+                  <td>–0.080</td>
+                  <td>0.012</td>
+                  <td>.000</td>
+                  <td>–0.106</td>
+                  <td>–0.057</td>
+                </tr>
+                <tr>
+                  <td>Etkileşim (X * M)</td>
+                  <td>0.003</td>
+                  <td>0.003</td>
+                  <td>.374</td>
+                  <td>–0.004</td>
+                  <td>0.009</td>
+                </tr>
+              </tbody>
+            </table>
+            <table-wrap-foot>
+              <fn>
+                <p/>
+              </fn>
+              <fn>
+                <p><italic>Not:</italic> Bağımlı Değişken=Siber Zorbalık, B=Standardize edilmiş Beta katsayısı, SH=Standart Hata, p&lt;0.05</p>
+              </fn>
+            </table-wrap-foot>
+          </table-wrap>
+          <p>Table 7’de yer alan bulgulara göre zedelenmiş özerklik ve performans şema alanının siber zorbalık üzerindeki doğrudan etkisi istatistiksel olarak anlamlı bulunmamıştır (β=-0.056, p=0.437). Algılanan sosyal destek, siber zorbalık davranışlarını negatif yönde anlamlı düzeyde yordamaktadır (β=-0.080, p=0.000). Düzenleyici değişken etkisini test eden etkileşim terimi anlamlı bulunmamıştır (β=0.003, p=0.374). Zedelenmiş özerklik ve performans şema alanı ile siber zorbalık davranışları arasındaki ilişkide algılanan sosyal desteğin düzenleyici etkisi olmadığı sonucuna ulaşılmıştır.</p>
+        </sec>
+        <sec id="e--t-zedelenmi--s-n-rlar--ema-alan--ile">
+          <title>ÇEŞÖT Zedelenmiş Sınırlar Şema Alanı ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolüne İlişkin Analiz Sonuçları</title>
+          <table-wrap id="table8">
+            <label>Table 8</label>
+            <caption>
+              <p>ÇEŞÖT Zedelenmiş Sınırlar Şemaları ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolü</p>
+            </caption>
+            <table frame="hsides" rules="groups">
+              <thead>
+                <tr>
+                  <th rowspan="2"/>
+                  <th rowspan="2">B</th>
+                  <th rowspan="2">SH</th>
+                  <th rowspan="2">p</th>
+                  <th colspan="2">%95 Güven Aralığı</th>
+                </tr>
+                <tr>
+                  <th>Alt Sınır</th>
+                  <th>Üst Sınır</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Zedelenmiş Sınırlar (X)</td>
+                  <td>1.128</td>
+                  <td>0.208</td>
+                  <td>.000</td>
+                  <td>0.742</td>
+                  <td>1.551</td>
+                </tr>
+                <tr>
+                  <td>Sosyal Destek (M)</td>
+                  <td>–0.039</td>
+                  <td>0.011</td>
+                  <td>.001</td>
+                  <td>–0.061</td>
+                  <td>–0.017</td>
+                </tr>
+                <tr>
+                  <td>Etkileşim (X * M)</td>
+                  <td>–0.021</td>
+                  <td>0.008</td>
+                  <td>.007</td>
+                  <td>–0.036</td>
+                  <td>–0.007</td>
+                </tr>
+              </tbody>
+            </table>
+            <table-wrap-foot>
+              <fn>
+                <p/>
+              </fn>
+              <fn>
+                <p><italic>Note:</italic> Bağımlı Değişken=Siber Zorbalık, B=Standardize edilmiş Beta katsayısı, SH=Standart Hata, p&lt;0.05</p>
+              </fn>
+            </table-wrap-foot>
+          </table-wrap>
+          <p>Table 8’de yer alan bulgulara göre zedelenmiş sınırlar şema alanının siber zorbalık üzerindeki doğrudan etkisi istatistiksel olarak anlamlıdır (β=1.128, p=0.000). Algılanan sosyal destek, siber zorbalık davranışlarını negatif yönde anlamlı düzeyde yordamaktadır (β=0.-039, p=0.001). Düzenleyici değişken etkisini test eden etkileşim terimi anlamlı bulunmuştur (β=-0.021, p=0.007). Zedelenmiş sınırlar şema alanı ile siber zorbalık davranışları arasındaki ilişkide algılanan sosyal desteğin düzenleyici rolü tespit edilmiştir.</p>
+        </sec>
+        <sec id="e--t-ba-kalar-na-y-nelimlilik--ema-alan">
+          <title>ÇEŞÖT Başkalarına Yönelimlilik Şema Alanı ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolüne İlişkin Analiz Sonuçları</title>
+          <table-wrap id="table9">
+            <label>Table 9</label>
+            <caption>
+              <p>ÇEŞÖT Başkalarına Yönelimlilik Şemaları ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolü</p>
+            </caption>
+            <table frame="hsides" rules="groups">
+              <thead>
+                <tr>
+                  <th rowspan="2"/>
+                  <th rowspan="2">B</th>
+                  <th rowspan="2">SH</th>
+                  <th rowspan="2">p</th>
+                  <th colspan="2">%95 Güven Aralığı</th>
+                </tr>
+                <tr>
+                  <th>Alt Sınır</th>
+                  <th>Üst Sınır</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Başkalarına Yönelimlilik (X)</td>
+                  <td>–0.135</td>
+                  <td>0.091</td>
+                  <td>.137</td>
+                  <td>–0.318</td>
+                  <td>0.041</td>
+                </tr>
+                <tr>
+                  <td>Sosyal Destek (M)</td>
+                  <td>–0.088</td>
+                  <td>0.014</td>
+                  <td>.000</td>
+                  <td>–0.118</td>
+                  <td>–0.061</td>
+                </tr>
+                <tr>
+                  <td>Etkileşim (X * M)</td>
+                  <td>0.006</td>
+                  <td>0.003</td>
+                  <td>.052</td>
+                  <td>–0.000</td>
+                  <td>0.013</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+          <p>Table 9’da yer alan bulgulara göre başkalarına yönelimlilik şema alanının siber zorbalık üzerindeki doğrudan etkisi istatistiksel olarak anlamlı bulunmamıştır (β=-0.135, p=0.137). Algılanan sosyal destek, siber zorbalık davranışlarını negatif yönde anlamlı düzeyde yordamaktadır (β=-0.088, p=0.000). Düzenleyici değişken etkisini test eden etkileşim terimi anlamlı bulunmamıştır (β=0.006, p=0.003). Başkalarına yönelimlilik şema alanı ile siber zorbalık davranışları arasındaki ilişkide algılanan sosyal desteğin düzenleyici etkisi bulunmamaktadır.</p>
+        </sec>
+        <sec id="e--t-a--r--tetikte-olma-ve-bask-lama-ke">
+          <title>ÇEŞÖT Aşırı Tetikte Olma ve Baskılama/Ketleme Şema Alanı ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolüne İlişkin Analiz Sonuçları</title>
+          <table-wrap id="table10">
+            <label>Table 10</label>
+            <caption>
+              <p>ÇEŞÖT Aşırı Tetikte Olma ve Baskılama/Ketleme Şemaları ile Siber Zorbalık Arasındaki İlişkide Sosyal Desteğin Düzenleyici Rolü</p>
+            </caption>
+            <table frame="hsides" rules="groups">
+              <thead>
+                <tr>
+                  <th rowspan="2"/>
+                  <th rowspan="2">B</th>
+                  <th rowspan="2">SH</th>
+                  <th rowspan="2">p</th>
+                  <th colspan="2">%95 Güven Aralığı</th>
+                </tr>
+                <tr>
+                  <th>Alt Sınır</th>
+                  <th>Üst Sınır</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aşırı Tetikte Olma ve Baskılama/Ketleme (X)</td>
+                  <td>0.022</td>
+                  <td>0.128</td>
+                  <td>.863</td>
+                  <td>–0.234</td>
+                  <td>0.270</td>
+                </tr>
+                <tr>
+                  <td>Sosyal Destek (M)</td>
+                  <td>–0.077</td>
+                  <td>0.013</td>
+                  <td>.000</td>
+                  <td>–0.104</td>
+                  <td>–0.052</td>
+                </tr>
+                <tr>
+                  <td>Etkileşim (X * M)</td>
+                  <td>0.002</td>
+                  <td>0.005</td>
+                  <td>.705</td>
+                  <td>–0.009</td>
+                  <td>0.011</td>
+                </tr>
+              </tbody>
+            </table>
+          </table-wrap>
+          <p>Table 10’de yer alan bulgulara göre başkalarına yönelimlilik şema alanının siber zorbalık üzerindeki doğrudan etkisi istatistiksel olarak anlamlı bulunmamıştır (β=0.022, p=0.863). Algılanan sosyal destek, siber zorbalık davranışlarını negatif yönde anlamlı düzeyde yordamaktadır (β=-0.077, p=0.000). Düzenleyici değişken etkisini test eden etkileşim terimi anlamlı bulunmamıştır (β=0.002, p=0.705). Aşırı tetikte olma ve baskılama/ketleme şema alanı ile siber zorbalık davranışları arasındaki ilişkide algılanan sosyal desteğin düzenleyici etkisi olmadığı sonucuna ulaşılmıştır.</p>
+        </sec>
+      </sec>
+    </sec>
+    <sec id="tart--ma">
+      <title>Tartışma</title>
+      <p>Bu çalışmada, 10-14 yaş arasındaki ergenlerin şema mekanizmaları ile siber zorbalık davranışları arasındaki ilişkide algılanan sosyal desteğin düzenleyici rolü araştırılmıştır. Elde edilen bulgular, araştırma soruları sıralamasına göre aşağıda tartışılmıştır.</p>
+      <p>Çalışmanın ilk araştırma sorusu doğrultusunda siber zorbalık davranışlarının sosyodemografik özelliklere göre değişimi incelenmiştir. Araştırmaya katılan ortaokul öğrencilerinin siber zorbalık puanları, cinsiyetler arasında anlamlı düzeyde farklılaşmaktadır. Erkekler, kızlarla karşılaştırıldığında daha çok siber zorbalık davranışları sergilemektedir. Bu sonuç ilgili literatürdeki pek çok araştırma ile tutarlıdır <xref ref-type="bibr" rid="alrajeh2021">(Alrajeh, 2021; Keleş, 2025; Wang, 2019; Zsila, 2018)</xref>. Bununla birlikte erkeklerin saldırgan eğilimlerini daha yüksek bulan çalışmalar da mevcuttur <xref ref-type="bibr" rid="erdur2007">(Erdur, 2007)</xref>. Cosma ve arkadaşlarının <xref ref-type="bibr" rid="cosma2022">(Cosma, 2022)</xref>, 46 ülkeden ergenlerin çalışma kapsamına dahil edildiği makale çalışmasında toplumsal cinsiyet eşitsizliğinin zorbalığa karışma ile ilişkili olduğu, erkeklerin geleneksel ve siber zorbalık türlerinde daha fazla yer aldığı belirlenmiştir. Bazı çalışmalarda ise kızların daha fazla siber zorbalık yaptığı veya cinsiyetler arasında farklılaşmanın bulunmadığı sonucuna varılmıştır <xref ref-type="bibr" rid="agatston2007">(Agatston, 2007; Mallmann, 2017; Topçu, 2008)</xref>. Bu sonuç çevrim içi ortamda anonim kalabilme imkanının siber zorbalık risklerini her iki cinsiyette de geçerli kılmasıyla açıklanabilir <xref ref-type="bibr" rid="li2007">(Li, 2007)</xref>.</p>
+      <p>Çalışmanın öğrencilerin sınıf düzeyi ile ilgili bulgusunda 8. sınıfların siber zorbalık davranış düzeyleri 6. sınıflara göre daha yüksek bulunmuştur. Pepler ve arkadaşlarına <xref ref-type="bibr" rid="pepler2006">(Pepler, 2006)</xref> göre ilköğretimden ortaöğretime geçişte zorbalık eğilimleri en yüksek düzeyde iken ortaöğretimin sonlarına doğru azalmaktadır. Bolat ve Korkmaz <xref ref-type="bibr" rid="bolat2021">(Bolat, 2021)</xref>, çalışmamızla benzer şekilde 7 ve 8. sınıf öğrencilerinin 6. sınıflara göre daha yüksek düzeyde siber zorbalık davranışları sergilediklerini tespit etmişlerdir. Sınıf düzeyi ile siber mağduriyet ve zorbalık arasında anlamlı farklılık göstermeyen araştırmalara da rastlanmıştır <xref ref-type="bibr" rid="erdur2007">(Erdur, 2007; Gürkan, 2022)</xref>.</p>
+      <p>Çalışmada siber zorbalık puanlarının okul başarı durumuna göre anlamlı olarak farklılaştığı, ikili karşılaştırmada yüksek başarı ile düşük başarı bildiren öğrenciler arasında anlamlı fark olduğu tespit edilmiştir. Bu sonuç alan yazındaki çeşitli çalışmalarla paralel görülmektedir <xref ref-type="bibr" rid="alotaibi2019">(Alotaibi, 2019; Rodop, 2022)</xref>. Wright <xref ref-type="bibr" rid="wright2015">(Wright, 2015)</xref>, sekizinci sınıf öğrencilerinin örneklem grubu oluşturduğu boylamsal çalışmasında, siber faillik ve mağduriyetin bir yıl sonraki okuldaki davranım sorunları, düşük ders başarısı ve okula devamsızlık ile pozitif yönlü bağlantısı olduğunu tespit etmiştir. Siber zorbalıkla akademik başarı arasında anlamlı ilişki tespit etmeyen çalışmalar da vardır <xref ref-type="bibr" rid="huang2010">(Huang, 2010; Mitchel, 2011)</xref>.</p>
+      <p>Çalışmanın bir sonraki sorusu doğrultusunda elde edilen sonuçta siber zorbalık toplam puanı “yapışıklık” ile “dayanıksızlık” dışında tüm şema boyutları ile pozitif yönlü anlamlı ilişki bulunmuştur. Bu sonuç genel olarak uyumsuz şema puanları artıkça siber zorbalık davranış eğiliminin arttığı şeklinde yorumlanabilir. Elde edilen bulgu ile benzer şekilde zorbalığa karışan ergenlerin dahil olmayanlara göre daha yüksek uyumsuz şema puanlarına sahip olduğunu tespit eden çalışmalar mevcuttur <xref ref-type="bibr" rid="mallmann2017">(Mallmann, 2017; Erol, 2015)</xref>. Mevcut çalışmada, siber zorbalık davranışları ile uyumsuz şemalar arasında en yüksek korelasyon ilişkisi “haklılık” ve “yetersiz öz denetim” şemalarını içeren zedelenmiş sınırlar alanında görülmüştür. Haklılık şeması bireyin diğerlerinden daha özel veya üstün olduğuna dair sanıdır <xref ref-type="bibr" rid="young2009">(Young, 2009)</xref>. Ayrıcalıklı olduğu algısına sahip bireyler istediği gibi davranabileceğini düşünerek veya haklı olduğuna inanarak saldırgan davranışlarını meşrulaştırabilir <xref ref-type="bibr" rid="calvete2008">(Calvete, 2008)</xref>. Yetersiz öz denetim şemaları ise bireylerin duygu ve dürtülerinin ifadesini düzenleyememe ile karakterizedir <xref ref-type="bibr" rid="young2009">(Young, 2009)</xref>. Özkan ve arkadaşları <xref ref-type="bibr" rid="ozkan2025">(Özkan, 2025)</xref> makale çalışmasında, ergenlerde dürtüselliğin siber zorbalık, siber mağduriyet ve internet bağımlılığını anlamlı düzeyde etkilediğini saptamışlardır. Vagos, Fabris ve Rijo <xref ref-type="bibr" rid="vagos2025">(Vagos, 2025)</xref>, ergenlerle yaptıkları çalışmada, kopukluk/reddedilme ve bozulmuş sınırlar alanının saldırgan davranışın gelişiminde önemli rol oynadığını tespit etmişlerdir. Fernández-González ve arkadaşlarının <xref ref-type="bibr" rid="fernandezgonzalez2021">(Fernández-González, 2021)</xref> çocuktan ebeveynlere agresyon ve flört ilişkilerinde şiddeti inceledikleri boylamsal çalışmalarında kuşkuculuk/ kötüye kullanılma, haklılık/büyüklenmecilik ve yetersiz öz denetim şemaları saldırgan davranışları yordamıştır ve bu bağlamda çalışmamızın bu bulgusu ile uyumludur.</p>
+      <p>Araştırmanın başka bir bulgusu “yapışıklık” şema boyutu ile siber zorbalık arasında anlamlı bulunmayan ilişki, alan yazında Tarçalır Erol <xref ref-type="bibr" rid="tarcalirerol2015">(Erol, 2015)</xref>’’un akran zorbalığı, Çakar’ın <xref ref-type="bibr" rid="cakar2024">(Çakar, 2024)</xref> riskli davranışlar ile uyumsuz şemaları incelediği çalışmalarda söz konusu şemanın belirleyici bir rol oynamaması yönünden benzemektedir. Ayrışabilme/ hayatta kalabilme becerileri ile ilgili eksikliklerle karakterize olan yapışıklık ve dayanıksızlık şemaları <xref ref-type="bibr" rid="rafaeli2013">(Rafaeli, 2013)</xref>, bu bireylerin saldırgan davranış gibi aktiflik gerektiren eylemlerden kaçınmalarına sebep olabilir. Nitekim zorbalık davranışları sergileme, öfkenin dışa yansıması, güç arayışı ve dikkat çekme arzusu ile bağlantılıdır <xref ref-type="bibr" rid="hakan2011">(Hakan, 2011)</xref>.</p>
+      <p>Çalışma bir başka bulgusunda ise aileden, öğretmenden ve arkadaştan gelen destek arttıkça siber zorbalık davranışları azalmaktadır. Elde edilen sonuç, sosyal desteğin siber zorbalık ile negatif yönlü ilişki gösterdiğini saptayan önceki çalışmalarla tutarlı görülmektedir <xref ref-type="bibr" rid="pala2021">(Pala, 2021; Fanti, 2012; Kahi, 2024; Eroğlu, 2015)</xref>. Zorbalık davranışları sergileyen bireylerin arkadaş edinme güçlükleri yaşadığı, sosyal uyum becerilerinde yetersiz kaldıkları böylelikle daha yoğun çevresel desteğe ihtiyaç duydukları söylenebilir <xref ref-type="bibr" rid="nansel2001">(Nansel, 2001)</xref>. Araştırmalar olumsuz ilişkilere sahip bireylerin siber zorba olma potansiyelinin daha yüksek olduğunu göstermektedir <xref ref-type="bibr" rid="akbulut2011">(Akbulut, 2011; Juvonen, 2008)</xref>. Diğer yandan çevreden yüksek sosyal destek algılayan ergenlerin, öz saygı düzeyleri daha yüksek, saldırgan davranış eğilimleri daha düşüktür <xref ref-type="bibr" rid="sabra2020">(Sabra, 2020)</xref>. Araştırmanın bu bulgusu ile paralel olarak Kahi ve arkadaşları <xref ref-type="bibr" rid="kahi2024">(Kahi, 2024)</xref>, hem siber zorbalık hem siber mağduriyetin, algılanan sosyal desteğin tüm alt boyutları ile (aile-öğretmen-arkadaş) negatif yönlü anlamlı ilişki kurduğunu tespit etmiş ayrıca algılanan sosyal desteğin psikolojik iyi oluş ile siber zorbalık arasında aracı rol üstlendiğini saptamışlardır. Hellfeldt, Lopez ve Andershed <xref ref-type="bibr" rid="hellfeldt2019">(Hellfeldt, 2019)</xref> tarafından yapılan bir başka makale çalışmasında ise aileden ve öğretmenden alınan sosyal desteğin yüksek olması, siber zorba ve mağdurların öznel iyi oluş düzeylerini artırırken düşük depresyon ve anksiyete belirtileri ile ilişkili bulunmuştur.</p>
+      <p>Araştırmanın son sorusu doğrultusunda algılanan sosyal destek, zedelenmiş sınırlar alanı (haklılık/büyüklenmecilik ve yetersiz öz denetim) ile siber zorbalık davranışları arasında düzenleyici rol üstlenmiştir. Zedelenmiş sınırlar alanı, geleceğe dönük amaç belirlemede, içsel sınır oluşturmada ve ötekilere karşı sorumlulukları gözetmede eksikliklerle bağlantılıdır <xref ref-type="bibr" rid="young2009">(Young, 2009)</xref>. Alan yazında haklılık/büyüklenmecilik ve yetersiz öz denetim şemalarının saldırganlıkla pozitif ilişkili olduğunu gösteren çalışmalar mevcuttur <xref ref-type="bibr" rid="tremblay2009">(Tremblay, 2009; Vagos, 2025)</xref>. Kendilik değeri ile meşguliyet, haklılık ve büyüklenmecilik ile ilişkili olan narsisizm (Wink, 1991) kavramı bazı araştırmalarda siber zorbalığın önemli yordayıcılarından biri olarak tespit edilmiştir <xref ref-type="bibr" rid="fang2020">(Fang, 2020; Geel, 2017)</xref>. Diğer yandan öz kontrol yetersizliği ile karakterize olan dürtüsellik, gençlerin saldırgan davranış sergileme olasılığını artırmaktadır <xref ref-type="bibr" rid="salekin2016">(Salekin, 2016)</xref>. Boylamsal türde yapılan bir çalışmada büyüklenmeci ve dürtüsel özellikler, siber zorbalık davranışlarını anlamlı olarak yordamıştır <xref ref-type="bibr" rid="lopezlarranaga2019">(López-Larrañaga, 2019)</xref>. Despoti, Kokkinos ve Fanti’nin <xref ref-type="bibr" rid="despoti2020">(Despoti, 2020)</xref> ergenlerle yapılan çalışmasında, dürtüsellik, katı-duygusuz özellikler ve narsisizmin zorbalık davranışları için risk oluşturduğu tespit edilmiş, algılanan sosyal destek (okul ve arkadaş) ise narsisizm ve zorbalık arasındaki ilişkiyi düzenlemiştir. Huang ve arkadaşları <xref ref-type="bibr" rid="huang2023">(Huang, 2023)</xref> çalışmalarında, karanlık üçlü olarak adlandırılan kişilik özelliklerini (Makyavelizm, narsisizm ve psikopati) yüksek düzeyde bildiren ergenlerin sosyal dışlanma yaşadıklarında öz denetimleri azalmakta iken zorbalık sergileme düzeylerinin artmakta olduğunu belirlemişlerdir. Pan ve arkadaşları <xref ref-type="bibr" rid="pan2025">(Pan, 2025)</xref> makale çalışmalarında, intihar amaçlı olmayan kendine zarar verme davranışları sergileyen ergenlerin, sağlıklı olan gruba göre daha dürtüsel olduğunu, sosyal desteğin yüksek düzeyde algılanmasının kendine zarar veren grupta bilişsel karmaşıklık düzeyini artırdığını (farklı çözüm yolları düşünme) tespit etmişlerdir. Ke ve arkadaşlarının <xref ref-type="bibr" rid="ke2024">(Ke, 2024)</xref> suça sürüklenen ergenlerle yaptıkları çalışmada algılanan sosyal desteğin artması, bilinçli farkındalık, öz kontrol ve dürtüsellik düzeylerini etkileyerek saldırganlığı dolaylı olarak azaltmıştır. Bu kapsamda araştırmamızın bu bulgusu, alan yazındaki yukarıda bahsedilen çalışmalarla tutarlı görülmektedir.</p>
+      <p>Çalışma sonucunda sosyal destek, zedelenmiş sınırlar dışındaki şema alanları ile siber zorbalık failliği arasında düzenleyici etki göstermemiştir. Erken dönem uyum bozucu şemalar, insanının tutarlılık itkisinin sonucunda geliştiğinden acıyla sonuçlanmasına rağmen aşinalık ve rahatlık hissi vermekte dolayısıyla değişimleri oldukça zor olmaktadır <xref ref-type="bibr" rid="young2009">(Young, 2009)</xref>. Bu kapsamda araştırmamızın bu bulgusu sonradan dışarıdan alınan sosyal desteğin veya olumlu ortamların uyumsuz şemaların etkilerini azaltmada yetersiz kalması olarak yorumlanabilir. Nitekim Fang ve arkadaşlarının <xref ref-type="bibr" rid="fang2020">(Fang, 2020)</xref> çalışmasında, çocukluk döneminde çocuğa karşı kötü muamelenin ergenlikte siber zorbalık davranışlarını anlamlı bir şekilde yordadığını bununla birlikte algılanan sosyal desteğin bahsedilen iki değişken arasındaki ilişkide düzenleyici bir rolü olmadığı saptanmıştır. Söz konusu çalışmada çocuklukta yaşanan kötü muamele düşük düzeyde algılandığında sosyal destek koruyucu bir işlev sağlarken yüksek düzeydeki çocukluk dönemi kötü muamelesinde sosyal desteğin bu etkisi ortadan kalkmıştır. Çocuklukta yaşanan olumsuz deneyimler, bireylerin güvenli bağlanma stilleri geliştirme ihtimalini azaltmaktadır <xref ref-type="bibr" rid="yu2020">(Yu, 2020)</xref>. Dolayısıyla ergenler çevrelerinden sosyal destek alsalar dahi güvensiz bağlanma örüntüleri, başkalarına güvenmeyi zorlaştırarak sosyal desteğin koruyuculuğunu engelleyebilir <xref ref-type="bibr" rid="davis2015">(Davis, 2015; Fang, 2020)</xref>. Sonuç olarak mevcut çalışma, alan yazındaki bazı çalışmalarla paralel biçimde <xref ref-type="bibr" rid="despoti2020">(Despoti, 2020; Fang, 2020)</xref> sosyal desteğin genellenebilir bir koruyucu işlev görmekten ziyade belirli koşullarda saldırgan davranışları etkilediğini göstermektedir.</p>
+    </sec>
+    <sec id="sonu">
+      <title>Sonuç</title>
+      <p>Araştırmamız sonucunda öğrencilerin siber zorbalık düzeylerinde cinsiyet, sınıf ve okul başarı düzeyine göre anlamlı farklılaşma görülmüştür. Öğrencilerin siber zorbalık davranış düzeyleri, uyumsuz şemaları ve algılanan sosyal destek düzeyleri arasında istatistiksel olarak anlamlı ilişkiler saptanmıştır. Son olarak öğrencilerin algıladıkları sosyal destek düzeyleri, uyumsuz şema alanlarından zedelenmiş sınırlar alanı ile siber zorbalık davranışları arasındaki ilişkide düzenleyici rol üstlenmiştir.</p>
+      <p>Siber zorbalıkla mücadelede okul ve toplum temelli önleyici çalışmaların yapılması önemlidir. Okullarda halihazırda siber zorbalığa dair önleyici çalışmalar psikolojik danışmanlar tarafından yapılmakla birlikte bütün öğrencilere erişim konusunda yetersizlikler mevcuttur <xref ref-type="bibr" rid="kiran2025">(Kıran, 2025)</xref>. Daha fazla öğrencinin katılımı sağlanarak bilinçli teknoloji kullanımı, sanal ortamdaki riskleri tanıma, dijital okur yazarlık gibi konularda bilgilendirme çalışmalarının sistematik bir şekilde yürütülmesi önemli görülmektedir. Bununla birlikte önleyici ve müdahale çalışmalarının şema yaklaşımı perspektifinde derinleştirilmesi, zorbalık riski taşıyan öğrencilerin erken tespit edilmesine imkân sağlayabilir. Uyumsuz şemaların temellerinin çocuğun büyüdüğü ortamda atıldığı düşünüldüğünde sağlıklı şemaların oluşumu için özellikle okul öncesi kademede aile eğitimleri planlanabilir. Algılanan sosyal destek ile siber zorbalık arasındaki anlamlı ilişkiler, anne babaları, akranları ve öğretmenleri kapsayan sosyal destek sistemlerinin güçlendirilmesi gerektiğini göstermektedir. Ayrıca okullarda akran bazında grup etkinlikleri ve iş birliğine dayalı öğretim sistemleri teşvik edilebilir.</p>
+    </sec>
+    <sec id="s-n-rl-l-klar">
+      <title>Sınırlılıklar</title>
+      <p>Kesitsel bir çalışma olan araştırmamız, yöntemin doğası gereği katılımcıların ölçeklere, ölçülen zamanda vermiş oldukları cevaplarla sınırlanmaktadır. Çalışmada kullanılan ÇEŞÖT ölçeğinin madde sayısının fazla olması bir diğer sınırlılık olarak görülmektedir. Gelecek araştırmacılara çocuk ve gençlere yönelik şema ölçeğinin kısa formumun geliştirilerek literatüre kazandırılması önerilebilir. Konuyla ilgili yapılacak araştırmaların farklı illeri ve yaş gruplarını kapsayacak şekilde genişletilmesi, bulguların genellenebilirliğini artıracaktır. Yine yapılacak çalışmalarda boylamsal desenin kullanılması, uyumsuz şemalar, siber zorbalık davranışları ve sosyal destek kavramları arasındaki ilişkilerde zamansal örüntülerin daha sağlıklı şekilde incelenmesine imkân sağlayacaktır.</p>
+    </sec>
+    <sec sec-type="COI-statement" id="declaration-of-conflicting-interests">
+      <title>Declaration of Conflicting Interests</title>
+      <p>There is no conflict of interest that could affect the writing and publication processes of this research.</p>
+    </sec>
+    <sec sec-type="funding" id="financial-support">
+      <title>Financial Support</title>
+      <p>No financial support was received from any institution or organization within the scope of this research.</p>
+    </sec>
+    <sec sec-type="ethics-statement" id="ethical-declaration">
+      <title>Ethical Declaration</title>
+      <p>Ethical approval dated 22.11.2024 was obtained for the study from the Ethics Committee of the Rectorate of Istanbul Commerce University (E-65836846-044-339440).</p>
+    </sec>
+    <sec sec-type="supplementary-material" id="use-of-artificial-intelligence">
+      <title>Use of Artificial Intelligence</title>
+      <p>No artificial intelligence-based tools or applications were used during the preparation process of this study. All content of the study was produced by the authors in accordance with scientific research methods and academic ethical principles.</p>
+    </sec>
+    <sec sec-type="author-contributions" id="author-contributions">
+      <title>Author Contributions</title>
+      <list list-type="bullet">
+        <list-item>
+          <p><bold>Tuğba Doğan: </bold>Responsible for the conceptualization, design, literature review, data collection processes, data analysis and interpretation of the findings of the research, and the preparation of the first draft of the article.</p>
+        </list-item>
+        <list-item>
+          <p><bold>Derya Deniz: </bold>Contributed to the revision processes, methodological supervision of the research, and the preparation of the final version of the article.</p>
+        </list-item>
+      </list>
+    </sec>
+  </body>
+</article>

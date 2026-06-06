@@ -11,9 +11,9 @@ export function ArticleAuthors({ authors }: { authors: Author[] }) {
           {a.isCorresponding && (
             <span
               className="inline-flex items-center gap-1 text-xs text-accent"
-              title="Sorumlu yazar"
+              title="Corresponding author"
             >
-              <Mail className="h-3 w-3" /> Sorumlu yazar
+              <Mail className="h-3 w-3" /> Corresponding author
             </span>
           )}
           <span className="text-muted-foreground">{a.affiliation}</span>

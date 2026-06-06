@@ -34,6 +34,19 @@ export const xmlArticles: XmlArticleEntry[] = [
     doi: "10.62847/akademik.2025.0001",
     keywords: ["mikrobiyom", "toprak verimliliği", "metagenomik", "Anadolu"],
   },
+  {
+    id: "test-makale",
+    journalSlug: "social-solutions",
+    xmlPath: "/articles/social-solutions/2026/test-makale/main_jats.xml",
+    pdfPath: "/articles/social-solutions/2026/test-makale/main.pdf",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    subject: "Research",
+    abstract: "Bu makale JATS XML testi için yüklenmiştir.",
+    publishedAt: "2026-04-16",
+    authorNames: ["Kaan Sevim"],
+    doi: "10.70989/jss.123456",
+    keywords: ["Early maladaptive schemas", "cyberbullying", "social support"],
+  },
 ];
 
 export function findXmlArticle(id: string, journalSlug: string): XmlArticleEntry | undefined {

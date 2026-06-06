@@ -45,9 +45,9 @@ function xmlLang(el: Element): string {
   );
 }
 
-const TR_MONTHS = [
-  "", "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
-  "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık",
+const EN_MONTHS = [
+  "", "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
 ];
 
 function formatDate(el: Element | null): string {
@@ -55,7 +55,7 @@ function formatDate(el: Element | null): string {
   const d = el.querySelector("day")?.textContent?.trim() ?? "";
   const m = parseInt(el.querySelector("month")?.textContent ?? "0");
   const y = el.querySelector("year")?.textContent?.trim() ?? "";
-  return `${d} ${TR_MONTHS[m] ?? ""} ${y}`.trim();
+  return `${d} ${EN_MONTHS[m] ?? ""} ${y}`.trim();
 }
 
 // ── Ana parser ────────────────────────────────────────────────────────────────
@@ -80,7 +80,7 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
   const subject =
     q(meta, 'subj-group[subj-group-type="discipline"] subject') ||
     q(meta, 'subj-group[subj-group-type="heading"] subject') ||
-    "Araştırma Makalesi";
+    "Research";
 
   // Kurumlar haritası
   const affMap = new Map<string, string>();
@@ -117,6 +117,8 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
 
     return {
       name,
+      surname,
+      givenNames: given,
       orcid,
       affiliation: affMap.get(affRid) ?? "",
       isCorresponding,
@@ -166,7 +168,7 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
   const accepted = formatDate(
     meta.querySelector('history date[date-type="accepted"]')
   );
-  const published = `${pubDay} ${TR_MONTHS[parseInt(pubMonth)] ?? ""} ${pubYear}`.trim();
+  const published = `${pubDay} ${EN_MONTHS[parseInt(pubMonth)] ?? ""} ${pubYear}`.trim();
 
   // Editör
   const editorC = doc.querySelector(
@@ -256,6 +258,12 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
     q(doc, 'custom-meta meta-value') ||
     undefined;
 
+  const journalTitle = q(doc, "journal-title-group > journal-title");
+  const volume = q(meta, "volume");
+  const issue = q(meta, "issue");
+  const fpage = q(meta, "fpage");
+  const lpage = q(meta, "lpage");
+
   return {
     id: entry.id,
     journalSlug: entry.journalSlug,
@@ -265,6 +273,11 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
     abstract,
     publishedAt,
     doi,
+    volume,
+    issue,
+    fpage,
+    lpage,
+    journalTitle,
     keywords,
     content: "",
     figures,

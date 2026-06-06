@@ -8,9 +8,9 @@ function fmt(n: number) {
 // Kompakt metrik şeridi (başlık altı).
 export function MetricsStrip({ metrics }: { metrics: Article["metrics"] }) {
   const items = [
-    { icon: Eye, label: "Görüntülenme", value: metrics.views },
-    { icon: Download, label: "İndirme", value: metrics.downloads },
-    { icon: Quote, label: "Atıf", value: metrics.citations },
+    { icon: Eye, label: "Views", value: metrics.views },
+    { icon: Download, label: "Downloads", value: metrics.downloads },
+    { icon: Quote, label: "Citations", value: metrics.citations },
   ];
   return (
     <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
@@ -28,9 +28,9 @@ export function MetricsStrip({ metrics }: { metrics: Article["metrics"] }) {
 // "Metrikler" sekmesi için büyük kartlar.
 export function MetricsCards({ metrics }: { metrics: Article["metrics"] }) {
   const items = [
-    { icon: Eye, label: "Görüntülenme", value: metrics.views },
-    { icon: Download, label: "İndirme", value: metrics.downloads },
-    { icon: Quote, label: "Atıf", value: metrics.citations },
+    { icon: Eye, label: "Views", value: metrics.views },
+    { icon: Download, label: "Downloads", value: metrics.downloads },
+    { icon: Quote, label: "Citations", value: metrics.citations },
   ];
   return (
     <div className="grid gap-4 sm:grid-cols-3">

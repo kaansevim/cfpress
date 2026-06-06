@@ -1,5 +1,7 @@
 export interface Author {
   name: string;
+  surname?: string;
+  givenNames?: string;
   orcid: string;
   affiliation: string;
   isCorresponding?: boolean;
@@ -28,6 +30,11 @@ export interface Article {
   abstract: string;
   publishedAt: string;
   doi: string;
+  volume?: string;
+  issue?: string;
+  fpage?: string;
+  lpage?: string;
+  journalTitle?: string;
   keywords: string[];
   content: string;
   figures: Figure[];

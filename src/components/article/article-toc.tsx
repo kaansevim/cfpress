@@ -29,10 +29,10 @@ export function ArticleToc({ headings }: { headings: Heading[] }) {
   if (headings.length === 0) return null;
 
   return (
-    <nav aria-label="İçindekiler" className="hidden lg:block">
+    <nav aria-label="Contents" className="hidden lg:block">
       <div className="sticky top-8">
         <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          İçindekiler
+          Contents
         </div>
         <ul className="space-y-1 border-l border-border text-sm">
           {headings.map((h) => (

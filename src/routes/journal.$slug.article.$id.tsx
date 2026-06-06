@@ -8,7 +8,7 @@ import { findXmlArticle, type XmlArticleEntry } from "@/lib/article-manifest";
 import { parseJats, type ParsedJats } from "@/lib/jats-parser";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleBody } from "@/components/article-body";
-import { JatsBody } from "@/components/jats-body";
+import { JatsBody, RenderFig, RenderTableWrap } from "@/components/jats-body";
 import { MockFigure } from "@/components/mock-figure";
 import { ArticleToc } from "@/components/article/article-toc";
 import { ArticleAuthors, AuthorContributions } from "@/components/article/article-authors";
@@ -76,6 +76,8 @@ const tabTrigger =
 function ArticlePage() {
   const loaderData = Route.useLoaderData();
   const { journal } = loaderData;
+
+  const [activeTab, setActiveTab] = useState("full-text");
 
   // XML makaleler için client-side parse durumu
   const [parsedJats, setParsedJats] = useState<ParsedJats | null>(null);
@@ -149,7 +151,7 @@ function ArticlePage() {
     <div className="min-h-screen bg-background">
       <SiteHeader journal={journal} />
 
-      <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
         <Link
           to="/journal/$slug/$section"
           params={{ slug: journal.slug, section: "articles" }}
@@ -159,21 +161,24 @@ function ArticlePage() {
         </Link>
       </div>
 
-      <Tabs defaultValue="full-text" className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
         {/* Sekme barı */}
         <div className="overflow-x-auto border-b border-border">
           <TabsList className="h-auto justify-start gap-1 rounded-none bg-transparent p-0">
             <TabsTrigger value="full-text" className={tabTrigger}>
-              Tam Metin
+              Full article
             </TabsTrigger>
             <TabsTrigger value="figures" className={tabTrigger}>
-              Şekiller ve Veriler
+              Table & figure
+            </TabsTrigger>
+            <TabsTrigger value="references" className={tabTrigger}>
+              References
             </TabsTrigger>
             <TabsTrigger value="info" className={tabTrigger}>
-              Makale ve Yazar Bilgisi
+              Article info
             </TabsTrigger>
             <TabsTrigger value="metrics" className={tabTrigger}>
-              Metrikler
+              Metrics
             </TabsTrigger>
           </TabsList>
         </div>
@@ -187,16 +192,6 @@ function ArticlePage() {
               <div className="mb-4 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wider text-muted-foreground">
                 <span className="text-accent">{article.subject}</span>
                 <span>·</span>
-                <span>Araştırma Makalesi</span>
-                {isXml && (
-                  <>
-                    <span>·</span>
-                    <span className="inline-flex items-center gap-1 text-accent">
-                      <FileText className="h-3 w-3" /> JATS XML
-                    </span>
-                  </>
-                )}
-                <span>·</span>
                 <span>{formatDate(article.publishedAt)}</span>
               </div>
 
@@ -208,35 +203,41 @@ function ArticlePage() {
 
               <div className="mt-5 flex flex-col gap-4 border-b border-border pb-5">
                 <MetricsStrip metrics={article.metrics} />
-                <ArticleActions article={article} />
-                <div className="flex flex-wrap items-center gap-4">
+                <ArticleActions article={article} pdfUrl={pdfUrl} />
+                <div className="flex flex-wrap items-center justify-between gap-4">
                   {article.doi && (
-                    <a
-                      href={`https://doi.org/${article.doi}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 font-mono text-sm text-accent hover:underline"
-                    >
-                      doi.org/{article.doi}{" "}
-                      <ExternalLink className="h-3 w-3" />
-                    </a>
-                  )}
-                  {pdfUrl && (
-                    <a
-                      href={pdfUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1 rounded-md border border-border px-3 py-1 text-sm hover:bg-muted"
-                    >
-                      <FileText className="h-3.5 w-3.5" /> PDF İndir
-                    </a>
+                    <div className="flex items-center gap-4">
+                      <a
+                        href={`https://doi.org/${article.doi}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 font-mono text-sm text-accent hover:underline"
+                      >
+                        doi.org/{article.doi}{" "}
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                      <div className="h-4 w-px bg-border"></div>
+                      <a
+                        href={`https://crossmark.crossref.org/dialog/?doi=${article.doi}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center transition-opacity hover:opacity-80"
+                        title="Check for updates"
+                      >
+                        <img 
+                          src="/crossmark.svg" 
+                          alt="Crossmark logo" 
+                          className="h-[22px] w-auto" 
+                        />
+                      </a>
+                    </div>
                   )}
                 </div>
               </div>
 
-              {/* Öz */}
+              {/* Abstract */}
               <section className="mt-8">
-                <h2 className="mb-3 font-serif-display text-xl font-bold">Özet</h2>
+                <h2 className="mb-3 font-serif-display text-xl font-bold">Abstract</h2>
                 <p className="article-prose text-[1.0625rem] leading-relaxed">
                   {article.abstract}
                 </p>
@@ -252,7 +253,7 @@ function ArticlePage() {
               {/* Makale gövdesi */}
               <div className="article-prose mt-10">
                 {isXml && parsedJats ? (
-                  <JatsBody bodyElement={parsedJats.bodyElement} />
+                  <JatsBody bodyElement={parsedJats.bodyElement} basePath={xmlEntry?.xmlPath ? xmlEntry.xmlPath.substring(0, xmlEntry.xmlPath.lastIndexOf("/") + 1) : ""} />
                 ) : (
                   <ArticleBody
                     content={(article as Article).content}
@@ -260,6 +261,23 @@ function ArticlePage() {
                   />
                 )}
               </div>
+
+              {/* References at the bottom of Full Text */}
+              {article.references.length > 0 && (
+                <section className="mt-16 border-t border-border pt-8">
+                  <h2 className="mb-6 font-serif-display text-2xl font-bold">References</h2>
+                  <ol className="space-y-4 text-sm">
+                    {article.references.map((r, i) => (
+                      <li key={r.id} id={r.id} className="flex gap-4 scroll-mt-24">
+                        <span className="font-mono text-xs text-muted-foreground pt-0.5">
+                          [{i + 1}]
+                        </span>
+                        <span className="leading-relaxed">{r.text}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )}
             </article>
           </div>
         </TabsContent>
@@ -267,20 +285,36 @@ function ArticlePage() {
         {/* ── Şekiller ── */}
         <TabsContent value="figures">
           <div className="mx-auto max-w-3xl space-y-10 py-4">
-            {article.figures.length === 0 && (
-              <p className="text-center text-sm text-muted-foreground">
-                Bu makalede şekil bulunmamaktadır.
-              </p>
+            {isXml && parsedJats ? (
+              Array.from(parsedJats.bodyElement.querySelectorAll("fig, table-wrap")).length === 0 ? (
+                <p className="text-center text-sm text-muted-foreground">
+                  Bu makalede şekil veya tablo bulunmamaktadır.
+                </p>
+              ) : (
+                Array.from(parsedJats.bodyElement.querySelectorAll("fig, table-wrap")).map((el, i) => {
+                  const basePath = xmlEntry?.xmlPath ? xmlEntry.xmlPath.substring(0, xmlEntry.xmlPath.lastIndexOf("/") + 1) : "";
+                  return el.tagName.toLowerCase() === "fig" ? 
+                    <RenderFig key={i} el={el} idSuffix="-tab" basePath={basePath} /> : 
+                    <RenderTableWrap key={i} el={el} idSuffix="-tab" />;
+                })
+              )
+            ) : (
+              article.figures.length === 0 ? (
+                <p className="text-center text-sm text-muted-foreground">
+                  Bu makalede şekil bulunmamaktadır.
+                </p>
+              ) : (
+                article.figures.map((f) => (
+                  <figure key={f.id} className="mb-10">
+                    <MockFigure figure={f} />
+                    <figcaption className="mt-2 text-sm">
+                      <span className="font-semibold">{f.label}.</span>{" "}
+                      <span className="text-muted-foreground">{f.caption}</span>
+                    </figcaption>
+                  </figure>
+                ))
+              )
             )}
-            {article.figures.map((f) => (
-              <figure key={f.id}>
-                <MockFigure figure={f} />
-                <figcaption className="mt-2 text-sm">
-                  <span className="font-semibold">{f.label}.</span>{" "}
-                  <span className="text-muted-foreground">{f.caption}</span>
-                </figcaption>
-              </figure>
-            ))}
           </div>
         </TabsContent>
 
@@ -289,14 +323,14 @@ function ArticlePage() {
           <div className="mx-auto max-w-3xl space-y-10 py-4">
             <section>
               <h2 className="mb-4 font-serif-display text-xl font-bold">
-                Yazarlar ve Katkılar
+                Authors and Contributions
               </h2>
               <AuthorContributions authors={article.authors} />
             </section>
 
             {article.funding && (
               <section>
-                <h2 className="mb-2 font-serif-display text-xl font-bold">Finansman</h2>
+                <h2 className="mb-2 font-serif-display text-xl font-bold">Funding</h2>
                 <p className="text-sm text-muted-foreground">{article.funding}</p>
               </section>
             )}
@@ -304,40 +338,48 @@ function ArticlePage() {
             {article.dataAvailability && (
               <section>
                 <h2 className="mb-2 font-serif-display text-xl font-bold">
-                  Veri Erişilebilirliği
+                  Data Availability
                 </h2>
                 <p className="text-sm text-muted-foreground">{article.dataAvailability}</p>
               </section>
             )}
 
             <section>
-              <h2 className="mb-3 font-serif-display text-xl font-bold">Yayın Bilgisi</h2>
+              <h2 className="mb-3 font-serif-display text-xl font-bold">Publication Info</h2>
               <dl className="space-y-3 text-sm">
-                <InfoRow label="Geliş Tarihi" value={article.info.received} />
-                <InfoRow label="Kabul Tarihi" value={article.info.accepted} />
-                <InfoRow label="Yayın Tarihi" value={article.info.published} />
-                <InfoRow label="Sorumlu Editör" value={article.info.editor} />
-                <InfoRow label="Lisans" value={article.info.license} />
+                <InfoRow label="Received" value={article.info.received} />
+                <InfoRow label="Accepted" value={article.info.accepted} />
+                <InfoRow label="Published" value={article.info.published} />
+                <InfoRow label="Handling Editor" value={article.info.editor} />
+                <InfoRow label="License" value={article.info.license} />
                 {article.doi && (
                   <InfoRow label="DOI" value={article.doi} mono />
                 )}
               </dl>
             </section>
+          </div>
+        </TabsContent>
 
-            {article.references.length > 0 && (
+        {/* ── References ── */}
+        <TabsContent value="references">
+          <div className="mx-auto max-w-3xl space-y-10 py-4">
+            {article.references.length > 0 ? (
               <section>
-                <h2 className="mb-3 font-serif-display text-xl font-bold">Kaynakça</h2>
-                <ol className="space-y-3 text-sm">
+                <ol className="space-y-4 text-sm">
                   {article.references.map((r, i) => (
-                    <li key={r.id} id={r.id} className="flex gap-3">
-                      <span className="font-mono text-xs text-muted-foreground">
+                    <li key={`ref-tab-${r.id}`} id={`ref-tab-${r.id}`} className="flex gap-4">
+                      <span className="font-mono text-xs text-muted-foreground pt-0.5">
                         [{i + 1}]
                       </span>
-                      <span>{r.text}</span>
+                      <span className="leading-relaxed">{r.text}</span>
                     </li>
                   ))}
                 </ol>
               </section>
+            ) : (
+              <p className="text-center text-sm text-muted-foreground">
+                No references available.
+              </p>
             )}
           </div>
         </TabsContent>
@@ -347,7 +389,7 @@ function ArticlePage() {
           <div className="mx-auto max-w-3xl py-6">
             <MetricsCards metrics={article.metrics} />
             <p className="mt-6 text-center text-xs text-muted-foreground">
-              Metrikler düzenli olarak güncellenir.
+              Metrics are updated regularly.
             </p>
           </div>
         </TabsContent>
