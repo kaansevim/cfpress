@@ -147,14 +147,35 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
           </Link>
         )}
 
-        {/* Desktop nav */}
-        {journal ? (
-          <JournalDesktopNav slug={journal.slug} />
-        ) : (
-          <nav className="hidden items-center gap-1 sm:flex">
-            <PlatformNav />
-          </nav>
-        )}
+        {/* Desktop nav & actions */}
+        <div className={journal ? "hidden items-center gap-6 lg:flex" : "hidden items-center gap-6 sm:flex"}>
+          {journal ? (
+            <JournalDesktopNav slug={journal.slug} />
+          ) : (
+            <nav className="flex items-center gap-1">
+              <PlatformNav />
+            </nav>
+          )}
+
+          <div className="flex items-center gap-4 border-l border-border pl-6">
+            <a
+              href="http://localhost:8080/index.php/test/login"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Editör Girişi
+            </a>
+            <a
+              href="http://localhost:8080/index.php/test/about/submissions"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+            >
+              Makale Gönder
+            </a>
+          </div>
+        </div>
 
         {/* Mobile menu toggle */}
         <button
@@ -176,6 +197,25 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
           ) : (
             <PlatformNav onNavigate={close} />
           )}
+
+          <div className="mt-4 flex flex-col gap-2 border-t border-border pt-4">
+            <a
+              href="http://localhost:8080/index.php/test/about/submissions"
+              target="_blank"
+              rel="noreferrer"
+              className="block rounded-md bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Makale Gönder
+            </a>
+            <a
+              href="http://localhost:8080/index.php/test/login"
+              target="_blank"
+              rel="noreferrer"
+              className="block rounded-md px-3 py-2 text-center text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+            >
+              Editör Girişi
+            </a>
+          </div>
         </nav>
       )}
     </header>
