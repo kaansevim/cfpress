@@ -31,7 +31,7 @@ services:
 
   # Open Journal Systems (Backend)
   ojs:
-    image: pkp/ojs:latest # Replace with specific version if needed (e.g. 3.4.0)
+    image: pkpofficial/ojs:latest # Replace with specific version if needed (e.g. 3.4.0)
     ports:
       - "8080:80"
     environment:
