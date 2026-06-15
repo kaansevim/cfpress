@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Frontend - TanStack Start Application
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      # OJS API URL can be passed here to connect to the backend
+      - VITE_OJS_API_URL=http://ojs:80/index.php/api/v1
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    restart: unless-stopped
+
+  # OJS Backend Database
+  db:
+    image: mariadb:10.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=ojs_root_secret
+      - MYSQL_DATABASE=ojs
+      - MYSQL_USER=ojs
+      - MYSQL_PASSWORD=ojs_secret
+    volumes:
+      - ojs_db_data:/var/lib/mysql
+    restart: unless-stopped
+
+  # Open Journal Systems (Backend)
+  ojs:
+    image: pkp/ojs:latest # Replace with specific version if needed (e.g. 3.4.0)
+    ports:
+      - "8080:80"
+    environment:
+      - OJS_DB_HOST=db
+      - OJS_DB_USER=ojs
+      - OJS_DB_PASSWORD=ojs_secret
+      - OJS_DB_NAME=ojs
+      - SERVERNAME=localhost
+    volumes:
+      - ojs_public:/var/www/html/public
+      - ojs_files:/var/www/files
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  ojs_db_data:
+  ojs_public:
+  ojs_files:
