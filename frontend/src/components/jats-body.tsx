@@ -213,7 +213,7 @@ export function RenderFig({ el, idSuffix = "", basePath = "" }: { el: Element; i
         />
       ) : (
         <div className="flex min-h-[8rem] items-center justify-center rounded border border-dashed border-border bg-muted/40 p-8 text-sm text-muted-foreground">
-          {label || "Şekil"}
+          {label || "Figure"}
         </div>
       )}
       {(label || caption) && (

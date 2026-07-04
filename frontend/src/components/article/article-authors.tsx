@@ -67,7 +67,7 @@ export function AuthorContributions({ authors }: { authors: Author[] }) {
           {a.contributions && a.contributions.length > 0 && (
             <div className="mt-3">
               <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Katkılar
+                Contributions
               </div>
               <div className="mt-1 flex flex-wrap gap-1.5">
                 {a.contributions.map((c) => (

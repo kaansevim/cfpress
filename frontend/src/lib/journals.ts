@@ -18,40 +18,40 @@ export const journals: Journal[] = [
     name: "Journal of Social Solutions",
     shortName: "JSS",
     scope:
-      "Toplumsal sorunlara disiplinler arası ve uygulanabilir çözümler üreten özgün araştırmaları yayımlar. Sosyal politika, toplum sağlığı, eğitim ve sürdürülebilir kalkınma odaklıdır.",
+      "An interdisciplinary journal publishing original research that develops practical, evidence-based responses to pressing social problems. Coverage spans social policy, community health, education, and sustainable development.",
     issn: "0000-0001",
     eissn: "0000-0002",
-    subjects: ["Sosyal Politika", "Toplum Sağlığı", "Eğitim", "Sürdürülebilir Kalkınma"],
+    subjects: ["Social Policy", "Community Health", "Education", "Sustainable Development"],
   },
   {
     slug: "cognitive-formation",
     name: "Journal of Cognitive Formation",
     shortName: "JCF",
     scope:
-      "Bilişsel bilimler, öğrenme, yapay zekâ ve insan-makine etkileşimi alanlarında kuramsal ve deneysel çalışmalara yer verir.",
+      "Publishes theoretical and experimental work on cognition, learning, and the mechanisms by which knowledge is formed — including research on artificial intelligence, language, and human–machine interaction.",
     issn: "0000-0003",
     eissn: "0000-0004",
-    subjects: ["Bilişsel Bilim", "Yapay Zekâ", "Öğrenme", "Dilbilim"],
+    subjects: ["Cognitive Science", "Artificial Intelligence", "Learning", "Linguistics"],
   },
   {
     slug: "economic-change-future",
     name: "Journal of Economic Change and Future",
     shortName: "JECF",
     scope:
-      "Ekonomik dönüşüm, kentleşme, çevre ekonomisi ve geleceğe yönelik politika araştırmalarını kapsar.",
+      "Devoted to the study of structural economic change and its long-run consequences. The journal welcomes research on urbanization, environmental economics, and forward-looking policy analysis.",
     issn: "0000-0005",
     eissn: "0000-0006",
-    subjects: ["Ekonomi", "Kentleşme", "Çevre", "Politika"],
+    subjects: ["Economics", "Urbanization", "Environment", "Public Policy"],
   },
   {
     slug: "community-foundations",
     name: "Journal of Community & Foundations",
     shortName: "JCFo",
     scope:
-      "Topluluk temelli araştırmalar, sivil toplum, vakıf çalışmaları ve yerel yönetişim üzerine çalışmaları yayımlar.",
+      "Publishes community-based research and scholarship on civil society, philanthropy, and local governance, with particular attention to the role of foundations and voluntary organizations in social life.",
     issn: "0000-0007",
     eissn: "0000-0008",
-    subjects: ["Topluluk", "Sivil Toplum", "Yerel Yönetişim"],
+    subjects: ["Community Studies", "Civil Society", "Philanthropy", "Local Governance"],
   },
 ];
 

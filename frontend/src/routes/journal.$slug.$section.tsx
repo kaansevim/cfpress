@@ -20,16 +20,16 @@ export const Route = createFileRoute("/journal/$slug/$section")({
     return { journal, articles: all, section: params.section };
   },
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Dergi" }] };
+    if (!loaderData) return { meta: [{ title: "Journal" }] };
     const group = journalNav.find((g) => g.section === loaderData.section);
     return { meta: [{ title: `${group?.label ?? ""} — ${loaderData.journal.name}` }] };
   },
   notFoundComponent: () => (
     <div className="flex min-h-screen items-center justify-center">
       <div className="text-center">
-        <p className="text-muted-foreground">Sayfa bulunamadı.</p>
+        <p className="text-muted-foreground">Page not found.</p>
         <Link to="/journals" className="mt-4 inline-block text-accent hover:underline">
-          ← Tüm dergiler
+          ← All journals
         </Link>
       </div>
     </div>
@@ -64,7 +64,7 @@ function SectionPage() {
         <main className="mx-auto max-w-3xl px-6 py-12">
           {articles.length === 0 ? (
             <p className="py-12 text-center text-muted-foreground">
-              Bu dergide henüz makale yayımlanmadı.
+              No articles have been published in this journal yet.
             </p>
           ) : (
             articles.map((a) => <ArticleCard key={a.id} article={a} />)
@@ -74,7 +74,7 @@ function SectionPage() {
         <main className="mx-auto max-w-3xl px-6 py-12">
           {/* ÇEKİRDEK TUR: alt başlıklar liste olarak; gerçek içerik 2. turda eklenecek. */}
           <p className="mb-8 text-muted-foreground">
-            Bu bölümün alt başlıkları aşağıda listelenmiştir. İçerikler hazırlanma aşamasındadır.
+            The subsections of this page are listed below. Content is being prepared.
           </p>
           <ul className="divide-y divide-border rounded-lg border border-border">
             {group.items.map((item) => (
@@ -82,7 +82,7 @@ function SectionPage() {
                 <div className="flex items-center justify-between px-5 py-4">
                   <span className="font-medium">{item}</span>
                   <span className="text-xs uppercase tracking-wider text-muted-foreground">
-                    Yakında
+                    Coming soon
                   </span>
                 </div>
               </li>

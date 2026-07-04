@@ -22,9 +22,9 @@ export function ArticleCard({ article }: { article: Article }) {
       <Link
         to="/journal/$slug/article/$id"
         params={{ slug: article.journalSlug, id: article.id }}
-        className="block"
+        className="inline-block"
       >
-        <h2 className="font-serif-display text-2xl font-bold leading-tight transition-colors group-hover:text-accent sm:text-3xl">
+        <h2 className="font-serif-display text-2xl font-bold leading-tight transition-colors hover:text-accent sm:text-3xl">
           {article.title}
         </h2>
       </Link>
@@ -41,7 +41,7 @@ export function ArticleCard({ article }: { article: Article }) {
           params={{ slug: article.journalSlug, id: article.id }}
           className="font-medium text-accent hover:underline"
         >
-          Makaleyi oku →
+          Read article →
         </Link>
         <a
           href={`https://doi.org/${article.doi}`}

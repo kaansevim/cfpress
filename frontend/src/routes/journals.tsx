@@ -6,8 +6,8 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 export const Route = createFileRoute("/journals")({
   head: () => ({
     meta: [
-      { title: "Dergiler — Akademik Yayın Platformu" },
-      { name: "description", content: "Platformda yönetilen tüm açık erişimli akademik dergiler." },
+      { title: "Journals — CF Open" },
+      { name: "description", content: "All open access academic journals published on the platform." },
     ],
   }),
   component: JournalsPage,
@@ -20,10 +20,9 @@ function JournalsPage() {
 
       <header className="border-b border-border">
         <div className="mx-auto max-w-5xl px-6 py-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Platform</p>
-          <h1 className="mt-3 font-serif-display text-4xl font-bold tracking-tight">Dergiler</h1>
+          <h1 className="font-serif-display text-4xl font-bold tracking-tight">Journals</h1>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Platformumuzda yönetilen açık erişimli, hakemli akademik dergiler.
+            The peer-reviewed, open access journals published on CF Open.
           </p>
         </div>
       </header>
@@ -56,7 +55,7 @@ function JournalsPage() {
                   ))}
                 </div>
                 <div className="mt-4 text-xs text-muted-foreground">
-                  {count} makale · e-ISSN {j.eissn}
+                  {count} {count === 1 ? "article" : "articles"} · e-ISSN {j.eissn}
                 </div>
               </Link>
             );
