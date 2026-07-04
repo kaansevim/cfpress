@@ -1,10 +1,12 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, useLocation } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { getJournal, journalNav, navItemSlug, type Journal } from "@/lib/journals";
 import { getArticlesByJournal, type Article } from "@/lib/mock-articles";
 import { getXmlArticlesByJournal } from "@/lib/article-manifest";
 import { xmlEntryToArticle } from "@/lib/article-utils";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleCard } from "@/components/article-card";
+import { getItemContent } from "@/lib/section-content";
 
 const VALID = new Set(["about", "articles", "for-authors"]);
 
@@ -40,6 +42,21 @@ export const Route = createFileRoute("/journal/$slug/$section")({
 function SectionPage() {
   const { journal, articles, section } = Route.useLoaderData();
   const group = journalNav.find((g) => g.section === section)!;
+  const hash = useLocation({ select: (l) => l.hash });
+
+  // Aynı route içinde yalnızca hash değiştiğinde router yeniden kaydırma
+  // yapmayabiliyor; scroll restoration'ın "en üste dön" davranışından SONRA
+  // çalışması için kaydırmayı iki frame erteleyerek garanti ediyoruz.
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.replace(/^#/, "");
+    const raf = requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      })
+    );
+    return () => cancelAnimationFrame(raf);
+  }, [hash, section]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -72,22 +89,28 @@ function SectionPage() {
         </main>
       ) : (
         <main className="mx-auto max-w-3xl px-6 py-12">
-          {/* ÇEKİRDEK TUR: alt başlıklar liste olarak; gerçek içerik 2. turda eklenecek. */}
-          <p className="mb-8 text-muted-foreground">
-            The subsections of this page are listed below. Content is being prepared.
-          </p>
-          <ul className="divide-y divide-border rounded-lg border border-border">
-            {group.items.map((item) => (
-              <li key={item} id={navItemSlug(item)} className="scroll-mt-24">
-                <div className="flex items-center justify-between px-5 py-4">
-                  <span className="font-medium">{item}</span>
-                  <span className="text-xs uppercase tracking-wider text-muted-foreground">
+          {group.items.map((item) => {
+            const slug = navItemSlug(item);
+            const content = getItemContent(journal, slug);
+            return (
+              <section
+                key={item}
+                id={slug}
+                className="scroll-mt-24 border-b border-border py-10 first:pt-0 last:border-b-0"
+              >
+                <h2 className="font-serif-display text-2xl font-bold tracking-tight">
+                  {item}
+                </h2>
+                {content ? (
+                  <div className="article-prose mt-4">{content}</div>
+                ) : (
+                  <p className="mt-4 text-sm uppercase tracking-wider text-muted-foreground">
                     Coming soon
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
+                  </p>
+                )}
+              </section>
+            );
+          })}
         </main>
       )}
 

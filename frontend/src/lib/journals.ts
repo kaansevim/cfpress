@@ -18,10 +18,10 @@ export const journals: Journal[] = [
     name: "Journal of Social Solutions",
     shortName: "JSS",
     scope:
-      "An interdisciplinary journal publishing original research that develops practical, evidence-based responses to pressing social problems. Coverage spans social policy, community health, education, and sustainable development.",
+      "An interdisciplinary journal publishing original research that develops practical, evidence-based responses to pressing social problems. Coverage spans social work, social policy, community health, education, and sustainable development.",
     issn: "0000-0001",
     eissn: "0000-0002",
-    subjects: ["Social Policy", "Community Health", "Education", "Sustainable Development"],
+    subjects: ["Social Work", "Social Policy", "Community Health", "Education", "Sustainable Development"],
   },
   {
     slug: "cognitive-formation",
