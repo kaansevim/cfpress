@@ -1,50 +1,70 @@
-version: '3.8'
+# Akademik Yayın Platformu — production docker-compose
+#
+#   cf.org.tr        → frontend (port 3000)   ← sunucudaki reverse proxy yönlendirir
+#   dergi.cf.org.tr  → ojs      (port 8080)   ← sunucudaki reverse proxy yönlendirir
+#
+# Kurulum: sunucuda "sudo bash kurulum.sh" çalıştırın (ayrıntı: KURULUM.md).
+# Portlar güvenlik için varsayılan olarak sadece 127.0.0.1'e bağlanır;
+# reverse proxy başka makinede/konteynerdeyse .env içinde BIND_IP=0.0.0.0 yapın.
 
 services:
-  # Frontend - TanStack Start Application
+  # ---------- Frontend (cf.org.tr) ----------
   frontend:
-    build: 
+    build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        # OJS'in dışarıdan erişilen adresi (frontend'deki "Editör Girişi" /
+        # "Makale Gönder" butonları bu adrese gider)
+        VITE_OJS_URL: ${OJS_PUBLIC_URL:-https://dergi.cf.org.tr}
+        # Opsiyonel: butonların belirli bir dergiye gitmesi için OJS dergi path'i
+        VITE_OJS_JOURNAL_PATH: ${OJS_JOURNAL_PATH:-}
     ports:
-      - "3000:3000"
+      - "${BIND_IP:-127.0.0.1}:3000:3000"
     environment:
-      - NODE_ENV=development
-      # OJS API URL can be passed here to connect to the backend
-      - VITE_OJS_API_URL=http://ojs:80/index.php/api/v1
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - NODE_ENV=production
     restart: unless-stopped
 
-  # OJS Backend Database
+  # ---------- Veritabanı ----------
   db:
     image: mariadb:10.6
     environment:
-      - MYSQL_ROOT_PASSWORD=ojs_root_secret
+      - MYSQL_ROOT_PASSWORD=${OJS_DB_ROOT_PASSWORD:-degistir_root_parolasi}
       - MYSQL_DATABASE=ojs
       - MYSQL_USER=ojs
-      - MYSQL_PASSWORD=ojs_secret
+      - MYSQL_PASSWORD=${OJS_DB_PASSWORD:-degistir_db_parolasi}
     volumes:
       - ojs_db_data:/var/lib/mysql
+      - ./ojs/config/db.charset.conf:/etc/mysql/conf.d/charset.cnf:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
     restart: unless-stopped
 
-  # Open Journal Systems (Backend)
+  # ---------- OJS (dergi.cf.org.tr) ----------
   ojs:
-    image: pkpofficial/ojs:latest # Replace with specific version if needed (e.g. 3.4.0)
+    image: pkpofficial/ojs:3_5_0-5
     ports:
-      - "8080:80"
+      - "${BIND_IP:-127.0.0.1}:8080:80"
     environment:
+      - SERVERNAME=${OJS_DOMAIN:-dergi.cf.org.tr}
       - OJS_DB_HOST=db
       - OJS_DB_USER=ojs
-      - OJS_DB_PASSWORD=ojs_secret
+      - OJS_DB_PASSWORD=${OJS_DB_PASSWORD:-degistir_db_parolasi}
       - OJS_DB_NAME=ojs
-      - SERVERNAME=localhost
     volumes:
       - ojs_public:/var/www/html/public
       - ojs_files:/var/www/files
+      # Kalıcı OJS ayar dosyası (kurulum.sh şablondan üretir) — konteyner
+      # yeniden oluşturulsa bile kurulum kaybolmaz
+      - ./ojs/config/ojs.config.inc.php:/var/www/html/config.inc.php
+      # Reverse proxy / Cloudflare arkasında HTTPS algılama
+      - ./ojs/config/apache.htaccess:/var/www/html/.htaccess:ro
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     restart: unless-stopped
 
 volumes:

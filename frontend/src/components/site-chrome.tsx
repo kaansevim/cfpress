@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { journalNav, navItemSlug, type Journal } from "@/lib/journals";
+import { OJS_LOGIN_URL, OJS_SUBMIT_URL } from "@/lib/ojs";
 
 /* ----------------------------- Platform Header ---------------------------- */
 
@@ -159,7 +160,7 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
 
           <div className="flex items-center gap-4 border-l border-border pl-6">
             <a
-              href="http://localhost:8080/index.php/test/login"
+              href={OJS_LOGIN_URL}
               target="_blank"
               rel="noreferrer"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -167,7 +168,7 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
               Editör Girişi
             </a>
             <a
-              href="http://localhost:8080/index.php/test/about/submissions"
+              href={OJS_SUBMIT_URL}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -200,7 +201,7 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
 
           <div className="mt-4 flex flex-col gap-2 border-t border-border pt-4">
             <a
-              href="http://localhost:8080/index.php/test/about/submissions"
+              href={OJS_SUBMIT_URL}
               target="_blank"
               rel="noreferrer"
               className="block rounded-md bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
@@ -208,7 +209,7 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
               Makale Gönder
             </a>
             <a
-              href="http://localhost:8080/index.php/test/login"
+              href={OJS_LOGIN_URL}
               target="_blank"
               rel="noreferrer"
               className="block rounded-md px-3 py-2 text-center text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"

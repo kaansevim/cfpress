@@ -13,6 +13,8 @@ export default defineConfig({
     server: { entry: "server" },
   },
   nitro: {
-    preset: "netlify"
+    // Netlify'da varsayılan preset kullanılır; Docker imajı build edilirken
+    // Dockerfile NITRO_PRESET=node-server ayarlayarak Node sunucusu üretir.
+    preset: process.env.NITRO_PRESET || "netlify"
   }
 });
