@@ -1,0 +1,4 @@
+# OJS, Cloudflare + reverse proxy arkasında çalışıyor.
+# Proxy TLS'i sonlandırdığı için Apache'ye istekler HTTP olarak gelir;
+# bu satır OJS'in isteğin aslında HTTPS olduğunu anlamasını sağlar.
+SetEnvIf X-Forwarded-Proto "^https$" HTTPS=on
