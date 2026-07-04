@@ -38,12 +38,12 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
   },
 
   head: ({ loaderData }) => {
-    if (!loaderData) return { meta: [{ title: "Makale" }] };
+    if (!loaderData) return { meta: [{ title: "Article" }] };
     const journal = loaderData.journal;
     const title =
       loaderData.kind === "mock"
         ? loaderData.article.title
-        : "Makale Yükleniyor…";
+        : "Loading article…";
     return {
       meta: [
         { title: `${title} — ${journal.name}` },
@@ -55,9 +55,9 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
   notFoundComponent: () => (
     <div className="flex min-h-screen items-center justify-center">
       <div className="text-center">
-        <p className="text-muted-foreground">Makale bulunamadı.</p>
+        <p className="text-muted-foreground">Article not found.</p>
         <Link to="/journals" className="mt-4 inline-block text-accent hover:underline">
-          ← Dergiler
+          ← Journals
         </Link>
       </div>
     </div>
@@ -115,7 +115,7 @@ function ArticlePage() {
         <SiteHeader journal={journal} />
         <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-muted-foreground">
           <Loader2 className="h-8 w-8 animate-spin text-accent" />
-          <p className="text-sm">Makale XML dosyası yükleniyor…</p>
+          <p className="text-sm">Loading article…</p>
         </div>
         <SiteFooter />
       </div>
@@ -128,7 +128,7 @@ function ArticlePage() {
       <div className="min-h-screen bg-background">
         <SiteHeader journal={journal} />
         <div className="flex min-h-[60vh] flex-col items-center justify-center gap-2 p-12 text-center">
-          <p className="font-semibold text-destructive">XML yüklenemedi</p>
+          <p className="font-semibold text-destructive">Failed to load article</p>
           <p className="text-sm text-muted-foreground">{jatsError}</p>
         </div>
         <SiteFooter />
@@ -153,8 +153,8 @@ function ArticlePage() {
 
       <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
         <Link
-          to="/journal/$slug/$section"
-          params={{ slug: journal.slug, section: "articles" }}
+          to="/journal/$slug"
+          params={{ slug: journal.slug }}
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" /> {journal.name}

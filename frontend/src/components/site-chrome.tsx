@@ -64,12 +64,6 @@ function JournalDesktopNav({ slug }: { slug: string }) {
           </DropdownMenuContent>
         </DropdownMenu>
       ))}
-      <Link
-        to="/"
-        className="ml-1 rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-      >
-        Platform
-      </Link>
     </nav>
   );
 }
@@ -104,25 +98,31 @@ function JournalMobileNav({ slug, onNavigate }: { slug: string; onNavigate: () =
           </ul>
         </div>
       ))}
-      <Link
-        to="/"
-        onClick={onNavigate}
-        className="block rounded-md px-3 py-2 text-sm font-semibold text-muted-foreground hover:bg-secondary hover:text-foreground"
-      >
-        Platform
-      </Link>
     </div>
   );
 }
 
 /* -------------------------------- SiteHeader ------------------------------ */
 
-export function SiteHeader({ journal }: { journal?: Journal }) {
+export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: boolean }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
 
   return (
-    <header className="border-b border-border bg-background">
+    <header className={flush ? "bg-transparent" : "border-b border-border bg-background"}>
+      {journal && (
+        <div className="border-b border-border bg-secondary/40">
+          <div className="mx-auto max-w-6xl px-4 py-1.5 sm:px-6">
+            <Link
+              to="/"
+              onClick={close}
+              className="text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+            >
+              CF Open
+            </Link>
+          </div>
+        </div>
+      )}
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
         {journal ? (
           <Link
@@ -143,7 +143,7 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
         ) : (
           <Link to="/" className="flex items-baseline gap-2" onClick={close}>
             <span className="font-serif-display text-xl font-bold tracking-tight sm:text-2xl">
-              Akademik Yayın Platformu
+              CF Open
             </span>
           </Link>
         )}
@@ -165,15 +165,7 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
               rel="noreferrer"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Editör Girişi
-            </a>
-            <a
-              href={OJS_SUBMIT_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Makale Gönder
+              Sign in
             </a>
           </div>
         </div>
@@ -182,7 +174,7 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Menüyü aç/kapat"
+          aria-label="Toggle menu"
           aria-expanded={open}
           className={journal ? "rounded-md p-2 hover:bg-secondary lg:hidden" : "rounded-md p-2 hover:bg-secondary sm:hidden"}
         >
@@ -200,21 +192,23 @@ export function SiteHeader({ journal }: { journal?: Journal }) {
           )}
 
           <div className="mt-4 flex flex-col gap-2 border-t border-border pt-4">
-            <a
-              href={OJS_SUBMIT_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="block rounded-md bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Makale Gönder
-            </a>
+            {journal && (
+              <a
+                href={OJS_SUBMIT_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-md bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Submit article
+              </a>
+            )}
             <a
               href={OJS_LOGIN_URL}
               target="_blank"
               rel="noreferrer"
               className="block rounded-md px-3 py-2 text-center text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             >
-              Editör Girişi
+              Sign in
             </a>
           </div>
         </nav>
@@ -233,51 +227,63 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="font-serif-display text-lg font-bold">Akademik Yayın Platformu</div>
+            <div className="font-serif-display text-lg font-bold">CF Open</div>
             <p className="mt-2 text-sm text-muted-foreground">
-              Birden çok hakemli, açık erişimli akademik derginin yönetildiği yayın platformu.
+              A publishing platform hosting peer-reviewed, open access academic journals.
             </p>
           </div>
 
           <div className="text-sm">
-            <div className="mb-2 font-semibold">Platform</div>
+            <div className="mb-2 font-semibold">Explore</div>
             <ul className="space-y-1 text-muted-foreground">
               <li>
                 <Link to="/journals" className="transition-colors hover:text-foreground">
-                  Dergiler
+                  Journals
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="transition-colors hover:text-foreground">
-                  Hakkında
+                  About
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="text-sm">
-            <div className="mb-2 font-semibold">Yayın Ofisi</div>
-            {/* GEÇİCİ — kullanıcının vereceği gerçek adresle değiştirilecek */}
+            <div className="mb-2 font-semibold">Editorial Office</div>
             <p className="text-muted-foreground">
-              Yayın Ofisi Adresi (placeholder)
+              CF Education and Consulting
               <br />
-              Şehir, Ülke
+              ASBU Sosyokent No: 209
               <br />
-              info@ornek-platform.org
+              Altindag - Ankara - Turkiye
+              <br />
+              <a
+                href="https://cfdanismanlik.com.tr/"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-foreground"
+              >
+                cfdanismanlik.com.tr
+              </a>
+              <br />
+              <a href="tel:+908503033719" className="transition-colors hover:text-foreground">
+                +90 850 303 37 19
+              </a>
             </p>
           </div>
 
           <div className="text-sm">
-            <div className="mb-2 font-semibold">Lisans & Erişim</div>
+            <div className="mb-2 font-semibold">License & Access</div>
             <p className="text-muted-foreground">
-              Tüm içerikler CC BY 4.0 lisansı ile açık erişimle yayımlanır.
+              All content is published open access under the CC BY 4.0 license.
             </p>
           </div>
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
           {/* GEÇİCİ ISSN/telif bilgisi */}
-          ISSN 0000-0000 (Basılı) · e-ISSN 0000-0001 (Çevrimiçi) · © {new Date().getFullYear()} Akademik Yayın Platformu
+          ISSN 0000-0000 (Print) · e-ISSN 0000-0001 (Online) · © {new Date().getFullYear()} CF Open
         </div>
       </div>
     </footer>

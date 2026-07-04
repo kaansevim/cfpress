@@ -85,7 +85,7 @@ export function toAPA(article: Article): string {
     }
     journalInfo.push(volIss);
   } else {
-    journalInfo.push("Akademik Yayın Platformu");
+    journalInfo.push("CF Open");
   }
   
   if (article.fpage) {
@@ -137,7 +137,7 @@ export function toChicago(article: Article): string {
     }
     res += ".";
   } else {
-    res += ` Akademik Yayın Platformu.`;
+    res += ` CF Open.`;
   }
   
   if (article.doi) {
@@ -172,7 +172,7 @@ export function toBibTeX(article: Article): string {
     lines.push(`  pages   = {${pages}},`);
   }
   if (article.doi) lines.push(`  doi     = {${article.doi}},`);
-  lines.push(`  note    = {Akademik Yayın Platformu}`);
+  lines.push(`  note    = {CF Open}`);
   lines.push(`}`);
   return lines.join("\n");
 }
