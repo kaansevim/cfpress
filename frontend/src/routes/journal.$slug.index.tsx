@@ -100,7 +100,7 @@ function JournalHome() {
     <div className="min-h-screen bg-background">
       <SiteHeader journal={journal} />
 
-      <header className="border-b border-border bg-secondary/30">
+      <header className="border-b border-border bg-accent/5">
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-16 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">

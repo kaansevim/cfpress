@@ -48,13 +48,20 @@ function JournalDesktopNav({ slug }: { slug: string }) {
             {group.label}
             <ChevronDown className="h-3.5 w-3.5" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" className="max-h-[70vh] overflow-y-auto">
+          <DropdownMenuContent
+            align="start"
+            className="max-h-[70vh] overflow-y-auto"
+            // Menü kapanırken odağın tetik butonuna dönmesi sayfayı yukarı
+            // kaydırıp anchor'a gidişi iptal ediyordu — engelliyoruz.
+            onCloseAutoFocus={(e) => e.preventDefault()}
+          >
             {group.items.map((item) => (
               <DropdownMenuItem key={item} asChild>
                 <Link
                   to="/journal/$slug/$section"
                   params={{ slug, section: group.section }}
                   hash={navItemSlug(item)}
+                  hashScrollIntoView={{ behavior: "smooth", block: "start" }}
                   className="cursor-pointer"
                 >
                   {item}
@@ -88,6 +95,7 @@ function JournalMobileNav({ slug, onNavigate }: { slug: string; onNavigate: () =
                   to="/journal/$slug/$section"
                   params={{ slug, section: group.section }}
                   hash={navItemSlug(item)}
+                  hashScrollIntoView={{ behavior: "smooth", block: "start" }}
                   onClick={onNavigate}
                   className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                 >
@@ -110,8 +118,8 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
 
   return (
     <header className={flush ? "bg-transparent" : "border-b border-border bg-background"}>
-      {journal && (
-        <div className="border-b border-border bg-secondary/40">
+      {journal ? (
+        <div className="border-b border-border bg-accent/5">
           <div className="mx-auto max-w-6xl px-4 py-1.5 sm:px-6">
             <Link
               to="/"
@@ -120,6 +128,14 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
             >
               CF Open
             </Link>
+          </div>
+        </div>
+      ) : (
+        // Dergi sayfalarındaki üst şeritle aynı yükseklikte görünmez boşluk —
+        // ana sayfa header'ı dergi sayfalarındaki hizada dursun diye.
+        <div className="border-b border-transparent" aria-hidden>
+          <div className="mx-auto max-w-6xl px-4 py-1.5 sm:px-6">
+            <span className="invisible text-xs font-medium tracking-wide">CF Open</span>
           </div>
         </div>
       )}
@@ -256,7 +272,7 @@ export function SiteFooter() {
               <br />
               ASBU Sosyokent No: 209
               <br />
-              Altindag - Ankara - Turkiye
+              Altındağ - Ankara - Türkiye
               <br />
               <a
                 href="https://cfdanismanlik.com.tr/"
@@ -282,8 +298,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
-          {/* GEÇİCİ ISSN/telif bilgisi */}
-          ISSN 0000-0000 (Print) · e-ISSN 0000-0001 (Online) · © {new Date().getFullYear()} CF Open
+          © {new Date().getFullYear()} CF Open
         </div>
       </div>
     </footer>

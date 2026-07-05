@@ -9,46 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as YazarRehberiRouteImport } from './routes/yazar-rehberi'
 import { Route as JournalsRouteImport } from './routes/journals'
-import { Route as HakemSureciRouteImport } from './routes/hakem-sureci'
-import { Route as EtikIlkelerRouteImport } from './routes/etik-ilkeler'
-import { Route as DashboardRouteImport } from './routes/dashboard'
-import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JournalSlugIndexRouteImport } from './routes/journal.$slug.index'
 import { Route as JournalSlugSectionRouteImport } from './routes/journal.$slug.$section'
 import { Route as JournalSlugArticleIdRouteImport } from './routes/journal.$slug.article.$id'
 
-const YazarRehberiRoute = YazarRehberiRouteImport.update({
-  id: '/yazar-rehberi',
-  path: '/yazar-rehberi',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const JournalsRoute = JournalsRouteImport.update({
   id: '/journals',
   path: '/journals',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HakemSureciRoute = HakemSureciRouteImport.update({
-  id: '/hakem-sureci',
-  path: '/hakem-sureci',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EtikIlkelerRoute = EtikIlkelerRouteImport.update({
-  id: '/etik-ilkeler',
-  path: '/etik-ilkeler',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthRoute = AuthRouteImport.update({
-  id: '/auth',
-  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -80,12 +50,7 @@ const JournalSlugArticleIdRoute = JournalSlugArticleIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/auth': typeof AuthRoute
-  '/dashboard': typeof DashboardRoute
-  '/etik-ilkeler': typeof EtikIlkelerRoute
-  '/hakem-sureci': typeof HakemSureciRoute
   '/journals': typeof JournalsRoute
-  '/yazar-rehberi': typeof YazarRehberiRoute
   '/journal/$slug/$section': typeof JournalSlugSectionRoute
   '/journal/$slug/': typeof JournalSlugIndexRoute
   '/journal/$slug/article/$id': typeof JournalSlugArticleIdRoute
@@ -93,12 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/auth': typeof AuthRoute
-  '/dashboard': typeof DashboardRoute
-  '/etik-ilkeler': typeof EtikIlkelerRoute
-  '/hakem-sureci': typeof HakemSureciRoute
   '/journals': typeof JournalsRoute
-  '/yazar-rehberi': typeof YazarRehberiRoute
   '/journal/$slug/$section': typeof JournalSlugSectionRoute
   '/journal/$slug': typeof JournalSlugIndexRoute
   '/journal/$slug/article/$id': typeof JournalSlugArticleIdRoute
@@ -107,12 +67,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/auth': typeof AuthRoute
-  '/dashboard': typeof DashboardRoute
-  '/etik-ilkeler': typeof EtikIlkelerRoute
-  '/hakem-sureci': typeof HakemSureciRoute
   '/journals': typeof JournalsRoute
-  '/yazar-rehberi': typeof YazarRehberiRoute
   '/journal/$slug/$section': typeof JournalSlugSectionRoute
   '/journal/$slug/': typeof JournalSlugIndexRoute
   '/journal/$slug/article/$id': typeof JournalSlugArticleIdRoute
@@ -122,12 +77,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/auth'
-    | '/dashboard'
-    | '/etik-ilkeler'
-    | '/hakem-sureci'
     | '/journals'
-    | '/yazar-rehberi'
     | '/journal/$slug/$section'
     | '/journal/$slug/'
     | '/journal/$slug/article/$id'
@@ -135,12 +85,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
-    | '/auth'
-    | '/dashboard'
-    | '/etik-ilkeler'
-    | '/hakem-sureci'
     | '/journals'
-    | '/yazar-rehberi'
     | '/journal/$slug/$section'
     | '/journal/$slug'
     | '/journal/$slug/article/$id'
@@ -148,12 +93,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
-    | '/auth'
-    | '/dashboard'
-    | '/etik-ilkeler'
-    | '/hakem-sureci'
     | '/journals'
-    | '/yazar-rehberi'
     | '/journal/$slug/$section'
     | '/journal/$slug/'
     | '/journal/$slug/article/$id'
@@ -162,12 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AuthRoute: typeof AuthRoute
-  DashboardRoute: typeof DashboardRoute
-  EtikIlkelerRoute: typeof EtikIlkelerRoute
-  HakemSureciRoute: typeof HakemSureciRoute
   JournalsRoute: typeof JournalsRoute
-  YazarRehberiRoute: typeof YazarRehberiRoute
   JournalSlugSectionRoute: typeof JournalSlugSectionRoute
   JournalSlugIndexRoute: typeof JournalSlugIndexRoute
   JournalSlugArticleIdRoute: typeof JournalSlugArticleIdRoute
@@ -175,46 +110,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/yazar-rehberi': {
-      id: '/yazar-rehberi'
-      path: '/yazar-rehberi'
-      fullPath: '/yazar-rehberi'
-      preLoaderRoute: typeof YazarRehberiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/journals': {
       id: '/journals'
       path: '/journals'
       fullPath: '/journals'
       preLoaderRoute: typeof JournalsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hakem-sureci': {
-      id: '/hakem-sureci'
-      path: '/hakem-sureci'
-      fullPath: '/hakem-sureci'
-      preLoaderRoute: typeof HakemSureciRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/etik-ilkeler': {
-      id: '/etik-ilkeler'
-      path: '/etik-ilkeler'
-      fullPath: '/etik-ilkeler'
-      preLoaderRoute: typeof EtikIlkelerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -258,12 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AuthRoute: AuthRoute,
-  DashboardRoute: DashboardRoute,
-  EtikIlkelerRoute: EtikIlkelerRoute,
-  HakemSureciRoute: HakemSureciRoute,
   JournalsRoute: JournalsRoute,
-  YazarRehberiRoute: YazarRehberiRoute,
   JournalSlugSectionRoute: JournalSlugSectionRoute,
   JournalSlugIndexRoute: JournalSlugIndexRoute,
   JournalSlugArticleIdRoute: JournalSlugArticleIdRoute,
