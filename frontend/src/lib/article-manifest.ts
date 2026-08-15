@@ -17,6 +17,11 @@ export interface XmlArticleEntry {
   authorNames: string[];      // ["Dr. Ayşe Yılmaz", "Prof. Dr. Mehmet Demir"]
   doi: string;
   keywords: string[];
+  language?: string;
+  volume?: string;
+  issue?: string;
+  firstPage?: string;
+  lastPage?: string;
 }
 
 export const xmlArticles: XmlArticleEntry[] = [
@@ -39,13 +44,18 @@ export const xmlArticles: XmlArticleEntry[] = [
     journalSlug: "social-solutions",
     xmlPath: "/articles/social-solutions/2026/test-makale/main_jats.xml",
     pdfPath: "/articles/social-solutions/2026/test-makale/main.pdf",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim",
     subject: "Research",
-    abstract: "Bu makale JATS XML testi için yüklenmiştir.",
+    abstract:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     publishedAt: "2026-04-16",
-    authorNames: ["Kaan Sevim"],
+    authorNames: ["Kaan Sevim", "Kaan Sevim"],
     doi: "10.70989/jss.123456",
     keywords: ["Early maladaptive schemas", "cyberbullying", "social support"],
+    language: "en",
+    volume: "1",
+    issue: "1",
+    firstPage: "1",
   },
 ];
 

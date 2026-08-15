@@ -6,8 +6,13 @@ export interface Journal {
   slug: string;
   name: string;
   shortName: string;
+  coverImage: string;
+  theme: {
+    heroFrom: string;
+    heroTo: string;
+    accent: string;
+  };
   scope: string;
-  issn?: string;
   eissn?: string;
   subjects: string[];
 }
@@ -17,9 +22,10 @@ export const journals: Journal[] = [
     slug: "social-solutions",
     name: "Journal of Social Solutions",
     shortName: "JSS",
+    coverImage: "/journals/social-solutions/cover.png",
+    theme: { heroFrom: "#102f4f", heroTo: "#1f5f91", accent: "#8fc7f2" },
     scope:
       "An interdisciplinary journal publishing original research that develops practical, evidence-based responses to pressing social problems. Coverage spans social work, social policy, community health, education, and sustainable development.",
-    issn: "0000-0001",
     eissn: "0000-0002",
     subjects: ["Social Work", "Social Policy", "Community Health", "Education", "Sustainable Development"],
   },
@@ -27,9 +33,10 @@ export const journals: Journal[] = [
     slug: "cognitive-formation",
     name: "Journal of Cognitive Formation",
     shortName: "JCF",
+    coverImage: "/journals/cognitive-formation/cover.png",
+    theme: { heroFrom: "#2f1d40", heroTo: "#664483", accent: "#d0afea" },
     scope:
       "Publishes theoretical and experimental work on cognition, learning, and the mechanisms by which knowledge is formed — including research on artificial intelligence, language, and human–machine interaction.",
-    issn: "0000-0003",
     eissn: "0000-0004",
     subjects: ["Cognitive Science", "Artificial Intelligence", "Learning", "Linguistics"],
   },
@@ -37,9 +44,10 @@ export const journals: Journal[] = [
     slug: "economic-change-future",
     name: "Journal of Economic Change and Future",
     shortName: "JECF",
+    coverImage: "/journals/economic-change-future/cover.png",
+    theme: { heroFrom: "#432600", heroTo: "#8a5615", accent: "#f0b65f" },
     scope:
       "Devoted to the study of structural economic change and its long-run consequences. The journal welcomes research on urbanization, environmental economics, and forward-looking policy analysis.",
-    issn: "0000-0005",
     eissn: "0000-0006",
     subjects: ["Economics", "Urbanization", "Environment", "Public Policy"],
   },
@@ -47,9 +55,10 @@ export const journals: Journal[] = [
     slug: "community-foundations",
     name: "Journal of Community & Foundations",
     shortName: "JCFo",
+    coverImage: "/journals/community-foundations/cover.png",
+    theme: { heroFrom: "#4c211b", heroTo: "#954b40", accent: "#f2a191" },
     scope:
       "Publishes community-based research and scholarship on civil society, philanthropy, and local governance, with particular attention to the role of foundations and voluntary organizations in social life.",
-    issn: "0000-0007",
     eissn: "0000-0008",
     subjects: ["Community Studies", "Civil Society", "Philanthropy", "Local Governance"],
   },
