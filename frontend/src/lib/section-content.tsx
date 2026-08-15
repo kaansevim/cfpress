@@ -39,8 +39,7 @@ const sharedContent: Record<string, ContentRenderer> = {
         Consulting. The language of publication is English.
       </p>
       <ul>
-        {j.issn && <li>Print ISSN: {j.issn}</li>}
-        {j.eissn && <li>Online ISSN: {j.eissn}</li>}
+        {j.eissn && <li>e-ISSN: {j.eissn}</li>}
         <li>Publication frequency: two issues per year (June and December)</li>
         <li>Peer review model: double-blind</li>
         <li>Access: immediate open access under the CC BY 4.0 license</li>
@@ -94,8 +93,7 @@ const sharedContent: Record<string, ContentRenderer> = {
         on the CF Open platform.
       </p>
       <ul>
-        {j.issn && <li>Print ISSN: {j.issn}</li>}
-        {j.eissn && <li>Online ISSN: {j.eissn}</li>}
+        {j.eissn && <li>e-ISSN: {j.eissn}</li>}
         <li>Publisher: CF Education and Consulting</li>
         <li>Platform: CF Open (Open Journal Systems)</li>
       </ul>

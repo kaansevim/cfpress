@@ -124,8 +124,9 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
             <Link
               to="/"
               onClick={close}
-              className="text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex items-center gap-1.5 text-xs font-medium tracking-wide text-muted-foreground transition-colors hover:text-foreground"
             >
+              <img src="/brand/cfopen-mark.svg" alt="" className="h-3.5 w-3.5" />
               CF Open
             </Link>
           </div>
@@ -144,10 +145,10 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
           <Link
             to="/journal/$slug"
             params={{ slug: journal.slug }}
-            className="flex items-baseline gap-2"
+            className="flex min-w-0 items-baseline gap-2 pr-4"
             onClick={close}
           >
-            <span className="font-serif-display text-lg font-bold leading-tight tracking-tight sm:text-xl">
+            <span className="truncate font-serif-display text-lg font-bold leading-tight tracking-tight sm:text-xl">
               {journal.name}
             </span>
             {journal.shortName && (
@@ -157,15 +158,24 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
             )}
           </Link>
         ) : (
-          <Link to="/" className="flex items-baseline gap-2" onClick={close}>
-            <span className="font-serif-display text-xl font-bold tracking-tight sm:text-2xl">
-              CF Open
-            </span>
+          <Link
+            to="/"
+            className="inline-flex h-10 items-center"
+            onClick={close}
+            aria-label="CF Open home"
+          >
+            <img
+              src="/brand/cfopen-lockup-primary.png"
+              alt="CF Open"
+              width="1892"
+              height="344"
+              className="h-6 w-auto sm:h-7"
+            />
           </Link>
         )}
 
         {/* Desktop nav & actions */}
-        <div className={journal ? "hidden items-center gap-6 lg:flex" : "hidden items-center gap-6 sm:flex"}>
+        <div className={journal ? "hidden h-10 items-center gap-6 lg:flex" : "hidden h-10 items-center gap-6 sm:flex"}>
           {journal ? (
             <JournalDesktopNav slug={journal.slug} />
           ) : (
@@ -243,7 +253,15 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="font-serif-display text-lg font-bold">CF Open</div>
+            <Link to="/" aria-label="CF Open home" className="inline-flex">
+              <img
+                src="/brand/cfopen-lockup-primary.png"
+                alt="CF Open"
+                width="1892"
+                height="344"
+                className="h-5 w-auto grayscale brightness-0"
+              />
+            </Link>
             <p className="mt-2 text-sm text-muted-foreground">
               A publishing platform hosting peer-reviewed, open access academic journals.
             </p>

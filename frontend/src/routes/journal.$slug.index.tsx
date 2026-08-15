@@ -6,6 +6,10 @@ import { xmlEntryToArticle } from "@/lib/article-utils";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { OJS_SUBMIT_URL } from "@/lib/ojs";
 import { ArticleCard } from "@/components/article-card";
+import { Pointer } from "lucide-react";
+
+// Yeni canlı görünüm ayrı tutulur. `false` yapıldığında önceki klasik alan geri gelir.
+const USE_VIBRANT_JOURNAL_HERO = true;
 
 export const Route = createFileRoute("/journal/$slug/")({
   loader: ({ params }): { journal: Journal; articles: Article[] } => {
@@ -93,6 +97,132 @@ function JournalSidebar({ slug, articles }: { slug: string; articles: Article[] 
   );
 }
 
+function ClassicJournalHero({ journal }: { journal: Journal }) {
+  return (
+    <header className="border-b border-border bg-accent/5">
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 py-12 sm:grid-cols-[10rem_1fr] sm:items-start lg:grid-cols-[12rem_1fr_auto] lg:gap-10 lg:py-16">
+        <img
+          src={journal.coverImage}
+          alt={`${journal.name} cover`}
+          width="1130"
+          height="1600"
+          className="aspect-[1130/1600] w-36 rounded-sm object-cover shadow-lg sm:w-full"
+        />
+        <div className="min-w-0 sm:pt-2">
+          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+            Open Access
+          </div>
+          <h1 className="mt-3 font-serif-display text-3xl font-bold tracking-tight sm:text-4xl">
+            {journal.name}
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{journal.scope}</p>
+          <div className="mt-5 flex flex-wrap gap-1.5">
+            {journal.subjects.map((s) => (
+              <span key={s} className="rounded-full bg-background px-2.5 py-0.5 text-xs">
+                {s}
+              </span>
+            ))}
+          </div>
+          <div className="mt-5 text-xs text-muted-foreground">
+            e-ISSN {journal.eissn}
+          </div>
+        </div>
+
+        <div className="shrink-0 sm:col-start-2 lg:col-start-auto lg:pt-8">
+          <a
+            href={OJS_SUBMIT_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          >
+            Submit your article
+            <Pointer className="h-4 w-4" aria-hidden />
+          </a>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function VibrantJournalHero({ journal }: { journal: Journal }) {
+  return (
+    <header
+      className="relative isolate overflow-hidden text-white"
+      style={{
+        background: `linear-gradient(125deg, ${journal.theme.heroFrom} 0%, ${journal.theme.heroTo} 100%)`,
+      }}
+    >
+      <div
+        aria-hidden
+        className="absolute -right-24 -top-40 h-[30rem] w-[30rem] rounded-full border border-white/20"
+      />
+      <div
+        aria-hidden
+        className="absolute -right-4 -top-20 h-72 w-72 rounded-full border border-white/15"
+      />
+      <div
+        aria-hidden
+        className="absolute bottom-10 right-[18%] h-20 w-20 rounded-full bg-white/10"
+      />
+      <div
+        aria-hidden
+        className="absolute -bottom-28 left-[32%] h-64 w-64 rounded-full border border-white/10"
+      />
+
+      <div className="relative mx-auto grid max-w-6xl gap-8 px-6 py-12 sm:grid-cols-[10rem_1fr] sm:items-center lg:grid-cols-[12rem_1fr_auto] lg:gap-10 lg:py-16">
+        <img
+          src={journal.coverImage}
+          alt={`${journal.name} cover`}
+          width="1130"
+          height="1600"
+          className="aspect-[1130/1600] w-36 rounded-sm object-cover shadow-2xl ring-1 ring-white/40 sm:w-full"
+        />
+
+        <div className="min-w-0">
+          <div className="inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+            Open Access
+          </div>
+          <h1 className="mt-4 max-w-3xl text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
+            {journal.name}
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+            {journal.scope}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {journal.subjects.map((s) => (
+              <span
+                key={s}
+                className="rounded-full bg-white/95 px-3 py-1 text-xs font-medium shadow-sm"
+                style={{ color: journal.theme.heroFrom }}
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+          <div className="mt-5 text-xs font-medium tracking-wide text-white/70">
+            e-ISSN {journal.eissn}
+          </div>
+        </div>
+
+        <div className="shrink-0 sm:col-start-2 lg:col-start-auto">
+          <a
+            href={OJS_SUBMIT_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white bg-[#ffffff] px-6 text-sm font-semibold shadow-[0_10px_28px_rgba(0,0,0,0.22)] transition-transform hover:-translate-y-0.5 hover:bg-[#ffffff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            style={{ color: journal.theme.heroFrom }}
+          >
+            Submit your article
+            <Pointer className="h-4 w-4" aria-hidden />
+          </a>
+        </div>
+      </div>
+
+      <div className="h-2 bg-white/15" style={{ borderTop: `1px solid ${journal.theme.accent}` }} />
+    </header>
+  );
+}
+
 function JournalHome() {
   const { journal, articles } = Route.useLoaderData();
 
@@ -100,40 +230,11 @@ function JournalHome() {
     <div className="min-h-screen bg-background">
       <SiteHeader journal={journal} />
 
-      <header className="border-b border-border bg-accent/5">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-16 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Open Access
-            </div>
-            <h1 className="mt-3 font-serif-display text-3xl font-bold tracking-tight sm:text-4xl">
-              {journal.name}
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg text-muted-foreground">{journal.scope}</p>
-            <div className="mt-5 flex flex-wrap gap-1.5">
-              {journal.subjects.map((s) => (
-                <span key={s} className="rounded-full bg-background px-2.5 py-0.5 text-xs">
-                  {s}
-                </span>
-              ))}
-            </div>
-            <div className="mt-5 text-xs text-muted-foreground">
-              ISSN {journal.issn} · e-ISSN {journal.eissn}
-            </div>
-          </div>
-
-          <div className="shrink-0 sm:pt-8">
-            <a
-              href={OJS_SUBMIT_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Submit article
-            </a>
-          </div>
-        </div>
-      </header>
+      {USE_VIBRANT_JOURNAL_HERO ? (
+        <VibrantJournalHero journal={journal} />
+      ) : (
+        <ClassicJournalHero journal={journal} />
+      )}
 
       <main className="mx-auto grid max-w-6xl gap-12 px-6 py-12 lg:grid-cols-[1fr_18rem]">
         {/* Sol: son makaleler */}

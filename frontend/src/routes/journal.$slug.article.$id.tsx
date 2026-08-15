@@ -14,7 +14,11 @@ import { ArticleToc } from "@/components/article/article-toc";
 import { ArticleAuthors, AuthorContributions } from "@/components/article/article-authors";
 import { ArticleActions } from "@/components/article/article-actions";
 import { MetricsStrip, MetricsCards } from "@/components/article/article-metrics";
+import { ArticleReaderLayout } from "@/components/article/article-reader-layout";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
+// Yeni okuyucu beğenilmezse false yapılarak mevcut görünüm anında geri getirilebilir.
+const USE_ARTICLE_READER_V2 = true;
 
 // ── Loader ────────────────────────────────────────────────────────────────────
 
@@ -40,15 +44,55 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Article" }] };
     const journal = loaderData.journal;
-    const title =
+    const source = loaderData.kind === "mock" ? loaderData.article : loaderData.entry;
+    const title = source.title;
+    const authors =
       loaderData.kind === "mock"
-        ? loaderData.article.title
-        : "Loading article…";
+        ? loaderData.article.authors.map((author) => author.name)
+        : loaderData.entry.authorNames;
+    const pdfUrl = loaderData.kind === "xml" ? loaderData.entry.pdfPath : undefined;
+    const volume = loaderData.kind === "mock" ? loaderData.article.volume : loaderData.entry.volume;
+    const issue = loaderData.kind === "mock" ? loaderData.article.issue : loaderData.entry.issue;
+    const firstPage = loaderData.kind === "mock" ? loaderData.article.fpage : loaderData.entry.firstPage;
+    const lastPage = loaderData.kind === "mock" ? loaderData.article.lpage : loaderData.entry.lastPage;
+    const language = loaderData.kind === "xml" ? loaderData.entry.language : undefined;
+
     return {
       meta: [
         { title: `${title} — ${journal.name}` },
-        { name: "description", content: title.slice(0, 160) },
+        { name: "description", content: source.abstract.slice(0, 160) },
+        { name: "citation_title", content: title },
+        ...authors.map((author) => ({ name: "citation_author", content: author })),
+        { name: "citation_journal_title", content: journal.name },
+        { name: "citation_publication_date", content: source.publishedAt },
+        { name: "citation_doi", content: source.doi },
+        ...(journal.eissn ? [{ name: "citation_eIssn", content: journal.eissn }] : []),
+        { name: "citation_abstract", content: source.abstract },
+        { name: "citation_keywords", content: source.keywords.join("; ") },
+        ...(language ? [{ name: "citation_language", content: language }] : []),
+        ...(volume ? [{ name: "citation_volume", content: volume }] : []),
+        ...(issue ? [{ name: "citation_issue", content: issue }] : []),
+        ...(firstPage ? [{ name: "citation_firstpage", content: firstPage }] : []),
+        ...(lastPage ? [{ name: "citation_lastpage", content: lastPage }] : []),
+        ...(pdfUrl ? [{ name: "citation_pdf_url", content: pdfUrl }] : []),
+        { name: "DC.type", content: "Text" },
+        { name: "DC.title", content: title },
+        ...authors.map((author) => ({ name: "DC.creator", content: author })),
+        { name: "DC.date", content: source.publishedAt },
+        { name: "DC.identifier", content: `doi:${source.doi}` },
+        { name: "DC.source", content: journal.name },
+        { name: "DC.format", content: "text/html" },
       ],
+      links: pdfUrl
+        ? [
+            {
+              rel: "alternate",
+              type: "application/pdf",
+              href: pdfUrl,
+              title: "Full text PDF",
+            },
+          ]
+        : [],
     };
   },
 
@@ -146,6 +190,20 @@ function ArticlePage() {
 
   const isXml = loaderData.kind === "xml";
   const pdfUrl = isXml ? (parsedJats as ParsedJats).pdfUrl : undefined;
+
+  if (USE_ARTICLE_READER_V2) {
+    return (
+      <ArticleReaderLayout
+        journal={journal}
+        article={article}
+        headings={headings}
+        isXml={isXml}
+        parsedJats={parsedJats}
+        xmlEntry={xmlEntry}
+        pdfUrl={pdfUrl}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">

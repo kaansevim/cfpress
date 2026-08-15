@@ -50,35 +50,28 @@ export function ArticleActions({ article, pdfUrl }: { article: Article; pdfUrl?:
   return (
     <div className="flex flex-wrap items-center gap-2">
       {/* Download */}
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="sm" className="gap-2 rounded-full">
-            <Download className="h-4 w-4" /> Download
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="start">
-          {pdfUrl ? (
-            <DropdownMenuItem asChild>
-              <a href={pdfUrl} target="_blank" rel="noreferrer" download>
-                Download PDF
-              </a>
-            </DropdownMenuItem>
-          ) : (
-            <DropdownMenuItem
-              onClick={() =>
-                alert("This is a prototype; the actual PDF file is not available yet.")
-              }
-            >
-              PDF (prototype)
-            </DropdownMenuItem>
-          )}
-        </DropdownMenuContent>
-      </DropdownMenu>
+      {pdfUrl ? (
+        <Button asChild variant="outline" size="sm" className="gap-2 rounded-full text-foreground">
+          <a href={pdfUrl} download>
+            <Download className="h-4 w-4" /> Download PDF
+          </a>
+        </Button>
+      ) : (
+        <Button
+          variant="outline"
+          size="sm"
+          className="gap-2 rounded-full text-foreground"
+          disabled
+          title="PDF is not available for this article"
+        >
+          <Download className="h-4 w-4" /> Download PDF
+        </Button>
+      )}
 
       {/* Cite */}
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="outline" size="sm" className="gap-2 rounded-full">
+          <Button variant="outline" size="sm" className="gap-2 rounded-full text-foreground">
             <Quote className="h-4 w-4" /> Cite
           </Button>
         </DialogTrigger>
@@ -113,7 +106,7 @@ export function ArticleActions({ article, pdfUrl }: { article: Article; pdfUrl?:
       {/* Share */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" size="sm" className="gap-2 rounded-full">
+          <Button variant="outline" size="sm" className="gap-2 rounded-full text-foreground">
             <Share2 className="h-4 w-4" /> Share
           </Button>
         </DropdownMenuTrigger>

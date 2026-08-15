@@ -24,7 +24,7 @@ export function ArticleCard({ article }: { article: Article }) {
         params={{ slug: article.journalSlug, id: article.id }}
         className="inline-block"
       >
-        <h2 className="font-serif-display text-2xl font-bold leading-tight transition-colors hover:text-accent sm:text-3xl">
+        <h2 className="font-serif-display text-xl font-bold leading-tight transition-colors hover:text-accent sm:text-2xl">
           {article.title}
         </h2>
       </Link>
