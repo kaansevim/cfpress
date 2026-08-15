@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_ORIGIN, SOCIAL_IMAGE_URL } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -81,16 +82,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "A publishing platform hosting peer-reviewed, open access academic journals." },
       { name: "author", content: "CF Open" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "CF Open" },
+      { property: "og:url", content: `${SITE_ORIGIN}/` },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "CF Open" },
       { name: "twitter:title", content: "CF Open" },
       { property: "og:description", content: "Peer-reviewed, open access academic journals under one roof." },
       { name: "twitter:description", content: "Peer-reviewed, open access academic journals under one roof." },
-      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image", content: SOCIAL_IMAGE_URL },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
+      { property: "og:image:type", content: "image/png" },
       { property: "og:image:alt", content: "CF Open — Open access academic journals" },
-      { name: "twitter:image", content: "/og-image.png" },
+      { name: "twitter:image", content: SOCIAL_IMAGE_URL },
+      { name: "twitter:image:alt", content: "CF Open — Open access academic journals" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

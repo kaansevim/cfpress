@@ -207,8 +207,8 @@ function ReaderSidebar({
               className={cn(
                 "min-w-0 border-b-2 px-2 py-3 text-xs font-semibold transition-colors sm:text-sm",
                 panel === tab.id
-                  ? "border-accent bg-background text-foreground"
-                  : "border-transparent bg-secondary/45 text-muted-foreground hover:text-foreground",
+                  ? "border-accent bg-background text-[#17324a]"
+                  : "border-transparent bg-secondary/45 text-[#075f99] hover:bg-secondary/70 hover:text-[#053f68]",
               )}
             >
               {tab.label}
@@ -234,10 +234,10 @@ function ReaderSidebar({
                       href={`#${heading.id}`}
                       onClick={() => setMobileExpanded(false)}
                       className={cn(
-                        "block rounded-md border-l-2 px-3 py-2 leading-snug transition-colors",
+                        "block rounded-md border-l-2 px-3 py-2 font-semibold leading-snug no-underline transition-colors",
                         activeHeading === heading.id
-                          ? "border-accent bg-accent/10 font-semibold text-accent"
-                          : "border-transparent text-muted-foreground hover:bg-secondary hover:text-foreground",
+                          ? "border-[#087acc] bg-[#e7f2f9] font-bold text-[#073f69]"
+                          : "border-transparent text-[#075f99] hover:bg-[#eef6fb] hover:text-[#053f68]",
                       )}
                     >
                       {heading.text}

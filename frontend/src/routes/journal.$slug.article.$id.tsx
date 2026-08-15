@@ -16,6 +16,7 @@ import { ArticleActions } from "@/components/article/article-actions";
 import { MetricsStrip, MetricsCards } from "@/components/article/article-metrics";
 import { ArticleReaderLayout } from "@/components/article/article-reader-layout";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { absoluteSiteUrl } from "@/lib/seo";
 
 // Yeni okuyucu beğenilmezse false yapılarak mevcut görünüm anında geri getirilebilir.
 const USE_ARTICLE_READER_V2 = true;
@@ -56,11 +57,21 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
     const firstPage = loaderData.kind === "mock" ? loaderData.article.fpage : loaderData.entry.firstPage;
     const lastPage = loaderData.kind === "mock" ? loaderData.article.lpage : loaderData.entry.lastPage;
     const language = loaderData.kind === "xml" ? loaderData.entry.language : undefined;
+    const description = source.abstract.slice(0, 160);
+    const canonicalUrl = absoluteSiteUrl(`/journal/${journal.slug}/article/${source.id}`);
 
     return {
       meta: [
         { title: `${title} — ${journal.name}` },
-        { name: "description", content: source.abstract.slice(0, 160) },
+        { name: "description", content: description },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: canonicalUrl },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:image:alt", content: `${title} — ${journal.name}` },
+        { property: "article:published_time", content: source.publishedAt },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
         { name: "citation_title", content: title },
         ...authors.map((author) => ({ name: "citation_author", content: author })),
         { name: "citation_journal_title", content: journal.name },
@@ -83,16 +94,19 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
         { name: "DC.source", content: journal.name },
         { name: "DC.format", content: "text/html" },
       ],
-      links: pdfUrl
-        ? [
+      links: [
+        { rel: "canonical", href: canonicalUrl },
+        ...(pdfUrl
+          ? [
             {
               rel: "alternate",
               type: "application/pdf",
               href: pdfUrl,
               title: "Full text PDF",
             },
-          ]
-        : [],
+            ]
+          : []),
+      ],
     };
   },
 
