@@ -7,6 +7,7 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { OJS_SUBMIT_URL } from "@/lib/ojs";
 import { ArticleCard } from "@/components/article-card";
 import { Pointer } from "lucide-react";
+import { absoluteSiteUrl } from "@/lib/seo";
 
 // Yeni canlı görünüm ayrı tutulur. `false` yapıldığında önceki klasik alan geri gelir.
 const USE_VIBRANT_JOURNAL_HERO = true;
@@ -28,8 +29,18 @@ export const Route = createFileRoute("/journal/$slug/")({
       ? [
           { title: `${loaderData.journal.name}` },
           { name: "description", content: loaderData.journal.scope.slice(0, 160) },
+          { property: "og:type", content: "website" },
+          { property: "og:url", content: absoluteSiteUrl(`/journal/${loaderData.journal.slug}`) },
+          { property: "og:title", content: loaderData.journal.name },
+          { property: "og:description", content: loaderData.journal.scope.slice(0, 160) },
+          { property: "og:image:alt", content: `${loaderData.journal.name} — CF Open` },
+          { name: "twitter:title", content: loaderData.journal.name },
+          { name: "twitter:description", content: loaderData.journal.scope.slice(0, 160) },
         ]
       : [{ title: "Journal" }],
+    links: loaderData
+      ? [{ rel: "canonical", href: absoluteSiteUrl(`/journal/${loaderData.journal.slug}`) }]
+      : [],
   }),
   notFoundComponent: () => (
     <div className="flex min-h-screen items-center justify-center">
