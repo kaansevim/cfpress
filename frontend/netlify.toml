@@ -1,3 +1,19 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# ── Cache Busting ──────────────────────────────────────────────
+# Varsayılan: tüm sayfa/HTML yanıtlarını her zaman sunucuya kontrol ettir.
+# Değişiklik yoksa 304 döner (hızlı), varsa yeni sürümü anında gösterir.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+
+# Hash'li asset'ler (JS/CSS/font/img) — dosya adı her build'de değişir,
+# bu yüzden uzun süreli cache güvenlidir.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
