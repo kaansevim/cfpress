@@ -97,7 +97,17 @@ async function cached<T>(key: string, load: () => Promise<T>): Promise<T> {
 
 async function ojsGet<T>(ojsPath: string, endpoint: string): Promise<T> {
   const { internal, token } = config();
-  const url = `${internal}/index.php/${ojsPath}/api/v1/${endpoint}`;
+
+  // NEDEN SORGU PARAMETRESİ: OJS'in önündeki Apache, `Authorization` başlığını
+  // PHP'ye iletmiyor (CGIPassAuth kapalı), bu yüzden Bearer ile istek 401
+  // dönüyor. OJS anahtarı `apiToken` parametresiyle de kabul ediyor ve bu yol
+  // sunucuda ek ayar gerektirmiyor. Başlık yine de gönderiliyor: sunucu ayarı
+  // ileride değişirse o yol da çalışır.
+  const sep = endpoint.includes("?") ? "&" : "?";
+  const url =
+    `${internal}/index.php/${ojsPath}/api/v1/${endpoint}` +
+    `${sep}apiToken=${encodeURIComponent(token)}`;
+
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
     signal: AbortSignal.timeout(15_000),
