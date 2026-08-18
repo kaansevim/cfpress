@@ -1,11 +1,17 @@
 // Çok-dergili platform veri modeli.
-// NOT: Dergi adları kullanıcı tarafından verildi. ISSN/kapsam metinleri GEÇİCİ
-// placeholder'dır — kullanıcı netleştirince güncellenecek.
+//
+// `ojsPath`  : Derginin OJS'teki adresi (dergi.cf.org.tr/index.php/{ojsPath}).
+//              "Makale Gönder" ve "Giriş" butonları bu değere göre üretilir,
+//              böylece her dergi kendi gönderim sayfasına gider.
+// `eissn`    : Opsiyonel. ISSN başvurusu yapılıp numara alındığında doldurulur.
+//              Boş bırakıldığında sitede ISSN satırı hiç gösterilmez —
+//              yer tutucu/uydurma numara YAZILMAMALIDIR.
 
 export interface Journal {
   slug: string;
   name: string;
   shortName: string;
+  ojsPath: string;
   coverImage: string;
   theme: {
     heroFrom: string;
@@ -22,44 +28,44 @@ export const journals: Journal[] = [
     slug: "social-solutions",
     name: "Journal of Social Solutions",
     shortName: "JSS",
+    ojsPath: "jss",
     coverImage: "/journals/social-solutions/cover.png",
     theme: { heroFrom: "#102f4f", heroTo: "#1f5f91", accent: "#8fc7f2" },
     scope:
       "An interdisciplinary journal publishing original research that develops practical, evidence-based responses to pressing social problems. Coverage spans social work, social policy, community health, education, and sustainable development.",
-    eissn: "0000-0002",
     subjects: ["Social Work", "Social Policy", "Community Health", "Education", "Sustainable Development"],
   },
   {
     slug: "cognitive-formation",
     name: "Journal of Cognitive Formation",
     shortName: "JCF",
+    ojsPath: "jcf",
     coverImage: "/journals/cognitive-formation/cover.png",
     theme: { heroFrom: "#2f1d40", heroTo: "#664483", accent: "#d0afea" },
     scope:
       "Publishes theoretical and experimental work on cognition, learning, and the mechanisms by which knowledge is formed — including research on artificial intelligence, language, and human–machine interaction.",
-    eissn: "0000-0004",
     subjects: ["Cognitive Science", "Artificial Intelligence", "Learning", "Linguistics"],
   },
   {
     slug: "economic-change-future",
     name: "Journal of Economic Change and Future",
     shortName: "JECF",
+    ojsPath: "jecf",
     coverImage: "/journals/economic-change-future/cover.png",
     theme: { heroFrom: "#432600", heroTo: "#8a5615", accent: "#f0b65f" },
     scope:
       "Devoted to the study of structural economic change and its long-run consequences. The journal welcomes research on urbanization, environmental economics, and forward-looking policy analysis.",
-    eissn: "0000-0006",
     subjects: ["Economics", "Urbanization", "Environment", "Public Policy"],
   },
   {
     slug: "community-foundations",
     name: "Journal of Community & Foundations",
     shortName: "JCFo",
+    ojsPath: "jcfo",
     coverImage: "/journals/community-foundations/cover.png",
     theme: { heroFrom: "#4c211b", heroTo: "#954b40", accent: "#f2a191" },
     scope:
       "Publishes community-based research and scholarship on civil society, philanthropy, and local governance, with particular attention to the role of foundations and voluntary organizations in social life.",
-    eissn: "0000-0008",
     subjects: ["Community Studies", "Civil Society", "Philanthropy", "Local Governance"],
   },
 ];
@@ -121,8 +127,8 @@ export const journalNav: NavSection[] = [
       "For reviewers",
       "E-submission",
       "Checklist",
-      "Copyright transfer agreement",
-      "Conflict of interest form",
+      "Copyright and licensing",
+      "Conflict of interest",
       "Article processing charge",
     ],
   },

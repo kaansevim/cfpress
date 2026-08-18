@@ -1,16 +1,29 @@
-# Ortam değişkenleri ve sunucuya özel gizli bilgiler
+# ── Gizli bilgiler — ASLA commit edilmeyecek ─────────────────────────────────
+# Sunucu parolaları, API anahtarları ve salt değerleri bu dosyalarda.
 .env
-
-# Sunucuda üretilen canlı OJS config (parola/salt içerir) — şablonu commit edin
+.env.*
+!.env.example
 ojs/config/ojs.config.inc.php
 
-# macOS
-.DS_Store
+# Kurulum sırasında elde kaydedilen, parola içeren yerel kopyalar
+config-kurulu.txt
+ojs-config-yeni.txt
+HOSTINGCIYE-TALEP.md
 
-# Bağımlılıklar / build çıktıları
+# ── Derleme çıktıları ────────────────────────────────────────────────────────
 node_modules/
 frontend/node_modules/
-frontend/.output/
 frontend/dist/
+frontend/.output/
+frontend/.netlify/
 frontend/.nitro/
 frontend/.tanstack/
+dist/
+.output/
+.netlify/
+
+# ── Silinmek üzere kenara alınanlar ──────────────────────────────────────────
+_to_delete/
+
+# ── İşletim sistemi ──────────────────────────────────────────────────────────
+.DS_Store

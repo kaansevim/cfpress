@@ -30,8 +30,16 @@ OJS_DB_ROOT_PASSWORD=${DB_ROOT_PASS}
 OJS_DOMAIN=dergi.cf.org.tr
 OJS_PUBLIC_URL=https://dergi.cf.org.tr
 
-# Frontend butonlarının gideceği OJS dergisi (dergi oluşturulunca doldurun,
-# sonra: docker compose up -d --build frontend)
+# Frontend'in OJS'e sunucu tarafı erişimi.
+# OJS_API_TOKEN: OJS'te Profil Düzenle -> API Anahtari sekmesinden üretilir.
+# Bu anahtar olmadan cf.org.tr'de makaleler görünmez (site çalışır, liste boş).
+# Ayrıca ojs/config/ojs.config.inc.php içinde:
+#   allowed_hosts = '["dergi.cf.org.tr", "ojs"]'
+OJS_INTERNAL_URL=http://ojs
+OJS_API_TOKEN=
+
+# Frontend butonlarının gideceği varsayılan OJS dergisi (opsiyonel; dergi
+# sayfalarındaki butonlar zaten kendi dergilerine gider)
 OJS_JOURNAL_PATH=
 
 # Portların bağlanacağı IP. Reverse proxy aynı sunucuda ise 127.0.0.1 kalsın.

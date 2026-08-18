@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink, FileText, Loader2 } from "lucide-react";
-import { getArticle, type Article } from "@/lib/mock-articles";
+import { type Article } from "@/lib/mock-articles";
 import { getJournal, type Journal } from "@/lib/journals";
 import { extractHeadings, formatDate, slugify, type Heading } from "@/lib/article-utils";
-import { findXmlArticle, type XmlArticleEntry } from "@/lib/article-manifest";
+import type { XmlArticleEntry } from "@/lib/article-manifest";
+import { ojsToArticle, ojsToXmlEntry } from "@/lib/article-utils";
+import { getArticleWithXml } from "@/lib/api/journal.functions";
+import { recordDownload, recordView } from "@/lib/api/metrics.functions";
 import { parseJats, type ParsedJats } from "@/lib/jats-parser";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleBody } from "@/components/article-body";
@@ -23,23 +26,40 @@ const USE_ARTICLE_READER_V2 = true;
 
 // ── Loader ────────────────────────────────────────────────────────────────────
 
+// "xml": JATS tam metni var — okuyucuda tam metin gösterilir.
+// "mock": yalnızca PDF var — özet ve PDF bağlantısı gösterilir.
 type LoaderData =
   | { kind: "mock"; journal: Journal; article: Article }
-  | { kind: "xml"; journal: Journal; entry: XmlArticleEntry };
+  | {
+      kind: "xml";
+      journal: Journal;
+      entry: XmlArticleEntry;
+      xml: string | null;
+      xmlError: string | null;
+      metrics: Article["metrics"];
+    };
 
 export const Route = createFileRoute("/journal/$slug/article/$id")({
-  loader: ({ params }): LoaderData => {
+  loader: async ({ params }): Promise<LoaderData> => {
     const journal = getJournal(params.slug);
     if (!journal) throw notFound();
 
-    // Önce XML manifest'i kontrol et
-    const entry = findXmlArticle(params.id, params.slug);
-    if (entry) return { kind: "xml", journal, entry };
+    // Makale ve JATS XML'i sunucu tarafında OJS'ten alınır.
+    const { article: ojsArticle, xml, xmlError } = await getArticleWithXml({
+      data: { slug: params.slug, id: params.id },
+    });
+    if (!ojsArticle) throw notFound();
 
-    // Mock veriye bak
-    const article = getArticle(params.id);
-    if (!article || article.journalSlug !== params.slug) throw notFound();
-    return { kind: "mock", journal, article };
+    const entry = ojsToXmlEntry(ojsArticle);
+    const metrics = {
+      views: ojsArticle.views ?? 0,
+      downloads: ojsArticle.downloads ?? 0,
+      citations: 0,
+    };
+    if (entry && xml) return { kind: "xml", journal, entry, xml, xmlError, metrics };
+
+    // XML yoksa (yalnızca PDF yüklenmişse) özet görünümü gösterilir.
+    return { kind: "mock", journal, article: ojsToArticle(ojsArticle) };
   },
 
   head: ({ loaderData }) => {
@@ -143,24 +163,51 @@ function ArticlePage() {
   const [jatsError, setJatsError] = useState<string | null>(null);
 
   const xmlEntry = loaderData.kind === "xml" ? loaderData.entry : null;
+  const xmlSource = loaderData.kind === "xml" ? loaderData.xml : null;
 
+  // XML sunucu tarafında indirilip şekil adresleri mutlak hale getirildi;
+  // burada yalnızca tarayıcıda ayrıştırılıyor (DOMParser gerekiyor).
   useEffect(() => {
     if (!xmlEntry) return;
-    setJatsLoading(true);
-    fetch(xmlEntry.xmlPath)
-      .then((r) => {
-        if (!r.ok) throw new Error(`HTTP ${r.status}: ${xmlEntry.xmlPath}`);
-        return r.text();
-      })
-      .then((xml) => {
-        setParsedJats(parseJats(xml, xmlEntry));
-        setJatsLoading(false);
-      })
-      .catch((e: Error) => {
-        setJatsError(e.message);
-        setJatsLoading(false);
-      });
-  }, [xmlEntry?.xmlPath]);
+    if (!xmlSource) {
+      setJatsError("The full text could not be loaded.");
+      setJatsLoading(false);
+      return;
+    }
+    try {
+      const parsed = parseJats(xmlSource, xmlEntry);
+      // Sayaç değerleri XML'de değil sitede tutuluyor.
+      if (loaderData.kind === "xml") parsed.metrics = loaderData.metrics;
+      setParsedJats(parsed);
+      setJatsError(null);
+    } catch (e) {
+      setJatsError(e instanceof Error ? e.message : "The article could not be displayed.");
+    }
+    setJatsLoading(false);
+  }, [xmlEntry, xmlSource, loaderData]);
+
+  // ── Metrikler ───────────────────────────────────────────────────────────
+  // Okuyucu cf.org.tr'de olduğu için sayım burada yapılır; OJS bu ziyaretleri
+  // göremez. Sayaç hata verirse sayfa etkilenmez.
+  const articleId = loaderData.kind === "xml" ? loaderData.entry.id : loaderData.article.id;
+  const journalSlug = journal.slug;
+
+  useEffect(() => {
+    void recordView({ data: { slug: journalSlug, id: articleId } }).catch(() => {});
+  }, [journalSlug, articleId]);
+
+  // Sayfadaki bütün indirme bağlantılarını (PDF, XML) tek yerden yakalar,
+  // böylece her düğmeye ayrı ayrı kod eklemek gerekmez.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (!target.closest('a[href*="/article/download/"]')) return;
+      void recordDownload({ data: { slug: journalSlug, id: articleId } }).catch(() => {});
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [journalSlug, articleId]);
 
   // Görüntülenecek makale verisi: XML yüklendiyse parsedJats, değilse mock
   const article: Article | ParsedJats =

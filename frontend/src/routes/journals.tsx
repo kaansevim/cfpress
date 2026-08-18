@@ -1,9 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { journals } from "@/lib/journals";
-import { getArticlesByJournal } from "@/lib/mock-articles";
+import { getAllArticles } from "@/lib/api/journal.functions";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/journals")({
+  // Dergi başına yayınlanmış makale sayısı OJS'ten hesaplanır.
+  loader: async (): Promise<{ counts: Record<string, number> }> => {
+    const all = await getAllArticles();
+    const counts: Record<string, number> = {};
+    for (const a of all) counts[a.journalSlug] = (counts[a.journalSlug] ?? 0) + 1;
+    return { counts };
+  },
   head: () => ({
     meta: [
       { title: "Journals — CF Open" },
@@ -14,6 +21,7 @@ export const Route = createFileRoute("/journals")({
 });
 
 function JournalsPage() {
+  const { counts } = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -30,7 +38,7 @@ function JournalsPage() {
       <main className="mx-auto max-w-5xl px-6 py-12">
         <div className="grid gap-5 sm:grid-cols-2">
           {journals.map((j) => {
-            const count = getArticlesByJournal(j.slug).length;
+            const count = counts[j.slug] ?? 0;
             return (
               <Link
                 key={j.slug}
@@ -64,7 +72,8 @@ function JournalsPage() {
                     ))}
                   </div>
                   <div className="mt-4 text-xs text-muted-foreground">
-                    {count} {count === 1 ? "article" : "articles"} · e-ISSN {j.eissn}
+                    {count} {count === 1 ? "article" : "articles"}
+                    {j.eissn ? ` · e-ISSN ${j.eissn}` : ""}
                   </div>
                 </div>
               </Link>

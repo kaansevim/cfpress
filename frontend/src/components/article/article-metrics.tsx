@@ -5,13 +5,22 @@ function fmt(n: number) {
   return n.toLocaleString("tr-TR");
 }
 
-// Kompakt metrik şeridi (başlık altı).
-export function MetricsStrip({ metrics }: { metrics: Article["metrics"] }) {
+// Görüntülenme ve indirme cf.org.tr'de sayılır. Atıf sayısı Crossref'ten gelir
+// ve DOI alınmadan var olamaz — sıfırken kutu hiç gösterilmez, uydurma sayı yok.
+function visibleItems(metrics: Article["metrics"]) {
   const items = [
     { icon: Eye, label: "Views", value: metrics.views },
     { icon: Download, label: "Downloads", value: metrics.downloads },
-    { icon: Quote, label: "Citations", value: metrics.citations },
   ];
+  if (metrics.citations > 0) {
+    items.push({ icon: Quote, label: "Citations", value: metrics.citations });
+  }
+  return items;
+}
+
+// Kompakt metrik şeridi (başlık altı).
+export function MetricsStrip({ metrics }: { metrics: Article["metrics"] }) {
+  const items = visibleItems(metrics);
   return (
     <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
       {items.map((it) => (
@@ -27,13 +36,9 @@ export function MetricsStrip({ metrics }: { metrics: Article["metrics"] }) {
 
 // "Metrikler" sekmesi için büyük kartlar.
 export function MetricsCards({ metrics }: { metrics: Article["metrics"] }) {
-  const items = [
-    { icon: Eye, label: "Views", value: metrics.views },
-    { icon: Download, label: "Downloads", value: metrics.downloads },
-    { icon: Quote, label: "Citations", value: metrics.citations },
-  ];
+  const items = visibleItems(metrics);
   return (
-    <div className="grid gap-4 sm:grid-cols-3">
+    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {items.map((it) => (
         <div key={it.label} className="rounded-lg border border-border p-6 text-center">
           <it.icon className="mx-auto h-6 w-6 text-accent" />

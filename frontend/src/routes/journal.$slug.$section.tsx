@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound, useLocation } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { getJournal, journalNav, navItemSlug, type Journal } from "@/lib/journals";
-import { getArticlesByJournal, type Article } from "@/lib/mock-articles";
-import { getXmlArticlesByJournal } from "@/lib/article-manifest";
-import { xmlEntryToArticle } from "@/lib/article-utils";
+import { type Article } from "@/lib/mock-articles";
+import { ojsToArticle } from "@/lib/article-utils";
+import { getJournalArticles } from "@/lib/api/journal.functions";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleCard } from "@/components/article-card";
 import { getItemContent } from "@/lib/section-content";
@@ -11,15 +11,13 @@ import { getItemContent } from "@/lib/section-content";
 const VALID = new Set(["about", "articles", "for-authors"]);
 
 export const Route = createFileRoute("/journal/$slug/$section")({
-  loader: ({ params }): { journal: Journal; articles: Article[]; section: string } => {
+  loader: async ({
+    params,
+  }): Promise<{ journal: Journal; articles: Article[]; section: string }> => {
     const journal = getJournal(params.slug);
     if (!journal || !VALID.has(params.section)) throw notFound();
-    const mockArticles = getArticlesByJournal(params.slug);
-    const xmlArticles = getXmlArticlesByJournal(params.slug).map(xmlEntryToArticle);
-    const all = [...xmlArticles, ...mockArticles].sort(
-      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    );
-    return { journal, articles: all, section: params.section };
+    const ojsArticles = await getJournalArticles({ data: { slug: params.slug } });
+    return { journal, articles: ojsArticles.map(ojsToArticle), section: params.section };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Journal" }] };

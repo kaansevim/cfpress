@@ -23,6 +23,17 @@ services:
       - "${BIND_IP:-127.0.0.1}:3000:3000"
     environment:
       - NODE_ENV=production
+      # OJS'e sunucu tarafı erişim (API anahtarı tarayıcıya gitmez)
+      - OJS_INTERNAL_URL=${OJS_INTERNAL_URL:-http://ojs}
+      - OJS_PUBLIC_URL=${OJS_PUBLIC_URL:-https://dergi.cf.org.tr}
+      - OJS_API_TOKEN=${OJS_API_TOKEN:-}
+      # Görüntülenme/indirme sayacının yazılacağı kalıcı dizin
+      - METRICS_DIR=/data
+    volumes:
+      # Sayaç dosyası burada durur; konteyner yeniden derlense bile silinmez
+      - frontend_data:/data
+    depends_on:
+      - ojs
     restart: unless-stopped
 
   # ---------- Veritabanı ----------
@@ -68,6 +79,7 @@ services:
     restart: unless-stopped
 
 volumes:
+  frontend_data:
   ojs_db_data:
   ojs_public:
   ojs_files:

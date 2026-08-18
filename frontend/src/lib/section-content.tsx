@@ -10,7 +10,10 @@
 
 import type { ReactNode } from "react";
 import type { Journal } from "@/lib/journals";
-import { OJS_LOGIN_URL, OJS_SUBMIT_URL } from "@/lib/ojs";
+import { ojsLoginUrl, ojsSubmitUrl } from "@/lib/ojs";
+
+/** Yayıncının resmi tüzel kişilik unvanı — ISSN/indeks başvurularında bu kullanılır. */
+const PUBLISHER = "CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi";
 
 export type ContentRenderer = (j: Journal) => ReactNode;
 
@@ -35,8 +38,8 @@ const sharedContent: Record<string, ContentRenderer> = {
     <>
       <p>
         <em>{j.name}</em> ({j.shortName}) is a peer-reviewed, open access journal
-        published on CF Open, the academic publishing platform of CF Education and
-        Consulting. The language of publication is English.
+        published on CF Open, the academic publishing platform of {PUBLISHER}. The
+        language of publication is English.
       </p>
       <ul>
         {j.eissn && <li>e-ISSN: {j.eissn}</li>}
@@ -89,12 +92,12 @@ const sharedContent: Record<string, ContentRenderer> = {
   "publishing-credentials": (j) => (
     <>
       <p>
-        <em>{j.name}</em> is published by CF Education and Consulting (Ankara, Türkiye)
-        on the CF Open platform.
+        <em>{j.name}</em> is published by {PUBLISHER} (Ankara, Türkiye) on the CF Open
+        platform.
       </p>
       <ul>
         {j.eissn && <li>e-ISSN: {j.eissn}</li>}
-        <li>Publisher: CF Education and Consulting</li>
+        <li>Publisher: {PUBLISHER}</li>
         <li>Platform: CF Open (Open Journal Systems)</li>
       </ul>
     </>
@@ -153,11 +156,11 @@ const sharedContent: Record<string, ContentRenderer> = {
     <>
       <p>Editorial office of <em>{j.name}</em>:</p>
       <p>
-        CF Education and Consulting
+        {PUBLISHER}
         <br />
-        ASBU Sosyokent No: 209
+        ASBÜ Sosyokent, Hacı Bayram Mah., Mahmut Atalay Sk. L Blok No: 6, İç Kapı No: 209
         <br />
-        Altındağ, Ankara, Türkiye
+        06050 Altındağ, Ankara, Türkiye
         <br />
         Tel: <a href="tel:+908503033719">+90 850 303 37 19</a>
         <br />
@@ -199,7 +202,10 @@ const sharedContent: Record<string, ContentRenderer> = {
       </ul>
       <h3>Manuscript preparation</h3>
       <p>
-        Prepare your manuscript using the journal's article template:{" "}
+        The initial submission may be made in your own format, provided the main file is
+        editable (DOCX or LaTeX); PDF-only submissions cannot be processed. Once the
+        manuscript is returned for revision or accepted, the revised version must be
+        prepared using the journal's article template:{" "}
         <a href="/templates/article-template.docx" download>
           download the article template (DOCX)
         </a>
@@ -232,7 +238,7 @@ const sharedContent: Record<string, ContentRenderer> = {
       </ul>
       <p>
         Submissions are made through the online system; see{" "}
-        <a href={OJS_SUBMIT_URL} target="_blank" rel="noopener noreferrer">
+        <a href={ojsSubmitUrl(j.ojsPath)} target="_blank" rel="noopener noreferrer">
           E-submission
         </a>
         .
@@ -291,7 +297,7 @@ const sharedContent: Record<string, ContentRenderer> = {
       </p>
       <p>
         To raise an ethical concern, contact the editorial office through{" "}
-        <a href={OJS_LOGIN_URL} target="_blank" rel="noopener noreferrer">
+        <a href={ojsLoginUrl(j.ojsPath)} target="_blank" rel="noopener noreferrer">
           your account
         </a>
         . All reports are handled confidentially.
@@ -354,7 +360,7 @@ const sharedContent: Record<string, ContentRenderer> = {
       </ul>
       <p>
         Reviews are conducted through the online system. Reviewer accounts are created at{" "}
-        <a href={OJS_LOGIN_URL} target="_blank" rel="noopener noreferrer">
+        <a href={ojsLoginUrl(j.ojsPath)} target="_blank" rel="noopener noreferrer">
           the journal management system
         </a>
         .
@@ -366,7 +372,7 @@ const sharedContent: Record<string, ContentRenderer> = {
     <p>
       Manuscripts are submitted through the journal's online submission system. Log in
       with your ORCID-linked account and follow the five-step submission wizard:{" "}
-      <a href={OJS_SUBMIT_URL} target="_blank" rel="noopener noreferrer">
+      <a href={ojsSubmitUrl(j.ojsPath)} target="_blank" rel="noopener noreferrer">
         go to e-submission
       </a>
       .
@@ -379,11 +385,11 @@ const sharedContent: Record<string, ContentRenderer> = {
       <ul>
         <li>the manuscript has not been published and is not under review elsewhere;</li>
         <li>
-          the manuscript is prepared with the journal's{" "}
+          the main manuscript file is editable (DOCX or LaTeX), not PDF only — the{" "}
           <a href="/templates/article-template.docx" download>
             article template
-          </a>
-          ;
+          </a>{" "}
+          becomes mandatory at the revision stage;
         </li>
         <li>title page, abstract (130–150 words), and 3–5 keywords are included;</li>
         <li>an anonymized version is provided for double-blind review;</li>
@@ -391,32 +397,45 @@ const sharedContent: Record<string, ContentRenderer> = {
         <li>all tables and figures are cited in the text;</li>
         <li>ethics approval information is stated (if applicable);</li>
         <li>all authors' ORCID iDs are provided;</li>
-        <li>the conflict of interest statement is completed;</li>
-        <li>the copyright/licensing form is signed by the corresponding author.</li>
+        <li>a conflict of interest statement is included in the manuscript;</li>
+        <li>
+          the corresponding author accepts the CC BY 4.0 licensing terms on behalf of
+          all authors when completing the submission.
+        </li>
       </ul>
     </>
   ),
 
-  "copyright-transfer-agreement": (j) => (
+  "copyright-and-licensing": (j) => (
     <>
       <p>
-        Authors retain copyright in articles published in <em>{j.name}</em>. Upon
-        acceptance, the corresponding author signs a publishing agreement granting the
-        journal the right of first publication under the CC BY 4.0 license. The signed
-        form is uploaded through the online submission system during the final
-        submission step.
+        Authors retain copyright in articles published in <em>{j.name}</em>. By
+        completing a submission, the corresponding author confirms on behalf of all
+        authors that the work may be published under the Creative Commons Attribution
+        4.0 International (CC BY 4.0) licence, granting the journal the right of first
+        publication.
+      </p>
+      <p>
+        This confirmation is given electronically in the submission system. No signed
+        document is required and nothing needs to be printed, scanned or posted.
       </p>
     </>
   ),
 
-  "conflict-of-interest-form": (j) => (
-    <p>
-      All authors must complete a conflict of interest disclosure covering financial
-      support, employment, consultancies, and personal relationships relevant to the
-      submitted work. The disclosure form is completed within the online submission
-      system; the corresponding author is responsible for submitting it on behalf of all
-      co-authors.
-    </p>
+  "conflict-of-interest": (j) => (
+    <>
+      <p>
+        Authors must disclose any financial support, employment, consultancy or personal
+        relationship that could be seen to influence the work submitted to{" "}
+        <em>{j.name}</em>. Where there is nothing to disclose, this should be stated
+        explicitly.
+      </p>
+      <p>
+        The declaration is made electronically during submission, by the corresponding
+        author on behalf of all co-authors, and is repeated in the manuscript itself.
+        There is no separate form to complete, sign or upload.
+      </p>
+    </>
   ),
 
   "article-processing-charge": (j) => (

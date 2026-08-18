@@ -1,10 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getJournal, navItemSlug, type Journal } from "@/lib/journals";
-import { getArticlesByJournal, type Article } from "@/lib/mock-articles";
-import { getXmlArticlesByJournal } from "@/lib/article-manifest";
-import { xmlEntryToArticle } from "@/lib/article-utils";
+import { type Article } from "@/lib/mock-articles";
+import { ojsToArticle } from "@/lib/article-utils";
+import { getJournalArticles } from "@/lib/api/journal.functions";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
-import { OJS_SUBMIT_URL } from "@/lib/ojs";
+import { ojsSubmitUrl } from "@/lib/ojs";
 import { ArticleCard } from "@/components/article-card";
 import { Pointer } from "lucide-react";
 import { absoluteSiteUrl } from "@/lib/seo";
@@ -13,16 +13,12 @@ import { absoluteSiteUrl } from "@/lib/seo";
 const USE_VIBRANT_JOURNAL_HERO = true;
 
 export const Route = createFileRoute("/journal/$slug/")({
-  loader: ({ params }): { journal: Journal; articles: Article[] } => {
+  loader: async ({ params }): Promise<{ journal: Journal; articles: Article[] }> => {
     const journal = getJournal(params.slug);
     if (!journal) throw notFound();
-    const mockArticles = getArticlesByJournal(params.slug);
-    const xmlArticles = getXmlArticlesByJournal(params.slug).map(xmlEntryToArticle);
-    // XML makaleler önce (yeni), mock makaleler sonra; tarih sırasına göre sırala
-    const all = [...xmlArticles, ...mockArticles].sort(
-      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    );
-    return { journal, articles: all };
+    // Makaleler OJS'ten gelir; erişilemezse liste boş döner ve sayfa çökmez.
+    const ojsArticles = await getJournalArticles({ data: { slug: params.slug } });
+    return { journal, articles: ojsArticles.map(ojsToArticle) };
   },
   head: ({ loaderData }) => ({
     meta: loaderData
@@ -134,14 +130,16 @@ function ClassicJournalHero({ journal }: { journal: Journal }) {
               </span>
             ))}
           </div>
-          <div className="mt-5 text-xs text-muted-foreground">
-            e-ISSN {journal.eissn}
-          </div>
+          {journal.eissn && (
+            <div className="mt-5 text-xs text-muted-foreground">
+              e-ISSN {journal.eissn}
+            </div>
+          )}
         </div>
 
         <div className="shrink-0 sm:col-start-2 lg:col-start-auto lg:pt-8">
           <a
-            href={OJS_SUBMIT_URL}
+            href={ojsSubmitUrl(journal.ojsPath)}
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-5 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -210,14 +208,16 @@ function VibrantJournalHero({ journal }: { journal: Journal }) {
               </span>
             ))}
           </div>
-          <div className="mt-5 text-xs font-medium tracking-wide text-white/70">
-            e-ISSN {journal.eissn}
-          </div>
+          {journal.eissn && (
+            <div className="mt-5 text-xs font-medium tracking-wide text-white/70">
+              e-ISSN {journal.eissn}
+            </div>
+          )}
         </div>
 
         <div className="shrink-0 sm:col-start-2 lg:col-start-auto">
           <a
-            href={OJS_SUBMIT_URL}
+            href={ojsSubmitUrl(journal.ojsPath)}
             target="_blank"
             rel="noreferrer"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white bg-[#ffffff] px-6 text-sm font-semibold shadow-[0_10px_28px_rgba(0,0,0,0.22)] transition-transform hover:-translate-y-0.5 hover:bg-[#ffffff] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"

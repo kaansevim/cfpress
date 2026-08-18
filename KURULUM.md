@@ -1,108 +1,123 @@
-# Kurulum ve Yönetim Rehberi
+# CF Open — Kurulum ve Yönetim Rehberi
+
+_Son güncelleme: 18 Ağustos 2026_
 
 ## Mimari
 
 ```
                     Cloudflare (SSL, Always Use HTTPS)
                               │
-                 Sunucudaki reverse proxy (hostingci yönetir)
+                   Sunucudaki reverse proxy
                     │                        │
    cf.org.tr → 127.0.0.1:3000    dergi.cf.org.tr → 127.0.0.1:8080
                     │                        │
              ┌──────────────┐        ┌──────────────┐     ┌─────────┐
-             │   frontend   │        │     OJS      │ ──▶ │ MariaDB │
-             │ (tanıtım UI) │        │ (dergi yön.) │     │   db    │
+             │   frontend   │ ──API─▶│     OJS      │ ──▶ │ MariaDB │
+             │  (okuyucu)   │        │  (yönetim)   │     │   db    │
              └──────────────┘        └──────────────┘     └─────────┘
                         tek docker compose içinde
 ```
 
-- **frontend/** — Tanıtım sitesi (TanStack Start). Docker'da production
-  build ile çalışır; Netlify deploy'u etkilenmez (preset otomatik seçilir).
-- **ojs/config/** — OJS ayar şablonu, Apache HTTPS algılama, DB karakter seti.
-- **kurulum.sh** — Sunucuda tek komutla kurulum (hostingci çalıştırır).
-- **HOSTING-NOTU.md** — Hostingciye gönderilecek talimatlar.
+**Rol dağılımı:**
 
-## OJS'i sıfırdan kurma (web sihirbazı)
+- **OJS** motordur: makale gönderimi, hakem süreci, dosyalar, kullanıcılar.
+  Tek doğru veri kaynağı burasıdır.
+- **frontend (cf.org.tr)** okuyucu yüzüdür: makaleleri OJS'in API'sinden
+  çeker, JATS XML'i kendi tasarımıyla gösterir. OJS'e hiçbir şey yazmaz.
 
-Hostingci `kurulum.sh`'i çalıştırıp yönlendirmeyi düzelttikten sonra:
+Bu ayrım bilinçlidir: OJS'in kendi arayüzünü giydirmek yerine (DergiPark'ın
+yaptığı gibi) önüne kendi sitemizi koyduk. Bedeli aradaki köprü, kazancı
+tasarım özgürlüğü.
 
-1. `https://dergi.cf.org.tr` adresini açın → OJS kurulum sihirbazı gelir.
-2. **Yönetici hesabı**: kullanıcı adı, güçlü parola ve e-posta girin.
-   (Bu site yöneticisi hesabıdır — bilgileri güvenle saklayın.)
-3. **Diller**: Birincil dil olarak Türkçe'yi seçebilirsiniz; İngilizce'yi de
-   ek dil olarak işaretlemenizi öneririz.
-4. **Dosya dizini** (Directory for uploads): `/var/www/files`
-5. **Veritabanı** (bilgileri hostingciden alın, script ekrana yazar):
-   - Sürücü: `mysqli`
-   - Sunucu: `db`
-   - Kullanıcı: `ojs`
-   - Parola: (hostingcinin ilettiği `OJS_DB_PASSWORD`)
-   - Veritabanı adı: `ojs`
-   - **"Create new database" işaretini kaldırın** (veritabanı zaten var)
-   - "Beacon" isteğe bağlıdır.
-6. **Install** deyin. Açılan sayfada admin bilgileriyle giriş yapın.
+## Klasörler
 
-## Kurulumdan sonra: dergileri oluşturma
+| Yol | Ne işe yarar |
+|---|---|
+| `frontend/` | Okuyucu sitesi (TanStack Start) |
+| `frontend/src/lib/ojs.server.ts` | OJS API istemcisi (sunucu tarafı) |
+| `frontend/src/lib/metrics.server.ts` | Görüntülenme/indirme sayacı |
+| `ojs/config/` | OJS ayar şablonu, Apache ve veritabanı ayarları |
+| `kurulum.sh` | Sıfırdan sunucu kurulumu |
 
-1. Giriş yapın → sağ üst menü → **Administration → Hosted Journals →
-   Create Journal**.
-2. Her dergi için ad, kısaltma ve **Path** girin. Önerilen path'ler
-   (frontend'deki dergilerle uyumlu):
-   - Journal of Social Solutions → `jss`
-   - Journal of Cognitive Formation → `jcf`
-   - Journal of Economic Change and Future → `jecf`
-   - Journal of Community & Foundations → `jcfo`
-3. Dergi adresleri şöyle olur:
-   `https://dergi.cf.org.tr/index.php/jss` vb.
+## Belgeler
 
-### Frontend butonlarını bir dergiye bağlama (opsiyonel)
+| Dosya | İçerik |
+|---|---|
+| `YAYIN-AKISI.md` | Makale dosyaları nereye yüklenir, yol haritası |
+| `SUNUCU-GUNCELLEME.md` | Sunucuya güncelleme çıkma adımları + yedekleme |
+| `DERGI-AYAR-SABLONU.md` | Yeni dergi açarken kullanılacak hazır metinler |
 
-"Makale Gönder" butonu varsayılan olarak OJS dergi listesine gider. Tek bir
-dergiye gitmesini isterseniz sunucudaki `.env` dosyasında:
+## Yayın akışı (günlük kullanım)
+
+1. Yazar OJS'ten makale gönderir
+2. Editör hakem sürecini OJS'te yürütür
+3. Kabul edilen makaleye **Production** aşamasında galley eklenir:
+   - `PDF` etiketli galley → `makale.pdf`
+   - `XML` etiketli galley → `makale.xml` (JATS)
+   - Şekiller XML galley'in altına **dependent file** olarak, **PNG/JPG** biçiminde
+4. Makale sayıya atanır, sayı yayınlanır
+5. cf.org.tr en geç 10 dakika içinde makaleyi kendiliğinden gösterir
+
+> Etiketler tam olarak `PDF` ve `XML` olmalıdır; frontend galley'leri bu
+> isimlerle tanır.
+
+**Yeni makale için sunucuya dokunmak gerekmez.** Kod değişmediği sürece
+yeniden derleme yapılmaz.
+
+## Sunucudaki gerekli ayarlar
+
+`.env` içinde:
 
 ```
-OJS_JOURNAL_PATH=jss
+OJS_DB_PASSWORD=...
+OJS_DB_ROOT_PASSWORD=...
+OJS_DOMAIN=dergi.cf.org.tr
+OJS_PUBLIC_URL=https://dergi.cf.org.tr
+OJS_INTERNAL_URL=http://ojs
+OJS_API_TOKEN=...        # OJS → Profil Düzenle → API Anahtarı
+BIND_IP=127.0.0.1
 ```
 
-yazıp `docker compose up -d --build frontend` çalıştırılmalı (hostingciden
-istenebilir).
+`ojs/config/ojs.config.inc.php` içinde:
 
-## Sık kullanılan komutlar (sunucuda)
+```
+allowed_hosts = '["dergi.cf.org.tr", "ojs"]'
+```
+
+SMTP ayarları da aynı dosyanın `[email]` bölümündedir.
+
+## Sık kullanılan komutlar
 
 ```bash
-docker compose ps                # servis durumları
-docker compose logs -f ojs      # OJS logları
-docker compose up -d --build     # kod güncellemesinden sonra
-docker compose restart ojs      # OJS'i yeniden başlat
+docker compose ps                      # servis durumları
+docker compose logs -f --tail=100 frontend
+docker compose logs -f --tail=100 ojs
+docker compose restart ojs
+docker compose up -d --build frontend  # kod güncellemesinden sonra
 ```
+
+> ⚠️ **`docker compose down -v` ASLA çalıştırılmaz.** Veritabanını ve yüklenen
+> tüm makale dosyalarını siler.
 
 ## Veriler nerede?
 
 | Veri | Yer | Kalıcı mı? |
 |---|---|---|
 | Veritabanı | `ojs_db_data` volume | ✔ |
-| Yüklenen makaleler/dosyalar | `ojs_files` volume | ✔ |
-| Dergi görselleri (public) | `ojs_public` volume | ✔ |
-| OJS ayarları | `ojs/config/ojs.config.inc.php` (sunucuda) | ✔ |
+| Yüklenen makale dosyaları | `ojs_files` volume | ✔ |
+| Dergi görselleri | `ojs_public` volume | ✔ |
+| Görüntülenme/indirme sayacı | `frontend_data` volume | ✔ |
+| OJS ayarları | `ojs/config/ojs.config.inc.php` | ✔ |
 
-Konteynerler silinip yeniden oluşturulsa bile bunlar korunur. Yedekleme için
-bu volume'lar ve config dosyası yeterlidir.
-
-## E-posta (önemli)
-
-OJS'in davet/bildirim e-postaları gönderebilmesi için SMTP ayarlanmalıdır.
-Sunucudaki `ojs/config/ojs.config.inc.php` içinde `[email]` bölümünde
-`smtp` satırlarını açıp bir SMTP hesabı girin, ardından
-`docker compose restart ojs`. (Ayarlanmazsa e-postalar büyük ihtimalle
-gönderilmez ya da spam'e düşer.)
+Yedekleme adımları `SUNUCU-GUNCELLEME.md` dosyasındadır.
 
 ## Sorun giderme
 
-- **dergi.cf.org.tr tanıtım sitesini açıyor** → reverse proxy hâlâ 3000'e
-  yönlendiriyor; HOSTING-NOTU.md'deki 2. adım yapılmamış.
-- **Yönlendirme döngüsü (redirect loop)** → Cloudflare SSL modu "Flexible"
-  kalmış; "Full" yapılmalı.
-- **OJS http:// linkler üretiyor / karışık içerik uyarısı** → proxy
-  `X-Forwarded-Proto` header'ını iletmiyor (HOSTING-NOTU.md'deki nginx
-  ayarına bakın).
+- **cf.org.tr'de makale görünmüyor** → `.env` içinde `OJS_API_TOKEN` var mı,
+  `allowed_hosts` listesinde `"ojs"` var mı? Sonra `docker compose logs frontend`.
+- **Makale açılıyor ama şekiller yok** → şekil PDF olarak yüklenmiş olabilir;
+  PNG/JPG olmalı. Ayrıca dosya adı XML içindeki adla birebir aynı olmalı.
+- **dergi.cf.org.tr tanıtım sitesini açıyor** → reverse proxy 8080 yerine
+  3000'e yönlendiriyor.
+- **Yönlendirme döngüsü** → Cloudflare SSL modu "Full" olmalı.
 - **Büyük PDF yüklenemiyor** → proxy'de `client_max_body_size` düşük.

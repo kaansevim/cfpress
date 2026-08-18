@@ -1,12 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { articles, type Article } from "@/lib/mock-articles";
+import { type Article } from "@/lib/mock-articles";
+import { ojsToArticle } from "@/lib/article-utils";
+import { getAllArticles } from "@/lib/api/journal.functions";
 import { journals, getJournal } from "@/lib/journals";
 import { ArticleCard } from "@/components/article-card";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 
 export const Route = createFileRoute("/")({
+  // Tüm dergilerin yayınlanmış makaleleri OJS'ten gelir.
+  loader: async (): Promise<{ articles: Article[] }> => ({
+    articles: (await getAllArticles()).map(ojsToArticle),
+  }),
   head: () => ({
     meta: [
       { title: "CF Open — Open Access Academic Journals" },
@@ -288,6 +294,7 @@ function Highlights({ articles }: { articles: Article[] }) {
 }
 
 function HomePage() {
+  const { articles } = Route.useLoaderData();
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
@@ -300,13 +307,16 @@ function HomePage() {
         a.authors.some((au) => au.name.toLowerCase().includes(q)) ||
         a.keywords.some((k) => k.toLowerCase().includes(q)),
     );
-  }, [query]);
+  }, [query, articles]);
 
-  // Öne çıkanlar: makale metriklerine (görüntülenme) göre otomatik sıralanır.
-  // Yeni makale eklendikçe / metrikler değiştikçe liste kendiliğinden güncellenir.
+  // Öne çıkanlar: en yeni yayınlanan makaleler.
+  // (Görüntülenme sayacı devreye girdiğinde "en çok okunan"a çevrilecek.)
   const mostRead = useMemo(
-    () => [...articles].sort((a, b) => b.metrics.views - a.metrics.views).slice(0, 5),
-    [],
+    () =>
+      [...articles]
+        .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
+        .slice(0, 5),
+    [articles],
   );
 
   return (

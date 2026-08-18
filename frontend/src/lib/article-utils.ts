@@ -1,5 +1,6 @@
 import type { Article, Author } from "@/lib/mock-articles";
 import type { XmlArticleEntry } from "@/lib/article-manifest";
+import type { OjsArticle } from "@/lib/ojs.server";
 
 // Türkçe karakterleri ASCII anchor'a indirger (TOC id'leri için).
 const TR_MAP: Record<string, string> = {
@@ -217,5 +218,63 @@ export function xmlEntryToArticle(e: XmlArticleEntry): Article {
     references: [],
     metrics: { views: 0, downloads: 0, citations: 0 },
     info: { received: "", accepted: "", published: "", editor: "", license: "CC BY 4.0" },
+  };
+}
+
+/* ------------------------- OJS kayıtlarına dönüşüm ------------------------ */
+
+// OJS'ten gelen normalize kayıt, sitenin mevcut görüntüleme tiplerine çevrilir.
+// Böylece kart ve sayfa bileşenlerinin hiçbiri değişmek zorunda kalmaz.
+
+/** Listeleme kartları için. */
+export function ojsToArticle(a: OjsArticle): Article {
+  return {
+    id: a.id,
+    journalSlug: a.journalSlug,
+    subject: a.subject,
+    title: a.title,
+    authors: a.authorNames.map((name) => ({ name, orcid: "", affiliation: "" })),
+    abstract: a.abstract,
+    publishedAt: a.publishedAt,
+    doi: a.doi,
+    volume: a.volume,
+    issue: a.issue,
+    fpage: a.firstPage,
+    lpage: a.lastPage,
+    keywords: a.keywords,
+    content: "",
+    figures: [],
+    references: [],
+    metrics: { views: a.views ?? 0, downloads: a.downloads ?? 0, citations: 0 },
+    info: {
+      received: "",
+      accepted: "",
+      published: a.publishedAt,
+      editor: "",
+      license: "CC BY 4.0",
+    },
+  };
+}
+
+/** JATS görüntüleyicisinin beklediği kayıt. XML yoksa null döner. */
+export function ojsToXmlEntry(a: OjsArticle): XmlArticleEntry | null {
+  if (!a.xmlPath) return null;
+  return {
+    id: a.id,
+    journalSlug: a.journalSlug,
+    xmlPath: a.xmlPath,
+    pdfPath: a.pdfPath,
+    title: a.title,
+    subject: a.subject,
+    abstract: a.abstract,
+    publishedAt: a.publishedAt,
+    authorNames: a.authorNames,
+    doi: a.doi,
+    keywords: a.keywords,
+    language: a.language,
+    volume: a.volume,
+    issue: a.issue,
+    firstPage: a.firstPage,
+    lastPage: a.lastPage,
   };
 }

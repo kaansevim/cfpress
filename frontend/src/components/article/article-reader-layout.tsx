@@ -18,7 +18,7 @@ import type { ParsedJats } from "@/lib/jats-parser";
 import type { Heading } from "@/lib/article-utils";
 import { formatDate } from "@/lib/article-utils";
 import { navItemSlug } from "@/lib/journals";
-import { OJS_SUBMIT_URL } from "@/lib/ojs";
+import { ojsSubmitUrl } from "@/lib/ojs";
 import { cn } from "@/lib/utils";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleBody } from "@/components/article-body";
@@ -529,7 +529,7 @@ export function ArticleReaderLayout({
                   Aims and scope <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
-                  href={OJS_SUBMIT_URL}
+                  href={ojsSubmitUrl(journal.ojsPath)}
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 rounded-lg bg-white px-3 py-2 text-sm font-semibold shadow-lg transition-transform hover:-translate-y-0.5"

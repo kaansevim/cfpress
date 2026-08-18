@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { journalNav, navItemSlug, type Journal } from "@/lib/journals";
-import { OJS_LOGIN_URL, OJS_SUBMIT_URL } from "@/lib/ojs";
+import { ojsLoginUrl, ojsSubmitUrl } from "@/lib/ojs";
 
 /* ----------------------------- Platform Header ---------------------------- */
 
@@ -186,7 +186,7 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
 
           <div className="flex items-center gap-4 border-l border-border pl-6">
             <a
-              href={OJS_LOGIN_URL}
+              href={ojsLoginUrl(journal?.ojsPath)}
               target="_blank"
               rel="noreferrer"
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -220,7 +220,7 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
           <div className="mt-4 flex flex-col gap-2 border-t border-border pt-4">
             {journal && (
               <a
-                href={OJS_SUBMIT_URL}
+                href={ojsSubmitUrl(journal?.ojsPath)}
                 target="_blank"
                 rel="noreferrer"
                 className="block rounded-md bg-primary px-3 py-2 text-center text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
@@ -229,7 +229,7 @@ export function SiteHeader({ journal, flush }: { journal?: Journal; flush?: bool
               </a>
             )}
             <a
-              href={OJS_LOGIN_URL}
+              href={ojsLoginUrl(journal?.ojsPath)}
               target="_blank"
               rel="noreferrer"
               className="block rounded-md px-3 py-2 text-center text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
@@ -286,11 +286,11 @@ export function SiteFooter() {
           <div className="text-sm">
             <div className="mb-2 font-semibold">Editorial Office</div>
             <p className="text-muted-foreground">
-              CF Education and Consulting
+              CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi
               <br />
-              ASBU Sosyokent No: 209
+              ASBÜ Sosyokent, Mahmut Atalay Sk. L Blok No: 6 / 209
               <br />
-              Altındağ - Ankara - Türkiye
+              06050 Altındağ - Ankara - Türkiye
               <br />
               <a
                 href="https://cfdanismanlik.com.tr/"
