@@ -7,6 +7,17 @@
 //              Boş bırakıldığında sitede ISSN satırı hiç gösterilmez —
 //              yer tutucu/uydurma numara YAZILMAMALIDIR.
 
+/** Yayın kurulu / yönetim ekibi üyesi. */
+export interface BoardMember {
+  name: string;
+  /** Görev: "Editor-in-Chief", "Associate Editor", "Managing Editor" vb. */
+  role: string;
+  affiliation?: string;
+  country?: string;
+  /** Sadece numara (örn. "0000-0002-1825-0097"); bağlantıyı site kurar. */
+  orcid?: string;
+}
+
 export interface Journal {
   slug: string;
   name: string;
@@ -21,6 +32,10 @@ export interface Journal {
   scope: string;
   eissn?: string;
   subjects: string[];
+  /** Boş bırakılırsa sitede "duyurulacaktır" mesajı görünür. */
+  editorialBoard?: BoardMember[];
+  /** Derginin yönetim/yayın ekibi (editoryal ofis, mizanpaj, teknik). */
+  managementTeam?: BoardMember[];
 }
 
 export const journals: Journal[] = [

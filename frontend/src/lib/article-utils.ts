@@ -239,6 +239,8 @@ export function ojsToArticle(a: OjsArticle): Article {
     doi: a.doi,
     volume: a.volume,
     issue: a.issue,
+    issueId: a.issueId,
+    issueLabel: a.issueLabel,
     fpage: a.firstPage,
     lpage: a.lastPage,
     keywords: a.keywords,
@@ -277,4 +279,45 @@ export function ojsToXmlEntry(a: OjsArticle): XmlArticleEntry | null {
     firstPage: a.firstPage,
     lastPage: a.lastPage,
   };
+}
+
+/* ----------------------------- Sayıya göre gruplama ---------------------- */
+
+export interface IssueGroup {
+  id: number | null;
+  /** Sayının görünen adı; sayıya atanmamış makaleler için null. */
+  label: string | null;
+  articles: Article[];
+}
+
+/**
+ * Makaleleri yayınlandıkları sayıya göre gruplar. Sayılar yeniden eskiye
+ * sıralanır; sıralama, gruptaki en yeni makalenin tarihine göre yapılır.
+ * Ayrı bir istek gerekmez — sayı bilgisi zaten her makalede taşınıyor.
+ */
+export function groupByIssue(articles: Article[]): IssueGroup[] {
+  const groups = new Map<string, IssueGroup>();
+
+  for (const article of articles) {
+    const key = article.issueId != null ? String(article.issueId) : "none";
+    let group = groups.get(key);
+    if (!group) {
+      group = {
+        id: article.issueId ?? null,
+        label: article.issueLabel ?? null,
+        articles: [],
+      };
+      groups.set(key, group);
+    }
+    group.articles.push(article);
+  }
+
+  const newest = (g: IssueGroup) =>
+    g.articles.reduce((max, a) => (a.publishedAt > max ? a.publishedAt : max), "");
+
+  return [...groups.values()].sort((a, b) => {
+    const diff = newest(b).localeCompare(newest(a));
+    if (diff !== 0) return diff;
+    return (b.id ?? 0) - (a.id ?? 0);
+  });
 }

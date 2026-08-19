@@ -8,7 +8,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 import { getJournal } from "../journals";
-import type { OjsArticle } from "../ojs.server";
+import type { OjsArticle, OjsJournalSettings } from "../ojs.server";
 
 const slugInput = z.object({ slug: z.string().min(1) });
 
@@ -88,6 +88,10 @@ export const getArticleWithXml = createServerFn({ method: "GET" })
     }
     if (!article) return { article: null, xml: null, xmlError: null };
 
+    // Sayaç değerleri makale listesi önbelleğinde tutulmaz; her istekte
+    // güncel değer okunur, yoksa makale sayfası hep 0 gösterirdi.
+    [article] = await withMetrics(journal.slug, [article]);
+
     let xml: string | null = null;
     let xmlError: string | null = null;
     try {
@@ -98,4 +102,19 @@ export const getArticleWithXml = createServerFn({ method: "GET" })
     }
 
     return { article, xml, xmlError };
+  });
+
+/** Derginin OJS'teki metin ayarları. Alınamazsa boş nesne döner. */
+export const getJournalSettings = createServerFn({ method: "GET" })
+  .inputValidator(slugInput)
+  .handler(async ({ data }): Promise<OjsJournalSettings> => {
+    const journal = getJournal(data.slug);
+    if (!journal) return {};
+    const { getJournalSettings: load } = await import("../ojs.server");
+    try {
+      return await load(journal.ojsPath);
+    } catch (error) {
+      console.error("[ojs] dergi ayarları alınamadı:", error);
+      return {};
+    }
   });

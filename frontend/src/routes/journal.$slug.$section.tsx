@@ -2,8 +2,9 @@ import { createFileRoute, Link, notFound, useLocation } from "@tanstack/react-ro
 import { useEffect } from "react";
 import { getJournal, journalNav, navItemSlug, type Journal } from "@/lib/journals";
 import { type Article } from "@/lib/mock-articles";
-import { ojsToArticle } from "@/lib/article-utils";
-import { getJournalArticles } from "@/lib/api/journal.functions";
+import { groupByIssue, ojsToArticle } from "@/lib/article-utils";
+import { getJournalArticles, getJournalSettings } from "@/lib/api/journal.functions";
+import type { OjsJournalSettings } from "@/lib/ojs.server";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleCard } from "@/components/article-card";
 import { getItemContent } from "@/lib/section-content";
@@ -13,11 +14,25 @@ const VALID = new Set(["about", "articles", "for-authors"]);
 export const Route = createFileRoute("/journal/$slug/$section")({
   loader: async ({
     params,
-  }): Promise<{ journal: Journal; articles: Article[]; section: string }> => {
+  }): Promise<{
+    journal: Journal;
+    articles: Article[];
+    section: string;
+    settings: OjsJournalSettings;
+  }> => {
     const journal = getJournal(params.slug);
     if (!journal || !VALID.has(params.section)) throw notFound();
-    const ojsArticles = await getJournalArticles({ data: { slug: params.slug } });
-    return { journal, articles: ojsArticles.map(ojsToArticle), section: params.section };
+    // Makale listesi ve dergi metinleri birbirinden bağımsız; paralel çekilir.
+    const [ojsArticles, settings] = await Promise.all([
+      getJournalArticles({ data: { slug: params.slug } }),
+      getJournalSettings({ data: { slug: params.slug } }),
+    ]);
+    return {
+      journal,
+      articles: ojsArticles.map(ojsToArticle),
+      section: params.section,
+      settings,
+    };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return { meta: [{ title: "Journal" }] };
@@ -38,7 +53,7 @@ export const Route = createFileRoute("/journal/$slug/$section")({
 });
 
 function SectionPage() {
-  const { journal, articles, section } = Route.useLoaderData();
+  const { journal, articles, section, settings } = Route.useLoaderData();
   const group = journalNav.find((g) => g.section === section)!;
   const hash = useLocation({ select: (l) => l.hash });
 
@@ -82,14 +97,27 @@ function SectionPage() {
               No articles have been published in this journal yet.
             </p>
           ) : (
-            articles.map((a) => <ArticleCard key={a.id} article={a} />)
+            // Makaleler yayınlandıkları sayıya göre gruplanır; sayı bilgisi
+            // OJS'ten her makaleyle birlikte geliyor, ek istek gerekmiyor.
+            <div id={navItemSlug("All issues")} className="scroll-mt-24">
+              {groupByIssue(articles).map((group) => (
+                <section key={group.id ?? "none"} className="mb-12 last:mb-0">
+                  <h2 className="mb-6 border-b border-border pb-2 font-serif-display text-lg font-bold">
+                    {group.label ?? "Articles"}
+                  </h2>
+                  {group.articles.map((a) => (
+                    <ArticleCard key={a.id} article={a} />
+                  ))}
+                </section>
+              ))}
+            </div>
           )}
         </main>
       ) : (
         <main className="mx-auto max-w-3xl px-6 py-12">
           {group.items.map((item) => {
             const slug = navItemSlug(item);
-            const content = getItemContent(journal, slug);
+            const content = getItemContent(journal, slug, settings);
             return (
               <section
                 key={item}

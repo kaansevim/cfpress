@@ -9,20 +9,81 @@
 // Anahtarlar navItemSlug(item) çıktısıdır (örn. "Aims and scope" → "aims-and-scope").
 
 import type { ReactNode } from "react";
-import type { Journal } from "@/lib/journals";
+import type { BoardMember, Journal } from "@/lib/journals";
 import { ojsLoginUrl, ojsSubmitUrl } from "@/lib/ojs";
+import type { OjsJournalSettings } from "@/lib/ojs.server";
 
 /** Yayıncının resmi tüzel kişilik unvanı — ISSN/indeks başvurularında bu kullanılır. */
 const PUBLISHER = "CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi";
 
-export type ContentRenderer = (j: Journal) => ReactNode;
+// İÇERİK KAYNAĞI KURALI
+// Her bölüm önce OJS'e bakar: dergi ayarlarında o alan doldurulmuşsa OJS'teki
+// metin gösterilir, boşsa buradaki varsayılan. Böylece aynı metin iki yerde
+// tutulmaz, dergi ekibi metni OJS'ten yönetebilir ve hiçbir sayfa boş kalmaz.
+
+export type ContentRenderer = (j: Journal, s: OjsJournalSettings) => ReactNode;
+
+/** OJS'ten gelen zengin metni gösterir. İçerik yalnızca dergi yöneticileri
+ *  tarafından OJS panelinden girilir; dışarıdan gelen veri değildir. */
+function OjsHtml({ html }: { html: string }) {
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+/** OJS'te doluysa onu, değilse koddaki varsayılanı gösterir. */
+function fromOjs(value: string | undefined, fallback: ReactNode): ReactNode {
+  return value ? <OjsHtml html={value} /> : fallback;
+}
+
+/** OJS'in zengin metin alanlarını düz satırlara indirger (adres, kurum adı gibi
+ *  tek satırlık alanlarda kullanılır). */
+function stripTags(html: string): string {
+  return html
+    .replace(/<br\s*\/?>/gi, "\n")
+    .replace(/<\/p>/gi, "\n")
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .join("\n");
+}
+
+/** Yayın kurulu / yönetim ekibi listesi. */
+function MemberList({ members }: { members: BoardMember[] }) {
+  return (
+    <ul className="not-prose mt-4 space-y-4">
+      {members.map((m) => (
+        <li key={`${m.name}-${m.role}`}>
+          <div className="font-semibold">{m.name}</div>
+          <div className="text-sm text-muted-foreground">
+            {m.role}
+            {m.affiliation ? ` · ${m.affiliation}` : ""}
+            {m.country ? `, ${m.country}` : ""}
+          </div>
+          {m.orcid && (
+            <a
+              href={`https://orcid.org/${m.orcid}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-accent hover:underline"
+            >
+              ORCID {m.orcid}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 /* ------------------------------ Ortak içerik ------------------------------ */
 
 const sharedContent: Record<string, ContentRenderer> = {
   /* --------------------------------- About -------------------------------- */
 
-  "aims-and-scope": (j) => (
+  "aims-and-scope": (j, s) =>
+    fromOjs(s.description, (
     <>
       <p>{j.scope}</p>
       <p>
@@ -32,9 +93,10 @@ const sharedContent: Record<string, ContentRenderer> = {
         is particularly encouraged.
       </p>
     </>
-  ),
+  )),
 
-  "about-the-journal": (j) => (
+  "about-the-journal": (j, s) =>
+    fromOjs(s.about, (
     <>
       <p>
         <em>{j.name}</em> ({j.shortName}) is a peer-reviewed, open access journal
@@ -49,7 +111,7 @@ const sharedContent: Record<string, ContentRenderer> = {
         <li>Article processing charge: none</li>
       </ul>
     </>
-  ),
+  )),
 
   "abstracting-and-indexing-services": (j) => (
     <>
@@ -63,12 +125,15 @@ const sharedContent: Record<string, ContentRenderer> = {
     </>
   ),
 
-  "editorial-board": (j) => (
-    <p>
-      The editorial board of <em>{j.name}</em> will be announced before the first issue
-      is published.
-    </p>
-  ),
+  "editorial-board": (j) =>
+    j.editorialBoard?.length ? (
+      <MemberList members={j.editorialBoard} />
+    ) : (
+      <p>
+        The editorial board of <em>{j.name}</em> will be announced before the first issue
+        is published.
+      </p>
+    ),
 
   "best-practice": (j) => (
     <>
@@ -82,28 +147,37 @@ const sharedContent: Record<string, ContentRenderer> = {
     </>
   ),
 
-  "journal-management-team": (j) => (
-    <p>
-      The management team of <em>{j.name}</em> will be announced before the first issue
-      is published.
-    </p>
-  ),
-
-  "publishing-credentials": (j) => (
-    <>
+  "journal-management-team": (j) =>
+    j.managementTeam?.length ? (
+      <MemberList members={j.managementTeam} />
+    ) : (
       <p>
-        <em>{j.name}</em> is published by {PUBLISHER} (Ankara, Türkiye) on the CF Open
-        platform.
+        The management team of <em>{j.name}</em> will be announced before the first issue
+        is published.
       </p>
-      <ul>
-        {j.eissn && <li>e-ISSN: {j.eissn}</li>}
-        <li>Publisher: {PUBLISHER}</li>
-        <li>Platform: CF Open (Open Journal Systems)</li>
-      </ul>
-    </>
-  ),
+    ),
 
-  "open-access": (j) => (
+  "publishing-credentials": (j, s) => {
+    const publisher = s.publisherInstitution ?? PUBLISHER;
+    const eissn = s.onlineIssn ?? j.eissn;
+    return (
+      <>
+        <p>
+          <em>{j.name}</em> is published by {publisher} (Ankara, Türkiye) on the CF Open
+          platform.
+        </p>
+        <ul>
+          {eissn && <li>e-ISSN: {eissn}</li>}
+          {s.printIssn && <li>Print ISSN: {s.printIssn}</li>}
+          <li>Publisher: {publisher}</li>
+          <li>Platform: CF Open (Open Journal Systems)</li>
+        </ul>
+      </>
+    );
+  },
+
+  "open-access": (j, s) =>
+    fromOjs(s.openAccessPolicy, (
     <>
       <p>
         <em>{j.name}</em> is a fully open access journal. All articles are freely
@@ -117,7 +191,7 @@ const sharedContent: Record<string, ContentRenderer> = {
         retain copyright in their work.
       </p>
     </>
-  ),
+  )),
 
   readership: (j) => (
     <p>
@@ -152,29 +226,58 @@ const sharedContent: Record<string, ContentRenderer> = {
     </p>
   ),
 
-  "contact-us": (j) => (
-    <>
-      <p>Editorial office of <em>{j.name}</em>:</p>
-      <p>
-        {PUBLISHER}
-        <br />
-        ASBÜ Sosyokent, Hacı Bayram Mah., Mahmut Atalay Sk. L Blok No: 6, İç Kapı No: 209
-        <br />
-        06050 Altındağ, Ankara, Türkiye
-        <br />
-        Tel: <a href="tel:+908503033719">+90 850 303 37 19</a>
-        <br />
-        Web:{" "}
-        <a href="https://cfdanismanlik.com.tr/" target="_blank" rel="noopener noreferrer">
-          cfdanismanlik.com.tr
-        </a>
-      </p>
-    </>
-  ),
+  "contact-us": (j, s) => {
+    // Adres/telefon/e-posta OJS'te doluysa oradan gelir; boşsa merkez ofis bilgisi.
+    const phone = s.contactPhone ?? "+90 850 303 37 19";
+    const address = s.mailingAddress
+      ? stripTags(s.mailingAddress).split("\n")
+      : [
+          "ASBÜ Sosyokent, Hacı Bayram Mah., Mahmut Atalay Sk. L Blok No: 6, İç Kapı No: 209",
+          "06050 Altındağ, Ankara, Türkiye",
+        ];
+    return (
+      <>
+        <p>Editorial office of <em>{j.name}</em>:</p>
+        <p>
+          {s.contactName && (
+            <>
+              {s.contactName}
+              <br />
+            </>
+          )}
+          {s.contactAffiliation ? stripTags(s.contactAffiliation) : PUBLISHER}
+          <br />
+          {address.map((line) => (
+            <span key={line}>
+              {line}
+              <br />
+            </span>
+          ))}
+          {s.contactEmail && (
+            <>
+              E-mail: <a href={`mailto:${s.contactEmail}`}>{s.contactEmail}</a>
+              <br />
+            </>
+          )}
+          Tel: <a href={`tel:${phone.replace(/[^+0-9]/g, "")}`}>{phone}</a>
+          <br />
+          Web:{" "}
+          <a
+            href={s.publisherUrl ?? "https://cfdanismanlik.com.tr/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {(s.publisherUrl ?? "https://cfdanismanlik.com.tr/").replace(/^https?:\/\/|\/$/g, "")}
+          </a>
+        </p>
+      </>
+    );
+  },
 
   /* --------------------------- For authors and reviewers ------------------- */
 
-  "instructions-for-authors": (j) => (
+  "instructions-for-authors": (j, s) =>
+    fromOjs(s.authorGuidelines, (
     <>
       <h3>General requirements</h3>
       <ul>
@@ -244,7 +347,7 @@ const sharedContent: Record<string, ContentRenderer> = {
         .
       </p>
     </>
-  ),
+  )),
 
   "research-and-publication-ethics": (j) => (
     <>
@@ -342,7 +445,8 @@ const sharedContent: Record<string, ContentRenderer> = {
     </>
   ),
 
-  "for-reviewers": (j) => (
+  "for-reviewers": (j, s) =>
+    fromOjs(s.reviewGuidelines, (
     <>
       <p>
         Reviewers safeguard the scholarly quality of <em>{j.name}</em>. Reviewers are
@@ -366,7 +470,7 @@ const sharedContent: Record<string, ContentRenderer> = {
         .
       </p>
     </>
-  ),
+  )),
 
   "e-submission": (j) => (
     <p>
@@ -379,7 +483,8 @@ const sharedContent: Record<string, ContentRenderer> = {
     </p>
   ),
 
-  checklist: (j) => (
+  checklist: (j, s) =>
+    fromOjs(s.submissionChecklist, (
     <>
       <p>Before submitting, please confirm that:</p>
       <ul>
@@ -404,9 +509,10 @@ const sharedContent: Record<string, ContentRenderer> = {
         </li>
       </ul>
     </>
-  ),
+  )),
 
-  "copyright-and-licensing": (j) => (
+  "copyright-and-licensing": (j, s) =>
+    fromOjs(s.copyrightNotice ?? s.licenseTerms, (
     <>
       <p>
         Authors retain copyright in articles published in <em>{j.name}</em>. By
@@ -420,9 +526,10 @@ const sharedContent: Record<string, ContentRenderer> = {
         document is required and nothing needs to be printed, scanned or posted.
       </p>
     </>
-  ),
+  )),
 
-  "conflict-of-interest": (j) => (
+  "conflict-of-interest": (j, s) =>
+    fromOjs(s.competingInterests, (
     <>
       <p>
         Authors must disclose any financial support, employment, consultancy or personal
@@ -436,7 +543,7 @@ const sharedContent: Record<string, ContentRenderer> = {
         There is no separate form to complete, sign or upload.
       </p>
     </>
-  ),
+  )),
 
   "article-processing-charge": (j) => (
     <p>
@@ -456,8 +563,12 @@ const journalOverrides: Record<string, Partial<Record<string, ContentRenderer>>>
 
 /* --------------------------------- Erişim -------------------------------- */
 
-export function getItemContent(journal: Journal, itemSlug: string): ReactNode | null {
+export function getItemContent(
+  journal: Journal,
+  itemSlug: string,
+  settings: OjsJournalSettings = {},
+): ReactNode | null {
   const renderer =
     journalOverrides[journal.slug]?.[itemSlug] ?? sharedContent[itemSlug] ?? null;
-  return renderer ? renderer(journal) : null;
+  return renderer ? renderer(journal, settings) : null;
 }

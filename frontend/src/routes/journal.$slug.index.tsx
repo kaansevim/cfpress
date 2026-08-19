@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getJournal, navItemSlug, type Journal } from "@/lib/journals";
 import { type Article } from "@/lib/mock-articles";
-import { ojsToArticle } from "@/lib/article-utils";
+import { groupByIssue, ojsToArticle } from "@/lib/article-utils";
 import { getJournalArticles } from "@/lib/api/journal.functions";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ojsSubmitUrl } from "@/lib/ojs";
@@ -248,22 +248,19 @@ function JournalHome() {
       )}
 
       <main className="mx-auto grid max-w-6xl gap-12 px-6 py-12 lg:grid-cols-[1fr_18rem]">
-        {/* Sol: son makaleler */}
+        {/* Sol: güncel sayı */}
         <div>
-          <div className="mb-8">
-            <h2 className="font-serif-display text-xl font-bold">Latest Articles</h2>
-          </div>
-
           {articles.length === 0 ? (
-            <p className="py-12 text-center text-muted-foreground">
-              No articles have been published in this journal yet.
-            </p>
+            <>
+              <div className="mb-8">
+                <h2 className="font-serif-display text-xl font-bold">Latest Articles</h2>
+              </div>
+              <p className="py-12 text-center text-muted-foreground">
+                No articles have been published in this journal yet.
+              </p>
+            </>
           ) : (
-            <div>
-              {articles.map((a) => (
-                <ArticleCard key={a.id} article={a} />
-              ))}
-            </div>
+            <CurrentIssue articles={articles} slug={journal.slug} />
           )}
         </div>
 
@@ -275,5 +272,39 @@ function JournalHome() {
 
       <SiteFooter />
     </div>
+  );
+}
+
+// Dergi ana sayfasında güncel sayı: en yeni sayının başlığı ve makaleleri.
+// Sayıya atanmamış makale varsa onlar da altında listelenir.
+function CurrentIssue({ articles, slug }: { articles: Article[]; slug: string }) {
+  const groups = groupByIssue(articles);
+  const current = groups[0];
+  const hasMore = groups.length > 1;
+
+  return (
+    <>
+      <div className="mb-8 flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="font-serif-display text-xl font-bold">
+          {current.label ?? "Latest Articles"}
+        </h2>
+        {hasMore && (
+          <Link
+            to="/journal/$slug/$section"
+            params={{ slug, section: "articles" }}
+            hash={navItemSlug("All issues")}
+            className="text-sm text-accent hover:underline"
+          >
+            All issues →
+          </Link>
+        )}
+      </div>
+
+      <div>
+        {current.articles.map((a) => (
+          <ArticleCard key={a.id} article={a} />
+        ))}
+      </div>
+    </>
   );
 }

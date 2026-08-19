@@ -54,6 +54,29 @@ export interface OjsArticle {
   downloads?: number;
 }
 
+/** OJS'teki dergi ayarlarından siteye yansıyan alanlar. */
+export interface OjsJournalSettings {
+  about?: string;
+  description?: string;
+  openAccessPolicy?: string;
+  copyrightNotice?: string;
+  licenseTerms?: string;
+  competingInterests?: string;
+  authorGuidelines?: string;
+  submissionChecklist?: string;
+  reviewGuidelines?: string;
+  privacyStatement?: string;
+  publisherInstitution?: string;
+  publisherUrl?: string;
+  onlineIssn?: string;
+  printIssn?: string;
+  contactName?: string;
+  contactEmail?: string;
+  contactPhone?: string;
+  contactAffiliation?: string;
+  mailingAddress?: string;
+}
+
 export interface OjsIssue {
   id: number;
   volume?: string;
@@ -166,6 +189,99 @@ async function sectionTitles(ojsPath: string): Promise<Map<number, string>> {
       // Bölüm adı kritik değil; alınamazsa boş geçilir.
     }
     return map;
+  });
+}
+
+/* ------------------------------ Dergi ayarları ---------------------------- */
+
+/**
+ * Ayarları çekebilmek için derginin sayısal kimliği gerekiyor; API bunu
+ * yalnızca yanıtların içinde veriyor. Sayı veya makale listesinden okunur.
+ */
+async function contextId(ojsPath: string): Promise<number | null> {
+  return cached(`contextId:${ojsPath}`, async () => {
+    for (const endpoint of ["issues?count=1", "submissions?count=1"]) {
+      try {
+        const data = await ojsGet<{ items?: Array<Record<string, unknown>> }>(ojsPath, endpoint);
+        const first = data.items?.[0];
+        const id = Number(first?.journalId ?? first?.contextId);
+        if (Number.isFinite(id) && id > 0) return id;
+      } catch {
+        /* diğerini dene */
+      }
+    }
+    return null;
+  });
+}
+
+/**
+ * Derginin OJS'teki metin ayarları. Alınamazsa boş nesne döner; sitede
+ * koddaki varsayılan metinler gösterilir, sayfa asla boş kalmaz.
+ */
+export async function getJournalSettings(ojsPath: string): Promise<OjsJournalSettings> {
+  if (!isOjsConfigured()) return {};
+  return cached(`settings:${ojsPath}`, async () => {
+    const id = await contextId(ojsPath);
+    if (!id) return {};
+
+    let raw: Record<string, unknown>;
+    try {
+      raw = await ojsGet<Record<string, unknown>>(ojsPath, `contexts/${id}`);
+    } catch (error) {
+      console.error("[ojs] dergi ayarları alınamadı:", error);
+      return {};
+    }
+
+    const text = (key: string) => {
+      const value = loc(raw[key]);
+      return value.trim() ? value : undefined;
+    };
+    const plain = (key: string) => {
+      const value = raw[key];
+      if (typeof value === "string" && value.trim()) return value.trim();
+      const localized = loc(value);
+      return localized.trim() ? localized.trim() : undefined;
+    };
+
+    // OJS kontrol listesini maddeler dizisi olarak tutar (sürüme göre düz metin
+    // ya da {content} nesnesi). İki biçimi de <ul> listesine çeviririz.
+    const checklist = (() => {
+      const items = locArray(raw["submissionChecklist"])
+        .map((item) => {
+          if (typeof item === "string") return item;
+          if (item && typeof item === "object") {
+            const o = item as Record<string, unknown>;
+            return loc(o.content ?? o.title);
+          }
+          return "";
+        })
+        .map((item) => item.trim())
+        .filter(Boolean);
+      if (items.length) return `<ul>${items.map((i) => `<li>${i}</li>`).join("")}</ul>`;
+      return text("submissionChecklist");
+    })();
+
+    return {
+      about: text("about"),
+      description: text("description"),
+      openAccessPolicy: text("openAccessPolicy"),
+      copyrightNotice: text("copyrightNotice"),
+      licenseTerms: text("licenseTerms"),
+      competingInterests: text("competingInterests"),
+      authorGuidelines: text("authorGuidelines"),
+      submissionChecklist: checklist,
+      reviewGuidelines: text("reviewGuidelines"),
+      privacyStatement: text("privacyStatement"),
+      publisherInstitution: plain("publisherInstitution"),
+      publisherUrl: plain("publisherUrl"),
+      onlineIssn: plain("onlineIssn"),
+      printIssn: plain("printIssn"),
+      contactName: plain("contactName"),
+      contactEmail: plain("contactEmail"),
+      contactPhone: plain("contactPhone"),
+      contactAffiliation: text("contactAffiliation"),
+      mailingAddress: text("mailingAddress"),
+    };
   });
 }
 

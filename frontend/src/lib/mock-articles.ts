@@ -42,6 +42,10 @@ export interface Article {
   doi: string;
   volume?: string;
   issue?: string;
+  /** OJS'teki sayı kimliği — makaleleri sayılara göre gruplamak için. */
+  issueId?: number;
+  /** Sayının görünen adı, örn. "Vol. 1 No. 1 (2026)". */
+  issueLabel?: string;
   fpage?: string;
   lpage?: string;
   journalTitle?: string;
