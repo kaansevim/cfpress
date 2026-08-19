@@ -394,9 +394,12 @@ const sharedContent: Record<string, ContentRenderer> = {
       </p>
       <h3>Corrections and retractions</h3>
       <p>
-        If a significant error or ethical breach is identified after publication, the
-        journal publishes a correction (erratum) or retracts the article with a
-        transparent notice that remains permanently accessible.
+        Errors and ethical breaches found after publication are handled under the
+        journal's published updates policy; see{" "}
+        <a href="#publication-updates-and-corrections">
+          Publication updates and corrections
+        </a>
+        .
       </p>
       <p>
         To raise an ethical concern, contact the editorial office through{" "}
@@ -404,6 +407,104 @@ const sharedContent: Record<string, ContentRenderer> = {
           your account
         </a>
         . All reports are handled confidentially.
+      </p>
+    </>
+  ),
+
+  // Crossmark politika sayfası. Crossref bu adreste şunları görmek istiyor:
+  // hakemlik süreci, uyulan etik ilkeler, sorun bildirme yolu, düzeltme ve geri
+  // çekme koşulları, kaydın sonradan ne olduğu. DOAJ başvurusunda da aranıyor.
+  "publication-updates-and-corrections": (j) => (
+    <>
+      <p>
+        The version of an article published in <em>{j.name}</em> is the version of record.
+        Once an article has appeared in an issue it is not silently altered, replaced or
+        removed. Any change that affects the scholarly content is made through one of the
+        published notices below, and every notice is linked to the article it concerns.
+      </p>
+
+      <h3>Correction (erratum and corrigendum)</h3>
+      <p>
+        A correction is issued when part of an article is wrong or misleading but the
+        findings and conclusions still stand. An <em>erratum</em> covers errors introduced
+        by the journal during production; a <em>corrigendum</em> covers errors made by the
+        authors. Typical cases are a mislabelled figure, an incorrect value in a table, a
+        missing funding or ethics statement, or a wrong author name or affiliation.
+      </p>
+      <p>
+        Corrections are published as separate, citable items and linked from the original
+        article in both directions. Minor typographical changes that do not affect meaning
+        are made without a notice.
+      </p>
+
+      <h3>Expression of concern</h3>
+      <p>
+        An expression of concern is published when the editors have well-founded doubts
+        about an article but the investigation is not yet complete, or when an
+        investigation cannot be concluded — for example because an institution does not
+        respond. It is a temporary notice and is replaced by a correction, a retraction, or
+        a statement of resolution once the matter is settled.
+      </p>
+
+      <h3>Retraction</h3>
+      <p>
+        An article is retracted when its main findings are unreliable or when a serious
+        ethical breach is established. Grounds for retraction include fabricated or
+        falsified data, plagiarism, duplicate publication, undisclosed conflicts of
+        interest that materially affect the work, unethical research, and honest error
+        substantial enough to invalidate the conclusions.
+      </p>
+      <p>
+        Retraction is not a punishment. It is a correction of the scholarly record, and the
+        notice states plainly what was wrong, who requested the retraction, and whether the
+        authors agree.
+      </p>
+
+      <h3>What happens to a retracted article</h3>
+      <p>
+        The article is not deleted. It remains online so that anyone who has cited or
+        downloaded it can still see what was published. The following applies:
+      </p>
+      <ul>
+        <li>the article page and the PDF are clearly marked as retracted;</li>
+        <li>the retraction notice is free to read and is linked from the article;</li>
+        <li>the article keeps its identifier, so existing citations continue to resolve;</li>
+        <li>
+          the article is removed from the journal's list of published research and is not
+          counted in journal metrics.
+        </li>
+      </ul>
+      <p>
+        Complete removal is reserved for the rare cases where leaving the article online
+        would be unlawful, would violate a court order, or would present a serious risk to
+        health or to an identifiable person. In those cases the metadata and a notice
+        remain in place.
+      </p>
+
+      <h3>Reporting a problem with a published article</h3>
+      <p>
+        Anyone may raise a concern — readers, reviewers, authors and institutions alike.
+        Write to the editorial office with the article title, what you believe is wrong,
+        and any supporting material. Concerns raised anonymously are considered on their
+        merits.
+      </p>
+      <p>
+        The editors first ask the corresponding author for an explanation, and normally
+        allow two weeks for a reply. Where necessary the authors' institution is contacted.
+        Cases are handled following the flowcharts of the Committee on Publication Ethics
+        (COPE). The people who raise a concern are kept informed of the outcome, and their
+        identity is not disclosed to the authors without their consent.
+      </p>
+      <p>
+        Contact details are on the{" "}
+        <a href="#contact-us">Contact us</a> page.
+      </p>
+
+      <h3>Authorship changes after publication</h3>
+      <p>
+        Adding, removing or reordering authors after publication requires a written request
+        signed by all authors, including the person being added or removed, together with
+        the reason for the change. Approved changes are published as a corrigendum.
       </p>
     </>
   ),

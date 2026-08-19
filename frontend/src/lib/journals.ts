@@ -138,6 +138,8 @@ export const journalNav: NavSection[] = [
     items: [
       "Instructions for authors",
       "Research and publication ethics",
+      // Crossmark ve DOAJ bu politikanın tek bir adreste bulunmasını istiyor.
+      "Publication updates and corrections",
       "Editorial policy",
       "For reviewers",
       "E-submission",
