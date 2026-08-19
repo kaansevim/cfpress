@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import {
-  ArrowLeft,
   ArrowRight,
   ChevronDown,
   ChevronUp,
@@ -443,13 +442,35 @@ export function ArticleReaderLayout({
         />
 
         <div className="relative mx-auto max-w-6xl px-4 py-7 sm:px-6 sm:py-8 lg:py-9">
-          <Link
-            to="/journal/$slug"
-            params={{ slug: journal.slug }}
-            className="inline-flex items-center gap-2 text-sm text-white/75 transition-colors hover:text-white"
-          >
-            <ArrowLeft className="h-4 w-4" /> {journal.name}
-          </Link>
+          {/* Kırıntı yolu (breadcrumb). Geri okundan çevrildi: üst başlıkta zaten
+              derginin adı yazdığı için aynı ad iki kez alt alta görünüyordu. */}
+          <nav aria-label="Breadcrumb" className="text-sm text-white/70">
+            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
+              <li>
+                <Link to="/" className="transition-colors hover:text-white hover:underline">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden className="text-white/40">
+                ›
+              </li>
+              <li>
+                <Link
+                  to="/journal/$slug"
+                  params={{ slug: journal.slug }}
+                  className="transition-colors hover:text-white hover:underline"
+                >
+                  {journal.shortName}
+                </Link>
+              </li>
+              <li aria-hidden className="text-white/40">
+                ›
+              </li>
+              <li aria-current="page" className="text-white/55">
+                Article
+              </li>
+            </ol>
+          </nav>
 
           <div className="mt-4 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_10.5rem] lg:grid-cols-[minmax(0,1fr)_12rem] lg:gap-14">
             <div className="min-w-0">
