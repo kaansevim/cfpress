@@ -22,6 +22,16 @@ export interface OjsFigure {
   mimetype: string;
 }
 
+/** Makale yazarı. ORCID yalnızca OJS'te kayıtlıysa dolar. */
+export interface OjsAuthor {
+  name: string;
+  /** Sadece numara (örn. "0000-0002-1825-0097"); OJS tam adres verir, kısaltılır. */
+  orcid: string;
+  affiliation: string;
+  email: string;
+  isCorresponding: boolean;
+}
+
 /** OJS'ten normalize edilmiş makale kaydı. */
 export interface OjsArticle {
   id: string;
@@ -32,6 +42,8 @@ export interface OjsArticle {
   abstract: string;
   publishedAt: string;
   authorNames: string[];
+  /** Yazar ayrıntıları (ORCID, kurum, e-posta). OJS boş bıraktıysa alanlar boş. */
+  authors: OjsAuthor[];
   doi: string;
   keywords: string[];
   language?: string;
@@ -344,13 +356,41 @@ function buildArticle(
     }
   }
 
-  const authors = Array.isArray(pub.authors) ? (pub.authors as Array<Record<string, unknown>>) : [];
-  const authorNames = authors.length
-    ? authors.map((a) => String(a.fullName ?? `${loc(a.givenName)} ${loc(a.familyName)}`).trim())
+  const rawAuthors = Array.isArray(pub.authors)
+    ? (pub.authors as Array<Record<string, unknown>>)
+    : [];
+
+  // Sorumlu yazar OJS'te yayının primaryContactId alanıyla işaretlenir.
+  const primaryContactId = pub.primaryContactId != null ? Number(pub.primaryContactId) : null;
+
+  const authorList: OjsAuthor[] = rawAuthors.map((a) => ({
+    name: String(a.fullName ?? `${loc(a.givenName)} ${loc(a.familyName)}`).trim(),
+    // OJS ORCID'i tam adres olarak saklar; sitede sadece numara gösterilir.
+    orcid: String(a.orcid ?? "")
+      .replace(/^https?:\/\/(sandbox\.)?orcid\.org\//, "")
+      .trim(),
+    affiliation: stripHtml(loc(a.affiliation)),
+    email: typeof a.email === "string" ? a.email : "",
+    isCorresponding: primaryContactId != null && Number(a.id) === primaryContactId,
+  }));
+
+  const authorNames = authorList.length
+    ? authorList.map((a) => a.name)
     : String(pub.authorsString ?? "")
         .split(",")
         .map((s) => s.replace(/\(.*?\)/g, "").trim())
         .filter(Boolean);
+
+  // Yazar dizisi boşsa (eski kayıtlar) en azından isimlerden bir liste kurulur.
+  const authors: OjsAuthor[] = authorList.length
+    ? authorList
+    : authorNames.map((name) => ({
+        name,
+        orcid: "",
+        affiliation: "",
+        email: "",
+        isCorresponding: false,
+      }));
 
   const issueId = pub.issueId != null ? Number(pub.issueId) : undefined;
   const issue = issues.find((i) => i.id === issueId);
@@ -369,6 +409,7 @@ function buildArticle(
     abstract: stripHtml(loc(pub.abstract)),
     publishedAt: String(pub.datePublished ?? "").slice(0, 10),
     authorNames,
+    authors,
     doi: doiObject ? String(doiObject.doi ?? "") : "",
     keywords: locArray(pub.keywords)
       .map((k) => (typeof k === "string" ? k : String((k as Record<string, unknown>)?.name ?? "")))

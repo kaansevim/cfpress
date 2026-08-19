@@ -233,7 +233,14 @@ export function ojsToArticle(a: OjsArticle): Article {
     journalSlug: a.journalSlug,
     subject: a.subject,
     title: a.title,
-    authors: a.authorNames.map((name) => ({ name, orcid: "", affiliation: "" })),
+    // ORCID/kurum/e-posta OJS'te doluysa gelir; boşsa bileşenler o satırı çizmez.
+    authors: a.authors.map((au) => ({
+      name: au.name,
+      orcid: au.orcid,
+      affiliation: au.affiliation,
+      email: au.email || undefined,
+      isCorresponding: au.isCorresponding,
+    })),
     abstract: a.abstract,
     publishedAt: a.publishedAt,
     doi: a.doi,
