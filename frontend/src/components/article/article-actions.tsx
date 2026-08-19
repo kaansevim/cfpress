@@ -67,12 +67,7 @@ export function ArticleActions({
   return (
     <div className="flex flex-wrap items-center gap-2">
       {pdfUrl && slug && id ? (
-        <PdfViewer
-          journalSlug={slug}
-          articleId={id}
-          title={article.title}
-          fallbackUrl={pdfUrl}
-        />
+        <PdfViewer journalSlug={slug} articleId={id} title={article.title} />
       ) : (
         <Button
           variant="outline"

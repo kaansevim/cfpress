@@ -104,34 +104,9 @@ export const getArticleWithXml = createServerFn({ method: "GET" })
     return { article, xml, xmlError };
   });
 
-export interface ArticlePdf {
-  base64: string;
-  filename: string;
-  bytes: number;
-}
-
-/**
- * Makalenin PDF'i, sayfa içi görüntüleyici için.
- *
- * Yalnızca okuyucu "View PDF" dediğinde çağrılır; makale listesi ve makale
- * sayfası bu veriyi taşımaz, yoksa her sayfa yüklemesinde megabaytlar boşuna
- * aktarılırdı. Alınamazsa null döner ve arayüz indirme bağlantısına düşer.
- */
-export const getArticlePdf = createServerFn({ method: "GET" })
-  .inputValidator(articleInput)
-  .handler(async ({ data }): Promise<ArticlePdf | null> => {
-    const journal = getJournal(data.slug);
-    if (!journal) return null;
-    const { getArticleById, fetchArticlePdf } = await import("../ojs.server");
-    try {
-      const article = await getArticleById(journal.ojsPath, journal.slug, data.id);
-      if (!article) return null;
-      return await fetchArticlePdf(article);
-    } catch (error) {
-      console.error("[ojs] PDF alınamadı:", error);
-      return null;
-    }
-  });
+// NOT: PDF bir sunucu işlevi değil, kendi adresinden veriliyor —
+// /journal/{dergi}/article/{id}/pdf (bkz. lib/pdf-route.server.ts). Böylece
+// telefon tarayıcıları dosyayı kendi okuyucularında açabiliyor.
 
 /** Derginin OJS'teki metin ayarları. Alınamazsa boş nesne döner. */
 export const getJournalSettings = createServerFn({ method: "GET" })

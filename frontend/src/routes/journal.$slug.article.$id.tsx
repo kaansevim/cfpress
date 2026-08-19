@@ -79,6 +79,9 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
     const language = loaderData.kind === "xml" ? loaderData.entry.language : undefined;
     const description = source.abstract.slice(0, 160);
     const canonicalUrl = absoluteSiteUrl(`/journal/${journal.slug}/article/${source.id}`);
+    // Google Scholar tam metni kendi alan adımızdan görsün: OJS adresi arama
+    // motorlarına kapatılıyor, ayrıca dosyayı "attachment" olarak veriyor.
+    const sitePdfUrl = pdfUrl ? `${canonicalUrl}/pdf` : undefined;
 
     return {
       meta: [
@@ -105,7 +108,7 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
         ...(issue ? [{ name: "citation_issue", content: issue }] : []),
         ...(firstPage ? [{ name: "citation_firstpage", content: firstPage }] : []),
         ...(lastPage ? [{ name: "citation_lastpage", content: lastPage }] : []),
-        ...(pdfUrl ? [{ name: "citation_pdf_url", content: pdfUrl }] : []),
+        ...(sitePdfUrl ? [{ name: "citation_pdf_url", content: sitePdfUrl }] : []),
         { name: "DC.type", content: "Text" },
         { name: "DC.title", content: title },
         ...authors.map((author) => ({ name: "DC.creator", content: author })),
@@ -116,12 +119,12 @@ export const Route = createFileRoute("/journal/$slug/article/$id")({
       ],
       links: [
         { rel: "canonical", href: canonicalUrl },
-        ...(pdfUrl
+        ...(sitePdfUrl
           ? [
             {
               rel: "alternate",
               type: "application/pdf",
-              href: pdfUrl,
+              href: sitePdfUrl,
               title: "Full text PDF",
             },
             ]
