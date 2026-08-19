@@ -178,6 +178,12 @@ function ArticlePage() {
       const parsed = parseJats(xmlSource, xmlEntry);
       // Sayaç değerleri XML'de değil sitede tutuluyor.
       if (loaderData.kind === "xml") parsed.metrics = loaderData.metrics;
+      // SAYFA ARALIĞI: OJS'teki "Pages" alanı XML'e üstün gelir. Dizgi
+      // programı son sayfayı kendisi hesapladığı için XML'de çoğu zaman
+      // yalnızca ilk sayfa oluyor; editör aralığı OJS'e yazınca atıf
+      // biçimleri (APA, BibTeX, RIS) tam sayfa aralığını gösterir.
+      if (xmlEntry.firstPage) parsed.fpage = xmlEntry.firstPage;
+      if (xmlEntry.lastPage) parsed.lpage = xmlEntry.lastPage;
       setParsedJats(parsed);
       setJatsError(null);
     } catch (e) {

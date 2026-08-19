@@ -396,8 +396,13 @@ function buildArticle(
   const issueId = pub.issueId != null ? Number(pub.issueId) : undefined;
   const issue = issues.find((i) => i.id === issueId);
 
-  const pages = typeof pub.pages === "string" ? pub.pages : "";
-  const [firstPage, lastPage] = pages.includes("-") ? pages.split("-", 2) : [pages, ""];
+  // OJS'teki "Pages" alanı serbest metin: "45", "45-58", "45–58", "45 - 58"
+  // hepsi girilebiliyor. Kısa çizgi, uzun çizgi ve boşluklar normalize edilir;
+  // tek sayfa girildiyse son sayfa boş kalır.
+  const pages = typeof pub.pages === "string" ? pub.pages.trim() : "";
+  const [firstPage = "", lastPage = ""] = pages
+    .split(/\s*[-–—]\s*/)
+    .map((part) => part.trim());
 
   const doiObject = pub.doiObject as Record<string, unknown> | null | undefined;
 
