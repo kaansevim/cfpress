@@ -25,8 +25,6 @@ The journal welcomes work in social work practice and the social work profession
 Quantitative, qualitative and mixed-methods studies are equally welcome, as are systematic reviews, evaluation studies and carefully documented practice reports. Research that crosses disciplinary boundaries is encouraged, and so is research that reports implementation difficulties and null findings honestly — both are more useful to practitioners than a clean result that cannot be reproduced.
 
 The journal is international in scope. Studies grounded in a single national or local setting are welcome, provided the authors make clear what readers elsewhere can take from the case.
-
-The journal does not publish purely theoretical essays without empirical or applied grounding, advocacy pieces, or descriptive institutional reports without analysis.
 ```
 
 ### About the Journal (→ About the journal)
@@ -59,8 +57,6 @@ Topics within scope include learning and memory; concept formation and conceptua
 The journal publishes experiments, computational models, corpus and behavioural studies, and theoretical papers that make testable claims. Pre-registered studies are encouraged, and replications — including failed ones — are treated as full contributions rather than as secondary material.
 
 Work that connects laboratory findings to learning in real classrooms, workplaces and everyday settings is particularly welcome.
-
-The journal does not publish engineering benchmarks without a cognitive claim, or commentary on artificial intelligence that is not grounded in evidence.
 ```
 
 ### About the Journal (→ About the journal)
@@ -93,8 +89,6 @@ Topics within scope include structural transformation and long-run growth; urban
 The journal publishes empirical work at both micro and macro level, theoretical modelling, scenario and simulation studies, policy evaluations, and economic history where it is used to inform the future. Transparent data and reproducible code are expected wherever the underlying material can be shared.
 
 Research on emerging economies is particularly welcome, as is comparative work that sets a single country's experience against a wider pattern.
-
-The journal does not publish market commentary, investment advice or short-term forecasting.
 ```
 
 ### About the Journal (→ About the journal)
@@ -127,8 +121,6 @@ Topics within scope include foundations, endowments and grantmaking practice; no
 The journal publishes case studies, organisational ethnography, surveys, comparative and historical research, and evaluations of grantmaking practice. Community-based and participatory research is welcome, including work co-authored with practitioners, provided the methods and the authors' position are described openly.
 
 The journal has a particular interest in philanthropic traditions that are under-represented in the English-language literature, including waqf and other endowment forms, and in the everyday organisational work that keeps small associations running.
-
-The journal does not publish promotional accounts of a single organisation's achievements.
 ```
 
 ### About the Journal (→ About the journal)

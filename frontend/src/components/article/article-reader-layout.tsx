@@ -491,7 +491,12 @@ export function ArticleReaderLayout({
               </div>
 
               <div className="mt-7 flex flex-wrap items-center gap-4">
-                <ArticleActions article={article} pdfUrl={pdfUrl} />
+                <ArticleActions
+                  article={article}
+                  pdfUrl={pdfUrl}
+                  journalSlug={journal.slug}
+                  articleId={xmlEntry?.id ?? article.id}
+                />
                 {article.doi && (
                   <a
                     href={`https://doi.org/${article.doi}`}

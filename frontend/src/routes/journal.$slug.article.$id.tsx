@@ -322,7 +322,12 @@ function ArticlePage() {
 
               <div className="mt-5 flex flex-col gap-4 border-b border-border pb-5">
                 <MetricsStrip metrics={article.metrics} />
-                <ArticleActions article={article} pdfUrl={pdfUrl} />
+                <ArticleActions
+                  article={article}
+                  pdfUrl={pdfUrl}
+                  journalSlug={journalSlug}
+                  articleId={articleId}
+                />
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   {article.doi && (
                     <div className="flex items-center gap-4">

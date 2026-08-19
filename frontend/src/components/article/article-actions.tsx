@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Download, Quote, Share2, Copy, Check } from "lucide-react";
+import { FileText, Quote, Share2, Copy, Check } from "lucide-react";
 import type { Article } from "@/lib/mock-articles";
 import { toAPA, toChicago, toBibTeX, toRIS } from "@/lib/article-utils";
+import { PdfViewer } from "@/components/article/pdf-viewer";
 import {
   Dialog,
   DialogContent,
@@ -40,22 +41,38 @@ function CopyButton({ getText, label }: { getText: () => string; label: string }
   );
 }
 
-const btn =
-  "inline-flex items-center gap-1.5 rounded-md border border-input bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary outline-none";
+interface ArticleActionsProps {
+  article: Article;
+  /** OJS'teki doğrudan PDF adresi. Görüntüleyici açılamazsa yedek yol. */
+  pdfUrl?: string;
+  /** Görüntüleyicinin PDF'i sunucudan isteyebilmesi için. */
+  journalSlug?: string;
+  articleId?: string;
+}
 
-export function ArticleActions({ article, pdfUrl }: { article: Article; pdfUrl?: string }) {
+export function ArticleActions({
+  article,
+  pdfUrl,
+  journalSlug,
+  articleId,
+}: ArticleActionsProps) {
   const doiUrl = `https://doi.org/${article.doi}`;
   const shareText = encodeURIComponent(article.title);
 
+  // PDF, indirmek yerine sayfanın yanında açılır. Okuyucu isterse panelin
+  // içindeki Download düğmesiyle dosyayı yine de alabilir.
+  const slug = journalSlug ?? article.journalSlug;
+  const id = articleId ?? article.id;
+
   return (
     <div className="flex flex-wrap items-center gap-2">
-      {/* Download */}
-      {pdfUrl ? (
-        <Button asChild variant="outline" size="sm" className="gap-2 rounded-full text-foreground">
-          <a href={pdfUrl} download>
-            <Download className="h-4 w-4" /> Download PDF
-          </a>
-        </Button>
+      {pdfUrl && slug && id ? (
+        <PdfViewer
+          journalSlug={slug}
+          articleId={id}
+          title={article.title}
+          fallbackUrl={pdfUrl}
+        />
       ) : (
         <Button
           variant="outline"
@@ -64,7 +81,7 @@ export function ArticleActions({ article, pdfUrl }: { article: Article; pdfUrl?:
           disabled
           title="PDF is not available for this article"
         >
-          <Download className="h-4 w-4" /> Download PDF
+          <FileText className="h-4 w-4" /> View PDF
         </Button>
       )}
 

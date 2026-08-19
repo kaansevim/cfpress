@@ -12,6 +12,7 @@
 // NOT: OJS_INTERNAL_URL kullanılacaksa OJS ayarında allowed_hosts listesine
 // "ojs" eklenmelidir, aksi halde OJS isteği reddeder.
 
+import { Buffer } from "node:buffer";
 import process from "node:process";
 
 export interface OjsFigure {
@@ -514,5 +515,46 @@ export async function fetchArticleXml(article: OjsArticle): Promise<string | nul
     const res = await fetch(article.xmlPath!, { signal: AbortSignal.timeout(20_000) });
     if (!res.ok) throw new Error(`XML ${res.status}`);
     return rewriteFigureHrefs(await res.text(), article.figures);
+  });
+}
+
+/* ------------------------------- PDF görüntü ------------------------------ */
+
+/** Sitede gösterilecek PDF'in üst sınırı. Üstündeki dosyalar tarayıcıya
+ *  gömülmez; okuyucuya doğrudan indirme bağlantısı verilir. */
+const PDF_MAX_BYTES = 30 * 1024 * 1024;
+
+export interface OjsPdf {
+  /** PDF içeriği base64. Tarayıcı bunu blob'a çevirip gömülü gösterir. */
+  base64: string;
+  filename: string;
+  bytes: number;
+}
+
+/**
+ * Makalenin PDF'ini sunucu tarafında indirir.
+ *
+ * NEDEN ARADAN GEÇİRİYORUZ: OJS galley dosyalarını her zaman
+ * `Content-Disposition: attachment` ile veriyor, yani adres doğrudan bir
+ * çerçeveye konduğunda tarayıcı dosyayı indiriyor, göstermiyor. İçeriği
+ * buradan alıp okuyucuya blob olarak vererek PDF'i sayfanın içinde
+ * açabiliyoruz. Ayrıca okuyucu OJS'e hiç gitmemiş oluyor.
+ */
+export async function fetchArticlePdf(article: OjsArticle): Promise<OjsPdf | null> {
+  if (!article.pdfPath) return null;
+  return cached(`pdf:${article.ojsPath}:${article.id}`, async () => {
+    const res = await fetch(article.pdfPath!, { signal: AbortSignal.timeout(30_000) });
+    if (!res.ok) throw new Error(`PDF ${res.status}`);
+
+    const buffer = Buffer.from(await res.arrayBuffer());
+    if (buffer.byteLength > PDF_MAX_BYTES) {
+      throw new Error(`PDF too large (${buffer.byteLength} bytes)`);
+    }
+
+    return {
+      base64: buffer.toString("base64"),
+      filename: `${article.ojsPath}-${article.id}.pdf`,
+      bytes: buffer.byteLength,
+    };
   });
 }
