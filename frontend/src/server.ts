@@ -3,6 +3,7 @@ import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 import { handleArticlePdfRequest } from "./lib/pdf-route.server";
+import { handleSeoRequest } from "./lib/seo-routes.server";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -45,6 +46,10 @@ export default {
       // olarak verilir (bkz. lib/pdf-route.server.ts).
       const pdf = await handleArticlePdfRequest(request);
       if (pdf) return pdf;
+
+      // robots.txt ve sitemap.xml de yönlendiriciye uğramaz.
+      const seo = await handleSeoRequest(request);
+      if (seo) return seo;
 
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
