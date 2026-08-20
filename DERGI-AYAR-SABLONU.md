@@ -143,7 +143,10 @@ https://cf.org.tr/journal/community-foundations
 
 ---
 
-## B. Üç dergide de aynı olanlar
+## B. Uc dergide de ayni olanlar
+
+> **Journal Summary ve About the Journal** metinleri bu dosyada degil,
+> `DERGI-METINLERI.md` icinde — her dergi icin ayri yazildi, oradan kopyala.
 
 ### Settings → Journal → Contact
 - Principal Contact: `Kaan Sevim` · `dergi@cfdanismanlik.com.tr` · `+90 850 303 37 19`
@@ -227,7 +230,7 @@ All submissions must meet the following requirements.
 - Ethics approval information, including the approval number and date, is stated where applicable.
 - An ORCID iD is provided for every author.
 - A conflict of interest statement is included in the manuscript, covering all authors.
-- The corresponding author agrees to sign the copyright and licensing agreement (CC BY 4.0) upon acceptance.
+- The corresponding author accepts the CC BY 4.0 licensing terms on behalf of all authors when completing the submission.
 ```
 
 **Upload Files**
@@ -307,17 +310,51 @@ Authors may deposit the published version in repositories or on personal website
 ```
 Articles are published under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence. Authors retain copyright of their work. Others may share and adapt it, including commercially, provided the authors and the original source are credited.
 ```
-- **Search Indexing:** Description = A bölümündeki özet · Custom Tags boş
+- **Search Indexing:** Description = A bolumundeki ozet
+- **Custom Tags** kutusuna sunu yapistir — OJS sayfalarini Google'dan gizler,
+  okuyucular cf.org.tr'ye yonlenir:
+```
+<meta name="robots" content="noindex, follow">
+```
 - **Access:** Open Access
 - **DOIs / Payments / Archiving:** dokunma
 - **Archiving (LOCKSS/CLOCKSS):** işaretleme
 
-### Settings → Users & Roles
-- Kendine `Journal editor` rolü ekle
+### Settings -> Users & Roles
+
+**Roles sekmesi — kunye ayari**
+
+OJS 3.5 yayin kurulu sayfasini rollerden uretir, cf.org.tr de onu okur.
+Her rolu duzenleyip **"Consider role in masthead list"** kutusunu ayarla:
+
+| Rol | Kutu |
+|---|---|
+| Journal editor, Section editor, Editorial Board Member | **isaretli** |
+| Layout Editor, Copyeditor, Proofreader | **isaretli** |
+| **Reviewer** | **bos** — hakem adlari sitede gorunmemeli |
+| Author, Reader | bos |
+
+**Users sekmesi**
+- Kendine `Journal editor` rolu ekle
+- Yayin kuruluna girecek kisileri buradan ekle; kurum ve ORCID alanlarini
+  doldur. Site bunlari otomatik gosterir, kodda liste tutulmuyor.
+
+**ORCID Settings sekmesi**
+- Enable ORCID functionality: isaretli
+- ORCID API: `Public`
+- Client ID / Client Secret: dort dergide de ayni degerler
+- City: `Ankara`
+- "Send e-mail to request ORCID authorization...": isaretli
 
 ### Issues
-- **Create Issue:** Volume `1`, Number `1`, Year `2026`, başlık `2026 Volume 1`
-- Yayınlama, içine makale girene kadar yapılmayacak
+- **Create Issue:** Volume `1`, Number `1`, Year `2026`
+- **Title alanini BOS birak.** Volume / Number / Year onay kutulari isaretli
+  olsun. Sayi `Vol. 1 No. 1 (2026)` olarak gorunur; baslik sadece ozel
+  sayilarda kullanilir.
+- **Pages** alanina makale eklerken tam araligi yaz (`45-58`). Dizgi son
+  sayfayi kendisi hesapladigi icin XML'de cogu zaman sadece ilk sayfa oluyor;
+  atif bicimleri OJS'teki bu degeri kullanir.
+- Yayinlama, icine makale girene kadar yapilmayacak
 
 ### Son
 - Dergi hazır olana kadar **Aktifleştir kutusu kapalı kalsın**
