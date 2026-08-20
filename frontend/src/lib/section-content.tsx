@@ -11,7 +11,7 @@
 import type { ReactNode } from "react";
 import type { BoardMember, Journal } from "@/lib/journals";
 import { ojsLoginUrl, ojsSubmitUrl } from "@/lib/ojs";
-import type { OjsJournalSettings } from "@/lib/ojs.server";
+import type { OjsJournalSettings, OjsMasthead } from "@/lib/ojs.server";
 
 /** Yayıncının resmi tüzel kişilik unvanı — ISSN/indeks başvurularında bu kullanılır. */
 const PUBLISHER = "CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi";
@@ -21,7 +21,13 @@ const PUBLISHER = "CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi";
 // metin gösterilir, boşsa buradaki varsayılan. Böylece aynı metin iki yerde
 // tutulmaz, dergi ekibi metni OJS'ten yönetebilir ve hiçbir sayfa boş kalmaz.
 
-export type ContentRenderer = (j: Journal, s: OjsJournalSettings) => ReactNode;
+export type ContentRenderer = (
+  j: Journal,
+  s: OjsJournalSettings,
+  m: OjsMasthead,
+) => ReactNode;
+
+const EMPTY_MASTHEAD: OjsMasthead = { editors: [], team: [] };
 
 /** OJS'ten gelen zengin metni gösterir. İçerik yalnızca dergi yöneticileri
  *  tarafından OJS panelinden girilir; dışarıdan gelen veri değildir. */
@@ -125,8 +131,12 @@ const sharedContent: Record<string, ContentRenderer> = {
     </>
   ),
 
-  "editorial-board": (j) =>
-    j.editorialBoard?.length ? (
+  // Künye OJS'ten gelir: bir kişiye rol verilip o rolde "Consider role in
+  // masthead list" işaretliyse burada görünür. OJS boşsa koddaki yedek liste.
+  "editorial-board": (j, _s, m) =>
+    m.editors.length ? (
+      <MemberList members={m.editors} />
+    ) : j.editorialBoard?.length ? (
       <MemberList members={j.editorialBoard} />
     ) : (
       <p>
@@ -147,8 +157,10 @@ const sharedContent: Record<string, ContentRenderer> = {
     </>
   ),
 
-  "journal-management-team": (j) =>
-    j.managementTeam?.length ? (
+  "journal-management-team": (j, _s, m) =>
+    m.team.length ? (
+      <MemberList members={m.team} />
+    ) : j.managementTeam?.length ? (
       <MemberList members={j.managementTeam} />
     ) : (
       <p>
@@ -668,8 +680,9 @@ export function getItemContent(
   journal: Journal,
   itemSlug: string,
   settings: OjsJournalSettings = {},
+  masthead: OjsMasthead = EMPTY_MASTHEAD,
 ): ReactNode | null {
   const renderer =
     journalOverrides[journal.slug]?.[itemSlug] ?? sharedContent[itemSlug] ?? null;
-  return renderer ? renderer(journal, settings) : null;
+  return renderer ? renderer(journal, settings, masthead) : null;
 }

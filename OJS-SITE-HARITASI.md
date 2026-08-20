@@ -1,13 +1,13 @@
 # Hangi metin nereden yönetiliyor?
 
-_Güncelleme: 19 Ağustos 2026_
+_Güncelleme: 20 Ağustos 2026_
 
-Kural tek cümle: **OJS'te doluysa OJS'teki metin görünür, boşsa sitedeki hazır
-metin görünür.** Hiçbir sayfa boş kalmaz. Bir metni değiştirmek için OJS'e
+Kural tek cümle: **OJS'te doluysa OJS'teki içerik görünür, boşsa sitedeki hazır
+metin görünür.** Hiçbir sayfa boş kalmaz. Bir şeyi değiştirmek için OJS'e
 yazman yeterli — kod değişmez, sunucuya dokunulmaz.
 
-Aşağıdaki liste OJS ekranlarına göre gruplandı. Yani bir ekrana girdiğinde o
-ekranda değiştirebileceğin her şeyi bir arada görüyorsun.
+Liste OJS ekranlarına göre gruplandı: bir ekrana girdiğinde orada
+değiştirebileceğin her şeyi bir arada görüyorsun.
 
 Adres kalıbı: `dergi.cf.org.tr/index.php/{dergi}/management/settings/...`
 
@@ -51,10 +51,15 @@ Adres kalıbı: `dergi.cf.org.tr/index.php/{dergi}/management/settings/...`
 | Contact name, e-mail, phone | Contact us |
 | Mailing address | Contact us |
 
-## Settings → Users & Roles → ORCID Settings
+## Settings → Users & Roles
 
-Siteye metin göndermez. Yazarların ORCID'lerini doğrulamasını sağlar;
-doğrulanan numara makale sayfasında yazar adının yanında görünür.
+| OJS'te ne yaparsın | cf.org.tr'de nereye gider |
+|---|---|
+| Kullanıcıya editör rolü verirsin | Editorial board |
+| Kullanıcıya mizanpaj/redaksiyon rolü verirsin | Journal management team |
+| ORCID Settings | Yazar ORCID'lerinin doğrulanması |
+
+Ayrıntısı aşağıda.
 
 ## Issues
 
@@ -62,79 +67,58 @@ Sayılar, makaleler, cilt/numara/yıl — hepsi buradan. Site otomatik okur.
 Sayının **Title** alanını boş bırak; Volume / Number / Year kutularını işaretle.
 Başlık sadece özel sayılarda kullanılır.
 
+**Pages** alanına tam aralığı yaz (`45-58`). XML'de sadece ilk sayfa olsa bile
+OJS'teki değer geçerli olur; atıf biçimleri buradan okur.
+
+---
+
+## Yayın kurulu nasıl yönetilir
+
+Kodda liste tutulmuyor. OJS künyeyi kullanıcı rollerinden kendisi üretiyor,
+site de o künyeyi okuyor.
+
+**1. Rolün künyede görünmesini aç.**
+Settings → Users & Roles → **Roles** sekmesi → rolü düzenle →
+**"Consider role in masthead list"** işaretli olsun.
+
+Açık olması gerekenler: Journal editor, Section editor, Editorial Board Member,
+Layout Editor, Copyeditor gibi görünmesini istediğin roller.
+Kapalı olması gereken: **Reviewer** — hakemlerin adı sitede görünmemeli.
+
+**2. Kişiyi ekle.**
+Settings → Users & Roles → **Users** → Add User → adı, kurumu, ORCID'i gir,
+rolünü seç.
+
+Site 10 dakika içinde kendiliğinden günceller. Kod değişmez, `git push`
+gerekmez.
+
+### Hangi rol hangi sayfaya düşer
+
+| OJS rolü | cf.org.tr sayfası |
+|---|---|
+| Journal editor, Journal manager, Editorial Board Member | Editorial board |
+| Section editor | Editorial board |
+| Layout Editor, Copyeditor, Proofreader, Assistant | Journal management team |
+
+Sıralama rol düzeyine göre: baş editör üstte, bölüm editörleri altında.
+
+### Sitede ne görünür
+
+Ad, rol adı, kurum ve ORCID numarası. E-posta adresi ve diğer kişisel
+bilgiler siteye **hiç çıkmaz** — sunucu tarafında ayıklanır.
+
+Görevi biten kişiler için rolün **dateEnd** tarihini girmen yeterli;
+o tarihten sonra künyeden düşer.
+
 ---
 
 ## Kodda kalanlar
 
-Dosya: `frontend/src/lib/journals.ts` — **tek dosya, dört dergi aynı dosyada.**
+Dosya: `frontend/src/lib/journals.ts` — tek dosya, dört dergi aynı dizide.
 
-- **Yayın kurulu** (`editorialBoard`) ve **yönetim ekibi** (`managementTeam`)
-- Dergi adı, kısaltma, kapak görseli, renkler, konu etiketleri
-
-Yayın kurulu neden OJS'te değil: OJS'e editör eklemek o kişiye sistemde yetki
-verir, siteye isim yazmaz. İkisi ayrı şey. Listeyi burada tutmak, sayfada kimin
-görüneceğine tek tek karar vermeni sağlıyor.
-
-### Yayın kurulu nasıl eklenir
-
-`journals.ts` içinde dört dergi tek bir dizide duruyor. Hangi dergiye
-ekleyeceksen o derginin süslü parantezinin içine yazacaksın — `slug` satırından
-tanıyabilirsin:
-
-```ts
-export const journals: Journal[] = [
-  {
-    slug: "social-solutions",          // ← JSS
-    name: "Journal of Social Solutions",
-    shortName: "JSS",
-    ojsPath: "jss",
-    coverImage: "/journals/social-solutions/cover.png",
-    theme: { ... },
-    scope: "...",
-    subjects: [...],
-
-    editorialBoard: [                  // ← buraya eklenir
-      {
-        name: "Prof. Dr. Ad Soyad",
-        role: "Editor-in-Chief",
-        affiliation: "Ankara Üniversitesi",
-        country: "Türkiye",
-        orcid: "0000-0002-1825-0097",
-      },
-      {
-        name: "Doç. Dr. Ad Soyad",
-        role: "Associate Editor",
-        affiliation: "İstanbul Üniversitesi",
-        country: "Türkiye",
-      },
-    ],
-
-    managementTeam: [                  // ← yönetim ekibi de aynı yere
-      {
-        name: "Ad Soyad",
-        role: "Managing Editor",
-        affiliation: "CF Open",
-        country: "Türkiye",
-      },
-    ],
-  },
-  {
-    slug: "cognitive-formation",       // ← JCF, kendi listesi buraya
-    ...
-  },
-  ...
-]
-```
-
-Kurallar:
-
-- `name` ve `role` zorunlu; `affiliation`, `country`, `orcid` isteğe bağlı
-- Her üyeden sonra virgül; son üyeden sonra da virgül bırakmak sorun değil
-- `orcid` sadece numara — `https://orcid.org/` yazma, siteyi kendisi ekliyor
-- Liste boş bırakılırsa sayfada "duyurulacaktır" yazar
-- Sıralama ekrandaki sıradır: baş editör en üste
-
-Değişiklikten sonra `git push` + sunucuda yeniden derleme gerekir.
+- Dergi adı, kısaltma, OJS yolu, kapak görseli, renkler, konu etiketleri
+- `editorialBoard` / `managementTeam` — **yedek liste**. Normalde boş kalır;
+  yalnızca OJS'e ulaşılamazsa devreye girer. Elle doldurman gerekmiyor.
 
 ---
 

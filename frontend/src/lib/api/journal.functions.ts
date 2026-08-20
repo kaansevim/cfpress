@@ -8,7 +8,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
 import { getJournal } from "../journals";
-import type { OjsArticle, OjsJournalSettings } from "../ojs.server";
+import type { OjsArticle, OjsJournalSettings, OjsMasthead } from "../ojs.server";
 
 const slugInput = z.object({ slug: z.string().min(1) });
 
@@ -107,6 +107,28 @@ export const getArticleWithXml = createServerFn({ method: "GET" })
 // NOT: PDF bir sunucu işlevi değil, kendi adresinden veriliyor —
 // /journal/{dergi}/article/{id}/pdf (bkz. lib/pdf-route.server.ts). Böylece
 // telefon tarayıcıları dosyayı kendi okuyucularında açabiliyor.
+
+/**
+ * Derginin künyesi (yayın kurulu + yayın ekibi), OJS rollerinden.
+ *
+ * OJS'in users ucu e-posta ve ORCID erişim anahtarı gibi özel alanlar da
+ * döndürüyor; burada yalnızca ad, rol, kurum ve ORCID numarası taşınır —
+ * geri kalanı tarayıcıya hiç çıkmaz.
+ */
+export const getJournalMasthead = createServerFn({ method: "GET" })
+  .inputValidator(slugInput)
+  .handler(async ({ data }): Promise<OjsMasthead> => {
+    const empty: OjsMasthead = { editors: [], team: [] };
+    const journal = getJournal(data.slug);
+    if (!journal) return empty;
+    const { getMasthead } = await import("../ojs.server");
+    try {
+      return await getMasthead(journal.ojsPath);
+    } catch (error) {
+      console.error("[ojs] künye alınamadı:", error);
+      return empty;
+    }
+  });
 
 /** Derginin OJS'teki metin ayarları. Alınamazsa boş nesne döner. */
 export const getJournalSettings = createServerFn({ method: "GET" })

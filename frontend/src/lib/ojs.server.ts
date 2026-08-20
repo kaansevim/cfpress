@@ -298,6 +298,103 @@ export async function getJournalSettings(ojsPath: string): Promise<OjsJournalSet
   });
 }
 
+/* -------------------------------- Künye ----------------------------------- */
+
+/** Künyede (masthead) görünen kişi. */
+export interface OjsMastheadMember {
+  name: string;
+  /** OJS'teki rol adı: "Journal editor", "Layout Editor" vb. */
+  role: string;
+  affiliation?: string;
+  /** Sadece numara; OJS tam adres saklar, kısaltılır. */
+  orcid?: string;
+}
+
+export interface OjsMasthead {
+  /** Editörler ve yayın kurulu (yönetici + bölüm editörü rolleri). */
+  editors: OjsMastheadMember[];
+  /** Yayın/üretim ekibi (mizanpaj, redaksiyon, editoryal asistan). */
+  team: OjsMastheadMember[];
+}
+
+// OJS rol kimlikleri. Künyeyi ikiye ayırmak için kullanılır.
+const ROLE_MANAGER = 16;
+const ROLE_SUB_EDITOR = 17;
+
+/**
+ * Derginin künyesi. OJS 3.5 künyeyi kullanıcı rollerinden üretir: bir rolde
+ * "Consider role in masthead list" işaretliyse o roldeki kişiler burada döner.
+ * Yani sitedeki yayın kurulu sayfası OJS'ten yönetilir, kodda liste tutulmaz.
+ *
+ * Alınamazsa boş döner; sayfa koddaki yedek listeye ya da "duyurulacaktır"
+ * mesajına düşer.
+ */
+export async function getMasthead(ojsPath: string): Promise<OjsMasthead> {
+  const empty: OjsMasthead = { editors: [], team: [] };
+  if (!isOjsConfigured()) return empty;
+
+  return cached(`masthead:${ojsPath}`, async () => {
+    let data: { items?: Array<Record<string, unknown>> };
+    try {
+      data = await ojsGet(ojsPath, "users?count=100");
+    } catch (error) {
+      console.error("[ojs] künye alınamadı:", error);
+      return empty;
+    }
+
+    const editors: Array<OjsMastheadMember & { sort: number }> = [];
+    const team: Array<OjsMastheadMember & { sort: number }> = [];
+    const now = Date.now();
+
+    for (const user of data.items ?? []) {
+      const groups = Array.isArray(user.groups)
+        ? (user.groups as Array<Record<string, unknown>>)
+        : [];
+
+      const name =
+        loc(user.preferredPublicName).trim() ||
+        String(user.fullName ?? "").trim() ||
+        `${loc(user.givenName)} ${loc(user.familyName)}`.trim();
+      if (!name) continue;
+
+      const affiliation = stripHtml(loc(user.affiliation)) || undefined;
+      const orcid =
+        String(user.orcidDisplayValue ?? user.orcid ?? "")
+          .replace(/^https?:\/\/(sandbox\.)?orcid\.org\//, "")
+          .trim() || undefined;
+
+      for (const group of groups) {
+        if (group.masthead !== true) continue;
+
+        // Görevi biten kişiler künyede kalmaz.
+        const end = typeof group.dateEnd === "string" ? Date.parse(group.dateEnd) : NaN;
+        if (Number.isFinite(end) && end < now) continue;
+
+        const roleId = Number(group.roleId);
+        const member = {
+          name,
+          role: String(group.name ?? "").trim(),
+          affiliation,
+          orcid,
+          sort: roleId,
+        };
+
+        if (roleId === ROLE_MANAGER || roleId === ROLE_SUB_EDITOR) editors.push(member);
+        else team.push(member);
+      }
+    }
+
+    // Baş editör önce: rol kimliği küçük olan üstte, sonra soyadına göre.
+    const order = (a: { sort: number; name: string }, b: { sort: number; name: string }) =>
+      a.sort - b.sort || a.name.localeCompare(b.name, "en");
+
+    const clean = (list: Array<OjsMastheadMember & { sort: number }>) =>
+      list.sort(order).map(({ sort: _sort, ...member }) => member);
+
+    return { editors: clean(editors), team: clean(team) };
+  });
+}
+
 /* --------------------------------- Sayılar -------------------------------- */
 
 export async function listIssues(ojsPath: string): Promise<OjsIssue[]> {

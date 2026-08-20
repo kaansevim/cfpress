@@ -3,8 +3,12 @@ import { useEffect } from "react";
 import { getJournal, journalNav, navItemSlug, type Journal } from "@/lib/journals";
 import { type Article } from "@/lib/mock-articles";
 import { groupByIssue, ojsToArticle } from "@/lib/article-utils";
-import { getJournalArticles, getJournalSettings } from "@/lib/api/journal.functions";
-import type { OjsJournalSettings } from "@/lib/ojs.server";
+import {
+  getJournalArticles,
+  getJournalMasthead,
+  getJournalSettings,
+} from "@/lib/api/journal.functions";
+import type { OjsJournalSettings, OjsMasthead } from "@/lib/ojs.server";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleCard } from "@/components/article-card";
 import { getItemContent } from "@/lib/section-content";
@@ -19,19 +23,22 @@ export const Route = createFileRoute("/journal/$slug/$section")({
     articles: Article[];
     section: string;
     settings: OjsJournalSettings;
+    masthead: OjsMasthead;
   }> => {
     const journal = getJournal(params.slug);
     if (!journal || !VALID.has(params.section)) throw notFound();
-    // Makale listesi ve dergi metinleri birbirinden bağımsız; paralel çekilir.
-    const [ojsArticles, settings] = await Promise.all([
+    // Makale listesi, dergi metinleri ve künye birbirinden bağımsız; paralel çekilir.
+    const [ojsArticles, settings, masthead] = await Promise.all([
       getJournalArticles({ data: { slug: params.slug } }),
       getJournalSettings({ data: { slug: params.slug } }),
+      getJournalMasthead({ data: { slug: params.slug } }),
     ]);
     return {
       journal,
       articles: ojsArticles.map(ojsToArticle),
       section: params.section,
       settings,
+      masthead,
     };
   },
   head: ({ loaderData }) => {
@@ -53,7 +60,7 @@ export const Route = createFileRoute("/journal/$slug/$section")({
 });
 
 function SectionPage() {
-  const { journal, articles, section, settings } = Route.useLoaderData();
+  const { journal, articles, section, settings, masthead } = Route.useLoaderData();
   const group = journalNav.find((g) => g.section === section)!;
   const hash = useLocation({ select: (l) => l.hash });
 
@@ -117,7 +124,7 @@ function SectionPage() {
         <main className="mx-auto max-w-3xl px-6 py-12">
           {group.items.map((item) => {
             const slug = navItemSlug(item);
-            const content = getItemContent(journal, slug, settings);
+            const content = getItemContent(journal, slug, settings, masthead);
             return (
               <section
                 key={item}
