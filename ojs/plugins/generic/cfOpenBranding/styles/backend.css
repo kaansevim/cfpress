@@ -153,16 +153,29 @@ body {
   color: var(--cf-brand-primary);
 }
 
-/* Header controls must retain their accessible white-on-brand treatment. */
-.app .app__header a,
-.app .app__header button,
-.app .app__returnHeader a,
-.app .app__returnHeader button,
-.app .app__header a:hover,
-.app .app__header a:focus,
-.app .app__header button:hover,
-.app .app__header button:focus {
+/*
+ * Keep only the controls that sit directly on the brand bar white. Dropdown
+ * panels are descendants of the header too, but use a white surface and must
+ * retain their normal dark/brand-coloured text.
+ */
+.app .app__contextTitle,
+.app .app__contextTitle:hover,
+.app .app__contextTitle:focus,
+.app .app__headerAction > a,
+.app .app__headerAction > button,
+.app .app__headerAction > a:hover,
+.app .app__headerAction > a:focus,
+.app .app__headerAction > button:hover,
+.app .app__headerAction > button:focus,
+.app .app-user-nav > button,
+.app .app__returnHeaderLink,
+.app .app__returnHeaderLink:hover,
+.app .app__returnHeaderLink:focus {
   color: #ffffff;
+}
+
+.app .pkpDropdown__content {
+  color: var(--cf-text);
 }
 
 .pkpButton,

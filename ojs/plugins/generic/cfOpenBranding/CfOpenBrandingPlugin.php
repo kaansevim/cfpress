@@ -15,7 +15,7 @@ use PKP\plugins\Hook;
 
 class CfOpenBrandingPlugin extends GenericPlugin
 {
-    private const ASSET_VERSION = '1.0.0';
+    private const ASSET_VERSION = '1.0.1';
 
     /**
      * These values mirror frontend/src/lib/journals.ts.
