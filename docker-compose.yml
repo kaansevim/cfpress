@@ -73,6 +73,8 @@ services:
       - ./ojs/config/ojs.config.inc.php:/var/www/html/config.inc.php
       # Reverse proxy / Cloudflare arkasında HTTPS algılama
       - ./ojs/config/apache.htaccess:/var/www/html/.htaccess:ro
+      # OJS core'a dokunmadan dashboard/submission ekranlarında CF Open kimliği
+      - ./ojs/plugins/generic/cfOpenBranding:/var/www/html/plugins/generic/cfOpenBranding:ro
     depends_on:
       db:
         condition: service_healthy

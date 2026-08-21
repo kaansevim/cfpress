@@ -1,6 +1,6 @@
 # CF Open — Kurulum ve Yönetim Rehberi
 
-_Son güncelleme: 18 Ağustos 2026_
+_Son güncelleme: 21 Ağustos 2026_
 
 ## Mimari
 
@@ -37,6 +37,7 @@ tasarım özgürlüğü.
 | `frontend/src/lib/ojs.server.ts` | OJS API istemcisi (sunucu tarafı) |
 | `frontend/src/lib/metrics.server.ts` | Görüntülenme/indirme sayacı |
 | `ojs/config/` | OJS ayar şablonu, Apache ve veritabanı ayarları |
+| `ojs/plugins/generic/cfOpenBranding/` | OJS yönetim ve gönderim ekranlarının CF Open kimliği |
 | `kurulum.sh` | Sıfırdan sunucu kurulumu |
 
 ## Belgeler
@@ -85,6 +86,22 @@ allowed_hosts = '["dergi.cf.org.tr", "ojs"]'
 ```
 
 SMTP ayarları da aynı dosyanın `[email]` bölümündedir.
+
+## OJS backend kimliğini etkinleştirme
+
+`cfOpenBranding` eklentisi Docker ile OJS'in generic plugin klasörüne salt
+okunur bağlanır; OJS core dosyalarını değiştirmez. İlk kurulumdan veya bu
+mount'u ekleyen güncellemeden sonra:
+
+1. `docker compose up -d --force-recreate ojs` çalıştırın.
+2. OJS'te **Administration → Site Settings → Plugins → Generic Plugins**
+   bölümüne gidin.
+3. **CF Open Backend Branding** eklentisini bir kez etkinleştirin.
+4. OJS önbelleğini temizleyip tarayıcıda sert yenileme yapın.
+
+Eklenti aktif journal path'ini otomatik algılar: `jss` mavi, `jcf` mor,
+`jecf` kahve/altın, `jcfo` bordo. Ayrıntılar ve güvenli geri alma adımları
+`ojs/plugins/generic/cfOpenBranding/README.md` dosyasındadır.
 
 ## Sık kullanılan komutlar
 

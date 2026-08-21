@@ -1,0 +1,404 @@
+/**
+ * CF Open backend branding for OJS 3.5.
+ *
+ * This file is loaded only in TemplateManager's `backend` context. Rules are
+ * deliberately visual: no OJS element is hidden, reordered or made inert.
+ */
+
+:root {
+  /* Safe defaults; the plugin replaces these for the active journal. */
+  --cf-brand-primary: #102f4f;
+  --cf-brand-secondary: #1f5f91;
+  --cf-brand-accent: #8fc7f2;
+  --cf-brand-soft: #edf5fb;
+  --cf-brand-border: #b7cde0;
+  --cf-brand-rgb: 31, 95, 145;
+  --cf-page-bg: #f4f6f8;
+  --cf-card-bg: #ffffff;
+  --cf-text: #263442;
+  --cf-text-muted: #5e6b78;
+  --cf-neutral-border: #d8dee5;
+  --cf-radius: 6px;
+  --cf-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --cf-shadow-md: 0 8px 24px rgba(16, 24, 40, 0.08);
+}
+
+/* Page shell ------------------------------------------------------------- */
+
+body {
+  background: var(--cf-page-bg);
+  color: var(--cf-text);
+}
+
+.app__header,
+.app__returnHeader {
+  background: linear-gradient(135deg, var(--cf-brand-primary), var(--cf-brand-secondary));
+  border-bottom: 3px solid var(--cf-brand-accent);
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.18);
+}
+
+.app__contextTitle {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.app__headerAction > button:hover,
+.app__headerAction > button:focus,
+.app__headerAction > a:hover,
+.app__headerAction > a:focus {
+  box-shadow: 0 0.25rem 0 var(--cf-brand-accent);
+}
+
+.app__main {
+  background: var(--cf-page-bg);
+}
+
+.app__breadcrumbs {
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid var(--cf-neutral-border);
+  color: var(--cf-brand-primary);
+}
+
+.app__breadcrumbsSeparator {
+  color: var(--cf-text-muted);
+}
+
+.app__pageHeading {
+  color: var(--cf-brand-primary);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.app__pageDescription,
+.pkpFormField__description,
+.pkpFormGroup__description,
+.description {
+  color: var(--cf-text-muted);
+}
+
+/* Main navigation -------------------------------------------------------- */
+
+#app-nav {
+  box-shadow: 3px 0 14px rgba(16, 24, 40, 0.05);
+}
+
+#app-nav > * {
+  background: var(--cf-card-bg);
+  border-color: var(--cf-neutral-border);
+}
+
+#app-nav a {
+  color: var(--cf-brand-secondary);
+}
+
+#app-nav a.bg-selection-dark,
+#app-nav a.bg-hover {
+  background: var(--cf-brand-primary);
+  color: #ffffff;
+}
+
+#app-nav a:not(.bg-selection-dark):hover,
+#app-nav a:not(.bg-selection-dark):focus-visible {
+  background: var(--cf-brand-soft);
+  color: var(--cf-brand-primary);
+}
+
+/* OJS 3.5 design tokens used by the Vue/Tailwind component library. */
+.app .bg-primary {
+  background-color: var(--cf-brand-secondary);
+}
+
+.app .text-primary,
+.app .text-heading {
+  color: var(--cf-brand-secondary);
+}
+
+.app .border-primary {
+  border-color: var(--cf-brand-secondary);
+}
+
+.app .bg-selection-dark {
+  background-color: var(--cf-brand-primary);
+}
+
+.app .bg-selection-light {
+  background-color: var(--cf-brand-soft);
+}
+
+.app .hover\:bg-hover:hover,
+.app .focus-visible\:bg-hover:focus-visible {
+  background-color: var(--cf-brand-primary);
+}
+
+.app .hover\:text-hover:hover {
+  color: var(--cf-brand-primary);
+}
+
+.app .text-on-dark,
+.app .hover\:text-on-dark:hover {
+  color: #ffffff;
+}
+
+/* Links, buttons and focus ---------------------------------------------- */
+
+.app a,
+.app .-linkButton {
+  color: var(--cf-brand-secondary);
+}
+
+.app a:hover,
+.app a:focus,
+.app .-linkButton:hover,
+.app .-linkButton:focus {
+  color: var(--cf-brand-primary);
+}
+
+/* Header controls must retain their accessible white-on-brand treatment. */
+.app .app__header a,
+.app .app__header button,
+.app .app__returnHeader a,
+.app .app__returnHeader button,
+.app .app__header a:hover,
+.app .app__header a:focus,
+.app .app__header button:hover,
+.app .app__header button:focus {
+  color: #ffffff;
+}
+
+.pkpButton,
+.pkp_button {
+  border-radius: var(--cf-radius);
+}
+
+.pkpButton.bg-primary,
+.pkp_button_primary {
+  background: var(--cf-brand-secondary);
+  border-color: var(--cf-brand-secondary);
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(var(--cf-brand-rgb), 0.22);
+}
+
+.pkpButton.bg-primary:hover,
+.pkpButton.bg-primary:focus,
+.pkp_button_primary:hover,
+.pkp_button_primary:focus {
+  background: var(--cf-brand-primary);
+  border-color: var(--cf-brand-primary);
+  color: #ffffff;
+}
+
+.pkp_button:not(.pkp_button_primary):not(.pkp_button_offset):hover,
+.pkp_button:not(.pkp_button_primary):not(.pkp_button_offset):focus {
+  border-color: var(--cf-brand-secondary);
+  color: var(--cf-brand-primary);
+}
+
+.app :where(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--cf-brand-secondary);
+  outline-offset: 2px;
+}
+
+/* Forms ------------------------------------------------------------------ */
+
+.pkpFormFieldLabel,
+.pkpFormField--options__legend,
+.pkpFormGroup__legend,
+.pkp_form label,
+.pkp_form legend {
+  color: var(--cf-text);
+  font-weight: 700;
+}
+
+.pkpFormField__input,
+.pkp_form input[type="date"],
+.pkp_form input[type="email"],
+.pkp_form input[type="file"],
+.pkp_form input[type="month"],
+.pkp_form input[type="number"],
+.pkp_form input[type="password"],
+.pkp_form input[type="search"],
+.pkp_form input[type="tel"],
+.pkp_form input[type="text"],
+.pkp_form input[type="url"],
+.pkp_form input[type="week"],
+.pkp_form textarea,
+.pkp_form select {
+  background: #ffffff;
+  border-color: #aeb8c3;
+  border-radius: var(--cf-radius);
+  color: var(--cf-text);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.pkpFormField__input:hover,
+.pkp_form input:hover,
+.pkp_form textarea:hover,
+.pkp_form select:hover {
+  border-color: var(--cf-brand-border);
+}
+
+.pkpFormField__input:focus,
+.pkp_form input:focus,
+.pkp_form textarea:focus,
+.pkp_form select:focus {
+  border-color: var(--cf-brand-secondary);
+  box-shadow: 0 0 0 3px rgba(var(--cf-brand-rgb), 0.16);
+  outline: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--cf-brand-secondary);
+}
+
+.pkpFormField--options {
+  background: #ffffff;
+  border-color: var(--cf-neutral-border);
+  border-radius: var(--cf-radius);
+}
+
+.pkpFormPage__footer,
+.pkpFormGroup + .pkpFormGroup {
+  border-color: var(--cf-neutral-border);
+}
+
+/* Panels, tabs, grids and submission workflow ---------------------------- */
+
+.panel,
+.listPanel,
+.app__contentPanel,
+.submissionWizard__reviewPanel,
+.pkp_controllers_grid {
+  background: var(--cf-card-bg);
+  border-color: var(--cf-neutral-border);
+  border-radius: var(--cf-radius);
+  box-shadow: var(--cf-shadow-sm);
+}
+
+.submissionWizard .panel,
+.submissionWizard__reviewPanel {
+  box-shadow: var(--cf-shadow-md);
+}
+
+.submissionWizard .pkpSteps__buttonWrapper {
+  border-color: var(--cf-neutral-border);
+  border-radius: var(--cf-radius);
+  box-shadow: var(--cf-shadow-sm);
+  overflow: hidden;
+}
+
+/* Keep the connector behind every label, including in custom OJS builds. */
+.submissionWizard .pkpSteps__line {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.submissionWizard .pkpSteps__step__label {
+  position: relative;
+  background: var(--cf-card-bg);
+  z-index: 2;
+}
+
+.submissionWizard__footer {
+  border-color: var(--cf-neutral-border);
+  border-radius: 0 0 var(--cf-radius) var(--cf-radius);
+  box-shadow: var(--cf-shadow-md);
+}
+
+.pkpSteps__step__label--completed .pkpSteps__step__number {
+  background: var(--cf-brand-secondary);
+}
+
+.pkpSteps__step__label--current {
+  color: var(--cf-brand-secondary);
+}
+
+.pkpSteps__step__label--current .pkpSteps__step__number,
+.pkpSteps__step__label--completed:focus .pkpSteps__step__number {
+  border-color: var(--cf-brand-secondary);
+  outline-color: var(--cf-brand-secondary);
+}
+
+.pkpSteps__line__started {
+  background: var(--cf-brand-secondary);
+}
+
+.pkpTabs__button {
+  color: var(--cf-brand-secondary);
+}
+
+.pkpTabs__button:focus::before,
+.pkpTabs__button:hover::before,
+.pkpTabs__button[aria-selected="true"]::before {
+  background: var(--cf-brand-secondary);
+}
+
+.pkpTabs__button[aria-selected="true"] {
+  color: var(--cf-brand-primary);
+}
+
+.pkpTab {
+  border-color: var(--cf-neutral-border);
+}
+
+.pkpHeader,
+.pkpHeader__title,
+.pkpHeader__title > h1,
+.pkpHeader__title > h2,
+.pkpHeader__title > h3,
+.pkpHeader__title > h4 {
+  color: var(--cf-brand-primary);
+}
+
+.pkpTable,
+.pkp_controllers_grid table {
+  border-color: var(--cf-neutral-border);
+}
+
+.pkpTable thead,
+.pkp_controllers_grid thead {
+  background: var(--cf-brand-soft);
+  color: var(--cf-brand-primary);
+}
+
+.pkpTable tbody tr:hover,
+.pkp_controllers_grid tbody tr:hover {
+  background: rgba(var(--cf-brand-rgb), 0.055);
+}
+
+.pkpNotification:not(.pkpNotification--success):not(.pkpNotification--warning) {
+  border-color: var(--cf-brand-secondary);
+  box-shadow: inset 0.25rem 0 0 var(--cf-brand-secondary);
+}
+
+[dir="rtl"] .pkpNotification:not(.pkpNotification--success):not(.pkpNotification--warning) {
+  box-shadow: inset -0.25rem 0 0 var(--cf-brand-secondary);
+}
+
+.modal__panel {
+  border-radius: var(--cf-radius);
+}
+
+.modal__header {
+  border-bottom: 1px solid var(--cf-neutral-border);
+}
+
+@media (max-width: 766px) {
+  .app__main {
+    padding: 0.75rem;
+  }
+
+  .app__breadcrumbs {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pkpFormField__input,
+  .pkp_form input,
+  .pkp_form textarea,
+  .pkp_form select {
+    transition: none;
+  }
+}

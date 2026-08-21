@@ -74,11 +74,19 @@ olmadan OJS isteği reddeder.
 ```bash
 cd ~/akademi-dostu-yayim
 git pull
-docker compose restart ojs
+docker compose up -d --force-recreate ojs
 docker compose up -d --build frontend
 ```
 
 Build birkaç dakika sürer.
+
+Bu güncellemede OJS konteyneri yeniden oluşturulur; böylece
+`cfOpenBranding` plugin mount'u devreye girer. Veritabanı, yüklenen dosyalar ve
+`config.inc.php` kalıcı volume/bind mount'larda olduğu için korunur.
+
+İlk seferinde OJS'te **Administration → Site Settings → Plugins → Generic
+Plugins** bölümünden **CF Open Backend Branding** eklentisini bir kez
+etkinleştirin. Ardından OJS önbelleğini temizleyin.
 
 ---
 
@@ -91,6 +99,7 @@ Build birkaç dakika sürer.
 | Makaleye tıkla | Tam metin (JATS) açılıyor, şekiller görünüyor |
 | PDF düğmesi | PDF iniyor |
 | "Submit your article" | JSS'in OJS gönderim sayfasına gidiyor |
+| OJS dashboard / gönderim | Açık derginin rengiyle CF Open görünümü geliyor |
 | Metrikler | Görüntülenme 1+ (sayfayı açtın), atıf kutusu yok |
 | `https://dergi.cf.org.tr` | OJS normal çalışıyor |
 
