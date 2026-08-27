@@ -30,8 +30,8 @@
   --color-ring: var(--ring);
   --color-orcid: var(--orcid);
   --color-orcid-foreground: var(--orcid-foreground);
-  --font-serif: "Noto Serif", Georgia, "Times New Roman", serif;
-  --font-sans: "Noto Sans", Arial, Helvetica, sans-serif;
+  --font-serif: "Source Serif 4", "Noto Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Noto Sans", system-ui, -apple-system, Arial, sans-serif;
 }
 
 :root {
@@ -93,12 +93,17 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .article-prose {
     font-family: var(--font-serif);
-    font-size: 1.125rem;
-    line-height: 1.75;
+    font-size: 1.1875rem;
+    line-height: 1.7;
+    letter-spacing: -0.003em;
+    font-optical-sizing: auto;
     color: var(--color-foreground);
   }
 
@@ -167,7 +172,8 @@
 
   .font-serif-display {
     font-family: var(--font-serif);
-    letter-spacing: -0.02em;
+    font-optical-sizing: auto;
+    letter-spacing: -0.018em;
   }
 }
 

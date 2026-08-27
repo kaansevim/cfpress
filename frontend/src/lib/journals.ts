@@ -45,7 +45,7 @@ export const journals: Journal[] = [
     shortName: "JSS",
     ojsPath: "jss",
     coverImage: "/journals/social-solutions/cover.png",
-    theme: { heroFrom: "#102f4f", heroTo: "#1f5f91", accent: "#8fc7f2" },
+    theme: { heroFrom: "#08203a", heroTo: "#12456e", accent: "#8fc7f2" },
     scope:
       "An interdisciplinary journal publishing original research that develops practical, evidence-based responses to pressing social problems. Coverage spans social work, social policy, community health, education, and sustainable development.",
     subjects: ["Social Work", "Social Policy", "Community Health", "Education", "Sustainable Development"],
@@ -56,7 +56,7 @@ export const journals: Journal[] = [
     shortName: "JCF",
     ojsPath: "jcf",
     coverImage: "/journals/cognitive-formation/cover.png",
-    theme: { heroFrom: "#2f1d40", heroTo: "#664483", accent: "#d0afea" },
+    theme: { heroFrom: "#211331", heroTo: "#43295c", accent: "#d0afea" },
     scope:
       "Publishes theoretical and experimental work on cognition, learning, and the mechanisms by which knowledge is formed — including research on artificial intelligence, language, and human–machine interaction.",
     subjects: ["Cognitive Science", "Artificial Intelligence", "Learning", "Linguistics"],
@@ -67,7 +67,7 @@ export const journals: Journal[] = [
     shortName: "JECF",
     ojsPath: "jecf",
     coverImage: "/journals/economic-change-future/cover.png",
-    theme: { heroFrom: "#432600", heroTo: "#8a5615", accent: "#f0b65f" },
+    theme: { heroFrom: "#2d1900", heroTo: "#5c390d", accent: "#f0b65f" },
     scope:
       "Devoted to the study of structural economic change and its long-run consequences. The journal welcomes research on urbanization, environmental economics, and forward-looking policy analysis.",
     subjects: ["Economics", "Urbanization", "Environment", "Public Policy"],
@@ -78,7 +78,7 @@ export const journals: Journal[] = [
     shortName: "JCFo",
     ojsPath: "jcfo",
     coverImage: "/journals/community-foundations/cover.png",
-    theme: { heroFrom: "#4c211b", heroTo: "#954b40", accent: "#f2a191" },
+    theme: { heroFrom: "#331410", heroTo: "#63322a", accent: "#f2a191" },
     scope:
       "Publishes community-based research and scholarship on civil society, philanthropy, and local governance, with particular attention to the role of foundations and voluntary organizations in social life.",
     subjects: ["Community Studies", "Civil Society", "Philanthropy", "Local Governance"],

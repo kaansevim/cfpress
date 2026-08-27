@@ -59,8 +59,8 @@ export function ArticleActions({
   const doiUrl = `https://doi.org/${article.doi}`;
   const shareText = encodeURIComponent(article.title);
 
-  // PDF, indirmek yerine sayfanın yanında açılır. Okuyucu isterse panelin
-  // içindeki Download düğmesiyle dosyayı yine de alabilir.
+  // PDF yeni sekmede açılır; tarayıcının kendi görüntüleyicisi indirme ve
+  // yazdırma düğmelerini zaten sunuyor, ayrı bir Download düğmesi yok.
   const slug = journalSlug ?? article.journalSlug;
   const id = articleId ?? article.id;
 

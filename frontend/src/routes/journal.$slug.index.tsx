@@ -184,7 +184,7 @@ function VibrantJournalHero({ journal }: { journal: Journal }) {
           alt={`${journal.name} cover`}
           width="1130"
           height="1600"
-          className="aspect-[1130/1600] w-36 rounded-sm object-cover shadow-2xl ring-1 ring-white/40 sm:w-full"
+          className="aspect-[1130/1600] w-36 rounded-sm object-cover shadow-2xl ring-1 ring-white/70 sm:w-full"
         />
 
         <div className="min-w-0">
@@ -194,14 +194,14 @@ function VibrantJournalHero({ journal }: { journal: Journal }) {
           <h1 className="mt-4 max-w-3xl text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
             {journal.name}
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white sm:text-lg">
             {journal.scope}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {journal.subjects.map((s) => (
               <span
                 key={s}
-                className="rounded-full bg-white/95 px-3 py-1 text-xs font-medium shadow-sm"
+                className="rounded-full bg-white px-3 py-1 text-xs font-medium shadow-sm"
                 style={{ color: journal.theme.heroFrom }}
               >
                 {s}
@@ -209,7 +209,7 @@ function VibrantJournalHero({ journal }: { journal: Journal }) {
             ))}
           </div>
           {journal.eissn && (
-            <div className="mt-5 text-xs font-medium tracking-wide text-white/70">
+            <div className="mt-5 text-xs font-medium tracking-wide text-white">
               e-ISSN {journal.eissn}
             </div>
           )}

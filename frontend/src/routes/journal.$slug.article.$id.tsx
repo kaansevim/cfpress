@@ -20,6 +20,7 @@ import { MetricsStrip, MetricsCards } from "@/components/article/article-metrics
 import { ArticleReaderLayout } from "@/components/article/article-reader-layout";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { absoluteSiteUrl } from "@/lib/seo";
+import { CitationText } from "@/components/article/citation-text";
 
 // Yeni okuyucu beğenilmezse false yapılarak mevcut görünüm anında geri getirilebilir.
 const USE_ARTICLE_READER_V2 = true;
@@ -405,7 +406,9 @@ function ArticlePage() {
                         <span className="font-mono text-xs text-muted-foreground pt-0.5">
                           [{i + 1}]
                         </span>
-                        <span className="leading-relaxed">{r.text}</span>
+                        <span className="leading-relaxed">
+                          <CitationText reference={r} />
+                        </span>
                       </li>
                     ))}
                   </ol>

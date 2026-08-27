@@ -26,9 +26,20 @@ export interface Figure {
   placeholder: string;
 }
 
+// Kaynakça dizgisinin bir parçası. XML'deki <mixed-citation> içinden gelir:
+// dergi adı ve cilt italik, adresler bağlantı olur.
+export interface RefSegment {
+  text: string;
+  italic?: boolean;
+  href?: string;
+}
+
 export interface Reference {
   id: string;
+  /** Düz metin karşılığı (arama, kısa gösterim, kopyalama için). */
   text: string;
+  /** Biçimli gösterim. Yoksa `text` düz basılır. */
+  segments?: RefSegment[];
 }
 
 export interface Article {

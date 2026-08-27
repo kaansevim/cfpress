@@ -183,15 +183,46 @@ function RenderNode({
   }
 }
 
+// ── Etiketler (Figure 1 / Table 1) ───────────────────────────────────────────
+
+// Başlık zaten "Figure 1." / "Table 2 —" gibi başlıyorsa etiketi tekrar etmeyiz.
+const ALREADY_LABELLED = /^\s*(fig(ure)?\.?|table|tablo|şekil|sekil)\s*\d+/i;
+
+/**
+ * XML'de <label> yoksa öğenin gövdedeki sırasına göre etiket üretir:
+ * "Figure 2", "Table 1". Şekiller ve tablolar ayrı ayrı numaralanır.
+ */
+export function autoLabel(el: Element, tag: "fig" | "table-wrap"): string {
+  const scope =
+    el.closest("body") ?? (el.ownerDocument?.documentElement as Element | null);
+  if (!scope) return "";
+  const idx = Array.from(scope.querySelectorAll(tag)).indexOf(el);
+  if (idx < 0) return "";
+  return `${tag === "fig" ? "Figure" : "Table"} ${idx + 1}`;
+}
+
+/** <label> varsa onu, yoksa sıra numarasından üretileni verir. */
+export function resolveLabel(
+  el: Element,
+  tag: "fig" | "table-wrap",
+  caption: string
+): string {
+  const explicit = el.querySelector("label")?.textContent?.trim() ?? "";
+  const label = explicit || (ALREADY_LABELLED.test(caption) ? "" : autoLabel(el, tag));
+  // "Figure 1." → "Figure 1" (nokta render sırasında ekleniyor)
+  return label.replace(/[.:]\s*$/, "");
+}
+
 // ── Şekil ─────────────────────────────────────────────────────────────────────
 
 export function RenderFig({ el, idSuffix = "", basePath = "" }: { el: Element; idSuffix?: string; basePath?: string }) {
   const baseId = el.getAttribute("id") ?? "";
   const id = baseId ? `${baseId}${idSuffix}` : undefined;
-  const label = el.querySelector("label")?.textContent?.trim() ?? "";
   const captionTitle = el.querySelector("caption > title")?.textContent?.trim() ?? "";
   const captionP = el.querySelector("caption > p")?.textContent?.trim() ?? "";
   const caption = [captionTitle, captionP].filter(Boolean).join(" ");
+  // XML'de <label> yoksa "Figure N" üretilir; başlık altta kalmaya devam eder.
+  const label = resolveLabel(el, "fig", caption);
   const graphicEl = el.querySelector("graphic");
   let src = graphicEl
     ? (graphicEl.getAttributeNS(XLINK, "href") ??
@@ -233,36 +264,42 @@ export function RenderFig({ el, idSuffix = "", basePath = "" }: { el: Element; i
 export function RenderTableWrap({ el, idSuffix = "" }: { el: Element; idSuffix?: string }) {
   const baseId = el.getAttribute("id") ?? "";
   const id = baseId ? `${baseId}${idSuffix}` : undefined;
-  const label = el.querySelector("label")?.textContent?.trim() ?? "";
   const captionTitle =
     el.querySelector("caption > title")?.textContent?.trim() ?? "";
   const captionP =
     el.querySelector("caption > p")?.textContent?.trim() ?? "";
+  const captionText = [captionTitle, captionP].filter(Boolean).join(" ");
+  // APA: tablo başlığı TABLONUN ÜSTÜNDE durur (şekillerde ise altta).
+  const label = resolveLabel(el, "table-wrap", captionText);
   const tableEl = el.querySelector("table");
 
   return (
     <figure id={id} className="my-8 overflow-x-auto">
-      {tableEl && <RenderTable table={tableEl} />}
-      {(label || captionTitle) && (
-        <figcaption className="mt-2 text-sm">
+      {(label || captionText) && (
+        <figcaption className="mb-2 text-sm">
           {label && <span className="font-semibold">{label}. </span>}
-          <span className="text-muted-foreground">
-            {[captionTitle, captionP].filter(Boolean).join(" ")}
-          </span>
+          {captionText && (
+            <span className="text-muted-foreground">{captionText}</span>
+          )}
         </figcaption>
       )}
+      {tableEl && <RenderTable table={tableEl} flush />}
     </figure>
   );
 }
 
 // ── Tablo ─────────────────────────────────────────────────────────────────────
 
-function RenderTable({ table }: { table: Element }) {
+function RenderTable({ table, flush = false }: { table: Element; flush?: boolean }) {
   const thead = table.querySelector("thead");
   const tbody = table.querySelector("tbody");
 
   return (
-    <div className="w-full overflow-x-auto my-6 rounded-lg border border-border shadow-sm">
+    <div
+      className={`w-full overflow-x-auto rounded-lg border border-border shadow-sm ${
+        flush ? "" : "my-6"
+      }`}
+    >
       <table className="w-full border-collapse text-sm text-left bg-card">
         {thead && (
           <thead className="bg-muted/40 border-b border-border text-muted-foreground">

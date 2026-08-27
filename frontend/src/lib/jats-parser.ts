@@ -1,7 +1,13 @@
 // JATS XML → Article verisi dönüştürücü.
 // DOMParser kullandığı için yalnızca tarayıcıda (useEffect içinde) çalışır.
 
-import type { Article, Author, Figure, Reference } from "./mock-articles";
+import type {
+  Article,
+  Author,
+  Figure,
+  Reference,
+  RefSegment,
+} from "./mock-articles";
 import type { XmlArticleEntry } from "./article-manifest";
 
 export interface ParsedJats extends Article {
@@ -34,6 +40,111 @@ function xlinkHref(el: Element): string {
   return (
     el.getAttributeNS(XLINK, "href") ?? el.getAttribute("xlink:href") ?? ""
   );
+}
+
+// ── Kaynakça yardımcıları ────────────────────────────────────────────────────
+
+// APA'da italik olan alanlar (dergi/kitap adı ve cilt).
+const ITALIC_TAGS = new Set(["source", "volume", "italic", "i", "em"]);
+const URL_RE = /(https?:\/\/[^\s<>()]+|www\.[^\s<>()]+)/;
+
+function collapse(str: string): string {
+  return str.replace(/\s+/g, " ").trim();
+}
+
+function pushSeg(
+  out: RefSegment[],
+  text: string,
+  italic: boolean,
+  href?: string
+): void {
+  if (!text) return;
+  const last = out[out.length - 1];
+  if (last && !last.href && !href && !!last.italic === italic) {
+    last.text += text;
+    return;
+  }
+  out.push({
+    text,
+    ...(italic ? { italic: true } : {}),
+    ...(href ? { href } : {}),
+  });
+}
+
+// Düz metindeki adresleri bağlantı parçasına ayırır.
+function pushLinkified(out: RefSegment[], text: string, italic: boolean): void {
+  const re = new RegExp(URL_RE.source, "g");
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    const url = m[0].replace(/[.,;:)\]]+$/, "");
+    if (!url) {
+      re.lastIndex = m.index + m[0].length;
+      continue;
+    }
+    pushSeg(out, text.slice(last, m.index), italic);
+    pushSeg(out, url, italic, url.startsWith("http") ? url : `https://${url}`);
+    last = m.index + url.length;
+    re.lastIndex = last;
+  }
+  pushSeg(out, text.slice(last), italic);
+}
+
+// <mixed-citation> içeriğini olduğu gibi parçalara çevirir: metin PDF'tekiyle
+// aynı kalır, yalnızca <source>/<volume> italiğe, adresler bağlantıya döner.
+function citationSegments(el: Element): RefSegment[] {
+  const out: RefSegment[] = [];
+
+  const walk = (node: Node, italic: boolean): void => {
+    if (node.nodeType === 3) {
+      pushLinkified(out, (node.textContent ?? "").replace(/\s+/g, " "), italic);
+      return;
+    }
+    if (node.nodeType !== 1) return;
+    const e = node as Element;
+    const tag = e.tagName.toLowerCase();
+
+    if (tag === "ext-link" || tag === "uri") {
+      const label = collapse(e.textContent ?? "");
+      const raw = xlinkHref(e) || label;
+      if (label) {
+        pushSeg(
+          out,
+          label,
+          italic,
+          raw.startsWith("http") ? raw : `https://${raw}`
+        );
+      }
+      return;
+    }
+
+    const inner = italic || ITALIC_TAGS.has(tag);
+    Array.from(e.childNodes).forEach((c) => walk(c, inner));
+  };
+
+  Array.from(el.childNodes).forEach((c) => walk(c, false));
+
+  if (out.length) {
+    out[0].text = out[0].text.replace(/^\s+/, "");
+    out[out.length - 1].text = out[out.length - 1].text.replace(/\s+$/, "");
+  }
+  return out.filter((seg) => seg.text.length > 0);
+}
+
+// "M. C." → "M. C." ; "Mehmet Cem" → "M. C."  (eski kod ilk harfi kırpıyordu)
+function initials(given: string): string {
+  return collapse(given)
+    .split(/[\s.]+/)
+    .filter(Boolean)
+    .map((w) => (w.length === 1 ? `${w}.` : `${w[0].toUpperCase()}.`))
+    .join(" ");
+}
+
+function joinAuthors(names: string[], hasEtal: boolean): string {
+  if (!names.length) return "";
+  if (hasEtal) return `${names.join(", ")}, et al.`;
+  if (names.length === 1) return names[0];
+  return `${names.slice(0, -1).join(", ")}, & ${names[names.length - 1]}`;
 }
 
 function xmlLang(el: Element): string {
@@ -214,16 +325,30 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
   });
 
   // Kaynaklar
+  //
+  // KURAL: <ref> içinde <mixed-citation> varsa dizgi ODUR — PDF'te basılan APA
+  // metninin birebir aynısı XML'e gömülüdür (bkz. latex2xml.py). Ön yüz burada
+  // yeniden dizgi KURMAZ, yalnızca italik/bağlantı biçimlendirmesi yapar.
+  // <element-citation> makine okunur metadata'dır; aşağıdaki üretici sadece
+  // mixed-citation'ı olmayan eski XML'ler için yedektir.
   const references: Reference[] = qq(doc, "ref-list ref").map((ref) => {
     const id = ref.getAttribute("id") ?? "";
+
+    const mc = ref.querySelector("mixed-citation");
+    if (mc) {
+      const segments = citationSegments(mc);
+      const text = segments.map((seg) => seg.text).join("");
+      if (text) return { id, text, segments };
+    }
+
     const ec = ref.querySelector("element-citation");
-    if (!ec) return { id, text: ref.textContent?.trim() ?? "" };
+    if (!ec) return { id, text: collapse(ref.textContent ?? "") };
 
     const names = qq(ec, 'person-group[person-group-type="author"] name').map(
       (n) => {
-        const s = n.querySelector("surname")?.textContent?.trim() ?? "";
+        const sur = n.querySelector("surname")?.textContent?.trim() ?? "";
         const g = n.querySelector("given-names")?.textContent?.trim() ?? "";
-        return g ? `${s}, ${g[0]}.` : s;
+        return g ? `${sur}, ${initials(g)}` : sur;
       }
     );
     const hasEtal = !!ec.querySelector("etal");
@@ -236,16 +361,37 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
     const lpage = q(ec, "lpage");
     const doiRef = q(ec, 'pub-id[pub-id-type="doi"]');
 
-    const parts: string[] = [];
-    if (names.length) parts.push(names.join(", ") + (hasEtal ? " vd." : ""));
-    if (year) parts.push(`(${year})`);
-    if (artTitle) parts.push(artTitle);
-    if (source) parts.push(source);
-    if (volume) parts.push(`${volume}${issue ? `(${issue})` : ""}`);
-    if (fpage) parts.push(`${fpage}${lpage ? `–${lpage}` : ""}`);
-    if (doiRef) parts.push(`doi:${doiRef}`);
+    const segments: RefSegment[] = [];
+    const add = (t: string) => pushSeg(segments, t, false);
 
-    return { id, text: parts.join(". ") };
+    const authorStr = joinAuthors(names, hasEtal);
+    if (authorStr) add(`${authorStr} `);
+    if (year) add(`(${year}). `);
+    if (artTitle) add(/[.!?]$/.test(artTitle) ? `${artTitle} ` : `${artTitle}. `);
+    if (source) pushSeg(segments, source, true);
+    if (volume) {
+      if (source) add(", ");
+      pushSeg(segments, volume, true);
+      if (issue) add(`(${issue})`);
+    }
+    if (fpage) add(`, ${fpage}${lpage ? `–${lpage}` : ""}`);
+    if (source || volume || fpage) add(".");
+    if (doiRef) {
+      const url = doiRef.startsWith("http")
+        ? doiRef
+        : `https://doi.org/${doiRef}`;
+      add(" ");
+      pushSeg(segments, url, false, url);
+    }
+
+    if (segments.length) {
+      segments[0].text = segments[0].text.replace(/^\s+/, "");
+      segments[segments.length - 1].text = segments[
+        segments.length - 1
+      ].text.replace(/\s+$/, "");
+    }
+    const clean = segments.filter((seg) => seg.text.length > 0);
+    return { id, text: clean.map((seg) => seg.text).join(""), segments: clean };
   });
 
   // Finansman
@@ -261,8 +407,11 @@ export function parseJats(xmlText: string, entry: XmlArticleEntry): ParsedJats {
   const journalTitle = q(doc, "journal-title-group > journal-title");
   const volume = q(meta, "volume");
   const issue = q(meta, "issue");
-  const fpage = q(meta, "fpage");
-  const lpage = q(meta, "lpage");
+  // Sayfa numaraları ÖNCE OJS kaydından (Pages alanı) alınır — atıf kutusu da
+  // aynı kaynağı kullanıyor. XML'de genelde yalnızca <fpage> bulunuyor, son
+  // sayfa dizgi sırasında hesaplandığı için oraya yazılmıyor.
+  const fpage = entry.firstPage || q(meta, "fpage");
+  const lpage = entry.lastPage || q(meta, "lpage");
 
   return {
     id: entry.id,

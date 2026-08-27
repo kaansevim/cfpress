@@ -11,6 +11,7 @@ import {
   UserRound,
 } from "lucide-react";
 import type { Article, Author } from "@/lib/mock-articles";
+import { CitationText } from "@/components/article/citation-text";
 import type { Journal } from "@/lib/journals";
 import type { XmlArticleEntry } from "@/lib/article-manifest";
 import type { ParsedJats } from "@/lib/jats-parser";
@@ -21,7 +22,7 @@ import { ojsSubmitUrl } from "@/lib/ojs";
 import { cn } from "@/lib/utils";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { ArticleBody } from "@/components/article-body";
-import { JatsBody } from "@/components/jats-body";
+import { JatsBody, resolveLabel } from "@/components/jats-body";
 import { ArticleActions } from "@/components/article/article-actions";
 import { AuthorContributions } from "@/components/article/article-authors";
 import { MetricsCards } from "@/components/article/article-metrics";
@@ -385,11 +386,12 @@ export function ArticleReaderLayout({
           const tag = element.tagName.toLowerCase();
           const kind = tag === "fig" ? "figure" : "table";
           const id = element.getAttribute("id") || `reader-${tag}-${index + 1}`;
-          const label =
-            element.querySelector("label")?.textContent?.trim() ||
-            `${tag === "fig" ? "Figure" : "Table"} ${index + 1}`;
           const caption =
             element.querySelector("caption")?.textContent?.replace(/\s+/g, " ").trim() || "";
+          // Etiket XML'de yoksa üretilir; şekiller ve tablolar ayrı numaralanır.
+          const label =
+            resolveLabel(element, tag === "fig" ? "fig" : "table-wrap", caption) ||
+            `${tag === "fig" ? "Figure" : "Table"} ${index + 1}`;
           const graphic = element.querySelector("graphic");
           const graphicHref =
             graphic?.getAttributeNS("http://www.w3.org/1999/xlink", "href") ||
@@ -415,9 +417,20 @@ export function ArticleReaderLayout({
     }));
   }, [article.figures, basePath, isXml, parsedJats]);
 
+  // Cilt · Sayı · sayfa aralığı. Sayfa OJS kaydındaki "Pages" alanından gelir
+  // (atıf kutusuyla aynı kaynak); yoksa XML'deki <fpage>/<lpage>'e düşer.
+  const firstPage = article.fpage || xmlEntry?.firstPage || "";
+  const lastPage = article.lpage || xmlEntry?.lastPage || "";
+  const pageRange = firstPage
+    ? lastPage && lastPage !== firstPage
+      ? `pages ${firstPage}–${lastPage}`
+      : `page ${firstPage}`
+    : "";
+
   const publicationLine = [
     article.volume ? `Volume ${article.volume}` : "",
     article.issue ? `Issue ${article.issue}` : "",
+    pageRange,
   ]
     .filter(Boolean)
     .join(" · ");
@@ -434,24 +447,24 @@ export function ArticleReaderLayout({
       >
         <div
           aria-hidden
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 82% 18%, rgba(255,255,255,.36), transparent 28%), radial-gradient(circle at 8% 92%, rgba(255,255,255,.18), transparent 25%)",
+              "radial-gradient(circle at 82% 18%, rgba(255,255,255,.24), transparent 30%), radial-gradient(circle at 8% 92%, rgba(255,255,255,.12), transparent 26%)",
           }}
         />
 
         <div className="relative mx-auto max-w-6xl px-4 py-7 sm:px-6 sm:py-8 lg:py-9">
           {/* Kırıntı yolu (breadcrumb). Geri okundan çevrildi: üst başlıkta zaten
               derginin adı yazdığı için aynı ad iki kez alt alta görünüyordu. */}
-          <nav aria-label="Breadcrumb" className="text-sm text-white/70">
+          <nav aria-label="Breadcrumb" className="text-sm text-white">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <li>
                 <Link to="/" className="transition-colors hover:text-white hover:underline">
                   Home
                 </Link>
               </li>
-              <li aria-hidden className="text-white/40">
+              <li aria-hidden className="text-white">
                 ›
               </li>
               <li>
@@ -463,10 +476,10 @@ export function ArticleReaderLayout({
                   {journal.shortName}
                 </Link>
               </li>
-              <li aria-hidden className="text-white/40">
+              <li aria-hidden className="text-white">
                 ›
               </li>
-              <li aria-current="page" className="text-white/55">
+              <li aria-current="page" className="text-white">
                 Article
               </li>
             </ol>
@@ -474,7 +487,7 @@ export function ArticleReaderLayout({
 
           <div className="mt-4 grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_10.5rem] lg:grid-cols-[minmax(0,1fr)_12rem] lg:gap-14">
             <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white/70">
+              <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-white">
                 <span>{article.subject}</span>
                 <span aria-hidden>•</span>
                 <span>Open access</span>
@@ -487,14 +500,14 @@ export function ArticleReaderLayout({
                       rel="noreferrer"
                       title="Check for updates"
                       aria-label="Check for article updates with Crossmark"
-                      className="inline-flex shrink-0 items-center gap-1.5 normal-case tracking-normal text-white/80 transition-colors hover:text-white"
+                      className="inline-flex shrink-0 items-center gap-1.5 normal-case tracking-normal text-white transition-colors hover:text-white"
                     >
                       <img
                         src="/crossmark-symbol.svg"
                         alt="Crossmark"
                         className="h-4 w-4"
                       />
-                      <span className="text-[11px] font-semibold underline decoration-white/55 underline-offset-4">
+                      <span className="text-[11px] font-semibold underline decoration-white underline-offset-4">
                         Check for updates
                       </span>
                     </a>
@@ -506,7 +519,7 @@ export function ArticleReaderLayout({
                 {article.title}
               </h1>
 
-              <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-white/78">
+              <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-white">
                 <span>Published {formatDate(article.publishedAt)}</span>
                 {publicationLine && <span>{publicationLine}</span>}
               </div>
@@ -523,7 +536,7 @@ export function ArticleReaderLayout({
                     href={`https://doi.org/${article.doi}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-white/80 hover:text-white hover:underline"
+                    className="inline-flex items-center gap-1 text-sm text-white hover:text-white hover:underline"
                   >
                     doi.org/{article.doi} <ExternalLink className="h-3.5 w-3.5" />
                   </a>
@@ -532,7 +545,7 @@ export function ArticleReaderLayout({
 
               <a
                 href="#metrics"
-                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white/85 transition-colors hover:text-white hover:underline"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-white hover:underline"
               >
                 Explore metrics <ArrowRight className="h-4 w-4" />
               </a>
@@ -542,15 +555,15 @@ export function ArticleReaderLayout({
               <img
                 src={journal.coverImage}
                 alt={`${journal.name} cover`}
-                className="w-full rounded-md border border-white/60 object-cover shadow-2xl shadow-black/30"
+                className="w-full rounded-md border border-white object-cover shadow-2xl shadow-black/30"
               />
-              <p className="mt-2 text-center text-xs font-semibold text-white/75">{journal.name}</p>
+              <p className="mt-2 text-center text-xs font-semibold text-white">{journal.name}</p>
               <div className="mt-2 space-y-1.5">
                 <Link
                   to="/journal/$slug/$section"
                   params={{ slug: journal.slug, section: "about" }}
                   hash={navItemSlug("Aims and scope")}
-                  className="flex items-center justify-between border-b border-white/45 py-1.5 text-sm font-semibold text-white/90 transition-colors hover:border-white hover:text-white"
+                  className="flex items-center justify-between border-b border-white py-1.5 text-sm font-semibold text-white transition-colors hover:border-white hover:text-white"
                 >
                   Aims and scope <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -621,7 +634,9 @@ export function ArticleReaderLayout({
                     className="flex scroll-mt-24 gap-4 leading-relaxed"
                   >
                     <span className="pt-0.5 font-mono text-xs text-accent">[{index + 1}]</span>
-                    <span>{reference.text}</span>
+                    <span>
+                      <CitationText reference={reference} />
+                    </span>
                   </li>
                 ))}
               </ol>
