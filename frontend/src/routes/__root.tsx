@@ -81,6 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "CF Open — Open Access Academic Journals" },
       { name: "description", content: "A publishing platform hosting peer-reviewed, open access academic journals." },
       { name: "author", content: "CF Open" },
+      // Google Search Console site doğrulaması — kaldırılırsa doğrulama düşer.
+      { name: "google-site-verification", content: "Fq_9rtEo_SozIgQUr8P-xHKRGUqAl4N7ucrXeiKGZUM" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "CF Open" },
       { property: "og:url", content: `${SITE_ORIGIN}/` },
