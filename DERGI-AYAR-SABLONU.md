@@ -1,4 +1,4 @@
-# Dergi Ayar Şablonu — JCF, JECF, JCFO
+# Dergi Ayar Şablonu — JCF, JECF, CFMR
 
 JSS'te yaptığımız ayarların aynısı. Her dergi için sırayla uygula.
 **A bölümü** dergiye göre değişir, **B bölümü** üç dergide de birebir aynıdır.
@@ -99,23 +99,23 @@ https://cf.org.tr/journal/economic-change-future
 
 ---
 
-### JCFO — Journal of Community & Foundations (path: `jcfo`)
+### CFMR — Commercial & Frontier Marketing Review (path: `cfmr`)
 
 **Masthead**
-- Journal title: `Journal of Community & Foundations`
-- Initials / Abbreviation: `JCFo`
+- Journal title: `Commercial & Frontier Marketing Review`
+- Initials / Abbreviation: `CFMR`
 - Publisher / URL / Country: JCF ile aynı
 
 **Journal Summary / Search Indexing Description**
 ```
-Community-based research and scholarship on civil society, philanthropy, and local governance.
+Research on marketing in commercial practice and at the frontiers of the discipline — emerging markets, new technologies and changing consumer behaviour.
 ```
 
 **About the Journal**
 ```
-Journal of Community & Foundations (JCFo) is a peer-reviewed, open access journal published by CF Open, the academic publishing platform of CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi. The language of publication is English.
+Commercial & Frontier Marketing Review (CFMR) is a peer-reviewed, open access journal published by CF Open, the academic publishing platform of CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi. The language of publication is English.
 
-The journal publishes community-based research and scholarship on civil society, philanthropy, and local governance, with particular attention to the role of foundations and voluntary organizations in social life. The journal welcomes original research articles, review articles, and letters to the editor.
+The journal publishes original research on marketing in commercial practice and at the frontiers of the discipline — emerging markets, new technologies and changing consumer behaviour — spanning consumer research, digital marketing, branding, retailing and marketing strategy. The journal welcomes original research articles, review articles, and letters to the editor.
 
 Peer review. All submissions are evaluated through double-blind peer review.
 
@@ -130,15 +130,15 @@ Full editorial policies and author instructions are available at https://cf.org.
 
 **Author Guidelines'ın ilk cümlesi**
 ```
-Journal of Community & Foundations publishes original research articles, review articles, and letters to the editor in English. The full instructions for authors, publication ethics, editorial policy and reviewer guidance are available at https://cf.org.tr/journal/community-foundations — please read them before submitting.
+Commercial & Frontier Marketing Review publishes original research articles, review articles, and letters to the editor in English. The full instructions for authors, publication ethics, editorial policy and reviewer guidance are available at https://cf.org.tr/journal/commercial-frontier-marketing — please read them before submitting.
 ```
 
 **Signature**
 ```
-Journal of Community & Foundations
+Commercial & Frontier Marketing Review
 CF Open — CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi
 dergi@cfdanismanlik.com.tr
-https://cf.org.tr/journal/community-foundations
+https://cf.org.tr/journal/commercial-frontier-marketing
 ```
 
 ---

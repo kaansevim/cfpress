@@ -73,15 +73,15 @@ export const journals: Journal[] = [
     subjects: ["Economics", "Urbanization", "Environment", "Public Policy"],
   },
   {
-    slug: "community-foundations",
-    name: "Journal of Community & Foundations",
-    shortName: "JCFo",
-    ojsPath: "jcfo",
-    coverImage: "/journals/community-foundations/cover.png",
+    slug: "commercial-frontier-marketing",
+    name: "Commercial & Frontier Marketing Review",
+    shortName: "CFMR",
+    ojsPath: "cfmr",
+    coverImage: "/journals/commercial-frontier-marketing/cover.png",
     theme: { heroFrom: "#331410", heroTo: "#63322a", accent: "#f2a191" },
     scope:
-      "Publishes community-based research and scholarship on civil society, philanthropy, and local governance, with particular attention to the role of foundations and voluntary organizations in social life.",
-    subjects: ["Community Studies", "Civil Society", "Philanthropy", "Local Governance"],
+      "Publishes original research on marketing in commercial practice and at the frontiers of the discipline — emerging markets, new technologies and changing consumer behaviour. Coverage spans consumer research, digital marketing, branding, retailing and marketing strategy.",
+    subjects: ["Marketing", "Consumer Behaviour", "Digital Marketing", "Branding", "Retailing"],
   },
 ];
 

@@ -109,26 +109,26 @@ Ethics: the journal follows the guidelines of the Committee on Publication Ethic
 
 ---
 
-## 4. JCFo — Journal of Community & Foundations
+## 4. CFMR — Commercial & Frontier Marketing Review
 
 ### Journal Summary (→ Aims and scope)
 
 ```
-The Journal of Community & Foundations publishes research on civil society, philanthropy and local governance, with particular attention to the part that foundations and voluntary organisations play in social life.
+The Commercial & Frontier Marketing Review publishes research on marketing as it is practised in commercial organisations and as it is reshaped at the frontiers of the discipline — in emerging and frontier markets, through new technologies, and by changing patterns of consumption.
 
-Topics within scope include foundations, endowments and grantmaking practice; nonprofit management, governance and accountability; volunteering and civic participation; local and municipal governance; community development and community organising; social capital and trust; faith-based, diaspora and informal giving; social enterprise and hybrid organisational forms; and the regulation of the third sector.
+Topics within scope include consumer behaviour and consumer research; branding and brand management; digital, social-media and platform marketing; retailing and omnichannel commerce; pricing, sales and distribution; marketing strategy and market orientation; services, relationship and business-to-business marketing; marketing analytics and the use of artificial intelligence in marketing; and marketing in emerging, frontier and transitional economies.
 
-The journal publishes case studies, organisational ethnography, surveys, comparative and historical research, and evaluations of grantmaking practice. Community-based and participatory research is welcome, including work co-authored with practitioners, provided the methods and the authors' position are described openly.
+The journal publishes empirical studies using quantitative, qualitative and mixed methods, experimental and survey research, case studies, conceptual and theory-building articles, and systematic reviews. Work co-authored with practitioners is welcome, provided the methods and the authors' position are described openly.
 
-The journal has a particular interest in philanthropic traditions that are under-represented in the English-language literature, including waqf and other endowment forms, and in the everyday organisational work that keeps small associations running.
+The journal has a particular interest in markets and marketing practices that are under-represented in the English-language literature, and in studies that connect new marketing tools to measurable commercial outcomes.
 ```
 
 ### About the Journal (→ About the journal)
 
 ```
-Journal of Community & Foundations (JCFo) is a peer-reviewed, open access journal published on CF Open, the academic publishing platform of CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi. The language of publication is English.
+Commercial & Frontier Marketing Review (CFMR) is a peer-reviewed, open access journal published on CF Open, the academic publishing platform of CF Eğitim Danışmanlık ve Organizasyon Limited Şirketi. The language of publication is English.
 
-Most of what holds a community together is organised by people who will never write about it, and most of what is written about philanthropy describes a small number of large Western foundations. JCFo was founded to widen that record — to take small associations, local government and unfamiliar giving traditions as seriously as the endowments that already have a literature.
+Most marketing scholarship is written about a small number of mature markets and large firms, while most marketing is done elsewhere — in small and medium-sized businesses, in emerging economies, and on platforms that did not exist a decade ago. CFMR was founded to bring that wider practice into the literature, and to hold work on the newest tools to the same standard of evidence as work on the established ones.
 
 Publication frequency: two issues per year, in June and December.
 Peer review: double-blind, with at least two independent reviewers.

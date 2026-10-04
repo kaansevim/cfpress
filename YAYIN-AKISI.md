@@ -91,7 +91,7 @@ Kaan SSH ile kendisi yapacak, hostingciye iş düşmüyor.
 
 | # | Adım | Kimde |
 |---|---|---|
-| 1 | JCF, JECF, JCFO ayarları (şablon dosyası hazır) | Kaan |
+| 1 | JCF, JECF, CFMR ayarları (şablon dosyası hazır) | Kaan |
 | 2 | Yedekleme kurulumu | Birlikte |
 | 3 | Entegrasyon + temizlik + metrikler kodlanır | Claude |
 | 4 | OJS'te API anahtarı üretilir | Kaan |

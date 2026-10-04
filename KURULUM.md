@@ -100,7 +100,7 @@ mount'u ekleyen güncellemeden sonra:
 4. OJS önbelleğini temizleyip tarayıcıda sert yenileme yapın.
 
 Eklenti aktif journal path'ini otomatik algılar: `jss` mavi, `jcf` mor,
-`jecf` kahve/altın, `jcfo` bordo. Ayrıntılar ve güvenli geri alma adımları
+`jecf` kahve/altın, `cfmr` bordo. Ayrıntılar ve güvenli geri alma adımları
 `ojs/plugins/generic/cfOpenBranding/README.md` dosyasındadır.
 
 ## Sık kullanılan komutlar

@@ -48,7 +48,7 @@ class CfOpenBrandingPlugin extends GenericPlugin
             'border' => '#dbc6a5',
             'rgb' => '138, 86, 21',
         ],
-        'jcfo' => [
+        'cfmr' => [
             'primary' => '#4c211b',
             'secondary' => '#954b40',
             'accent' => '#f2a191',

@@ -11,7 +11,7 @@ dosyalarını veya frontend tema dosyalarını değiştirmez.
 | `jss` | Journal of Social Solutions | mavi |
 | `jcf` | Journal of Cognitive Formation | mor |
 | `jecf` | Journal of Economic Change and Future | kahve / altın |
-| `jcfo` | Journal of Community & Foundations | bordo |
+| `cfmr` | Commercial & Frontier Marketing Review | bordo |
 
 Ana renkler `CfOpenBrandingPlugin.php` içinde tutulur ve
 `frontend/src/lib/journals.ts` değerleriyle aynıdır. Yeni bir dergi eklenirse
